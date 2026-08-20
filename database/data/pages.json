@@ -1,0 +1,2143 @@
+[
+    {
+        "slug": "home",
+        "name": "Home",
+        "route_name": "home",
+        "sections": [
+            {
+                "key": "home_hero",
+                "name": "Home Hero",
+                "content": {
+                    "hero_title_line_1": {
+                        "type": "text",
+                        "value": "provide The"
+                    },
+                    "hero_title_line_2": {
+                        "type": "text",
+                        "value": "best ranking"
+                    },
+                    "hero_title_line_3": {
+                        "type": "text",
+                        "value": "Experience"
+                    },
+                    "hero_paragraph": {
+                        "type": "text",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus ante velit nunc"
+                    },
+                    "hero_tagline": {
+                        "type": "text",
+                        "value": "Marketing Design Agency since 1988"
+                    },
+                    "hero_button_label": {
+                        "type": "text",
+                        "value": "LET’S TALK"
+                    },
+                    "hero_button_url": {
+                        "type": "url",
+                        "value": "contact-us.html"
+                    },
+                    "hero_image": {
+                        "type": "image",
+                        "value": "../images/home-hero-image.jpg"
+                    },
+                    "hero_image_alt": {
+                        "type": "text",
+                        "value": "Home hero image"
+                    },
+                    "hero_round_link_url": {
+                        "type": "url",
+                        "value": "#case-study"
+                    },
+                    "hero_round_icon": {
+                        "type": "image",
+                        "value": "../images/icons/round-icon.png"
+                    },
+                    "hero_round_text_image": {
+                        "type": "image",
+                        "value": "../images/icons/hero-round-text.png"
+                    },
+                    "hero_round_text_alt": {
+                        "type": "text",
+                        "value": "Hero round text"
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "home_about_us",
+                "name": "Home About Us",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "ABOUT US"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "Discover the future of marketing with FAVLES, your trusted partner in innovative digital solutions. Our cutting-edge website offers a dynamic platform"
+                    },
+                    "button_label": {
+                        "type": "text",
+                        "value": "GET TO KNOW US"
+                    },
+                    "button_url": {
+                        "type": "url",
+                        "value": "contact-us.html"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "home_video",
+                "name": "Home Video",
+                "content": {
+                    "video_thumbnail": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp"
+                    },
+                    "video_thumbnail_alt": {
+                        "type": "text",
+                        "value": "Service video thumbnail image"
+                    },
+                    "video_url": {
+                        "type": "video",
+                        "value": "https://youtube.com/watch?v=r233kDWShkA"
+                    },
+                    "video_play_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664d7b64e6f014d2e2659c40_video-play.svg"
+                    },
+                    "video_lightbox_href": {
+                        "type": "url",
+                        "value": "#"
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "home_services",
+                "name": "Home Services",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "SERVICES"
+                    }
+                },
+                "sort_order": 3
+            },
+            {
+                "key": "home_case_study",
+                "name": "Home Case Study",
+                "content": {
+                    "section_anchor_id": {
+                        "type": "text",
+                        "value": "case-study"
+                    },
+                    "caption": {
+                        "type": "text",
+                        "value": "CASE STUDY"
+                    },
+                    "button_label": {
+                        "type": "text",
+                        "value": "VIEW ALL CASE STUDY"
+                    },
+                    "button_url": {
+                        "type": "url",
+                        "value": "casestudy.html"
+                    }
+                },
+                "sort_order": 4
+            },
+            {
+                "key": "home_process",
+                "name": "Home Process",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "PROCESS"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "A SIMPLE, YET POWERFUL AND EFFICIENT PROCESS; A SYSTEMATIC APPROACH TO DIGITAL MARKETING"
+                    }
+                },
+                "sort_order": 5
+            },
+            {
+                "key": "home_testimonials",
+                "name": "Home Testimonials",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "TESTIMONIALS"
+                    }
+                },
+                "sort_order": 6
+            },
+            {
+                "key": "home_latest_blog",
+                "name": "Home Latest Blog",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "BLOG/ARTICLES"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "Browse our latest news and resources"
+                    }
+                },
+                "sort_order": 7
+            },
+            {
+                "key": "home_cta",
+                "name": "Home Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    }
+                },
+                "sort_order": 8
+            }
+        ]
+    },
+    {
+        "slug": "about",
+        "name": "About Us",
+        "route_name": "about",
+        "sections": [
+            {
+                "key": "about_hero",
+                "name": "About Hero",
+                "content": {
+                    "hero_title_line_1": {
+                        "type": "text",
+                        "value": "creating true"
+                    },
+                    "hero_title_line_2": {
+                        "type": "text",
+                        "value": "expressions"
+                    },
+                    "hero_title_line_3": {
+                        "type": "text",
+                        "value": "of brands"
+                    },
+                    "hero_image_primary": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/66a96bab029754bb653bd53c_about-us-image-1.webp"
+                    },
+                    "hero_image_primary_alt": {
+                        "type": "text",
+                        "value": "about us image"
+                    },
+                    "hero_image_secondary": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/66a96bab2657765525173560_about-us-image-2.webp"
+                    },
+                    "hero_image_secondary_alt": {
+                        "type": "text",
+                        "value": "about us image"
+                    },
+                    "hero_badge_link_url": {
+                        "type": "url",
+                        "value": "#team"
+                    },
+                    "hero_badge_arrow_icon": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/66501c426d5623b1d6d38036_round-icon.png"
+                    },
+                    "hero_badge_round_text_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/66501c42caaf44099468db6d_hero-round-text.png"
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "about_us_info_stats",
+                "name": "About Us Info Stats",
+                "content": [],
+                "sort_order": 1
+            },
+            {
+                "key": "our_mission",
+                "name": "Our Mission",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "MISSION/VISION"
+                    },
+                    "mission_statement": {
+                        "type": "text",
+                        "value": "Our mission at FABELS Agency is to empower our clients to achieve their business goals through innovative VR"
+                    },
+                    "vision_statement": {
+                        "type": "text",
+                        "value": "We pride ourselves on delightful interactions and experiences within beautiful interfaces and worlds. "
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "our_team",
+                "name": "Our Team",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "OUR TEAM"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "A simple, yet powerful and &nbsp;efficient process A systematic approach to digital marketing"
+                    },
+                    "section_anchor_id": {
+                        "type": "text",
+                        "value": "team"
+                    }
+                },
+                "sort_order": 3
+            },
+            {
+                "key": "our_clients",
+                "name": "Our Clients",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "OUR CLIENTS"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "PROUD TO PARTNER WITH INDUSTRY-LEADING COMPANIES"
+                    }
+                },
+                "sort_order": 4
+            },
+            {
+                "key": "testimonials",
+                "name": "Testimonials",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "TESTIMONIALS"
+                    },
+                    "default_active_tab": {
+                        "type": "text",
+                        "value": "Tab 3"
+                    }
+                },
+                "sort_order": 5
+            },
+            {
+                "key": "our_jobs",
+                "name": "Our Jobs",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "JOBS"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "Opportunities to join our awesome team"
+                    }
+                },
+                "sort_order": 6
+            },
+            {
+                "key": "cta",
+                "name": "Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 7
+            }
+        ]
+    },
+    {
+        "slug": "services",
+        "name": "Services",
+        "route_name": "services.index",
+        "sections": [
+            {
+                "key": "service_hero",
+                "name": "Service Hero",
+                "content": {
+                    "hero_title_line_1": {
+                        "type": "text",
+                        "value": "our digital"
+                    },
+                    "hero_title_line_2": {
+                        "type": "text",
+                        "value": "marketing"
+                    },
+                    "hero_title_line_3": {
+                        "type": "text",
+                        "value": "services"
+                    },
+                    "hero_paragraph": {
+                        "type": "text",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id nibh vestibulum, fringilla nulla nec, iaculis mauris. Proin."
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "service_list",
+                "name": "Service List",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "SERVICES"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "about_us_stats",
+                "name": "About Us Stats",
+                "content": [],
+                "sort_order": 2
+            },
+            {
+                "key": "our_process",
+                "name": "Our Process",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "MARKETING PROCESS"
+                    },
+                    "section_title": {
+                        "type": "text",
+                        "value": "Successful Marketing Process"
+                    }
+                },
+                "sort_order": 3
+            },
+            {
+                "key": "service_video",
+                "name": "Service Video",
+                "content": {
+                    "video_thumbnail": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp"
+                    },
+                    "video_thumbnail_alt": {
+                        "type": "text",
+                        "value": "Service video thumbnail image"
+                    },
+                    "play_icon": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664d7b64e6f014d2e2659c40_video-play.svg"
+                    },
+                    "video_url": {
+                        "type": "video",
+                        "value": "https://youtube.com/watch?v=r233kDWShkA"
+                    }
+                },
+                "sort_order": 4
+            },
+            {
+                "key": "faq",
+                "name": "Faq",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "FAQ"
+                    }
+                },
+                "sort_order": 5
+            },
+            {
+                "key": "our_clients",
+                "name": "Our Clients",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "OUR CLIENTS"
+                    },
+                    "section_title": {
+                        "type": "text",
+                        "value": "PROUD TO PARTNER WITH INDUSTRY-LEADING COMPANIES"
+                    }
+                },
+                "sort_order": 6
+            },
+            {
+                "key": "cta",
+                "name": "Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 7
+            }
+        ]
+    },
+    {
+        "slug": "service-details",
+        "name": "Service Details",
+        "route_name": "services.show",
+        "sections": [
+            {
+                "key": "custom_cursor_overlay",
+                "name": "Custom Cursor Overlay",
+                "content": {
+                    "cursor_hover_label": {
+                        "type": "text",
+                        "value": "View Case"
+                    },
+                    "cursor_play_icon": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664d7b64e6f014d2e2659c40_video-play.svg"
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "service_details_hero",
+                "name": "Service Details Hero",
+                "content": {
+                    "hero_title": {
+                        "type": "text",
+                        "value": "Search engine optimization"
+                    },
+                    "hero_description": {
+                        "type": "text",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet dolor sit amet diam pulvinar tempus et ac sapien. Nullam molestie, lorem finibus tristique tincidunt, nunc purus venenatis."
+                    },
+                    "hero_cta_label": {
+                        "type": "text",
+                        "value": "LET’S TALK"
+                    },
+                    "hero_cta_url": {
+                        "type": "url",
+                        "value": "contact-us.html"
+                    },
+                    "hero_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/664de42dca00f87923b875a3/66acd1202df48adbb6b1b10d_service-image-4.webp"
+                    },
+                    "hero_image_alt": {
+                        "type": "text",
+                        "value": "This is a nice image"
+                    },
+                    "hero_cta_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "service_details_features",
+                "name": "Service Details Features",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "SERVICE"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "Under the services of the search engine optimization"
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "service_process",
+                "name": "Service Process",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "PROCESS"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "Our bulletproof process to win on social media"
+                    }
+                },
+                "sort_order": 3
+            },
+            {
+                "key": "case_study",
+                "name": "Case Study",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "CASE STUDY"
+                    },
+                    "view_all_label": {
+                        "type": "text",
+                        "value": "VIEW MORE"
+                    },
+                    "view_all_url": {
+                        "type": "url",
+                        "value": "casestudy.html"
+                    },
+                    "view_all_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 4
+            },
+            {
+                "key": "why_choose_us",
+                "name": "Why Choose Us",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "WHY CHOOSE US"
+                    },
+                    "button_label": {
+                        "type": "text",
+                        "value": "SEE MORE"
+                    },
+                    "button_url": {
+                        "type": "url",
+                        "value": "why-choose-us.html"
+                    },
+                    "side_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp"
+                    },
+                    "side_image_alt": {
+                        "type": "text",
+                        "value": "our evaluation section image"
+                    },
+                    "button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 5
+            },
+            {
+                "key": "cta",
+                "name": "Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 6
+            }
+        ]
+    },
+    {
+        "slug": "case-studies",
+        "name": "Case Studies",
+        "route_name": "case-studies.index",
+        "sections": [
+            {
+                "key": "case_study_hero",
+                "name": "Case Study Hero",
+                "content": {
+                    "hero_title_line_1": {
+                        "type": "text",
+                        "value": "A selection of"
+                    },
+                    "hero_title_line_2": {
+                        "type": "text",
+                        "value": "successful"
+                    },
+                    "hero_title_line_3": {
+                        "type": "text",
+                        "value": "projects"
+                    },
+                    "hero_paragraph": {
+                        "type": "text",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non massa luctus, rutrum libero in, fermentum orci. Pellentesque condimentum nisl et erat."
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "case_study_list",
+                "name": "Case Study List",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "CASE STUDY"
+                    },
+                    "pagination_next_label": {
+                        "type": "text",
+                        "value": "NEXT PAGE"
+                    },
+                    "pagination_next_href": {
+                        "type": "url",
+                        "value": "?b2709d13_page=2"
+                    },
+                    "pagination_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "testimonials",
+                "name": "Testimonials",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "TESTIMONIALS"
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "latest_blog",
+                "name": "Latest Blog",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "BLOG/ARTICLES"
+                    },
+                    "section_heading": {
+                        "type": "text",
+                        "value": "Browse our latest news and resources"
+                    }
+                },
+                "sort_order": 3
+            },
+            {
+                "key": "cta",
+                "name": "Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_link": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 4
+            }
+        ]
+    },
+    {
+        "slug": "case-study-details",
+        "name": "Case Study Details",
+        "route_name": "case-studies.show",
+        "sections": [
+            {
+                "key": "case_study_details_hero",
+                "name": "Case Study Details Hero",
+                "content": {
+                    "case_study_title": {
+                        "type": "text",
+                        "value": "Event planning and management"
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "case_study_info",
+                "name": "Case Study Info",
+                "content": {
+                    "main_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/664de42dca00f87923b875a3/66a88aa8e8d3d468817e7ff3_case-study-image-1%20(1).webp"
+                    },
+                    "main_image_alt": {
+                        "type": "text",
+                        "value": "This is a nice image"
+                    },
+                    "client_label": {
+                        "type": "text",
+                        "value": "CLIENT"
+                    },
+                    "client_name": {
+                        "type": "text",
+                        "value": "Sarah Anderson"
+                    },
+                    "date_label": {
+                        "type": "text",
+                        "value": "DATE"
+                    },
+                    "date_value": {
+                        "type": "text",
+                        "value": "July 31, 2024"
+                    },
+                    "services_label": {
+                        "type": "text",
+                        "value": "Services"
+                    },
+                    "services_value": {
+                        "type": "text",
+                        "value": "Branding, Development"
+                    },
+                    "share_label": {
+                        "type": "text",
+                        "value": "Share on"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "case_study_objective_and_strategies",
+                "name": "Case Study Objective And Strategies",
+                "content": {
+                    "objective_caption": {
+                        "type": "text",
+                        "value": "OBJECTIVE"
+                    },
+                    "objective_heading": {
+                        "type": "richtext",
+                        "value": "Enhance event attendance, engagement, and ROI through strategic planning and seamless execution."
+                    },
+                    "key_strategies_caption": {
+                        "type": "text",
+                        "value": "Key Strategies"
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "case_study_result",
+                "name": "Case Study Result",
+                "content": {
+                    "results_caption": {
+                        "type": "text",
+                        "value": "RESULTS"
+                    },
+                    "results_heading": {
+                        "type": "richtext",
+                        "value": "Event planning management project impactful results"
+                    }
+                },
+                "sort_order": 3
+            },
+            {
+                "key": "testimonial",
+                "name": "Testimonial",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "TESTIMONIALS"
+                    },
+                    "default_active_tab": {
+                        "type": "text",
+                        "value": "Tab 3"
+                    }
+                },
+                "sort_order": 4
+            },
+            {
+                "key": "cta",
+                "name": "Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 5
+            }
+        ]
+    },
+    {
+        "slug": "blog",
+        "name": "Blog",
+        "route_name": "blog.index",
+        "sections": [
+            {
+                "key": "blog_hero",
+                "name": "Blog Hero",
+                "content": {
+                    "hero_title_line_1": {
+                        "type": "text",
+                        "value": "Blog "
+                    },
+                    "hero_title_line_2": {
+                        "type": "text",
+                        "value": "&amp; articles"
+                    },
+                    "hero_paragraph": {
+                        "type": "text",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non massa luctus, rutrum libero in, fermentum orci. "
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "blog_featured",
+                "name": "Blog Featured",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "FEATURED BLOG"
+                    },
+                    "section_heading": {
+                        "type": "text",
+                        "value": "Browse our latest news and resources"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "blog_list",
+                "name": "Blog List",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "LATEST BLOG"
+                    },
+                    "section_heading": {
+                        "type": "text",
+                        "value": "Browse our latest news and resources"
+                    },
+                    "pagination_next_label": {
+                        "type": "text",
+                        "value": "NEXT PAGE"
+                    },
+                    "pagination_next_url": {
+                        "type": "url",
+                        "value": "?2f3fa35c_page=2"
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "blog_cta",
+                "name": "Blog Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    }
+                },
+                "sort_order": 3
+            }
+        ]
+    },
+    {
+        "slug": "blog-details",
+        "name": "Blog Details",
+        "route_name": "blog.show",
+        "sections": [
+            {
+                "key": "blog_details_hero",
+                "name": "Blog Details Hero",
+                "content": {
+                    "post_title": {
+                        "type": "text",
+                        "value": "Navigating search algorithms for regional impact"
+                    },
+                    "author_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/664de42dca00f87923b875a3/664de7a1a39dba4ac261a75a_blog-author-image.png"
+                    },
+                    "author_image_alt": {
+                        "type": "text",
+                        "value": ""
+                    },
+                    "author_name": {
+                        "type": "text",
+                        "value": "James Maroon"
+                    },
+                    "published_date": {
+                        "type": "text",
+                        "value": "July 10, 2024"
+                    },
+                    "read_time_value": {
+                        "type": "text",
+                        "value": "6"
+                    },
+                    "read_time_label": {
+                        "type": "text",
+                        "value": "min read"
+                    },
+                    "featured_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/664de42dca00f87923b875a3/66876a195c4a30e89f362732_blog-image-1.webp"
+                    },
+                    "featured_image_alt": {
+                        "type": "text",
+                        "value": "This is a nice image"
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "blog_details_body",
+                "name": "Blog Details Body",
+                "content": {
+                    "body_richtext": {
+                        "type": "richtext",
+                        "value": "<p>As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent. You will help the team design beautiful interfaces that solve business challenges for our clients. We work with a number of Tier 1 banks on building web-based applications for AML, KYC and Sanctions List management workflows. This role is ideal if you are looking to segue your…"
+                    },
+                    "body_h2_1": {
+                        "type": "text",
+                        "value": "What is growth marketing?"
+                    },
+                    "body_h3_1": {
+                        "type": "text",
+                        "value": "It's important to always have a growth marketing plan"
+                    },
+                    "body_h3_2": {
+                        "type": "text",
+                        "value": "If your business is not growing, it's falling"
+                    },
+                    "body_blockquote": {
+                        "type": "text",
+                        "value": "\"Unlock the door to hearts and minds with the key of visual content. In a world that moves at the speed of a scroll, compelling visuals not only catch the eye but also tell stories that resonate long after the screen goes dark.\""
+                    },
+                    "body_h3_3": {
+                        "type": "text",
+                        "value": "3 tips to build a bulletproof growth marketing plan"
+                    },
+                    "body_h3_4": {
+                        "type": "text",
+                        "value": "Identify the channels that are driving more revenue"
+                    },
+                    "body_h3_5": {
+                        "type": "text",
+                        "value": "Conclusion"
+                    },
+                    "prev_button_label": {
+                        "type": "text",
+                        "value": "PREVIOUS BLOG"
+                    },
+                    "prev_button_url": {
+                        "type": "url",
+                        "value": "blog-details.html"
+                    },
+                    "next_button_label": {
+                        "type": "text",
+                        "value": "NEXT BLOG"
+                    },
+                    "next_button_url": {
+                        "type": "url",
+                        "value": "#"
+                    },
+                    "pagination_arrow_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "latest_blog",
+                "name": "Latest Blog",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "BLOG/ARTICLES"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "Browse our latest news and resources"
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "cta",
+                "name": "Cta",
+                "content": {
+                    "cta_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_arrow_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 3
+            }
+        ]
+    },
+    {
+        "slug": "career",
+        "name": "Career",
+        "route_name": "career.index",
+        "sections": [
+            {
+                "key": "career_hero",
+                "name": "Career Hero",
+                "content": {
+                    "hero_title_line_1": {
+                        "type": "text",
+                        "value": "join our team"
+                    },
+                    "hero_title_line_2": {
+                        "type": "text",
+                        "value": "at inbound"
+                    },
+                    "hero_paragraph": {
+                        "type": "text",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique velit nulla &nbsp;consectetur adipiscing elit. Tristique velit nulla at congue massa enim habitasse"
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "career_stats",
+                "name": "Career Stats",
+                "content": [],
+                "sort_order": 1
+            },
+            {
+                "key": "career_benefits",
+                "name": "Career Benefits",
+                "content": {
+                    "benefits_caption": {
+                        "type": "text",
+                        "value": "BENEFITS"
+                    },
+                    "benefits_heading": {
+                        "type": "text",
+                        "value": "Join our team to advance your career, collaborate on innovative projects, and help businesses achieve their goals."
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "career_testimonials",
+                "name": "Career Testimonials",
+                "content": {
+                    "testimonials_caption": {
+                        "type": "text",
+                        "value": "TESTIMONIALS"
+                    }
+                },
+                "sort_order": 3
+            },
+            {
+                "key": "career_jobs",
+                "name": "Career Jobs",
+                "content": {
+                    "jobs_caption": {
+                        "type": "text",
+                        "value": "JOBS"
+                    },
+                    "jobs_heading": {
+                        "type": "text",
+                        "value": "Opportunities to join our awesome team"
+                    }
+                },
+                "sort_order": 4
+            },
+            {
+                "key": "career_cta",
+                "name": "Career Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 5
+            }
+        ]
+    },
+    {
+        "slug": "career-details",
+        "name": "Career Details",
+        "route_name": "career.show",
+        "sections": [
+            {
+                "key": "career_hero",
+                "name": "Career Hero",
+                "content": {
+                    "job_title": {
+                        "type": "text",
+                        "value": "Brand expert"
+                    },
+                    "job_location": {
+                        "type": "text",
+                        "value": "new york"
+                    },
+                    "job_employment_type": {
+                        "type": "text",
+                        "value": "Full time"
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "job_details",
+                "name": "Job Details",
+                "content": {
+                    "about_caption": {
+                        "type": "text",
+                        "value": "ABOUT THE ROLE"
+                    },
+                    "body_richtext": {
+                        "type": "richtext",
+                        "value": "<h2>Job Description</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies risus at dolor egestas, vitae cursus urna auctor. Pellentesque efficitur at ex a cursus. Vivamus eget sagittis ligula, a lobortis tortor. Nunc et turpis ut est interdum lobortis.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien odio, rhoncus eget mi vitae, lobortis inter"
+                    },
+                    "body_heading_1": {
+                        "type": "text",
+                        "value": "Job Description"
+                    },
+                    "body_paragraph_1": {
+                        "type": "text",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies risus at dolor egestas, vitae cursus urna auctor. Pellentesque efficitur at ex a cursus. Vivamus eget sagittis ligula, a lobortis tortor. Nunc et turpis ut est interdum lobortis."
+                    },
+                    "body_paragraph_2": {
+                        "type": "text",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien odio, rhoncus eget mi vitae, lobortis interdum velit. Vestibulum malesuada urna massa, id fringilla libero iaculis sed. Proin efficitur lorem a lacus lobortis porttitor eu ac risus. Aenean."
+                    },
+                    "body_heading_2": {
+                        "type": "text",
+                        "value": "In the short term, you will"
+                    },
+                    "body_list_1_item_1": {
+                        "type": "text",
+                        "value": "Become familiar with our systems, style &amp; process"
+                    },
+                    "body_list_1_item_2": {
+                        "type": "text",
+                        "value": "Participate in Continuous Discovery Habits; coaching others on qualitative research."
+                    },
+                    "body_list_1_item_3": {
+                        "type": "text",
+                        "value": "lead your own discovery &amp; interviews with members to understand pains, gains &amp; Jobs to be done"
+                    },
+                    "body_list_1_item_4": {
+                        "type": "text",
+                        "value": "Guide research activities to define current member pain points and map ideal future experiences"
+                    },
+                    "body_list_1_item_5": {
+                        "type": "text",
+                        "value": "Facilitate research by collecting, analyzing, and producing insights to lead the team toward user outcomes"
+                    },
+                    "body_list_1_item_6": {
+                        "type": "text",
+                        "value": "Collaborate with cross-functional project team groups to support the design &amp; creation of new products and features"
+                    },
+                    "body_heading_3": {
+                        "type": "text",
+                        "value": "What you bring to the table"
+                    },
+                    "body_list_2_item_1": {
+                        "type": "text",
+                        "value": "4+ years of professional experience with 2+ years of experience in User Research"
+                    },
+                    "body_list_2_item_2": {
+                        "type": "text",
+                        "value": "Experience in conducting research with a clear understanding of various quantitative and qualitative research methodologies"
+                    },
+                    "body_list_2_item_3": {
+                        "type": "text",
+                        "value": "Analytical, data-driven, and supremely detail-oriented"
+                    },
+                    "body_list_2_item_4": {
+                        "type": "text",
+                        "value": "Highly collaborative and empathetic: you love connecting with and helping others, whether they’re users or teammates"
+                    },
+                    "body_list_2_item_5": {
+                        "type": "text",
+                        "value": "You’re legally authorized to work in the United States and able to work US-hours."
+                    },
+                    "body_list_2_item_6": {
+                        "type": "text",
+                        "value": "Preferred: Experience with quantitative analysis and data visualization"
+                    },
+                    "apply_box_title": {
+                        "type": "text",
+                        "value": "APPLY FOR THIS JOB"
+                    },
+                    "apply_box_text": {
+                        "type": "text",
+                        "value": "Please let Advertise know that you found this position on Jobs as a way to support us, so we can keep posting."
+                    },
+                    "apply_button_label": {
+                        "type": "text",
+                        "value": "APPLY FOR JOB"
+                    },
+                    "apply_button_url": {
+                        "type": "url",
+                        "value": "mailto:applyexamplejob@gmail.com?subject=Job%20Apply"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "other_jobs",
+                "name": "Other Jobs",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "BENEFITS"
+                    },
+                    "section_heading": {
+                        "type": "text",
+                        "value": "Opportunities to join our awesome team"
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "cta",
+                "name": "Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    }
+                },
+                "sort_order": 3
+            }
+        ]
+    },
+    {
+        "slug": "contact",
+        "name": "Contact Us",
+        "route_name": "contact",
+        "sections": [
+            {
+                "key": "contact_hero",
+                "name": "Contact Hero",
+                "content": {
+                    "hero_title_line_1": {
+                        "type": "text",
+                        "value": "Have a"
+                    },
+                    "hero_title_line_2": {
+                        "type": "text",
+                        "value": "project?"
+                    },
+                    "hero_paragraph": {
+                        "type": "richtext",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non massa luctus, rutrum libero in, fermentum orci."
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "contact_us_main",
+                "name": "Contact Us Main",
+                "content": {
+                    "section_caption": {
+                        "type": "text",
+                        "value": "CONTACT US"
+                    },
+                    "section_heading": {
+                        "type": "text",
+                        "value": "Contact our support team to grow your business"
+                    },
+                    "form_title": {
+                        "type": "text",
+                        "value": "contact us!"
+                    },
+                    "form_submit_label": {
+                        "type": "text",
+                        "value": "SUBMIT"
+                    },
+                    "form_success_message": {
+                        "type": "text",
+                        "value": "Thank you! Your submission has been received!"
+                    },
+                    "form_error_message": {
+                        "type": "text",
+                        "value": "Oops! Something went wrong while submitting the form."
+                    },
+                    "form_success_icon": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/668c4528a2433dc202d5dd5d_check-circle.svg"
+                    },
+                    "form_error_icon": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/668c45d06e7cd30793472a3d_alert-circle.svg"
+                    },
+                    "submit_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "contact_faq",
+                "name": "Contact Faq",
+                "content": {
+                    "faq_caption": {
+                        "type": "text",
+                        "value": "FAQ"
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "contact_cta",
+                "name": "Contact Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 3
+            }
+        ]
+    },
+    {
+        "slug": "faq",
+        "name": "FAQ",
+        "route_name": "faq",
+        "sections": [
+            {
+                "key": "faq_common_hero",
+                "name": "Faq Common Hero",
+                "content": {
+                    "hero_title_line_1": {
+                        "type": "text",
+                        "value": "Frequently"
+                    },
+                    "hero_title_line_2": {
+                        "type": "text",
+                        "value": "asked"
+                    },
+                    "hero_title_line_3": {
+                        "type": "text",
+                        "value": "question"
+                    },
+                    "hero_paragraph": {
+                        "type": "richtext",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat velit in lorem feugiat."
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "faq_accordion",
+                "name": "Faq Accordion",
+                "content": {
+                    "faq_caption": {
+                        "type": "text",
+                        "value": "FAQ"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "faq_cta",
+                "name": "Faq Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_icon": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 2
+            }
+        ]
+    },
+    {
+        "slug": "why-choose-us",
+        "name": "Why Choose Us",
+        "route_name": "why-choose-us",
+        "sections": [
+            {
+                "key": "why_choose_us_hero",
+                "name": "Why Choose Us Hero",
+                "content": {
+                    "heading": {
+                        "type": "text",
+                        "value": "Why"
+                    },
+                    "paragraph": {
+                        "type": "richtext",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate luctus nibh et ultrices. Etiam tempor eu ante ac tristique."
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "our_solution",
+                "name": "Our Solution",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "OUR SOLUTION"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "We understand that every business has unique needs and goals. That's why we offer a wide range of tailored marketing solutions to help you achieve success in the digital landscape"
+                    },
+                    "image": {
+                        "type": "image",
+                        "value": "664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "our_evaluation",
+                "name": "Our Evaluation",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "OUR EVALUATION"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "Crafting Success with EDOLY Marketing"
+                    },
+                    "paragraph": {
+                        "type": "richtext",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies arcu est, a consequat massa pharetra sed. Sed vestibulum in turpis sed facilisis. Vestibulum lobortis placerat sapien, in sodales ligula tempor id. Maecenas aliquam felis mauris."
+                    },
+                    "paragraph_2": {
+                        "type": "richtext",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, risus at vehicula tincidunt, justo nibh venenatis est, ut volutpat ex nunc facilisis eros. Integer viverra lobortis faucibus. Curabitur dapibus erat quis libero faucibus, et facilisis."
+                    },
+                    "image": {
+                        "type": "image",
+                        "value": "668f57f523812d8b78e89c6b_our-evaluation-section-image.webp"
+                    }
+                },
+                "sort_order": 2
+            },
+            {
+                "key": "our_process",
+                "name": "Our Process",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "MARKETING PROCESS"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "Successful Marketing Process"
+                    },
+                    "paragraph": {
+                        "type": "richtext",
+                        "value": "Lorem ipsum dolor sit amet, consectetur elit."
+                    }
+                },
+                "sort_order": 3
+            },
+            {
+                "key": "testimonials",
+                "name": "Testimonials",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "TESTIMONIALS"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "TESTIMONIALS"
+                    },
+                    "image": {
+                        "type": "image",
+                        "value": "664d84edbc138a0caa5bc133_testimonial-image-1.jpg"
+                    },
+                    "image_2": {
+                        "type": "image",
+                        "value": "66a9f6f91a1a26abf2c2521c_testimonial-image-2.webp"
+                    },
+                    "image_3": {
+                        "type": "image",
+                        "value": "66a9f6f87e67c52919eb2006_testimonial-image-3.webp"
+                    },
+                    "image_4": {
+                        "type": "image",
+                        "value": "66a9f6f87e67c52919eb1ff0_testimonial-image-5.webp"
+                    }
+                },
+                "sort_order": 4
+            },
+            {
+                "key": "faq",
+                "name": "Faq",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "FAQ"
+                    },
+                    "paragraph": {
+                        "type": "richtext",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at."
+                    }
+                },
+                "sort_order": 5
+            },
+            {
+                "key": "latest_blog",
+                "name": "Latest Blog",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "BLOG/ARTICLES"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "Browse our latest news and resources"
+                    },
+                    "heading_2": {
+                        "type": "text",
+                        "value": "Navigating search algorithms for regional impact"
+                    },
+                    "heading_3": {
+                        "type": "text",
+                        "value": "How to increase your twitter reach by this simple trick"
+                    },
+                    "paragraph": {
+                        "type": "richtext",
+                        "value": "Jul 10, 2024"
+                    },
+                    "paragraph_2": {
+                        "type": "richtext",
+                        "value": "6"
+                    },
+                    "paragraph_3": {
+                        "type": "richtext",
+                        "value": "min read"
+                    },
+                    "paragraph_4": {
+                        "type": "richtext",
+                        "value": "Lorem ipsum dolor sit amet, consecteturor adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor. Eget phasellus ideirs."
+                    },
+                    "image": {
+                        "type": "image",
+                        "value": "66507334b279af4803571b92_calender-icon.png"
+                    },
+                    "image_2": {
+                        "type": "image",
+                        "value": "66507334a301d18ef9aa933f_time-icon.png"
+                    },
+                    "image_3": {
+                        "type": "image",
+                        "value": "664c2ad8ce7e660fca0261be_arrow.svg"
+                    },
+                    "image_4": {
+                        "type": "image",
+                        "value": "66876a195c4a30e89f362732_blog-image-1.webp"
+                    }
+                },
+                "sort_order": 6
+            },
+            {
+                "key": "cta",
+                "name": "Cta",
+                "content": {
+                    "heading": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "image": {
+                        "type": "image",
+                        "value": "664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "image_2": {
+                        "type": "image",
+                        "value": "664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 7
+            }
+        ]
+    },
+    {
+        "slug": "changelog",
+        "name": "Changelog",
+        "route_name": "changelog",
+        "sections": [
+            {
+                "key": "changelog_hero",
+                "name": "Changelog Hero",
+                "content": {
+                    "hero_title": {
+                        "type": "text",
+                        "value": "changelog"
+                    },
+                    "hero_divider_visible": {
+                        "type": "boolean",
+                        "value": "<div class=\"horizontal-line-wrap\"><div class=\"horizontal-line\" style=\"transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;\"></div></div>"
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "changelog_entries",
+                "name": "Changelog Entries",
+                "content": [],
+                "sort_order": 1
+            },
+            {
+                "key": "changelog_cta",
+                "name": "Changelog Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 2
+            }
+        ]
+    },
+    {
+        "slug": "style-guide",
+        "name": "Style Guide",
+        "route_name": "style-guide",
+        "sections": [
+            {
+                "key": "style_guide_hero",
+                "name": "Style Guide Hero",
+                "content": {
+                    "hero_title": {
+                        "type": "text",
+                        "value": "Style Guide"
+                    },
+                    "hero_divider_visible": {
+                        "type": "boolean",
+                        "value": "<div class=\"horizontal-line\" style=\"transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;\">"
+                    }
+                },
+                "sort_order": 0
+            },
+            {
+                "key": "style_guide_main",
+                "name": "Style Guide Main",
+                "content": {
+                    "typo_display_large": {
+                        "type": "text",
+                        "value": "Display L"
+                    },
+                    "typo_display_medium": {
+                        "type": "text",
+                        "value": "Display M"
+                    },
+                    "typo_h1": {
+                        "type": "text",
+                        "value": "Heading H1"
+                    },
+                    "typo_h2": {
+                        "type": "text",
+                        "value": "Heading H2"
+                    },
+                    "typo_h3": {
+                        "type": "text",
+                        "value": "Heading H3"
+                    },
+                    "typo_h4": {
+                        "type": "text",
+                        "value": "Heading H4"
+                    },
+                    "custom_heading_h1": {
+                        "type": "text",
+                        "value": "Heading H1"
+                    },
+                    "custom_heading_h2": {
+                        "type": "text",
+                        "value": "Heading H2"
+                    },
+                    "custom_heading_h3": {
+                        "type": "text",
+                        "value": "Heading H3"
+                    },
+                    "custom_heading_h4": {
+                        "type": "text",
+                        "value": "Heading H4"
+                    },
+                    "body_caption": {
+                        "type": "text",
+                        "value": "Caption"
+                    },
+                    "body_paragraph": {
+                        "type": "richtext",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+                    },
+                    "body_blockquote": {
+                        "type": "text",
+                        "value": "Block Quote"
+                    },
+                    "button_demo_label": {
+                        "type": "text",
+                        "value": "BUY TEMPLATE"
+                    },
+                    "button_demo_url": {
+                        "type": "url",
+                        "value": "#"
+                    },
+                    "button_demo_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 1
+            },
+            {
+                "key": "style_guide_cta",
+                "name": "Style Guide Cta",
+                "content": {
+                    "cta_title_line_1": {
+                        "type": "text",
+                        "value": "START YOUR"
+                    },
+                    "cta_title_line_2": {
+                        "type": "text",
+                        "value": "PROJECT NOW"
+                    },
+                    "cta_image": {
+                        "type": "image",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c7b819abdb2098fe1c195_cta-image.jpg"
+                    },
+                    "cta_image_alt": {
+                        "type": "text",
+                        "value": "CTA image"
+                    },
+                    "cta_button_label": {
+                        "type": "text",
+                        "value": "GET IT TOUCH"
+                    },
+                    "cta_button_url": {
+                        "type": "url",
+                        "value": "https://www.flowfye.com/services#pricing"
+                    },
+                    "cta_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    }
+                },
+                "sort_order": 2
+            }
+        ]
+    },
+    {
+        "slug": "404",
+        "name": "Not Found",
+        "route_name": "not-found",
+        "sections": [
+            {
+                "key": "notfound_hero",
+                "name": "Notfound Hero",
+                "content": {
+                    "error_code": {
+                        "type": "text",
+                        "value": "404"
+                    },
+                    "error_message": {
+                        "type": "richtext",
+                        "value": "Hmmmm... I couldn't find that page. It's just me playing the guitar :)"
+                    },
+                    "back_button_label": {
+                        "type": "text",
+                        "value": "GO BACK TO HOMEPAGE"
+                    },
+                    "back_button_url": {
+                        "type": "url",
+                        "value": "home.html"
+                    },
+                    "back_button_icon": {
+                        "type": "icon",
+                        "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
+                    },
+                    "hero_divider_visible": {
+                        "type": "boolean",
+                        "value": "<div class=\"horizontal-line\" style=\"transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;\">"
+                    }
+                },
+                "sort_order": 0
+            }
+        ]
+    }
+]

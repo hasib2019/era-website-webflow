@@ -1,0 +1,688 @@
+{
+    "services": [
+        {
+            "counter": "01",
+            "title": "Paid advertising",
+            "image": "66acaea5036eaf7d2aec81f8_service-image-1.webp",
+            "image_alt": "This is a nice image",
+            "sort_order": 0
+        },
+        {
+            "counter": "02",
+            "title": "Content marketing",
+            "image": "66acb115a3b25c70635e0aac_service-image-2.webp",
+            "image_alt": "This is a nice image",
+            "sort_order": 1
+        },
+        {
+            "counter": "03",
+            "title": "Social media marketing",
+            "image": "66acb123f1bd721a4e983c62_service-image-3.webp",
+            "image_alt": "This is a nice image",
+            "sort_order": 2
+        },
+        {
+            "counter": "04",
+            "title": "Search engine optimization",
+            "image": "66acd1202df48adbb6b1b10d_service-image-4.webp",
+            "image_alt": "This is a nice image",
+            "sort_order": 3
+        }
+    ],
+    "case_studies": [
+        {
+            "title": "Event planning and management",
+            "subtitle": "Crafting impactful events",
+            "image": "66a88aa8e8d3d468817e7ff3_case-study-image-1.webp",
+            "image_alt": "This is a nice image",
+            "sort_order": 0
+        },
+        {
+            "title": "A targeted digital campaign",
+            "subtitle": "Boosting Sales for company",
+            "image": "66a88ba2e8b025fd7b925b37_case-study-image-2.webp",
+            "image_alt": "This is a nice image",
+            "sort_order": 1
+        },
+        {
+            "title": "A multi-channel marketing strategy",
+            "subtitle": "Boosting E-commerce Sales",
+            "image": "66a88bbbcdb323d26bec8efd_case-study-image-3.webp",
+            "image_alt": "This is a nice image",
+            "sort_order": 2
+        },
+        {
+            "title": "A comprehensive digital marketing campaign",
+            "subtitle": "Driving Brand Awareness",
+            "image": "66a88c5767620a39a1f38944_case-study-image-4.webp",
+            "image_alt": "This is a nice image",
+            "sort_order": 3
+        }
+    ],
+    "posts": [
+        {
+            "title": "Navigating search algorithms for regional impact",
+            "summary": "Lorem ipsum dolor sit amet, consecteturor adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor. Eget phasellus ideirs.",
+            "image": "66876a195c4a30e89f362732_blog-image-1.webp",
+            "image_alt": "This is a nice image",
+            "info": [],
+            "is_featured": true,
+            "sort_order": 0
+        },
+        {
+            "title": "How to increase your twitter reach by this simple trick",
+            "summary": "Lorem ipsum dolor sit amet, consecteturor adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor. Eget phasellus ideirs.",
+            "image": "66876a27d9a22ea2e9b0e272_blog-image-2.webp",
+            "image_alt": "This is a nice image",
+            "info": [
+                "Jul 10, 2024",
+                "6 min read"
+            ],
+            "is_featured": false,
+            "sort_order": 1
+        },
+        {
+            "title": "5 social media apps you should be paying attention to",
+            "summary": "Lorem ipsum dolor sit amet, consecteturor adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor. Eget phasellus ideirs.",
+            "image": "66876a32c35271e54e7b0923_blog-image-3.webp",
+            "image_alt": "This is a nice image",
+            "info": [
+                "Jul 10, 2024",
+                "6 min read"
+            ],
+            "is_featured": false,
+            "sort_order": 2
+        },
+        {
+            "title": "How to reach out for guest increase your seo authority",
+            "summary": "Lorem ipsum dolor sit amet, consecteturor adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor. Eget phasellus ideirs.",
+            "image": "66876a402e26307e4570fcd6_blog-image-4.webp",
+            "image_alt": "This is a nice image",
+            "info": [
+                "Jul 10, 2024",
+                "6 min read"
+            ],
+            "is_featured": false,
+            "sort_order": 3
+        }
+    ],
+    "testimonials": [
+        {
+            "author_line": "MAKRONI SELENSKY - CTO",
+            "company": "ALIPPO",
+            "quote": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet ante placerat, aliquet diam ac, sodales augue. Mauris facilisis!”",
+            "image": "664d84edbc138a0caa5bc133_testimonial-image-1.jpg",
+            "image_alt": "Testimonial image",
+            "sort_order": 0
+        },
+        {
+            "author_line": "Lola Ziete - CEO",
+            "company": "BAROON.RE",
+            "quote": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec luctus metus. Morbi eget ligula ullamcorper, malesuada justo ac, porta mauris. Donec!”",
+            "image": "66a9f6f91a1a26abf2c2521c_testimonial-image-2.webp",
+            "image_alt": "",
+            "sort_order": 1
+        },
+        {
+            "author_line": "MELISA ANDREA - CTO",
+            "company": "EMOON.CROP",
+            "quote": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nisi non diam viverra blandit vel eget turpis. In semper dolor nec!”",
+            "image": "66a9f6f87e67c52919eb2006_testimonial-image-3.webp",
+            "image_alt": "",
+            "sort_order": 2
+        },
+        {
+            "author_line": "Kathryn Murphy - CO FOUNDER",
+            "company": "ZOOMER",
+            "quote": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat auctor urna, in maximus ex pharetra sit amet. Orci varius natoque penatibus!”",
+            "image": "66a9f6f87e67c52919eb1ff0_testimonial-image-5.webp",
+            "image_alt": "",
+            "sort_order": 3
+        },
+        {
+            "author_line": "Jerome Bell - CTO",
+            "company": "MESHPO.IO",
+            "quote": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit quam non elit sollicitudin pharetra. Duis ut porta mi. Nullam nec ligula.!”",
+            "image": "66a9f6f856d3b112ae801aeb_testimonial-image-4.webp",
+            "image_alt": "",
+            "sort_order": 4
+        }
+    ],
+    "team_members": [
+        {
+            "name": "DEVID SCOT",
+            "image": "66a867b53e41d85a39e69c45_team-image-1.webp",
+            "image_alt": "team image",
+            "socials": [
+                "https://www.facebook.com/",
+                "https://twitter.com/",
+                "https://www.instagram.com/"
+            ],
+            "sort_order": 0
+        },
+        {
+            "name": "DEVID SCOT",
+            "image": "66a867b55d1ff8f73afa66b9_team-image-2.webp",
+            "image_alt": "team image",
+            "socials": [
+                "https://www.facebook.com/",
+                "https://twitter.com/",
+                "https://www.instagram.com/"
+            ],
+            "sort_order": 1
+        },
+        {
+            "name": "DEVID SCOT",
+            "image": "66a867b529472deb79723de1_team-image-3.webp",
+            "image_alt": "team image",
+            "socials": [
+                "https://www.facebook.com/",
+                "https://twitter.com/",
+                "https://www.instagram.com/"
+            ],
+            "sort_order": 2
+        },
+        {
+            "name": "DEVID SCOT",
+            "image": "66a867b51ff280b3505fd6c7_team-image-4.webp",
+            "image_alt": "team image",
+            "socials": [
+                "https://www.facebook.com/",
+                "https://twitter.com/",
+                "https://www.instagram.com/"
+            ],
+            "sort_order": 3
+        }
+    ],
+    "clients": [
+        {
+            "name": "Magic Leap",
+            "row_group": 1,
+            "sort_order": 0
+        },
+        {
+            "name": "business",
+            "row_group": 1,
+            "sort_order": 1
+        },
+        {
+            "name": "JP",
+            "row_group": 1,
+            "sort_order": 2
+        },
+        {
+            "name": "Microsoft Holoense",
+            "row_group": 1,
+            "sort_order": 3
+        },
+        {
+            "name": "Abode",
+            "row_group": 1,
+            "sort_order": 4
+        },
+        {
+            "name": "Imporabable",
+            "row_group": 1,
+            "sort_order": 5
+        },
+        {
+            "name": "Logoipsum",
+            "row_group": 1,
+            "sort_order": 6
+        },
+        {
+            "name": "VIP",
+            "row_group": 2,
+            "sort_order": 0
+        },
+        {
+            "name": "Company",
+            "row_group": 2,
+            "sort_order": 1
+        },
+        {
+            "name": "Trinity",
+            "row_group": 2,
+            "sort_order": 2
+        },
+        {
+            "name": "Husspot",
+            "row_group": 2,
+            "sort_order": 3
+        },
+        {
+            "name": "Wnity",
+            "row_group": 2,
+            "sort_order": 4
+        },
+        {
+            "name": "Len Wall",
+            "row_group": 2,
+            "sort_order": 5
+        },
+        {
+            "name": "AMS",
+            "row_group": 2,
+            "sort_order": 6
+        },
+        {
+            "name": "Feemic",
+            "row_group": 2,
+            "sort_order": 7
+        },
+        {
+            "name": "Imlorabable",
+            "row_group": 2,
+            "sort_order": 8
+        },
+        {
+            "name": "JP",
+            "row_group": 2,
+            "sort_order": 9
+        },
+        {
+            "name": "Imporabable",
+            "row_group": 3,
+            "sort_order": 0
+        },
+        {
+            "name": "Good Cloud",
+            "row_group": 3,
+            "sort_order": 1
+        },
+        {
+            "name": "Forcesales",
+            "row_group": 3,
+            "sort_order": 2
+        },
+        {
+            "name": "Me Press",
+            "row_group": 3,
+            "sort_order": 3
+        },
+        {
+            "name": "MOP",
+            "row_group": 3,
+            "sort_order": 4
+        },
+        {
+            "name": "application",
+            "row_group": 3,
+            "sort_order": 5
+        },
+        {
+            "name": "Helloforce",
+            "row_group": 3,
+            "sort_order": 6
+        }
+    ],
+    "jobs": [
+        {
+            "title": "Social media marketer",
+            "location": "new york",
+            "employment_type": "Full time",
+            "sort_order": 0
+        },
+        {
+            "title": "Senior SEO expert",
+            "location": "new york",
+            "employment_type": "Full time",
+            "sort_order": 1
+        },
+        {
+            "title": "Content writer",
+            "location": "new york",
+            "employment_type": "Full time",
+            "sort_order": 2
+        },
+        {
+            "title": "Brand expert",
+            "location": "new york",
+            "employment_type": "Full time",
+            "sort_order": 3
+        },
+        {
+            "title": "Copy writer",
+            "location": "new york",
+            "employment_type": "Full time",
+            "sort_order": 4
+        },
+        {
+            "title": "Digital marker",
+            "location": "new york",
+            "employment_type": "Full time",
+            "sort_order": 5
+        }
+    ],
+    "benefits": [
+        {
+            "scope": "career",
+            "number": "1",
+            "title": "Marketing Plan",
+            "sort_order": 0
+        },
+        {
+            "scope": "career",
+            "number": "2",
+            "title": "Execution",
+            "sort_order": 1
+        },
+        {
+            "scope": "career",
+            "number": "3",
+            "title": "Growth & Scale",
+            "sort_order": 2
+        },
+        {
+            "scope": "career",
+            "number": "4",
+            "title": "Growth & Scale",
+            "sort_order": 3
+        }
+    ],
+    "benefit_images": [
+        "66a6836c3d2c836983ada19c_Our-benefits-image-1.webp",
+        "66a6836c97a13a4a180486c0_Our-benefits-image-2.webp",
+        "66a6836cde55ad37d6dcd116_Our-benefits-image-3.webp",
+        "66a6836c50dc9af6975c04a7_Our-benefits-image-4.webp"
+    ],
+    "faqs": [
+        {
+            "question": "WHAT SERVICES DOES PROVIDE THE EDOLY?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 0
+        },
+        {
+            "question": "HOW CAN EDOLY BENEFITS MY BUSINESS",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 1
+        },
+        {
+            "question": "HOW DO YOU APPROACH STRATEGIC PLANNING?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 2
+        },
+        {
+            "question": "HOW DOES EDOLY PROVIDE THE SECURITY?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 3
+        },
+        {
+            "question": "WHAT IS THE TYPICAL TIMELINE FOR PROJECT DELIVERY?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 4
+        },
+        {
+            "question": "Is there a free tier?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 5
+        },
+        {
+            "question": "How much does it cost if I need more?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 6
+        },
+        {
+            "question": "Is this product available for enterprise companies?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 7
+        },
+        {
+            "question": "What does success look like for your company?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 8
+        },
+        {
+            "question": "How many active users are available in the free plan?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 9
+        },
+        {
+            "question": "Who is experia tool designed for?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
+            "sort_order": 10
+        }
+    ],
+    "process_steps": [
+        {
+            "scope": "home",
+            "number": "1",
+            "title": "Marketing Plan",
+            "description": "",
+            "sort_order": 0
+        },
+        {
+            "scope": "home",
+            "number": "2",
+            "title": "Analyze",
+            "description": "",
+            "sort_order": 1
+        },
+        {
+            "scope": "home",
+            "number": "3",
+            "title": "Execution",
+            "description": "",
+            "sort_order": 2
+        },
+        {
+            "scope": "home",
+            "number": "4",
+            "title": "Growth & Scale",
+            "description": "",
+            "sort_order": 3
+        },
+        {
+            "scope": "service",
+            "number": "1",
+            "title": "Discovery",
+            "description": "Lorem ipsum dolor sit amet, consectetur elit.",
+            "sort_order": 0
+        },
+        {
+            "scope": "service",
+            "number": "2",
+            "title": "Strategy",
+            "description": "Lorem ipsum dolor sit amet, consectetur elit.",
+            "sort_order": 1
+        },
+        {
+            "scope": "service",
+            "number": "3",
+            "title": "Implement",
+            "description": "Lorem ipsum dolor sit amet, consectetur elit.",
+            "sort_order": 2
+        },
+        {
+            "scope": "service",
+            "number": "4",
+            "title": "Measurement",
+            "description": "Lorem ipsum dolor sit amet, consectetur elit.",
+            "sort_order": 3
+        },
+        {
+            "scope": "service-details",
+            "number": "1",
+            "title": "",
+            "description": "Local seo optimization Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed lectus vehicula.",
+            "sort_order": 0
+        },
+        {
+            "scope": "service-details",
+            "number": "2",
+            "title": "",
+            "description": "Voice search optimization Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis nibh sed.",
+            "sort_order": 1
+        },
+        {
+            "scope": "service-details",
+            "number": "3",
+            "title": "",
+            "description": "Video seo services Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien nibh, ornare.",
+            "sort_order": 2
+        },
+        {
+            "scope": "service-details",
+            "number": "4",
+            "title": "",
+            "description": "E-commerce seo solutions Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet ultricies gravida.",
+            "sort_order": 3
+        },
+        {
+            "scope": "service-details",
+            "number": "5",
+            "title": "",
+            "description": "Mobile seo services Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus porta velit.",
+            "sort_order": 4
+        },
+        {
+            "scope": "service-details",
+            "number": "6",
+            "title": "",
+            "description": "International seo strategies Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dapibus pulvinar neque.",
+            "sort_order": 5
+        },
+        {
+            "scope": "why-choose-us",
+            "number": "1",
+            "title": "Discovery",
+            "description": "Lorem ipsum dolor sit amet, consectetur elit.",
+            "sort_order": 0
+        },
+        {
+            "scope": "why-choose-us",
+            "number": "2",
+            "title": "Strategy",
+            "description": "Lorem ipsum dolor sit amet, consectetur elit.",
+            "sort_order": 1
+        },
+        {
+            "scope": "why-choose-us",
+            "number": "3",
+            "title": "Implement",
+            "description": "Lorem ipsum dolor sit amet, consectetur elit.",
+            "sort_order": 2
+        },
+        {
+            "scope": "why-choose-us",
+            "number": "4",
+            "title": "Measurement",
+            "description": "Lorem ipsum dolor sit amet, consectetur elit.",
+            "sort_order": 3
+        }
+    ],
+    "stats": [
+        {
+            "scope": "home",
+            "value": "325",
+            "suffix": "+",
+            "label": "Clients Worldwide",
+            "sort_order": 0
+        },
+        {
+            "scope": "home",
+            "value": "975",
+            "suffix": "+",
+            "label": "Projects Completed",
+            "sort_order": 1
+        },
+        {
+            "scope": "home",
+            "value": "50",
+            "suffix": "+",
+            "label": "Team Members",
+            "sort_order": 2
+        },
+        {
+            "scope": "home",
+            "value": "85",
+            "suffix": "M+",
+            "label": "Revenue Generated",
+            "sort_order": 3
+        },
+        {
+            "scope": "service",
+            "value": "325",
+            "suffix": "+",
+            "label": "Clients Worldwide",
+            "sort_order": 0
+        },
+        {
+            "scope": "service",
+            "value": "975",
+            "suffix": "+",
+            "label": "Projects Completed",
+            "sort_order": 1
+        },
+        {
+            "scope": "service",
+            "value": "50",
+            "suffix": "+",
+            "label": "Team Members",
+            "sort_order": 2
+        },
+        {
+            "scope": "service",
+            "value": "85",
+            "suffix": "M+",
+            "label": "Revenue Generated",
+            "sort_order": 3
+        },
+        {
+            "scope": "about",
+            "value": "325",
+            "suffix": "+",
+            "label": "Clients Worldwide",
+            "sort_order": 0
+        },
+        {
+            "scope": "about",
+            "value": "975",
+            "suffix": "+",
+            "label": "Projects Completed",
+            "sort_order": 1
+        },
+        {
+            "scope": "about",
+            "value": "50",
+            "suffix": "+",
+            "label": "Team Members",
+            "sort_order": 2
+        },
+        {
+            "scope": "about",
+            "value": "85",
+            "suffix": "M+",
+            "label": "Revenue Generated",
+            "sort_order": 3
+        },
+        {
+            "scope": "career",
+            "value": "325",
+            "suffix": "+",
+            "label": "Clients Worldwide",
+            "sort_order": 0
+        },
+        {
+            "scope": "career",
+            "value": "975",
+            "suffix": "+",
+            "label": "Projects Completed",
+            "sort_order": 1
+        },
+        {
+            "scope": "career",
+            "value": "50",
+            "suffix": "+",
+            "label": "Team Members",
+            "sort_order": 2
+        },
+        {
+            "scope": "career",
+            "value": "85",
+            "suffix": "M+",
+            "label": "Revenue Generated",
+            "sort_order": 3
+        }
+    ]
+}
