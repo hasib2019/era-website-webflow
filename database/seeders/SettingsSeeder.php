@@ -49,7 +49,7 @@ class SettingsSeeder extends Seeder
                 ['cta_label', 'BUY TEMPLATE', 'text', 'Footer button label'],
                 ['cta_url', '/contact', 'url', 'Footer button link'],
                 ['big_text', 'edoly', 'text', 'Large footer wordmark'],
-                ['copyright', '© All rights reserved. Era Infotech Ltd. Powered by Webflow.', 'text', 'Copyright line'],
+                ['copyright', '© All rights reserved. Era Infotech Ltd. Powered by Era Infotech Ltd.', 'text', 'Copyright line'],
                 ['newsletter_success', 'Thank you! Your submission has been received!', 'text', 'Newsletter success message'],
                 ['newsletter_error', 'Oops! Something went wrong while submitting the form.', 'text', 'Newsletter error message'],
             ],

@@ -65,7 +65,11 @@
             "summary": "Lorem ipsum dolor sit amet, consecteturor adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor. Eget phasellus ideirs.",
             "image": "66876a195c4a30e89f362732_blog-image-1.webp",
             "image_alt": "This is a nice image",
-            "info": [],
+            "info": [
+                "Jul 10, 2024",
+                "6",
+                "min read"
+            ],
             "is_featured": true,
             "sort_order": 0
         },
@@ -197,121 +201,145 @@
     "clients": [
         {
             "name": "Magic Leap",
+            "variant": null,
             "row_group": 1,
             "sort_order": 0
         },
         {
             "name": "business",
+            "variant": null,
             "row_group": 1,
             "sort_order": 1
         },
         {
             "name": "JP",
+            "variant": null,
             "row_group": 1,
             "sort_order": 2
         },
         {
             "name": "Microsoft Holoense",
+            "variant": "white-logo",
             "row_group": 1,
             "sort_order": 3
         },
         {
             "name": "Abode",
+            "variant": null,
             "row_group": 1,
             "sort_order": 4
         },
         {
             "name": "Imporabable",
+            "variant": null,
             "row_group": 1,
             "sort_order": 5
         },
         {
             "name": "Logoipsum",
+            "variant": "white-logo",
             "row_group": 1,
             "sort_order": 6
         },
         {
             "name": "VIP",
+            "variant": null,
             "row_group": 2,
             "sort_order": 0
         },
         {
             "name": "Company",
+            "variant": "white-logo",
             "row_group": 2,
             "sort_order": 1
         },
         {
             "name": "Trinity",
+            "variant": null,
             "row_group": 2,
             "sort_order": 2
         },
         {
             "name": "Husspot",
+            "variant": null,
             "row_group": 2,
             "sort_order": 3
         },
         {
             "name": "Wnity",
+            "variant": null,
             "row_group": 2,
             "sort_order": 4
         },
         {
             "name": "Len Wall",
+            "variant": null,
             "row_group": 2,
             "sort_order": 5
         },
         {
             "name": "AMS",
+            "variant": null,
             "row_group": 2,
             "sort_order": 6
         },
         {
             "name": "Feemic",
+            "variant": null,
             "row_group": 2,
             "sort_order": 7
         },
         {
             "name": "Imlorabable",
+            "variant": null,
             "row_group": 2,
             "sort_order": 8
         },
         {
             "name": "JP",
+            "variant": null,
             "row_group": 2,
             "sort_order": 9
         },
         {
             "name": "Imporabable",
+            "variant": null,
             "row_group": 3,
             "sort_order": 0
         },
         {
             "name": "Good Cloud",
+            "variant": null,
             "row_group": 3,
             "sort_order": 1
         },
         {
             "name": "Forcesales",
+            "variant": null,
             "row_group": 3,
             "sort_order": 2
         },
         {
             "name": "Me Press",
+            "variant": "white-logo",
             "row_group": 3,
             "sort_order": 3
         },
         {
             "name": "MOP",
+            "variant": null,
             "row_group": 3,
             "sort_order": 4
         },
         {
             "name": "application",
+            "variant": null,
             "row_group": 3,
             "sort_order": 5
         },
         {
             "name": "Helloforce",
+            "variant": null,
             "row_group": 3,
             "sort_order": 6
         }
@@ -576,6 +604,7 @@
             "scope": "home",
             "value": "325",
             "suffix": "+",
+            "suffix_html": "<div>+</div>",
             "label": "Clients Worldwide",
             "sort_order": 0
         },
@@ -583,6 +612,7 @@
             "scope": "home",
             "value": "975",
             "suffix": "+",
+            "suffix_html": "<div>+</div>",
             "label": "Projects Completed",
             "sort_order": 1
         },
@@ -590,6 +620,7 @@
             "scope": "home",
             "value": "50",
             "suffix": "+",
+            "suffix_html": "<div>+</div>",
             "label": "Team Members",
             "sort_order": 2
         },
@@ -597,6 +628,7 @@
             "scope": "home",
             "value": "85",
             "suffix": "M+",
+            "suffix_html": "<div>M+</div>",
             "label": "Revenue Generated",
             "sort_order": 3
         },
@@ -604,6 +636,7 @@
             "scope": "service",
             "value": "325",
             "suffix": "+",
+            "suffix_html": "<div class=\"counting-plus-icon\">+</div>",
             "label": "Clients Worldwide",
             "sort_order": 0
         },
@@ -611,6 +644,7 @@
             "scope": "service",
             "value": "975",
             "suffix": "+",
+            "suffix_html": "<div class=\"counting-plus-icon\">+</div>",
             "label": "Projects Completed",
             "sort_order": 1
         },
@@ -618,6 +652,7 @@
             "scope": "service",
             "value": "50",
             "suffix": "+",
+            "suffix_html": "<div class=\"counting-plus-icon\">+</div>",
             "label": "Team Members",
             "sort_order": 2
         },
@@ -625,6 +660,7 @@
             "scope": "service",
             "value": "85",
             "suffix": "M+",
+            "suffix_html": "<div>M<span class=\"counting-plus-icon\">+</span></div>",
             "label": "Revenue Generated",
             "sort_order": 3
         },
@@ -632,6 +668,7 @@
             "scope": "about",
             "value": "325",
             "suffix": "+",
+            "suffix_html": "<div class=\"counting-plus-icon\">+</div>",
             "label": "Clients Worldwide",
             "sort_order": 0
         },
@@ -639,6 +676,7 @@
             "scope": "about",
             "value": "975",
             "suffix": "+",
+            "suffix_html": "<div class=\"counting-plus-icon\">+</div>",
             "label": "Projects Completed",
             "sort_order": 1
         },
@@ -646,6 +684,7 @@
             "scope": "about",
             "value": "50",
             "suffix": "+",
+            "suffix_html": "<div class=\"counting-plus-icon\">+</div>",
             "label": "Team Members",
             "sort_order": 2
         },
@@ -653,6 +692,7 @@
             "scope": "about",
             "value": "85",
             "suffix": "M+",
+            "suffix_html": "<div>M<span class=\"counting-plus-icon\">+</span></div>",
             "label": "Revenue Generated",
             "sort_order": 3
         },
@@ -660,6 +700,7 @@
             "scope": "career",
             "value": "325",
             "suffix": "+",
+            "suffix_html": "<div class=\"counting-plus-icon\">+</div>",
             "label": "Clients Worldwide",
             "sort_order": 0
         },
@@ -667,6 +708,7 @@
             "scope": "career",
             "value": "975",
             "suffix": "+",
+            "suffix_html": "<div class=\"counting-plus-icon\">+</div>",
             "label": "Projects Completed",
             "sort_order": 1
         },
@@ -674,6 +716,7 @@
             "scope": "career",
             "value": "50",
             "suffix": "+",
+            "suffix_html": "<div class=\"counting-plus-icon\">+</div>",
             "label": "Team Members",
             "sort_order": 2
         },
@@ -681,6 +724,7 @@
             "scope": "career",
             "value": "85",
             "suffix": "M+",
+            "suffix_html": "<div>M<span class=\"counting-plus-icon\">+</span></div>",
             "label": "Revenue Generated",
             "sort_order": 3
         }

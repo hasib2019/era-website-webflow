@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/lib_slice.php';
-$root = 'd:/ERA/Era-WEBSITE-Templete/era-website/Pages/';
+require __DIR__ . '/config.php';
+
+$root = EXPORT_PAGES;
 $skip = ['pricing.html', 'terms&conditions.html'];
 printf("%-26s %8s %8s %8s %8s %8s %8s\n", 'PAGE', 'head', 'preNav', 'cursor', 'navbar', 'content', 'footer');
 foreach (glob($root . '*.html') as $f) {

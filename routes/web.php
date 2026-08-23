@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Site\FormController;
 use App\Http\Controllers\Site\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,10 @@ Route::get('/style-guide', [PageController::class, 'styleGuide'])->name('style-g
 // The template ships a styled not-found page and links to it from the footer,
 // so it stays reachable as a real route as well as the error handler's view.
 Route::get('/404', fn () => response()->view('errors.404', [], 404))->name('not-found');
+
+/*
+ * Form endpoints. The markup keeps Webflow's input names; FormController maps
+ * them onto the models.
+ */
+Route::post('/contact', [FormController::class, 'contact'])->name('contact.submit');
+Route::post('/subscribe', [FormController::class, 'subscribe'])->name('subscribe');

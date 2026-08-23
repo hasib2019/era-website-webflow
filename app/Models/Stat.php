@@ -9,7 +9,7 @@ class Stat extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['scope', 'value', 'suffix', 'label', 'sort_order'];
+    protected $fillable = ['scope', 'value', 'suffix', 'suffix_html', 'label', 'sort_order'];
 
     public function scopeForScope($query, string $scope)
     {

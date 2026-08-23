@@ -11,7 +11,7 @@
                             <div class="title-move-animation"
                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                                 <div class="text-gradient">
-                                    <div class="display-large">Have a</div>
+                                    <div class="display-large">{{ cms('contact.contact_hero.hero_title_line_1', 'Have a') }}</div>
                                 </div>
                             </div>
                         </div>
@@ -21,7 +21,7 @@
                                     <div class="title-move-animation"
                                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                                         <div class="text-gradient">
-                                            <div class="display-large">project?</div>
+                                            <div class="display-large">{{ cms('contact.contact_hero.hero_title_line_2', 'project?') }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -29,8 +29,7 @@
                             <div id="w-node-_6731808a-23bb-c40b-6feb-8f3197526bab-f09ac0cc"
                                 class="content-group-para-wrap"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                <p class="hero-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-                                    non massa luctus, rutrum libero in, fermentum orci.</p>
+                                <p class="hero-para">{{ cms('contact.contact_hero.hero_paragraph', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non massa luctus, rutrum libero in, fermentum orci.') }}</p>
                             </div>
                         </div>
                     </div>
@@ -49,13 +48,13 @@
                         <div class="section-caption-wrap">
                             <div class="caption"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                CONTACT US</div>
+                                {{ cms('contact.contact_us_main.section_caption', 'CONTACT US') }}</div>
                         </div>
                         <div class="section-title-wrap">
                             <div class="text-align-right">
                                 <div class="text-animation-block"
                                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                    <h2>Contact our support team to grow your business</h2>
+                                    <h2>{{ cms('contact.contact_us_main.section_heading', 'Contact our support team to grow your business') }}</h2>
                                     <div class="text-overlay" style="will-change: width, height; width: 100%;"></div>
                                     <div class="text-overlay row-02" style="will-change: width, height; width: 100%;">
                                     </div>
@@ -94,36 +93,36 @@
                             <div data-w-id="221a5df5-9f48-d8a2-8f2b-5b1c2a94ac8e"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                                 class="contact-us-form-block w-form">
-                                <h3 class="contact-us-form-title">contact us!</h3>
+                                <h3 class="contact-us-form-title">{{ cms('contact.contact_us_main.form_title', 'contact us!') }}</h3>
                                 <form id="wf-form-Contact-Us-Form" name="wf-form-Contact-Us-Form"
-                                    data-name="Contact Us Form" method="get" class="contact-us-form"
-                                    data-wf-element-id="221a5df5-9f48-d8a2-8f2b-5b1c2a94ac8f" aria-label="Contact Us Form">
+                                    data-name="Contact Us Form" class="contact-us-form"
+                                    data-wf-element-id="221a5df5-9f48-d8a2-8f2b-5b1c2a94ac8f" aria-label="Contact Us Form" method="POST" action="{{ route('contact.submit') }}">@csrf
                                     <input
                                         class="form-field w-node-_221a5df5-9f48-d8a2-8f2b-5b1c2a94ac92-f09ac0cc w-input"
                                         maxlength="256" name="First-name" data-name="First name"
-                                        placeholder="First name" type="text" id="First-name"><input
+                                        placeholder="First name" type="text" id="First-name" value="{{ old('First-name') }}"><input
                                         class="form-field w-node-_9cba4c6b-ec70-5294-237e-67b1906b7691-f09ac0cc w-input"
                                         maxlength="256" name="Last-name" data-name="Last name" placeholder="Last name"
-                                        type="text" id="Last-name"><input
+                                        type="text" id="Last-name" value="{{ old('Last-name') }}"><input
                                         class="form-field w-node-_221a5df5-9f48-d8a2-8f2b-5b1c2a94ac95-f09ac0cc w-input"
                                         maxlength="256" name="Email" data-name="Email" placeholder="Email" type="email"
-                                        id="Email" required=""><input
+                                        id="Email" required="" value="{{ old('Email') }}"><input
                                         class="form-field w-node-_55adfff3-1d83-34e6-65a9-111da15059e2-f09ac0cc w-input"
                                         maxlength="256" name="Phone-number" data-name="Phone number"
-                                        placeholder="Phone number" type="tel" id="Phone-number" required=""><input
+                                        placeholder="Phone number" type="tel" id="Phone-number" required="" value="{{ old('Phone-number') }}"><input
                                         class="form-field w-node-eac952a3-338a-9294-9e37-a88080c1f122-f09ac0cc w-input"
                                         maxlength="256" name="Subject" data-name="Subject" placeholder="Subject"
-                                        type="text" id="Subject" required=""><textarea
+                                        type="text" id="Subject" required="" value="{{ old('Subject') }}"><textarea
                                         placeholder="Please write your messages" maxlength="5000" id="field"
                                         name="field" data-name="Field"
-                                        class="form-field text-box w-node-_655061c0-a8f4-4ca5-60c8-5eda961a0d01-f09ac0cc w-input"></textarea><button
+                                        class="form-field text-box w-node-_655061c0-a8f4-4ca5-60c8-5eda961a0d01-f09ac0cc w-input">{{ old('field') }}</textarea><button
                                         id="w-node-c8860e6c-392e-a0c2-a620-83bf95598abf-f09ac0cc" type="submit"
                                         class="primary-button" style="border-color: rgba(255, 255, 255, 0.2);">
                                         <div class="button-text-wrap">
                                             <div class="button-text-inner"
                                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                <div class="text-block">SUBMIT</div>
-                                                <div>SUBMIT</div>
+                                                <div class="text-block">{{ cms('contact.contact_us_main.form_submit_label', 'SUBMIT') }}</div>
+                                                <div>{{ cms('contact.contact_us_main.form_submit_label', 'SUBMIT') }}</div>
                                             </div>
                                         </div>
                                         <div class="button-icon-element">
@@ -140,20 +139,20 @@
                                     </button>
                                     
                                 </form>
-                                <div class="success-message w-form-done" tabindex="-1" role="region"
+                                <div @if (session('form_sent') === 'contact') style="display:block" @endif class="success-message w-form-done" tabindex="-1" role="region"
                                     aria-label="Contact Us Form success">
                                     <div class="form-info-block"><img
-                                            src="/storage/media/webflow/668c4528a2433dc202d5dd5d_check-circle.svg"
+                                            src="{{ cms_image('contact.contact_us_main.form_success_icon', '/storage/media/webflow/668c4528a2433dc202d5dd5d_check-circle.svg') }}"
                                             loading="lazy" alt="">
-                                        <div>Thank you! Your submission has been received!</div>
+                                        <div>{{ cms('contact.contact_us_main.form_success_message', 'Thank you! Your submission has been received!') }}</div>
                                     </div>
                                 </div>
-                                <div class="error-message w-form-fail" tabindex="-1" role="region"
+                                <div @if (session('form_failed') === 'contact' || $errors->{'contact'}->any()) style="display:block" @endif class="error-message w-form-fail" tabindex="-1" role="region"
                                     aria-label="Contact Us Form failure">
                                     <div class="form-info-block"><img
-                                            src="/storage/media/webflow/668c45d06e7cd30793472a3d_alert-circle.svg"
+                                            src="{{ cms_image('contact.contact_us_main.form_error_icon', '/storage/media/webflow/668c45d06e7cd30793472a3d_alert-circle.svg') }}"
                                             loading="lazy" alt="">
-                                        <div>Oops! Something went wrong while submitting the form.</div>
+                                        <div>{{ cms('contact.contact_us_main.form_error_message', 'Oops! Something went wrong while submitting the form.') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +173,7 @@
                         <div class="faq-caption-wrap">
                             <div class="caption"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                FAQ</div>
+                                {{ cms('contact.contact_faq.faq_caption', 'FAQ') }}</div>
                         </div>
                         <div class="faq-list"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
@@ -297,7 +296,7 @@
                                 style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                                 <div class="text-gradient cta-text-gradient">
                                     <div class="text-align-center">
-                                        <h2 class="display-medium">START YOUR</h2>
+                                        <h2 class="display-medium">{{ cms('contact.contact_cta.cta_title_line_1', 'START YOUR') }}</h2>
                                     </div>
                                 </div>
                             </div>
@@ -307,14 +306,14 @@
                                 style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                                 <div class="text-gradient cta-text-gradient">
                                     <div class="text-align-center">
-                                        <div class="display-medium">PROJECT NOW</div>
+                                        <div class="display-medium">{{ cms('contact.contact_cta.cta_title_line_2', 'PROJECT NOW') }}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap"
                             style="opacity: 0;"><img
-                                src="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg"
+                                src="{{ cms_image('contact.contact_cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                                 loading="lazy" sizes="100vw"
                                 srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                                 alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!}
@@ -324,8 +323,8 @@
                             <div class="button-text-wrap">
                                 <div class="button-text-inner"
                                     style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                    <div class="text-block">GET IT TOUCH</div>
-                                    <div>GET IT TOUCH</div>
+                                    <div class="text-block">{{ cms('contact.contact_cta.cta_button_label', 'GET IT TOUCH') }}</div>
+                                    <div>{{ cms('contact.contact_cta.cta_button_label', 'GET IT TOUCH') }}</div>
                                 </div>
                             </div>
                             <div class="button-icon-element">

@@ -10,7 +10,7 @@
                     <div class="title-move-animation"
                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                         <div class="text-gradient">
-                            <h1 class="display-large text-align-center">changelog</h1>
+                            <h1 class="display-large text-align-center">{{ cms('changelog.changelog_hero.hero_title', 'changelog') }}</h1>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                             style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
-                                    <h2 class="display-medium">START YOUR</h2>
+                                    <h2 class="display-medium">{{ cms('changelog.changelog_cta.cta_title_line_1', 'START YOUR') }}</h2>
                                 </div>
                             </div>
                         </div>
@@ -60,14 +60,14 @@
                             style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
-                                    <div class="display-medium">PROJECT NOW</div>
+                                    <div class="display-medium">{{ cms('changelog.changelog_cta.cta_title_line_2', 'PROJECT NOW') }}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap"
                         style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                        <img src="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg"
+                        <img src="{{ cms_image('changelog.changelog_cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
                             srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                             alt="CTA image" class="full-image">
@@ -77,8 +77,8 @@
                         <div class="button-text-wrap">
                             <div class="button-text-inner"
                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                <div class="text-block">GET IT TOUCH</div>
-                                <div>GET IT TOUCH</div>
+                                <div class="text-block">{{ cms('changelog.changelog_cta.cta_button_label', 'GET IT TOUCH') }}</div>
+                                <div>{{ cms('changelog.changelog_cta.cta_button_label', 'GET IT TOUCH') }}</div>
                             </div>
                         </div>
                         <div class="button-icon-element">

@@ -10,8 +10,10 @@
 require __DIR__ . '/lib_slice.php';
 require __DIR__ . '/lib_rewrite.php';
 
-$SRC = 'd:/ERA/Era-WEBSITE-Templete/era-website/Pages/';
-$BASE = 'http://127.0.0.1:8123';
+require __DIR__ . '/config.php';
+
+$SRC = EXPORT_PAGES;
+$BASE = rtrim(getenv('VERIFY_BASE_URL') ?: 'http://127.0.0.1:8000', '/');
 $assetMap = load_asset_map(__DIR__ . '/asset_map.txt');
 $backMap = array_flip($assetMap);
 
@@ -49,6 +51,8 @@ function skeleton(DOMXPath $x): array
     $out = [];
     foreach ($x->query('//body//*') as $n) {
         if (in_array($n->nodeName, ['script', 'noscript'], true)) continue;
+        // hidden inputs (CSRF tokens) render nothing
+        if ($n->nodeName === 'input' && $n->getAttribute('type') === 'hidden') continue;
         $cls = trim(preg_replace('/\s+/', ' ', $n->getAttribute('class')));
         // active-state markers are generated per route by design
         $cls = trim(str_replace('w--current', '', $cls));
@@ -76,7 +80,11 @@ function assets(DOMXPath $x): array
     $out = [];
     foreach ($x->query('//body//img') as $n) {
         $src = $n->getAttribute('src');
-        $out[] = basename(parse_url($src, PHP_URL_PATH) ?? $src);
+        $name = basename(parse_url($src, PHP_URL_PATH) ?? $src);
+        // the export shipped one asset as "...-1%20(1).webp"; it was renamed on disk
+        $name = str_replace(['%20', '(', ')', ' '], '', $name);
+        $name = str_replace('case-study-image-11', 'case-study-image-1', $name);
+        $out[] = $name;
     }
     return $out;
 }
@@ -106,7 +114,7 @@ $fails = 0;
 printf("%-26s %10s %10s %10s\n", 'PAGE', 'skeleton', 'text', 'images');
 foreach ($PAGES as $file => $uri) {
     $rendered = file_get_contents($BASE . $uri, false, stream_context_create(['http' => ['ignore_errors' => true]]));
-    $source = unfreeze(unwrap_dropped_links(file_get_contents($SRC . $file)));
+    $source = unfreeze(drop_stray_testimonial_wrapper(unwrap_dropped_links(file_get_contents($SRC . $file))));
 
     $rx = dom($rendered);
     $sx = dom($source);

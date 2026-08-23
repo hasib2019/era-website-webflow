@@ -7,8 +7,8 @@
         <div data-w-id="fd885965-1454-8dd5-7dfb-6b25a03c3d50" class="cursor"
             style="transform: translate3d(-28.163vw, 49.995vh, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1; background-color: rgb(255, 255, 255); will-change: transform;">
             <div data-w-id="fd885965-1454-8dd5-7dfb-6b25a03c3d51" class="cursor-text-view"
-                style="opacity: 0; display: block;">View Case</div><img
-                src="/storage/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg"
+                style="opacity: 0; display: block;">{{ cms('service-details.custom_cursor_overlay.cursor_hover_label', 'View Case') }}</div><img
+                src="{{ cms_image('service-details.custom_cursor_overlay.cursor_play_icon', '/storage/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg') }}"
                 loading="lazy" alt="" class="video-play-icon">
         </div>
     </div>
@@ -22,7 +22,7 @@
                             <div class="title-move-animation"
                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                                 <div class="text-gradient">
-                                    <h1 class="display-large">Search engine optimization</h1>
+                                    <h1 class="display-large">{{ ($service->hero_heading ?: $service->title) ?: cms('service-details.service_details_hero.hero_title', 'Search engine optimization') }}</h1>
                                 </div>
                             </div>
                         </div>
@@ -31,9 +31,7 @@
                         class="service-short-description-wrap">
                         <p data-w-id="6b10a086-cdc8-1904-869f-3b19474562d8"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet dolor sit
-                            amet diam pulvinar tempus et ac sapien. Nullam molestie, lorem finibus tristique
-                            tincidunt, nunc purus venenatis.</p>
+                            {{ ($service->hero_intro ?: $service->excerpt) ?: cms('service-details.service_details_hero.hero_description', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet dolor sit amet diam pulvinar tempus et ac sapien. Nullam molestie, lorem finibus tristique tincidunt, nunc purus venenatis.') }}</p>
                     </div>
                     <div id="w-node-ca5155ab-986f-fabd-0c31-a3f3f5f63039-a80b356f"
                         data-w-id="ca5155ab-986f-fabd-0c31-a3f3f5f63039"
@@ -43,8 +41,8 @@
                             <div class="button-text-wrap">
                                 <div class="button-text-inner"
                                     style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                    <div class="text-block">LET’S TALK</div>
-                                    <div>LET’S TALK</div>
+                                    <div class="text-block">{{ cms('service-details.service_details_hero.hero_cta_label', 'LET’S TALK') }}</div>
+                                    <div>{{ cms('service-details.service_details_hero.hero_cta_label', 'LET’S TALK') }}</div>
                                 </div>
                             </div>
                             <div class="button-icon-element">
@@ -63,7 +61,7 @@
                         data-w-id="106e21cd-1a1c-528f-a761-28e2ab0e10e0"
                         style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                         class="service-main-image-wrap"><img
-                            src="/storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4.webp"
+                            src="{{ ($service->heroImage?->url ?: $service->image?->url) ?: cms_image('service-details.service_details_hero.hero_image', '/storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4.webp') }}"
                             loading="lazy" alt="This is a nice image"
                             sizes="(max-width: 479px) 43vw, (max-width: 767px) 35vw, (max-width: 991px) 32vw, (max-width: 1279px) 33vw, 540px"
                             srcset="/storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4-p-500.webp 500w, /storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4-p-800.webp 800w, /storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4.webp 1028w"
@@ -85,13 +83,13 @@
                         <div class="section-caption-wrap">
                             <div class="caption"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                SERVICE</div>
+                                {{ cms('service-details.service_details_features.caption', 'SERVICE') }}</div>
                         </div>
                         <div class="section-title-wrap">
                             <div class="text-align-right">
                                 <div class="text-animation-block"
                                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                    <h2>Under the services of the search engine optimization</h2>
+                                    <h2>{{ cms('service-details.service_details_features.heading', 'Under the services of the search engine optimization') }}</h2>
                                     <div class="text-overlay" style="will-change: width, height; width: 0%;"></div>
                                     <div class="text-overlay row-02" style="will-change: width, height; width: 0%;">
                                     </div>
@@ -197,13 +195,13 @@
                     <div class="section-caption-wrap">
                         <div class="caption"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                            PROCESS</div>
+                            {{ cms('service-details.service_process.caption', 'PROCESS') }}</div>
                     </div>
                     <div class="section-title-wrap">
                         <div class="text-align-right">
                             <div class="text-animation-block"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                <h2>Our bulletproof process to win on social media</h2>
+                                <h2>{{ cms('service-details.service_process.heading', 'Our bulletproof process to win on social media') }}</h2>
                                 <div class="text-overlay" style="will-change: width, height; width: 100%;"></div>
                                 <div class="text-overlay row-02" style="will-change: width, height; width: 100%;">
                                 </div>
@@ -266,7 +264,7 @@
             <div class="case-study-component">
                 <h2 class="caption"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                    CASE STUDY</h2>
+                    {{ cms('service-details.case_study.caption', 'CASE STUDY') }}</h2>
                 <div class="case-study-element">
                     <div class="w-dyn-list">
                         <div role="list" class="w-dyn-items">
@@ -320,8 +318,8 @@
                             <div class="button-text-wrap">
                                 <div class="button-text-inner"
                                     style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                    <div class="text-block">VIEW MORE</div>
-                                    <div>VIEW MORE</div>
+                                    <div class="text-block">{{ cms('service-details.case_study.view_all_label', 'VIEW MORE') }}</div>
+                                    <div>{{ cms('service-details.case_study.view_all_label', 'VIEW MORE') }}</div>
                                 </div>
                             </div>
                             <div class="button-icon-element">
@@ -353,7 +351,7 @@
                         <div class="why-choose-us-caption-wrap">
                             <div class="caption"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                WHY CHOOSE US</div>
+                                {{ cms('service-details.why_choose_us.caption', 'WHY CHOOSE US') }}</div>
                         </div>
                         <div class="why-choose-us-content-block">
                             <div class="why-choose-us-content-item">
@@ -432,8 +430,8 @@
                                 <div class="button-text-wrap">
                                     <div class="button-text-inner"
                                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="text-block">SEE MORE</div>
-                                        <div>SEE MORE</div>
+                                        <div class="text-block">{{ cms('service-details.why_choose_us.button_label', 'SEE MORE') }}</div>
+                                        <div>{{ cms('service-details.why_choose_us.button_label', 'SEE MORE') }}</div>
                                     </div>
                                 </div>
                                 <div class="button-icon-element">
@@ -453,7 +451,7 @@
                         <div data-w-id="fc291a14-7273-2f34-0daa-4445132c96c7"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                             class="why-choose-us-image-wrap"><img
-                                src="/storage/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp"
+                                src="{{ cms_image('service-details.why_choose_us.side_image', '/storage/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp') }}"
                                 loading="lazy"
                                 sizes="(max-width: 479px) 93vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1279px) 44vw, 500px"
                                 srcset="/storage/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image-p-500.webp 500w, /storage/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image-p-800.webp 800w, /storage/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp 998w"
@@ -477,7 +475,7 @@
                             style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
-                                    <h2 class="display-medium">START YOUR</h2>
+                                    <h2 class="display-medium">{{ cms('service-details.cta.cta_title_line_1', 'START YOUR') }}</h2>
                                 </div>
                             </div>
                         </div>
@@ -487,13 +485,13 @@
                             style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
-                                    <div class="display-medium">PROJECT NOW</div>
+                                    <div class="display-medium">{{ cms('service-details.cta.cta_title_line_2', 'PROJECT NOW') }}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
-                        <img src="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg"
+                        <img src="{{ cms_image('service-details.cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
                             srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
@@ -502,8 +500,8 @@
                         <div class="button-text-wrap">
                             <div class="button-text-inner"
                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                <div class="text-block">GET IT TOUCH</div>
-                                <div>GET IT TOUCH</div>
+                                <div class="text-block">{{ cms('service-details.cta.cta_button_label', 'GET IT TOUCH') }}</div>
+                                <div>{{ cms('service-details.cta.cta_button_label', 'GET IT TOUCH') }}</div>
                             </div>
                         </div>
                         <div class="button-icon-element">

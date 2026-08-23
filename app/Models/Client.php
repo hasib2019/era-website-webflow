@@ -11,7 +11,7 @@ class Client extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'logo_id', 'logo_alt', 'website_url',
+        'name', 'logo_id', 'logo_alt', 'variant', 'website_url',
         'row_group', 'is_published', 'sort_order',
     ];
 

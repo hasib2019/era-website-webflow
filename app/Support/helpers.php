@@ -17,3 +17,62 @@ if (! function_exists('nav_active')) {
         return Request::is($pattern === '' ? '/' : $pattern);
     }
 }
+
+if (! function_exists('cms')) {
+    /**
+     * One editable field of one page section.
+     *
+     * The second argument is the value the template shipped with, so a page
+     * renders unchanged if the field is cleared or the section is hidden.
+     */
+    function cms(string $path, mixed $default = null): mixed
+    {
+        [$page, $section, $field] = array_pad(explode('.', $path, 3), 3, null);
+
+        return App\Support\Content::field($page, $section, $field, $default);
+    }
+}
+
+if (! function_exists('cms_image')) {
+    /** A section field holding a media reference, resolved to a public URL. */
+    function cms_image(string $path, ?string $default = null): ?string
+    {
+        return App\Support\Content::mediaUrl(cms($path), $default);
+    }
+}
+
+if (! function_exists('cms_srcset')) {
+    /** The responsive srcset for a section's image field, when one exists. */
+    function cms_srcset(string $path, ?string $default = null): ?string
+    {
+        return App\Support\Content::mediaSrcset(cms($path)) ?? $default;
+    }
+}
+
+if (! function_exists('cms_section_visible')) {
+    function cms_section_visible(string $page, string $section): bool
+    {
+        return App\Support\Content::sectionVisible($page, $section);
+    }
+}
+
+if (! function_exists('setting')) {
+    function setting(string $path, mixed $default = null): mixed
+    {
+        return App\Support\Content::setting($path, $default);
+    }
+}
+
+if (! function_exists('setting_image')) {
+    function setting_image(string $path, ?string $default = null): ?string
+    {
+        return App\Support\Content::settingMedia($path, $default);
+    }
+}
+
+if (! function_exists('cms_menu')) {
+    function cms_menu(string $slug): Illuminate\Support\Collection
+    {
+        return App\Support\Content::menu($slug);
+    }
+}

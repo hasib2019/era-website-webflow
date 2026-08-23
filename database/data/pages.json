@@ -308,7 +308,7 @@
                     },
                     "heading": {
                         "type": "text",
-                        "value": "A simple, yet powerful and &nbsp;efficient process A systematic approach to digital marketing"
+                        "value": "A simple, yet powerful and  efficient process A systematic approach to digital marketing"
                     },
                     "section_anchor_id": {
                         "type": "text",
@@ -995,7 +995,7 @@
                     },
                     "hero_title_line_2": {
                         "type": "text",
-                        "value": "&amp; articles"
+                        "value": "& articles"
                     },
                     "hero_paragraph": {
                         "type": "text",
@@ -1253,7 +1253,7 @@
                     },
                     "hero_paragraph": {
                         "type": "text",
-                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique velit nulla &nbsp;consectetur adipiscing elit. Tristique velit nulla at congue massa enim habitasse"
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique velit nulla  consectetur adipiscing elit. Tristique velit nulla at congue massa enim habitasse"
                     }
                 },
                 "sort_order": 0
@@ -1396,7 +1396,7 @@
                     },
                     "body_list_1_item_1": {
                         "type": "text",
-                        "value": "Become familiar with our systems, style &amp; process"
+                        "value": "Become familiar with our systems, style & process"
                     },
                     "body_list_1_item_2": {
                         "type": "text",
@@ -1404,7 +1404,7 @@
                     },
                     "body_list_1_item_3": {
                         "type": "text",
-                        "value": "lead your own discovery &amp; interviews with members to understand pains, gains &amp; Jobs to be done"
+                        "value": "lead your own discovery & interviews with members to understand pains, gains & Jobs to be done"
                     },
                     "body_list_1_item_4": {
                         "type": "text",
@@ -1416,7 +1416,7 @@
                     },
                     "body_list_1_item_6": {
                         "type": "text",
-                        "value": "Collaborate with cross-functional project team groups to support the design &amp; creation of new products and features"
+                        "value": "Collaborate with cross-functional project team groups to support the design & creation of new products and features"
                     },
                     "body_heading_3": {
                         "type": "text",

@@ -15,7 +15,7 @@
                         <div style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                             class="title-move-animation ">
                             <div class="text-gradient">
-                                <h1 class="display-large">provide The</h1>
+                                <h1 class="display-large">{{ cms('home.home_hero.hero_title_line_1', 'provide The') }}</h1>
                             </div>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                         <div style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                             class="title-move-animation">
                             <div class="text-gradient">
-                                <div class="display-large">best ranking</div>
+                                <div class="display-large">{{ cms('home.home_hero.hero_title_line_2', 'best ranking') }}</div>
                             </div>
                         </div>
                     </div>
@@ -31,20 +31,19 @@
                         <div style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                             class="title-move-animation">
                             <div class="text-gradient">
-                                <div class="display-large">Experience</div>
+                                <div class="display-large">{{ cms('home.home_hero.hero_title_line_3', 'Experience') }}</div>
                             </div>
                         </div>
                     </div>
                     <div id="id_hero-title-wrap" class="hero-title-wrap">
                         <p data-w-id="ef9124bf-77e8-79d6-ba7b-d69dbee3728f"
                             style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
-                            class="home-hero-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus
-                            ante velit nunc</p>
+                            class="home-hero-para">{{ cms('home.home_hero.hero_paragraph', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus ante velit nunc') }}</p>
                     </div>
                     <div class="hero-title-wrap">
                         <p data-w-id="8291a6a2-6ca8-df2b-5ce1-6b641e1cf7e0"
                             style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                            Marketing Design Agency since 1988</p>
+                            {{ cms('home.home_hero.hero_tagline', 'Marketing Design Agency since 1988') }}</p>
                     </div>
                     <div id="w-node-_8180ad61-f75c-6c01-5016-22828d663093-f09ac0c2" class="hero-title-wrap">
                         <div data-w-id="ed5a3aa6-b06a-604a-3bf8-49a8d0dcaa18"
@@ -55,8 +54,8 @@
                                 <div class="button-text-wrap">
                                     <div class="button-text-inner"
                                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="text-block">LET’S TALK</div>
-                                        <div>LET’S TALK</div>
+                                        <div class="text-block">{{ cms('home.home_hero.hero_button_label', 'LET’S TALK') }}</div>
+                                        <div>{{ cms('home.home_hero.hero_button_label', 'LET’S TALK') }}</div>
                                     </div>
                                 </div>
                                 <div class="button-icon-element">
@@ -76,14 +75,14 @@
                 <div data-w-id="1cdc3515-9b69-d8e5-eafb-ce4163077016"
                     style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;"
                     class="home-hero-image-wrap">
-                    <img src="/site/images/home-hero-image.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 54vw, (max-width: 991px) 40vw, 493px"
+                    <img src="{{ cms_image('home.home_hero.hero_image', '/site/images/home-hero-image.jpg') }}" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 54vw, (max-width: 991px) 40vw, 493px"
                         srcset="/site/images/home-hero-image-p-500.jpg 500w, ../images/home-hero-image.jpg 741w"
                         alt="Home hero image" class="image">
                     <a data-w-id="c868fe40-8193-7925-a7ad-53ff469463d6" style="opacity: 1;" href="#case-study" class="hero-round-text-wrap w-inline-block">
                         <div class="hero-round-icon-wrap"> 
-                            <img src="/site/images/icons/round-icon.png" loading="lazy" alt="Round icon" class="round-arrow-icon">
+                            <img src="{{ cms_image('home.home_hero.hero_round_icon', '/site/images/icons/round-icon.png') }}" loading="lazy" alt="Round icon" class="round-arrow-icon">
                         </div>
-                        <img src="/site/images/icons/hero-round-text.png" loading="lazy" alt="Hero round text" class="hero-round-text-image" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(87.2028deg) skew(0deg); transform-style: preserve-3d; will-change: transform;">
+                        <img src="{{ cms_image('home.home_hero.hero_round_text_image', '/site/images/icons/hero-round-text.png') }}" loading="lazy" alt="Hero round text" class="hero-round-text-image" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(87.2028deg) skew(0deg); transform-style: preserve-3d; will-change: transform;">
                     </a>
                 </div>
             </div>
@@ -100,13 +99,12 @@
                 <div class="home-about-us-element">
                     <div id="w-node-_5683a303-6a9e-12ed-1839-7ffe7b5b3eef-f09ac0c2" class="caption"
                         style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                        ABOUT US</div>
+                        {{ cms('home.home_about_us.caption', 'ABOUT US') }}</div>
                     <div id="w-node-_77d354db-51d6-5e2a-1b83-495d25f56242-f09ac0c2" class="home-about-us-content">
                         <div class="text-align-right">
                             <div class="text-animation-block"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                <h2>Discover the future of marketing with FAVLES, your trusted partner in innovative
-                                    digital solutions. Our cutting-edge website offers a dynamic platform</h2>
+                                <h2>{{ cms('home.home_about_us.heading', 'Discover the future of marketing with FAVLES, your trusted partner in innovative digital solutions. Our cutting-edge website offers a dynamic platform') }}</h2>
                                 <div data-w-id="fef22dc4-3f3b-b686-a687-78a998cf1b5e" class="text-overlay"
                                     style="will-change: width, height; width: 100%;"></div>
                                 <div class="text-overlay row-02" style="will-change: width, height; width: 100%;"></div>
@@ -120,186 +118,10 @@
                         <div class="home-about-us-info-wrap">
                             <div class="about-us-info-wrap">
                                 <div class="about-us-info-list">
-                                    <div class="about-us-info-item">
-                                        <div class="about-us-info-title">
-                                            <div class="counting-animation">
-                                                <div class="couting-column align-top"
-                                                    style="transform: translate3d(0px, -91%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div>3<br></div>
-                                                    <div>9</div>
-                                                    <div>8</div>
-                                                    <div>7</div>
-                                                    <div>6</div>
-                                                    <div>5</div>
-                                                    <div>4</div>
-                                                    <div>3</div>
-                                                    <div>2</div>
-                                                    <div>1</div>
-                                                    <div>0</div>
-                                                </div>
-                                                <div class="couting-column align-bottom"
-                                                    style="transform: translate3d(0px, 91%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div>9</div>
-                                                    <div>8</div>
-                                                    <div>7</div>
-                                                    <div>6</div>
-                                                    <div>5</div>
-                                                    <div>4</div>
-                                                    <div>3</div>
-                                                    <div>2</div>
-                                                    <div>1</div>
-                                                    <div>0</div>
-                                                    <div>2</div>
-                                                </div>
-                                                <div class="couting-column align-top"
-                                                    style="transform: translate3d(0px, -91%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div>5</div>
-                                                    <div>9</div>
-                                                    <div>8</div>
-                                                    <div>7</div>
-                                                    <div>6</div>
-                                                    <div>5</div>
-                                                    <div>4</div>
-                                                    <div>3</div>
-                                                    <div>2</div>
-                                                    <div>1</div>
-                                                    <div>0</div>
-                                                </div>
-                                                <div class="couting-column">
-                                                    <div>+</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="gray-text">Clients Worldwide</p>
-                                    </div>
-                                    <div class="about-us-info-item">
-                                        <div class="about-us-info-title">
-                                            <div class="counting-animation">
-                                                <div class="couting-column align-top"
-                                                    style="transform: translate3d(0px, -91%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div>9</div>
-                                                    <div>9</div>
-                                                    <div>8</div>
-                                                    <div>7</div>
-                                                    <div>6</div>
-                                                    <div>5</div>
-                                                    <div>4</div>
-                                                    <div>3</div>
-                                                    <div>2</div>
-                                                    <div>1</div>
-                                                    <div>0</div>
-                                                </div>
-                                                <div class="couting-column align-bottom"
-                                                    style="transform: translate3d(0px, 91%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div>9</div>
-                                                    <div>8</div>
-                                                    <div>7</div>
-                                                    <div>6</div>
-                                                    <div>5</div>
-                                                    <div>4</div>
-                                                    <div>3</div>
-                                                    <div>2</div>
-                                                    <div>1</div>
-                                                    <div>0</div>
-                                                    <div>7</div>
-                                                </div>
-                                                <div class="couting-column align-top"
-                                                    style="transform: translate3d(0px, -91%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div>5</div>
-                                                    <div>9</div>
-                                                    <div>8</div>
-                                                    <div>7</div>
-                                                    <div>6</div>
-                                                    <div>5</div>
-                                                    <div>4</div>
-                                                    <div>3</div>
-                                                    <div>2</div>
-                                                    <div>1</div>
-                                                    <div>0</div>
-                                                </div>
-                                                <div class="couting-column">
-                                                    <div>+</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="gray-text">Projects Completed</p>
-                                    </div>
-                                    <div class="about-us-info-item">
-                                        <div class="about-us-info-title">
-                                            <div class="counting-animation">
-                                                <div class="couting-column align-top"
-                                                    style="transform: translate3d(0px, -91%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div>5</div>
-                                                    <div>9</div>
-                                                    <div>8</div>
-                                                    <div>7</div>
-                                                    <div>6</div>
-                                                    <div>5</div>
-                                                    <div>4</div>
-                                                    <div>3</div>
-                                                    <div>2</div>
-                                                    <div>1</div>
-                                                    <div>0</div>
-                                                </div>
-                                                <div class="couting-column align-bottom"
-                                                    style="transform: translate3d(0px, 91%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div>9</div>
-                                                    <div>8</div>
-                                                    <div>7</div>
-                                                    <div>6</div>
-                                                    <div>5</div>
-                                                    <div>4</div>
-                                                    <div>3</div>
-                                                    <div>2</div>
-                                                    <div>1</div>
-                                                    <div>0</div>
-                                                    <div>0</div>
-                                                </div>
-                                                <div class="couting-column">
-                                                    <div>+</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="gray-text">Team Members</p>
-                                    </div>
-                                    <div class="about-us-info-item">
-                                        <div class="about-us-info-title">
-                                            <div class="counting-animation">
-                                                <div class="couting-column align-top"
-                                                    style="transform: translate3d(0px, -91%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div>8</div>
-                                                    <div>9</div>
-                                                    <div>8</div>
-                                                    <div>7</div>
-                                                    <div>6</div>
-                                                    <div>5</div>
-                                                    <div>4</div>
-                                                    <div>3</div>
-                                                    <div>2</div>
-                                                    <div>1</div>
-                                                    <div>0</div>
-                                                </div>
-                                                <div class="couting-column align-bottom"
-                                                    style="transform: translate3d(0px, 91%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div>9</div>
-                                                    <div>8</div>
-                                                    <div>7</div>
-                                                    <div>6</div>
-                                                    <div>5</div>
-                                                    <div>4</div>
-                                                    <div>3</div>
-                                                    <div>2</div>
-                                                    <div>1</div>
-                                                    <div>0</div>
-                                                    <div>5</div>
-                                                </div>
-                                                <div class="couting-column">
-                                                    <div>M+</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="gray-text">Revenue Generated</p>
-                                    </div>
+                                    @foreach (\App\Models\Stat::forScope('home')->ordered()->get() as $stat)<div class="about-us-info-item">
+                                        <div class="about-us-info-title">@include('site.partials.stat-counter', ['withBreak' => $loop->first])</div>
+                                        <p class="gray-text">{{ $stat->label }}</p>
+                                    </div>@endforeach
                                 </div>
                             </div>
                         </div>
@@ -311,8 +133,8 @@
                                 <div class="button-text-wrap">
                                     <div class="button-text-inner"
                                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="text-block">GET TO KNOW US</div>
-                                        <div>GET TO KNOW US</div>
+                                        <div class="text-block">{{ cms('home.home_about_us.button_label', 'GET TO KNOW US') }}</div>
+                                        <div>{{ cms('home.home_about_us.button_label', 'GET TO KNOW US') }}</div>
                                     </div>
                                 </div>
                                 <div class="button-icon-element">
@@ -343,13 +165,13 @@
                     class="video-lightbox w-inline-block w-lightbox"
                     style="will-change: transform; transform: translate3d(-160px, -1000px, 0px) scale3d(0.3, 0.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;"
                     aria-label="open lightbox" aria-haspopup="dialog"><img
-                        src="/storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp"
+                        src="{{ cms_image('home.home_video.video_thumbnail', '/storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp') }}"
                         loading="lazy"
                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1439px) 94vw, (max-width: 1919px) 96vw, 99vw"
                         srcset="/storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-500.webp 500w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-800.webp 800w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1080.webp 1080w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1600.webp 1600w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-2000.webp 2000w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp 2480w"
                         alt="Service video thumbnail image" class="image">
                     <div style="opacity: 1;" class="video-play-icon-wrap"><img
-                            src="/storage/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg"
+                            src="{{ cms_image('home.home_video.video_play_icon', '/storage/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg') }}"
                             loading="lazy" alt="" class="video-play-icon"></div>
                     <script type="application/json" class="w-json">{
   "items": [
@@ -379,95 +201,29 @@
                 <div class="service-section-caption-wrap">
                     <h2 class="caption"
                         style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                        SERVICES</h2>
+                        {{ cms('home.home_services.caption', 'SERVICES') }}</h2>
                 </div>
                 <div data-w-id="be10eac0-f33f-85de-d8c0-cd7eeb04d68a" class="service-collection-list-wrapper w-dyn-list"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                     <div role="list" class="w-dyn-items">
-                        <div data-w-id="be10eac0-f33f-85de-d8c0-cd7eeb04d68c" role="listitem"
-                            class="service-collection-item w-dyn-item"><a {!! nav_active('/services/search-engine-optimization') ? 'aria-current="page"' : '' !!} href="/services/search-engine-optimization"
+                        @foreach (\App\Models\Service::published()->ordered()->get() as $service)<div data-w-id="be10eac0-f33f-85de-d8c0-cd7eeb04d68c" role="listitem"
+                            class="service-collection-item w-dyn-item"><a {!! nav_active('/services/search-engine-optimization') ? 'aria-current="page"' : '' !!} href="{{ route('services.show', $service->slug) }}"
                                 class="service-link w-inline-block{{ nav_active('/services/search-engine-optimization') ? ' w--current' : '' }}">
                                 <div class="service-content-wrap">
                                     <div class="service-content-inner"
                                         style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="service-counter" style="color: rgb(120, 120, 120);">01</div>
+                                        <div class="service-counter" style="color: rgb(120, 120, 120);">{{ $service->counter }}</div>
                                         <div class="service-title-wrap">
-                                            <div class="service-title" style="color: rgb(120, 120, 120);">Paid
-                                                advertising</div>
+                                            <div class="service-title" style="color: rgb(120, 120, 120);">{{ $service->title }}</div>
                                         </div>
                                     </div>
                                 </div>
                             </a><img
-                                src="/storage/media/webflow/66acaea5036eaf7d2aec81f8_service-image-1.webp"
+                                src="{{ $service->image?->url }}"
                                 loading="lazy" alt="This is a nice image"
-                                sizes="(max-width: 767px) 100vw, (max-width: 991px) 280px, 328px"
-                                srcset="/storage/media/webflow/66acaea5036eaf7d2aec81f8_service-image-1-p-500.webp 500w, /storage/media/webflow/66acaea5036eaf7d2aec81f8_service-image-1-p-800.webp 800w, /storage/media/webflow/66acaea5036eaf7d2aec81f8_service-image-1.webp 1028w"
                                 class="service-image"
                                 style="transform: translate3d(320px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                        </div>
-                        <div data-w-id="be10eac0-f33f-85de-d8c0-cd7eeb04d68c" role="listitem"
-                            class="service-collection-item w-dyn-item"><a {!! nav_active('/services/search-engine-optimization') ? 'aria-current="page"' : '' !!} href="/services/search-engine-optimization"
-                                class="service-link w-inline-block{{ nav_active('/services/search-engine-optimization') ? ' w--current' : '' }}">
-                                <div class="service-content-wrap">
-                                    <div class="service-content-inner"
-                                        style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="service-counter" style="color: rgb(120, 120, 120);">02</div>
-                                        <div class="service-title-wrap">
-                                            <div class="service-title" style="color: rgb(120, 120, 120);">Content
-                                                marketing</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a><img
-                                src="/storage/media/webflow/66acb115a3b25c70635e0aac_service-image-2.webp"
-                                loading="lazy" alt="This is a nice image"
-                                sizes="(max-width: 767px) 100vw, (max-width: 991px) 280px, 328px"
-                                srcset="/storage/media/webflow/66acb115a3b25c70635e0aac_service-image-2-p-500.webp 500w, /storage/media/webflow/66acb115a3b25c70635e0aac_service-image-2-p-800.webp 800w, /storage/media/webflow/66acb115a3b25c70635e0aac_service-image-2.webp 1028w"
-                                class="service-image"
-                                style="transform: translate3d(320px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                        </div>
-                        <div data-w-id="be10eac0-f33f-85de-d8c0-cd7eeb04d68c" role="listitem"
-                            class="service-collection-item w-dyn-item"><a {!! nav_active('/services/search-engine-optimization') ? 'aria-current="page"' : '' !!} href="/services/search-engine-optimization"
-                                class="service-link w-inline-block{{ nav_active('/services/search-engine-optimization') ? ' w--current' : '' }}">
-                                <div class="service-content-wrap">
-                                    <div class="service-content-inner"
-                                        style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="service-counter" style="color: rgb(120, 120, 120);">03</div>
-                                        <div class="service-title-wrap">
-                                            <div class="service-title" style="color: rgb(120, 120, 120);">Social media
-                                                marketing</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a><img
-                                src="/storage/media/webflow/66acb123f1bd721a4e983c62_service-image-3.webp"
-                                loading="lazy" alt="This is a nice image"
-                                sizes="(max-width: 767px) 100vw, (max-width: 991px) 280px, 328px"
-                                srcset="/storage/media/webflow/66acb123f1bd721a4e983c62_service-image-3-p-500.webp 500w, /storage/media/webflow/66acb123f1bd721a4e983c62_service-image-3-p-800.webp 800w, /storage/media/webflow/66acb123f1bd721a4e983c62_service-image-3.webp 1028w"
-                                class="service-image"
-                                style="transform: translate3d(320px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                        </div>
-                        <div data-w-id="be10eac0-f33f-85de-d8c0-cd7eeb04d68c" role="listitem"
-                            class="service-collection-item w-dyn-item"><a {!! nav_active('/services/search-engine-optimization') ? 'aria-current="page"' : '' !!} href="/services/search-engine-optimization"
-                                class="service-link w-inline-block{{ nav_active('/services/search-engine-optimization') ? ' w--current' : '' }}">
-                                <div class="service-content-wrap">
-                                    <div class="service-content-inner"
-                                        style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="service-counter" style="color: rgb(120, 120, 120);">04</div>
-                                        <div class="service-title-wrap">
-                                            <div class="service-title" style="color: rgb(120, 120, 120);">Search engine
-                                                optimization</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a><img
-                                src="/storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4.webp"
-                                loading="lazy" alt="This is a nice image"
-                                sizes="(max-width: 767px) 100vw, (max-width: 991px) 280px, 328px"
-                                srcset="/storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4-p-500.webp 500w, /storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4-p-800.webp 800w, /storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4.webp 1028w"
-                                class="service-image"
-                                style="transform: translate3d(320px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                        </div>
+                        </div>@endforeach
                     </div>
                 </div>
             </div>
@@ -478,7 +234,7 @@
             <div class="case-study-component">
                 <h2 class="caption"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                    CASE STUDY</h2>
+                    {{ cms('home.home_case_study.caption', 'CASE STUDY') }}</h2>
                 <div class="case-study-element">
                     <div class="w-dyn-list">
                         <div role="list" class="w-dyn-items">
@@ -549,8 +305,8 @@
                             <div class="button-text-wrap">
                                 <div class="button-text-inner"
                                     style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                    <div class="text-block">VIEW ALL CASE STUDY</div>
-                                    <div>VIEW ALL CASE STUDY</div>
+                                    <div class="text-block">{{ cms('home.home_case_study.button_label', 'VIEW ALL CASE STUDY') }}</div>
+                                    <div>{{ cms('home.home_case_study.button_label', 'VIEW ALL CASE STUDY') }}</div>
                                 </div>
                             </div>
                             <div class="button-icon-element">
@@ -585,11 +341,11 @@
                 <div class="our-process-title-element home-page-process-title">
                     <div class="caption"
                         style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                        PROCESS</div>
+                        {{ cms('home.home_process.caption', 'PROCESS') }}</div>
                     <div class="text-align-right">
                         <div class="text-animation-block"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                            <h2>A SIMPLE, YET POWERFUL AND EFFICIENT PROCESS; A SYSTEMATIC APPROACH TO DIGITAL MARKETING
+                            <h2>{{ cms('home.home_process.heading', 'A SIMPLE, YET POWERFUL AND EFFICIENT PROCESS; A SYSTEMATIC APPROACH TO DIGITAL MARKETING') }}
                             </h2>
                             <div class="text-overlay" style="will-change: width, height; width: 100%;"></div>
                             <div class="text-overlay row-02" style="will-change: width, height; width: 100%;"></div>
@@ -601,30 +357,12 @@
                 <div data-w-id="0670aef5-e717-741f-56f2-9b86c49790d3"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                     class="our-process-list">
-                    <div class="our-process-item margin-left-none">
-                        <div class="our-process-item-title">Marketing Plan</div>
+                    @foreach (\App\Models\ProcessStep::forScope('home')->ordered()->get() as $step)<div class="our-process-item{{ $loop->first ? ' margin-left-none' : '' }}">
+                        <div class="our-process-item-title">{{ $step->title }}</div>
                         <div class="process-counting-wrap">
-                            <div>1</div>
+                            <div>{{ $step->number }}</div>
                         </div>
-                    </div>
-                    <div class="our-process-item">
-                        <div class="our-process-item-title">Analyze</div>
-                        <div class="process-counting-wrap">
-                            <div>2</div>
-                        </div>
-                    </div>
-                    <div class="our-process-item">
-                        <div class="our-process-item-title">Execution</div>
-                        <div class="process-counting-wrap">
-                            <div>3</div>
-                        </div>
-                    </div>
-                    <div class="our-process-item">
-                        <div class="our-process-item-title">Growth &amp; Scale</div>
-                        <div class="process-counting-wrap">
-                            <div>4</div>
-                        </div>
-                    </div>
+                    </div>@endforeach
                 </div>
             </div>
         </div>
@@ -639,208 +377,51 @@
             <div class="testimonial-component">
                 <h2 class="caption"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                    TESTIMONIALS</h2>
+                    {{ cms('home.home_testimonials.caption', 'TESTIMONIALS') }}</h2>
                 <div data-w-id="afebf228-b705-b23f-c6fe-3b4a36c0203b" class="testimonial-element-wrap"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                     <div data-current="Tab 3" data-easing="ease-in-out-quad" data-duration-in="350"
                         data-duration-out="350" class="testimonial-tabs w-tabs">
                         <div id="w-node-afebf228-b705-b23f-c6fe-3b4a36c0203d-36c02036"
-                            class="testimonial-tabs-menu w-tab-menu" role="tablist"><a data-w-tab="Tab 1"
-                                class="testimonial-content-wrap w-inline-block w-tab-link" tabindex="-1"
-                                id="w-tabs-0-data-w-tab-0" href="#w-tabs-0-data-w-pane-0" role="tab"
-                                aria-controls="w-tabs-0-data-w-pane-0" aria-selected="false">
+                            class="testimonial-tabs-menu w-tab-menu" role="tablist">@php($activeTab = min(2, \App\Models\Testimonial::published()->count() - 1))@foreach (\App\Models\Testimonial::published()->ordered()->get() as $testimonial)<a data-w-tab="Tab {{ $loop->iteration }}"
+                                class="testimonial-content-wrap w-inline-block w-tab-link{{ $loop->index === $activeTab ? ' w--current' : '' }}" tabindex="-1"
+                                id="w-tabs-0-data-w-tab-{{ $loop->index }}" href="#w-tabs-0-data-w-pane-{{ $loop->index }}" role="tab"
+                                aria-controls="w-tabs-0-data-w-pane-{{ $loop->index }}" aria-selected="{{ $loop->index === $activeTab ? 'true' : 'false' }}">
                                 <div class="testimonial-content-inner">
                                     <div class="testimonial-title-wrap">
-                                        <div class="testimonial-title">MAKRONI SELENSKY - CTO <span
-                                                class="lowercase-regular">ALIPPO</span></div>
+                                        <div class="testimonial-title">{{ $testimonial->author_line }} <span
+                                                class="lowercase-regular">{{ $testimonial->company }}</span></div>
                                     </div>
                                     <div class="testimonial-description-wrap" style="width: 100%; height: 0px;">
                                         <div class="testimonial-description-inner">
-                                            <blockquote class="testimonial-description">“Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit. Nam sit amet ante placerat, aliquet diam
-                                                ac, sodales augue. Mauris facilisis!”</blockquote>
+                                            <blockquote class="testimonial-description">{{ $testimonial->quote }}</blockquote>
                                             <div class="testimonial-inside-image-parent">
-                                                <div>
+                                                
                                                     <div class="testimonial-inside-image-wrap"><img loading="lazy"
-                                                            src="/storage/media/webflow/664d84edbc138a0caa5bc133_testimonial-image-1.jpg"
-                                                            alt="Testimonial image" sizes="100vw"
-                                                            srcset="/storage/media/webflow/664d84edbc138a0caa5bc133_testimonial-image-1-p-500.jpg 500w, /storage/media/webflow/664d84edbc138a0caa5bc133_testimonial-image-1.jpg 749w"
+                                                            src="{{ $testimonial->image?->url }}"
+                                                            alt="{{ $testimonial->image_alt }}"
                                                             class="testimonial-inside-image">
                                                         <div class="testimonial-image-overlay"></div>
                                                     </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </a><a data-w-tab="Tab 2" class="testimonial-content-wrap w-inline-block w-tab-link"
-                                tabindex="-1" id="w-tabs-0-data-w-tab-1" href="#w-tabs-0-data-w-pane-1" role="tab"
-                                aria-controls="w-tabs-0-data-w-pane-1" aria-selected="false">
-                                <div class="testimonial-content-inner">
-                                    <div class="testimonial-title-wrap">
-                                        <div class="testimonial-title">Lola Ziete - CEO <span
-                                                class="lowercase-regular">BAROON.RE</span></div>
-                                    </div>
-                                    <div class="testimonial-description-wrap" style="width: 100%; height: 0px;">
-                                        <div class="testimonial-description-inner">
-                                            <blockquote class="testimonial-description">“Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit. Nulla nec luctus metus. Morbi eget ligula
-                                                ullamcorper, malesuada justo ac, porta mauris. Donec!”</blockquote>
-                                            <div class="testimonial-inside-image-parent">
-                                                <div class="testimonial-inside-image-wrap"><img loading="lazy"
-                                                        src="/storage/media/webflow/66a9f6f91a1a26abf2c2521c_testimonial-image-2.webp"
-                                                        alt=""
-                                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 40vw, (max-width: 991px) 300px, 100vw"
-                                                        srcset="/storage/media/webflow/66a9f6f91a1a26abf2c2521c_testimonial-image-2-p-500.webp 500w, /storage/media/webflow/66a9f6f91a1a26abf2c2521c_testimonial-image-2-p-800.webp 800w, /storage/media/webflow/66a9f6f91a1a26abf2c2521c_testimonial-image-2.webp 998w"
-                                                        class="testimonial-inside-image">
-                                                    <div class="testimonial-image-overlay"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a><a data-w-tab="Tab 3"
-                                class="testimonial-content-wrap w-inline-block w-tab-link w--current"
-                                id="w-tabs-0-data-w-tab-2" href="#w-tabs-0-data-w-pane-2" role="tab"
-                                aria-controls="w-tabs-0-data-w-pane-2" aria-selected="true">
-                                <div class="testimonial-content-inner">
-                                    <div class="testimonial-title-wrap">
-                                        <div class="testimonial-title">MELISA ANDREA - CTO <span
-                                                class="lowercase-regular">EMOON.CROP</span></div>
-                                    </div>
-                                    <div class="testimonial-description-wrap" style="width: 100%;">
-                                        <div class="testimonial-description-inner">
-                                            <blockquote class="testimonial-description">“Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit. Curabitur ac nisi non diam viverra blandit
-                                                vel eget turpis. In semper dolor nec!”</blockquote>
-                                            <div class="testimonial-inside-image-parent">
-                                                <div class="testimonial-inside-image-wrap"><img loading="lazy"
-                                                        src="/storage/media/webflow/66a9f6f87e67c52919eb2006_testimonial-image-3.webp"
-                                                        alt=""
-                                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 40vw, (max-width: 991px) 300px, 100vw"
-                                                        srcset="/storage/media/webflow/66a9f6f87e67c52919eb2006_testimonial-image-3-p-500.webp 500w, /storage/media/webflow/66a9f6f87e67c52919eb2006_testimonial-image-3-p-800.webp 800w, /storage/media/webflow/66a9f6f87e67c52919eb2006_testimonial-image-3.webp 998w"
-                                                        class="testimonial-inside-image">
-                                                    <div class="testimonial-image-overlay"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a><a data-w-tab="Tab 4" class="testimonial-content-wrap w-inline-block w-tab-link"
-                                tabindex="-1" id="w-tabs-0-data-w-tab-3" href="#w-tabs-0-data-w-pane-3" role="tab"
-                                aria-controls="w-tabs-0-data-w-pane-3" aria-selected="false">
-                                <div class="testimonial-content-inner">
-                                    <div class="testimonial-title-wrap">
-                                        <div class="testimonial-title">Kathryn Murphy - CO FOUNDER <span
-                                                class="lowercase-regular">ZOOMER</span></div>
-                                    </div>
-                                    <div class="testimonial-description-wrap" style="width: 100%; height: 0px;">
-                                        <div class="testimonial-description-inner">
-                                            <blockquote class="testimonial-description">“Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit. Integer volutpat auctor urna, in maximus ex
-                                                pharetra sit amet. Orci varius natoque penatibus!”</blockquote>
-                                            <div class="testimonial-inside-image-parent">
-                                                <div class="testimonial-inside-image-wrap"><img loading="lazy"
-                                                        src="/storage/media/webflow/66a9f6f87e67c52919eb1ff0_testimonial-image-5.webp"
-                                                        alt=""
-                                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 40vw, (max-width: 991px) 300px, 100vw"
-                                                        srcset="/storage/media/webflow/66a9f6f87e67c52919eb1ff0_testimonial-image-5-p-500.webp 500w, /storage/media/webflow/66a9f6f87e67c52919eb1ff0_testimonial-image-5-p-800.webp 800w, /storage/media/webflow/66a9f6f87e67c52919eb1ff0_testimonial-image-5.webp 998w"
-                                                        class="testimonial-inside-image">
-                                                    <div class="testimonial-image-overlay"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a><a data-w-tab="Tab 5" class="testimonial-content-wrap w-inline-block w-tab-link"
-                                tabindex="-1" id="w-tabs-0-data-w-tab-4" href="#w-tabs-0-data-w-pane-4" role="tab"
-                                aria-controls="w-tabs-0-data-w-pane-4" aria-selected="false">
-                                <div class="testimonial-content-inner">
-                                    <div class="testimonial-title-wrap">
-                                        <div class="testimonial-title">Jerome Bell - CTO <span
-                                                class="lowercase-regular">MESHPO.IO</span></div>
-                                    </div>
-                                    <div class="testimonial-description-wrap" style="width: 100%; height: 0px;">
-                                        <div class="testimonial-description-inner">
-                                            <blockquote class="testimonial-description">“Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit. Donec suscipit quam non elit sollicitudin
-                                                pharetra. Duis ut porta mi. Nullam nec ligula.!”</blockquote>
-                                            <div class="testimonial-inside-image-parent">
-                                                <div class="testimonial-inside-image-wrap"><img loading="lazy"
-                                                        src="/storage/media/webflow/66a9f6f856d3b112ae801aeb_testimonial-image-4.webp"
-                                                        alt=""
-                                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 40vw, (max-width: 991px) 300px, 100vw"
-                                                        srcset="/storage/media/webflow/66a9f6f856d3b112ae801aeb_testimonial-image-4-p-500.webp 500w, /storage/media/webflow/66a9f6f856d3b112ae801aeb_testimonial-image-4-p-800.webp 800w, /storage/media/webflow/66a9f6f856d3b112ae801aeb_testimonial-image-4.webp 998w"
-                                                        class="testimonial-inside-image">
-                                                    <div class="testimonial-image-overlay"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a></div>
+                            </a>@endforeach</div>
                         <div id="w-node-afebf228-b705-b23f-c6fe-3b4a36c02080-36c02036"
                             class="testimonial-tabs-image-element w-tab-content">
-                            <div data-w-tab="Tab 1" class="testimonial-image-wrap w-tab-pane"
-                                id="w-tabs-0-data-w-pane-0" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-0">
+                            @foreach (\App\Models\Testimonial::published()->ordered()->get() as $testimonial)<div data-w-tab="Tab {{ $loop->iteration }}" class="testimonial-image-wrap w-tab-pane{{ $loop->index === $activeTab ? ' w--tab-active' : '' }}"
+                                id="w-tabs-0-data-w-pane-{{ $loop->index }}" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-0">
                                 <div class="testimonial-image-parent">
                                     <div class="testimonial-image-inner"><img loading="lazy"
-                                            src="/storage/media/webflow/664d84edbc138a0caa5bc133_testimonial-image-1.jpg"
-                                            alt="Testimonial image" sizes="100vw"
-                                            srcset="/storage/media/webflow/664d84edbc138a0caa5bc133_testimonial-image-1-p-500.jpg 500w, /storage/media/webflow/664d84edbc138a0caa5bc133_testimonial-image-1.jpg 749w"
+                                            src="{{ $testimonial->image?->url }}"
+                                            alt="{{ $testimonial->image_alt }}"
                                             class="testimonial-image">
                                         <div class="testimonial-image-overlay"></div>
                                     </div>
                                 </div>
-                            </div>
-                            <div data-w-tab="Tab 2" class="testimonial-image-wrap w-tab-pane"
-                                id="w-tabs-0-data-w-pane-1" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-1">
-                                <div class="testimonial-image-parent">
-                                    <div class="testimonial-image-inner"><img loading="lazy"
-                                            src="/storage/media/webflow/66a9f6f91a1a26abf2c2521c_testimonial-image-2.webp"
-                                            alt="" sizes="(max-width: 991px) 100vw, 500px"
-                                            srcset="/storage/media/webflow/66a9f6f91a1a26abf2c2521c_testimonial-image-2-p-500.webp 500w, /storage/media/webflow/66a9f6f91a1a26abf2c2521c_testimonial-image-2-p-800.webp 800w, /storage/media/webflow/66a9f6f91a1a26abf2c2521c_testimonial-image-2.webp 998w"
-                                            class="testimonial-image">
-                                        <div class="testimonial-image-overlay"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-w-tab="Tab 3" class="testimonial-image-wrap w-tab-pane w--tab-active"
-                                id="w-tabs-0-data-w-pane-2" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-2">
-                                <div class="testimonial-image-parent">
-                                    <div class="testimonial-image-inner"><img loading="lazy"
-                                            src="/storage/media/webflow/66a9f6f87e67c52919eb2006_testimonial-image-3.webp"
-                                            alt="" sizes="(max-width: 991px) 100vw, 500px"
-                                            srcset="/storage/media/webflow/66a9f6f87e67c52919eb2006_testimonial-image-3-p-500.webp 500w, /storage/media/webflow/66a9f6f87e67c52919eb2006_testimonial-image-3-p-800.webp 800w, /storage/media/webflow/66a9f6f87e67c52919eb2006_testimonial-image-3.webp 998w"
-                                            class="testimonial-image">
-                                        <div class="testimonial-image-overlay"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-w-tab="Tab 4" class="testimonial-image-wrap w-tab-pane"
-                                id="w-tabs-0-data-w-pane-3" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-3">
-                                <div class="testimonial-image-parent">
-                                    <div class="testimonial-image-inner"><img loading="lazy"
-                                            src="/storage/media/webflow/66a9f6f87e67c52919eb1ff0_testimonial-image-5.webp"
-                                            alt="" sizes="(max-width: 991px) 100vw, 500px"
-                                            srcset="/storage/media/webflow/66a9f6f87e67c52919eb1ff0_testimonial-image-5-p-500.webp 500w, /storage/media/webflow/66a9f6f87e67c52919eb1ff0_testimonial-image-5-p-800.webp 800w, /storage/media/webflow/66a9f6f87e67c52919eb1ff0_testimonial-image-5.webp 998w"
-                                            class="testimonial-image">
-                                        <div class="testimonial-image-overlay"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-w-tab="Tab 5" class="testimonial-image-wrap w-tab-pane"
-                                id="w-tabs-0-data-w-pane-4" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-4">
-                                <div class="testimonial-image-parent">
-                                    <div class="testimonial-image-inner"><img loading="lazy"
-                                            src="/storage/media/webflow/66a9f6f856d3b112ae801aeb_testimonial-image-4.webp"
-                                            alt="" sizes="(max-width: 991px) 100vw, 500px"
-                                            srcset="/storage/media/webflow/66a9f6f856d3b112ae801aeb_testimonial-image-4-p-500.webp 500w, /storage/media/webflow/66a9f6f856d3b112ae801aeb_testimonial-image-4-p-800.webp 800w, /storage/media/webflow/66a9f6f856d3b112ae801aeb_testimonial-image-4.webp 998w"
-                                            class="testimonial-image">
-                                        <div class="testimonial-image-overlay"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>@endforeach
                         </div>
                     </div>
                 </div>
@@ -858,11 +439,11 @@
                 <div class="blog-section-title-wrap">
                     <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92c3-635c92bf" class="caption"
                         style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                        BLOG/ARTICLES</div>
+                        {{ cms('home.home_latest_blog.caption', 'BLOG/ARTICLES') }}</div>
                     <div class="text-align-right">
                         <div class="text-animation-block"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                            <h2>Browse our latest news and resources</h2>
+                            <h2>{{ cms('home.home_latest_blog.heading', 'Browse our latest news and resources') }}</h2>
                             <div class="text-overlay" style="will-change: width, height; width: 100%;"></div>
                             <div class="text-overlay row-02" style="will-change: width, height; width: 100%;"></div>
                             <div class="text-overlay row-03" style="will-change: width, height; width: 100%;"></div>
@@ -1015,7 +596,7 @@
                             style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
-                                    <h2 class="display-medium">START YOUR</h2>
+                                    <h2 class="display-medium">{{ cms('home.home_cta.cta_title_line_1', 'START YOUR') }}</h2>
                                 </div>
                             </div>
                         </div>
@@ -1025,13 +606,13 @@
                             style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
-                                    <div class="display-medium">PROJECT NOW</div>
+                                    <div class="display-medium">{{ cms('home.home_cta.cta_title_line_2', 'PROJECT NOW') }}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
-                        <img src="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg"
+                        <img src="{{ cms_image('home.home_cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
                             srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
@@ -1040,8 +621,8 @@
                         <div class="button-text-wrap">
                             <div class="button-text-inner"
                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                <div class="text-block">GET IT TOUCH</div>
-                                <div>GET IT TOUCH</div>
+                                <div class="text-block">{{ cms('home.home_cta.cta_button_label', 'GET IT TOUCH') }}</div>
+                                <div>{{ cms('home.home_cta.cta_button_label', 'GET IT TOUCH') }}</div>
                             </div>
                         </div>
                         <div class="button-icon-element">

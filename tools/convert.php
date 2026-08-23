@@ -12,7 +12,9 @@
 require __DIR__ . '/lib_slice.php';
 require __DIR__ . '/lib_rewrite.php';
 
-$SRC = 'd:/ERA/Era-WEBSITE-Templete/era-website/Pages/';
+require __DIR__ . '/config.php';
+
+$SRC = EXPORT_PAGES;
 $APP = dirname(__DIR__);
 $VIEWS = $APP . '/resources/views/site';
 
@@ -83,7 +85,7 @@ foreach ($PAGES as $file => $_) {
 }
 
 $clean = fn(string $h): string => inject_active_state(
-    rewrite_links(rewrite_assets(settle_ix2(unfreeze(unwrap_dropped_links($h))), $assetMap))
+    rewrite_links(rewrite_assets(settle_ix2(unfreeze(drop_stray_testimonial_wrapper(unwrap_dropped_links($h)))), $assetMap))
 );
 
 echo "shared partials\n";

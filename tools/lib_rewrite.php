@@ -157,3 +157,33 @@ function settle_ix2(string $html): string
     $html = preg_replace('/(transform-style: preserve-3d;)\s*opacity: 0;/', '$1 opacity: 1;', $html);
     return $html;
 }
+
+/**
+ * Drops an unstyled wrapper the export left on the first testimonial only.
+ *
+ * `.testimonial-inside-image-parent` has no CSS rule, and neither does the bare
+ * <div> Webflow nested inside it for slide one and nowhere else. Removing it
+ * makes every slide the same shape so the block can be looped, and changes
+ * nothing on screen.
+ */
+function drop_stray_testimonial_wrapper(string $html): string
+{
+    $needle = '<div class="testimonial-inside-image-parent">';
+    $offset = 0;
+
+    while (($start = strpos($html, $needle, $offset)) !== false) {
+        $end = match_close($html, $start, 'div');
+        $block = substr($html, $start, $end - $start);
+
+        // only when the parent's single child is a class-less <div>
+        if (preg_match('#^(' . preg_quote($needle, '#') . '\s*)<div>(.*)</div>(\s*</div>)$#s', $block, $m)) {
+            $block = $m[1] . $m[2] . $m[3];
+            $html = substr($html, 0, $start) . $block . substr($html, $end);
+            $end = $start + strlen($block);
+        }
+
+        $offset = $end;
+    }
+
+    return $html;
+}

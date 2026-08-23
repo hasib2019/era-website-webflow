@@ -4,7 +4,7 @@
  * database/data/pages.json, which PageContentSeeder loads.
  */
 
-$INVENTORY = 'C:/Users/MDHASI~1/AppData/Local/Temp/claude/d--ERA-Era-WEBSITE-Templete-era-website/d92037e4-7181-499e-a989-3de567deb92a/tasks/wpj6k532b.output';
+$INVENTORY = __DIR__ . '/inventory/page-inventory.json';
 
 $groupToPage = [
     'home' => ['home', 'Home', 'home'],
@@ -23,7 +23,7 @@ $groupToPage = [
 ];
 
 $raw = json_decode(file_get_contents($INVENTORY), true);
-$inventories = $raw['result']['inventories'] ?? [];
+$inventories = $raw['inventories'] ?? [];
 
 $pages = [];
 

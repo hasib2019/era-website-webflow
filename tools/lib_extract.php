@@ -6,7 +6,9 @@
  * read straight from the markup rather than retyped.
  */
 
-const SRC_DIR = 'd:/ERA/Era-WEBSITE-Templete/era-website/Pages/';
+require_once __DIR__ . '/config.php';
+
+const SRC_DIR = EXPORT_PAGES;
 
 function load_doc(string $page): DOMXPath
 {
@@ -96,7 +98,7 @@ function slugify(string $value): string
  * park on their first character, `align-bottom` columns on their last, and a
  * column with neither class is a literal suffix such as "+" or "M+".
  *
- * @return array{0: string, 1: string} [value, suffix]
+ * @return array{0: string, 1: string, 2: string} [value, suffix, suffix markup]
  */
 function decode_counter(DOMXPath $x, DOMNode $item): array
 {
@@ -120,5 +122,15 @@ function decode_counter(DOMXPath $x, DOMNode $item): array
         }
     }
 
-    return [$value, $suffix];
+    $html = '';
+    foreach ($x->query('.//div[' . has_class('couting-column') . ']', $item) as $col) {
+        if (str_contains($col->getAttribute('class'), 'align-')) {
+            continue;
+        }
+        foreach ($col->childNodes as $child) {
+            $html .= $col->ownerDocument->saveHTML($child);
+        }
+    }
+
+    return [$value, $suffix, trim(preg_replace('/\s+/', ' ', $html))];
 }

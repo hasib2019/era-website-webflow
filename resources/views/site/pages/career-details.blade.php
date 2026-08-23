@@ -11,7 +11,7 @@
                         <div class="title-move-animation"
                             style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                             <div class="text-gradient">
-                                <h1 class="display-large">Brand expert</h1>
+                                <h1 class="display-large">{{ ($job->title) ?: cms('career-details.career_hero.job_title', 'Brand expert') }}</h1>
                             </div>
                         </div>
                     </div>
@@ -39,47 +39,32 @@
                         <div class="job-details-caption">
                             <div class="caption"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                ABOUT THE ROLE</div>
+                                {{ cms('career-details.job_details.about_caption', 'ABOUT THE ROLE') }}</div>
                         </div>
                         <div data-w-id="2fca20c7-8e4a-6117-a83c-79c0e2dafec7"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                             class="career-details-wrap">
                             <div class="career-details-rich-text w-richtext">
-                                <h2>Job Description</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies
-                                    risus at dolor egestas, vitae cursus urna auctor. Pellentesque efficitur at ex a
-                                    cursus. Vivamus eget sagittis ligula, a lobortis tortor. Nunc et turpis ut est
-                                    interdum lobortis.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien odio,
-                                    rhoncus eget mi vitae, lobortis interdum velit. Vestibulum malesuada urna massa,
-                                    id fringilla libero iaculis sed. Proin efficitur lorem a lacus lobortis
-                                    porttitor eu ac risus. Aenean.</p>
-                                <h3>In the short term, you will</h3>
+                                <h2>{{ cms('career-details.job_details.body_heading_1', 'Job Description') }}</h2>
+                                <p>{{ cms('career-details.job_details.body_paragraph_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies risus at dolor egestas, vitae cursus urna auctor. Pellentesque efficitur at ex a cursus. Vivamus eget sagittis ligula, a lobortis tortor. Nunc et turpis ut est interdum lobortis.') }}</p>
+                                <p>{{ cms('career-details.job_details.body_paragraph_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien odio, rhoncus eget mi vitae, lobortis interdum velit. Vestibulum malesuada urna massa, id fringilla libero iaculis sed. Proin efficitur lorem a lacus lobortis porttitor eu ac risus. Aenean.') }}</p>
+                                <h3>{{ cms('career-details.job_details.body_heading_2', 'In the short term, you will') }}</h3>
                                 <ul role="list">
-                                    <li>Become familiar with our systems, style &amp; process</li>
-                                    <li>Participate in Continuous Discovery Habits; coaching others on qualitative
-                                        research.</li>
-                                    <li>lead your own discovery &amp; interviews with members to understand pains,
-                                        gains &amp; Jobs to be done</li>
-                                    <li>Guide research activities to define current member pain points and map ideal
-                                        future experiences</li>
-                                    <li>Facilitate research by collecting, analyzing, and producing insights to lead
-                                        the team toward user outcomes</li>
-                                    <li>Collaborate with cross-functional project team groups to support the design
-                                        &amp; creation of new products and features</li>
+                                    <li>{{ cms('career-details.job_details.body_list_1_item_1', 'Become familiar with our systems, style & process') }}</li>
+                                    <li>{{ cms('career-details.job_details.body_list_1_item_2', 'Participate in Continuous Discovery Habits; coaching others on qualitative research.') }}</li>
+                                    <li>{{ cms('career-details.job_details.body_list_1_item_3', 'lead your own discovery & interviews with members to understand pains, gains & Jobs to be done') }}</li>
+                                    <li>{{ cms('career-details.job_details.body_list_1_item_4', 'Guide research activities to define current member pain points and map ideal future experiences') }}</li>
+                                    <li>{{ cms('career-details.job_details.body_list_1_item_5', 'Facilitate research by collecting, analyzing, and producing insights to lead the team toward user outcomes') }}</li>
+                                    <li>{{ cms('career-details.job_details.body_list_1_item_6', 'Collaborate with cross-functional project team groups to support the design & creation of new products and features') }}</li>
                                 </ul>
-                                <h3>What you bring to the table</h3>
+                                <h3>{{ cms('career-details.job_details.body_heading_3', 'What you bring to the table') }}</h3>
                                 <ul role="list">
-                                    <li>4+ years of professional experience with 2+ years of experience in User
-                                        Research</li>
-                                    <li>Experience in conducting research with a clear understanding of various
-                                        quantitative and qualitative research methodologies</li>
-                                    <li>Analytical, data-driven, and supremely detail-oriented</li>
-                                    <li>Highly collaborative and empathetic: you love connecting with and helping
-                                        others, whether they’re users or teammates</li>
-                                    <li>You’re legally authorized to work in the United States and able to work
-                                        US-hours.</li>
-                                    <li>Preferred: Experience with quantitative analysis and data visualization</li>
+                                    <li>{{ cms('career-details.job_details.body_list_2_item_1', '4+ years of professional experience with 2+ years of experience in User Research') }}</li>
+                                    <li>{{ cms('career-details.job_details.body_list_2_item_2', 'Experience in conducting research with a clear understanding of various quantitative and qualitative research methodologies') }}</li>
+                                    <li>{{ cms('career-details.job_details.body_list_2_item_3', 'Analytical, data-driven, and supremely detail-oriented') }}</li>
+                                    <li>{{ cms('career-details.job_details.body_list_2_item_4', 'Highly collaborative and empathetic: you love connecting with and helping others, whether they’re users or teammates') }}</li>
+                                    <li>{{ cms('career-details.job_details.body_list_2_item_5', 'You’re legally authorized to work in the United States and able to work US-hours.') }}</li>
+                                    <li>{{ cms('career-details.job_details.body_list_2_item_6', 'Preferred: Experience with quantitative analysis and data visualization') }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -88,18 +73,17 @@
                         <div data-w-id="f1ca983b-7aa4-4bbd-c833-af185dd2c819"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                             class="job-application-info">
-                            <div class="heading-h4">APPLY FOR THIS JOB</div>
+                            <div class="heading-h4">{{ cms('career-details.job_details.apply_box_title', 'APPLY FOR THIS JOB') }}</div>
                             <div class="application-para-wrap">
-                                <p>Please let Advertise know that you found this position on Jobs as a way to
-                                    support us, so we can keep posting.</p>
+                                <p>{{ cms('career-details.job_details.apply_box_text', 'Please let Advertise know that you found this position on Jobs as a way to support us, so we can keep posting.') }}</p>
                             </div><a data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                                 href="mailto:applyexamplejob@gmail.com?subject=Job%20Apply"
                                 class="primary-button w-inline-block" style="border-color: rgba(255, 255, 255, 0.2);">
                                 <div class="button-text-wrap">
                                     <div class="button-text-inner"
                                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="text-block">APPLY FOR JOB</div>
-                                        <div>APPLY FOR JOB</div>
+                                        <div class="text-block">{{ cms('career-details.job_details.apply_button_label', 'APPLY FOR JOB') }}</div>
+                                        <div>{{ cms('career-details.job_details.apply_button_label', 'APPLY FOR JOB') }}</div>
                                     </div>
                                 </div>
                                 <div class="button-icon-element">
@@ -132,13 +116,13 @@
                     <div class="section-caption-wrap">
                         <div class="caption"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                            BENEFITS</div>
+                            {{ cms('career-details.other_jobs.section_caption', 'BENEFITS') }}</div>
                     </div>
                     <div class="section-title-wrap">
                         <div class="text-align-right">
                             <div class="text-animation-block"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                                <h2>Opportunities to join our awesome team</h2>
+                                <h2>{{ cms('career-details.other_jobs.section_heading', 'Opportunities to join our awesome team') }}</h2>
                                 <div class="text-overlay" style="will-change: width, height; width: 100%;"></div>
                                 <div class="text-overlay row-02" style="will-change: width, height; width: 100%;">
                                 </div>
@@ -367,7 +351,7 @@
                             style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
-                                    <h2 class="display-medium">START YOUR</h2>
+                                    <h2 class="display-medium">{{ cms('career-details.cta.cta_title_line_1', 'START YOUR') }}</h2>
                                 </div>
                             </div>
                         </div>
@@ -377,13 +361,13 @@
                             style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
-                                    <div class="display-medium">PROJECT NOW</div>
+                                    <div class="display-medium">{{ cms('career-details.cta.cta_title_line_2', 'PROJECT NOW') }}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
-                        <img src="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg"
+                        <img src="{{ cms_image('career-details.cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
                             srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
@@ -392,8 +376,8 @@
                         <div class="button-text-wrap">
                             <div class="button-text-inner"
                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                <div class="text-block">GET IT TOUCH</div>
-                                <div>GET IT TOUCH</div>
+                                <div class="text-block">{{ cms('career-details.cta.cta_button_label', 'GET IT TOUCH') }}</div>
+                                <div>{{ cms('career-details.cta.cta_button_label', 'GET IT TOUCH') }}</div>
                             </div>
                         </div>
                         <div class="button-icon-element">

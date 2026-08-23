@@ -44,8 +44,13 @@ foreach (['feature-blog-collection-item', 'blog-collection-item'] as $cls) {
         $seen[$title] = true;
 
         $info = [];
-        foreach ($x->query('.//*[' . has_class('blog-info') . ']', $item) as $n) {
-            $info[] = node_text($n);
+        foreach (['blog-info-text', 'blog-info'] as $metaClass) {
+            foreach ($x->query('.//*[' . has_class($metaClass) . ']', $item) as $n) {
+                $info[] = node_text($n);
+            }
+            if ($info) {
+                break;
+            }
         }
 
         $out['posts'][] = [
@@ -101,8 +106,12 @@ foreach ($x->query('//div[' . has_class('client-logo-list-inner') . ']') as $row
         continue;
     }
     foreach ($x->query('.//div[' . has_class('client-logo') . ']', $firstCopy) as $i => $logo) {
+        $classes = preg_split('/\s+/', trim($logo->getAttribute('class')), -1, PREG_SPLIT_NO_EMPTY);
+        $variant = implode(' ', array_values(array_diff($classes, ['client-logo'])));
+
         $out['clients'][] = [
             'name' => node_text($logo),
+            'variant' => $variant ?: null,
             'row_group' => $row + 1,
             'sort_order' => $i,
         ];
@@ -179,12 +188,13 @@ foreach ($scopes as [$page, $scope]) {
     }
 
     foreach ($x->query('//div[' . has_class('about-us-info-item') . ']') as $i => $item) {
-        [$value, $suffix] = decode_counter($x, $item);
+        [$value, $suffix, $suffixHtml] = decode_counter($x, $item);
 
         $out['stats'][] = [
             'scope' => $scope,
             'value' => $value,
             'suffix' => $suffix,
+            'suffix_html' => $suffixHtml,
             'label' => first_text($x, './/*[' . has_class('gray-text') . ']', $item),
             'sort_order' => $i,
         ];

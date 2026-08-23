@@ -166,7 +166,11 @@ class ContentSeeder extends Seeder
         foreach ($this->rows('clients') as $row) {
             Client::updateOrCreate(
                 ['name' => $row['name'], 'row_group' => $row['row_group']],
-                ['sort_order' => $row['sort_order'], 'is_published' => true],
+                [
+                    'variant' => $row['variant'] ?? null,
+                    'sort_order' => $row['sort_order'],
+                    'is_published' => true,
+                ],
             );
         }
     }
@@ -221,6 +225,7 @@ class ContentSeeder extends Seeder
                 [
                     'value' => $row['value'],
                     'suffix' => $row['suffix'],
+                    'suffix_html' => $row['suffix_html'] ?? null,
                     'label' => $row['label'],
                 ],
             );

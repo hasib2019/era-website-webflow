@@ -3,14 +3,18 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\CaseStudy;
+use App\Models\JobOpening;
+use App\Models\Post;
+use App\Models\Service;
 use Illuminate\Contracts\View\View;
 
 /**
  * Serves the public marketing site.
  *
- * The views are the converted Webflow export; content becomes database-driven
- * one section at a time, so a route that has not been wired to a model yet still
- * renders the markup the template shipped with.
+ * The views are the converted Webflow export with their copy, images and
+ * repeating cards bound to the CMS; anything not yet bound still renders the
+ * value the template shipped with.
  */
 class PageController extends Controller
 {
@@ -31,7 +35,9 @@ class PageController extends Controller
 
     public function serviceDetails(string $slug): View
     {
-        return view('site.pages.service-details', compact('slug'));
+        $service = Service::published()->where('slug', $slug)->firstOrFail();
+
+        return view('site.pages.service-details', compact('service'));
     }
 
     public function caseStudies(): View
@@ -41,7 +47,9 @@ class PageController extends Controller
 
     public function caseStudyDetails(string $slug): View
     {
-        return view('site.pages.case-study-details', compact('slug'));
+        $caseStudy = CaseStudy::published()->where('slug', $slug)->firstOrFail();
+
+        return view('site.pages.case-study-details', compact('caseStudy'));
     }
 
     public function blog(): View
@@ -51,7 +59,9 @@ class PageController extends Controller
 
     public function blogDetails(string $slug): View
     {
-        return view('site.pages.blog-details', compact('slug'));
+        $post = Post::published()->where('slug', $slug)->firstOrFail();
+
+        return view('site.pages.blog-details', compact('post'));
     }
 
     public function career(): View
@@ -61,7 +71,9 @@ class PageController extends Controller
 
     public function careerDetails(string $slug): View
     {
-        return view('site.pages.career-details', compact('slug'));
+        $job = JobOpening::published()->where('slug', $slug)->firstOrFail();
+
+        return view('site.pages.career-details', compact('job'));
     }
 
     public function contact(): View
