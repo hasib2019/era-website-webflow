@@ -13,7 +13,7 @@
 
 import puppeteer from 'puppeteer-core';
 
-const BASE = (process.env.BASE_URL ?? 'http://127.0.0.1:8126').replace(/\/$/, '');
+const BASE = (process.env.BASE_URL ?? 'http://127.0.0.1:8000').replace(/\/$/, '');
 const CHROME = process.env.CHROME_PATH ?? 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 
 const WIDTHS = (process.env.WIDTHS ?? "320,360,390,414,480,600,768,834,991,1024,1280,1440").split(",").map(Number);
