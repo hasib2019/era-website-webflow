@@ -41,6 +41,13 @@ $html = bind_text($html, 'PAGES',
 $html = str_replace('href="/contact" target="_blank"',
     "href=\"{{ setting('footer.cta_url', '/contact') }}\" target=\"_blank\"", $html);
 
+// the footer credit, rebranded in lib_rewrite.php, stays editable
+$html = str_replace('href="https://erainfotechbd.com/" target="_blank"',
+    "href=\"{{ setting('footer.credit_url', 'https://erainfotechbd.com/') }}\" target=\"_blank\"", $html);
+
+$html = bind_text($html, 'Era Infotech Ltd.',
+    "{{ setting('footer.credit_label', 'Era Infotech Ltd.') }}");
+
 // the export shipped this with a stray space, which made the link dead
 $html = str_replace('https:// erainfotechbd.com/', "{{ setting('general.website_url', 'https://erainfotechbd.com/') }}", $html);
 

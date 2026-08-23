@@ -218,9 +218,11 @@ deliberately:
 
 ```bash
 php artisan migrate:fresh --seed
-php artisan media:import-webflow
 php tools/build.php --verify
 ```
+
+Seeding imports the media library first; the content seeders need it to resolve
+image filenames to media ids.
 
 `migrate:fresh` drops the submissions and the activity log too. On anything with
 real data, seed selectively:

@@ -124,7 +124,7 @@ $fails = 0;
 printf("%-26s %10s %10s %10s\n", 'PAGE', 'skeleton', 'text', 'images');
 foreach ($PAGES as $file => $uri) {
     $rendered = file_get_contents($BASE . $uri, false, stream_context_create(['http' => ['ignore_errors' => true]]));
-    $source = unfreeze(drop_stray_testimonial_wrapper(unwrap_dropped_links(file_get_contents($SRC . $file))));
+    $source = unfreeze(rebrand_footer_credit(drop_stray_testimonial_wrapper(unwrap_dropped_links(file_get_contents($SRC . $file)))));
 
     $rx = dom($rendered);
     $sx = dom($source);

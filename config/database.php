@@ -58,7 +58,20 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
-            'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
+            /*
+             * Forced, not left to the server default.
+             *
+             * Two reasons. MyISAM silently discards foreign keys, and this schema
+             * has 25 of them doing cascade deletes. And its 1000-byte index limit
+             * rejects the composite unique keys on `settings` and `media`, which
+             * come to 1528 bytes even at the 191-character default string length
+             * set in AppServiceProvider. ROW_FORMAT=DYNAMIC raises InnoDB's own
+             * limit to 3072 bytes, which fits.
+             *
+             * Removing this brings back:
+             *   SQLSTATE[42000]: 1071 Specified key was too long
+             */
+            'engine' => env('DB_ENGINE', 'InnoDB ROW_FORMAT=DYNAMIC'),
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 (PHP_VERSION_ID >= 80500 ? Mysql::ATTR_SSL_CA : PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],

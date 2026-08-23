@@ -187,3 +187,20 @@ function drop_stray_testimonial_wrapper(string $html): string
 
     return $html;
 }
+
+/**
+ * Replaces the template's "Powered by Webflow" credit with ERA's own.
+ *
+ * This is a content decision, not a conversion detail, so it is applied to the
+ * export and to verify.php's baseline alike — that keeps the fidelity check
+ * meaningful instead of permanently two text nodes out. wire_footer.php then
+ * binds both halves to settings so the wording stays editable.
+ */
+function rebrand_footer_credit(string $html): string
+{
+    return str_replace(
+        ['href="http://webflow.com/"', '>Webflow.</a>'],
+        ['href="https://erainfotechbd.com/"', '>Era Infotech Ltd.</a>'],
+        $html
+    );
+}

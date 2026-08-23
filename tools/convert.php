@@ -85,7 +85,7 @@ foreach ($PAGES as $file => $_) {
 }
 
 $clean = fn(string $h): string => inject_active_state(
-    rewrite_links(rewrite_assets(settle_ix2(unfreeze(drop_stray_testimonial_wrapper(unwrap_dropped_links($h)))), $assetMap))
+    rewrite_links(rewrite_assets(settle_ix2(unfreeze(rebrand_footer_credit(drop_stray_testimonial_wrapper(unwrap_dropped_links($h))))), $assetMap))
 );
 
 echo "shared partials\n";

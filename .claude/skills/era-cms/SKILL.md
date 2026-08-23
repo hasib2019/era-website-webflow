@@ -122,6 +122,19 @@ a permission in `RolePermissionSeeder`, a row in `routes/admin.php`'s
 `$collections` table, and an entry in `config/admin_nav.php`.
 Details in `docs/04-admin-dashboard.md`.
 
+## Database engine
+
+The schema needs **InnoDB with `ROW_FORMAT=DYNAMIC`**, forced in
+`config/database.php`, plus `Schema::defaultStringLength(191)` in
+`AppServiceProvider`. MyISAM silently drops the 25 foreign keys, and its
+1000-byte index cap rejects the composite uniques on `settings` and `media`
+(1528 bytes). **191 alone does not fix it** — the engine does.
+
+`1071 Specified key was too long ... 1000 bytes` on deploy means those settings
+did not reach the server: `php artisan config:clear`, then
+`php artisan migrate:fresh --force` to clear the MyISAM tables the failed run
+left behind. See `docs/06-operations.md`.
+
 ## Environment
 
 PHP 8.2 via XAMPP at `D:\XAMPP-8`. MySQL is not on `PATH` and is not running by

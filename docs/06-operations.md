@@ -34,11 +34,15 @@ php artisan serve
 Seeding runs eight seeders in order: roles and permissions, admin users,
 settings, menus, collections, page sections, per-record detail content.
 
-Media rows for the 127 downloaded Webflow assets come from:
+`db:seed` imports the media library first, because the content seeders resolve
+image filenames to media ids — seed before the library exists and every record
+comes out with a null image. To re-run the import on its own:
 
 ```bash
 php artisan media:import-webflow
 ```
+
+It is idempotent; files already registered are skipped.
 
 ## Environment
 
@@ -81,8 +85,51 @@ need to ship. Regenerate views locally, commit them, deploy the result.
 If you cache views in production, remember `php artisan view:clear` after any
 deploy that changes the site views.
 
+## Database engine (read before the first deploy)
+
+The schema needs **InnoDB with `ROW_FORMAT=DYNAMIC`**. Two settings enforce it,
+and both must reach the server:
+
+| Where | What |
+|---|---|
+| `config/database.php` | `'engine' => env('DB_ENGINE', 'InnoDB ROW_FORMAT=DYNAMIC')` |
+| `app/Providers/AppServiceProvider.php` | `Schema::defaultStringLength(191)` |
+
+Why both:
+
+- MyISAM **silently discards foreign keys**. This schema has 25 of them doing
+  cascade deletes, so on MyISAM they would simply not exist.
+- MyISAM caps an index at 1000 bytes and older InnoDB row formats at 767. The
+  composite unique keys on `settings (group, key)` and `media (disk, path)` come
+  to 1528 bytes even at 191 characters. `ROW_FORMAT=DYNAMIC` raises the limit to
+  3072, which fits. **The 191 setting on its own is not enough.**
+
+Check what a server actually did:
+
+```sql
+SELECT engine, row_format, COUNT(*) FROM information_schema.tables
+ WHERE table_schema = DATABASE() GROUP BY engine, row_format;
+
+SELECT COUNT(*) FROM information_schema.table_constraints
+ WHERE table_schema = DATABASE() AND constraint_type = 'FOREIGN KEY';
+```
+
+Expect every table `InnoDB / Dynamic`, and 25 foreign keys.
 ## Troubleshooting
 
+**`SQLSTATE[42000]: 1071 Specified key was too long; max key length is 1000 bytes`**
+The tables are being created as MyISAM — 1000 bytes is its signature, and the
+failing `CREATE TABLE` in the error will have no `ENGINE=` clause. The server is
+running without the two settings above: either they were not deployed, or a
+cached config is still in play.
+
+```bash
+php artisan config:clear          # or config:cache to rebuild it
+php artisan migrate:fresh --force # the failed run leaves MyISAM tables behind
+```
+
+`migrate:fresh` drops every table in the database. On a first deploy that is
+what you want; on a live one, drop the partial tables by hand instead.
 **A page shows the template's old wording after an edit.**
 The compiled view is stale, or the field is not bound. `php artisan view:clear`
 first; if it persists, grep the view for `cms('page.section.field'` — if it is
