@@ -150,13 +150,21 @@ function unfreeze(string $html): string
     return $html;
 }
 
-/** Settles IX2's frozen entry state so content is visible if the runtime never boots. */
-function settle_ix2(string $html): string
-{
-    $html = preg_replace('/translate3d\(0px, 60px, 0px\)/', 'translate3d(0px, 0px, 0px)', $html);
-    $html = preg_replace('/(transform-style: preserve-3d;)\s*opacity: 0;/', '$1 opacity: 1;', $html);
-    return $html;
-}
+/*
+ * settle_ix2() used to live here.
+ *
+ * It rewrote the export's frozen entry states — translate3d(0, 60px, 0) and
+ * opacity: 0 — to their settled values, as a guard against the interactions
+ * runtime failing to boot. Measuring the running page showed the guard was
+ * pointless and harmful: IX2 re-applies its own initial state on load, so the
+ * rewrite bought nothing, and its opacity pattern only matched when the
+ * declarations appeared in one particular order. Elements written the other way
+ * round kept opacity: 0 while losing their offset, which broke the reveal.
+ *
+ * The inline styles are now copied through exactly. The no-JS case is covered
+ * by a <noscript> rule in resources/views/site/partials/head.blade.php.
+ */
+
 
 /**
  * Drops an unstyled wrapper the export left on the first testimonial only.

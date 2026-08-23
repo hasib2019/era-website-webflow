@@ -1,6 +1,8 @@
 @extends('site.layouts.app')
 
 @section('title', 'Career')
+@section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
+@section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
 <header class="section-common-hero career-hero">
@@ -313,7 +315,7 @@
                     </div>
                     <div class="cta-title-wrap">
                         <div data-w-id="93ad72e4-cc3e-2e24-6f93-9a3fc7f64ccd" class="title-move-animation"
-                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
                                     <div class="display-medium">{{ cms('career.career_cta.cta_title_line_2', 'PROJECT NOW') }}</div>
@@ -354,7 +356,7 @@
         </div>
         <div class="horizontal-line-wrap">
             <div class="horizontal-line"
-                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
     </section>

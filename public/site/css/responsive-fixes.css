@@ -94,22 +94,6 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
- * 5. Media never wider than its column
- * ------------------------------------------------------------------------- */
-img,
-video,
-iframe {
-    max-width: 100%;
-}
-
-/* The hero portrait is sized in viewport units and may exceed its wrapper. */
-.home-hero-image-wrap img,
-.about-us-image-wrap img,
-.case-study-image-wrap img {
-    height: auto;
-}
-
-/* ---------------------------------------------------------------------------
  * 6. The video zoom animation is desktop-sized
  *
  * Webflow's interactions runtime parks the hero video thumbnail at

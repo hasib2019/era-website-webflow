@@ -1,6 +1,8 @@
 @extends('site.layouts.app')
 
 @section('title', 'FAQ')
+@section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
+@section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
 <header class="section-common-hero">
@@ -17,7 +19,7 @@
                     </div>
                     <div id="w-node-_994ab409-0497-8698-ef49-a62e07da2d70-f09ac0cd" class="hero-title-wrap">
                         <div class="title-move-animation"
-                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <div class="text-gradient">
                                 <div class="display-large">{{ cms('faq.faq_common_hero.hero_title_line_2', 'asked') }}</div>
                             </div>
@@ -27,7 +29,7 @@
                         <div class="content-group-title-wrap">
                             <div class="hero-title-wrap">
                                 <div class="title-move-animation"
-                                    style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                                    style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                     <div class="text-gradient">
                                         <div class="display-large">{{ cms('faq.faq_common_hero.hero_title_line_3', 'question') }}</div>
                                     </div>
@@ -35,7 +37,7 @@
                             </div>
                         </div>
                         <div id="w-node-_831e41e0-f952-34e2-a6e9-15913a3ea122-f09ac0cd" class="content-group-para-wrap"
-                            style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <p class="hero-para">{{ cms('faq.faq_common_hero.hero_paragraph', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat velit in lorem feugiat.') }}</p>
                         </div>
                     </div>
@@ -44,7 +46,7 @@
         </div>
         <div class="horizontal-line-wrap">
             <div class="horizontal-line"
-                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
     </header>
@@ -54,11 +56,11 @@
                 <div class="faq-element">
                     <div class="faq-caption-wrap">
                         <div class="caption"
-                            style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             {{ cms('faq.faq_accordion.faq_caption', 'FAQ') }}</div>
                     </div>
                     <div class="faq-list"
-                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                         @foreach (\App\Models\Faq::published()->ordered()->get() as $faq)<div class="faq-item">
                             <div class="faq-trigger">
                                 <div class="faq-title" style="color: rgb(120, 120, 120);">{{ $faq->question }}</div>
@@ -80,7 +82,7 @@
         </div>
         <div class="horizontal-line-wrap">
             <div class="horizontal-line"
-                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
     </section>
@@ -90,7 +92,7 @@
                 <div class="cta-component">
                     <div class="cta-title-wrap">
                         <div data-w-id="9a268fd0-8c98-cbd7-b73d-163a2aa21c2a" class="title-move-animation"
-                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
                                     <h2 class="display-medium">{{ cms('faq.faq_cta.cta_title_line_1', 'START YOUR') }}</h2>
@@ -100,7 +102,7 @@
                     </div>
                     <div class="cta-title-wrap">
                         <div data-w-id="93ad72e4-cc3e-2e24-6f93-9a3fc7f64ccd" class="title-move-animation"
-                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
                                     <div class="display-medium">{{ cms('faq.faq_cta.cta_title_line_2', 'PROJECT NOW') }}</div>
@@ -139,7 +141,7 @@
         </div>
         <div class="horizontal-line-wrap">
             <div class="horizontal-line"
-                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
     </section>

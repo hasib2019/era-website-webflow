@@ -1,6 +1,8 @@
 @extends('site.layouts.app')
 
 @section('title', 'Style Guide')
+@section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
+@section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
 <header class="utilities-section-hero">
@@ -17,8 +19,7 @@
             </div>
         </div>
         <div class="horizontal-line-wrap">
-            <div class="horizontal-line"
-                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+            {!! cms('style-guide.style_guide_hero.hero_divider_visible', '<div class="horizontal-line" style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">') !!}
             </div>
         </div>
     </header>
@@ -27,7 +28,7 @@
             <div class="utilities-main-inner">
                 <aside class="utilities-main-aside">
                     <div class="utilities-main-sidebar"
-                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                         <a href="#heading" class="utilities-sidebar-link w-inline-block">
                             <div>Heading</div>
                         </a><a href="#custom-heading" class="utilities-sidebar-link w-inline-block">
@@ -43,7 +44,7 @@
                 </aside>
                 <div class="utilities-main-content">
                     <div id="heading" class="utilities-single-section-block"
-                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                         <div class="utilities-section-content">
                             <div class="display-large">{{ cms('style-guide.style_guide_main.typo_display_large', 'Display L') }}</div>
                             <div class="display-medium">{{ cms('style-guide.style_guide_main.typo_display_medium', 'Display M') }}</div>
@@ -54,7 +55,7 @@
                         </div>
                     </div>
                     <div id="custom-heading" class="utilities-single-section-block"
-                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                         <div class="utilities-section-content">
                             <div class="heading-h1">{{ cms('style-guide.style_guide_main.typo_h1', 'Heading H1') }}</div>
                             <div class="heading-h2">{{ cms('style-guide.style_guide_main.typo_h2', 'Heading H2') }}</div>
@@ -63,17 +64,17 @@
                         </div>
                     </div>
                     <div id="body-text" class="utilities-single-section-block"
-                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                         <div class="utilities-section-content">
                             <div class="caption"
-                                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                 {{ cms('style-guide.style_guide_main.body_caption', 'Caption') }}</div>
                             <p>{{ cms('style-guide.style_guide_main.body_paragraph', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.') }}</p>
                             <blockquote>{{ cms('style-guide.style_guide_main.body_blockquote', 'Block Quote') }}</blockquote>
                         </div>
                     </div>
                     <div id="Color" class="utilities-single-section-block"
-                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                         <div class="utilities-color-swatch-wrapper">
                             <div class="utilities-color-swatch-item">
                                 <div class="background-white">
@@ -102,7 +103,7 @@
                         </div>
                     </div>
                     <div id="Buttons" class="utilities-single-section-block"
-                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                         <div class="utilities-section-content"><a data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                                 href="#" class="primary-button w-inline-block"
                                 style="border-color: rgba(255, 255, 255, 0.2);">
@@ -130,8 +131,7 @@
             </div>
         </div>
         <div class="horizontal-line-wrap">
-            <div class="horizontal-line"
-                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+            {!! cms('style-guide.style_guide_hero.hero_divider_visible', '<div class="horizontal-line" style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">') !!}
             </div>
         </div>
     </section>
@@ -141,7 +141,7 @@
                 <div class="cta-component">
                     <div class="cta-title-wrap">
                         <div data-w-id="9a268fd0-8c98-cbd7-b73d-163a2aa21c2a" class="title-move-animation"
-                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
                                     <h2 class="display-medium">{{ cms('style-guide.style_guide_cta.cta_title_line_1', 'START YOUR') }}</h2>
@@ -151,7 +151,7 @@
                     </div>
                     <div class="cta-title-wrap">
                         <div data-w-id="93ad72e4-cc3e-2e24-6f93-9a3fc7f64ccd" class="title-move-animation"
-                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
                                     <div class="display-medium">{{ cms('style-guide.style_guide_cta.cta_title_line_2', 'PROJECT NOW') }}</div>
@@ -189,8 +189,7 @@
             </div>
         </div>
         <div class="horizontal-line-wrap">
-            <div class="horizontal-line"
-                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+            {!! cms('style-guide.style_guide_hero.hero_divider_visible', '<div class="horizontal-line" style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">') !!}
             </div>
         </div>
     </section>

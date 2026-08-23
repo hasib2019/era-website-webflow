@@ -1,6 +1,8 @@
 @extends('site.layouts.app')
 
 @section('title', 'Contact Us')
+@section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
+@section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
 <header class="section-common-hero">
@@ -68,7 +70,7 @@
                     </div>
                     <div class="contact-us-element">
                         <div data-w-id="b648a0c7-845e-cd10-ef1a-20b936c4d457"
-                            style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
+                            style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                             class="address-wrapper">
                             <div class="address-info">
                                 <div class="address-info-title">office</div>
@@ -91,7 +93,7 @@
                         </div>
                         <div id="w-node-b7234a9a-67bb-0b74-f19a-02f99d3aed29-f09ac0cc" class="contact-us-form-element">
                             <div data-w-id="221a5df5-9f48-d8a2-8f2b-5b1c2a94ac8e"
-                                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
+                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                                 class="contact-us-form-block w-form">
                                 <h3 class="contact-us-form-title">{{ cms('contact.contact_us_main.form_title', 'contact us!') }}</h3>
                                 <form id="wf-form-Contact-Us-Form" name="wf-form-Contact-Us-Form"
@@ -162,7 +164,7 @@
             </div>
             <div class="horizontal-line-wrap">
                 <div class="horizontal-line"
-                    style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                    style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                 </div>
             </div>
         </section>
@@ -172,11 +174,11 @@
                     <div class="faq-element">
                         <div class="faq-caption-wrap">
                             <div class="caption"
-                                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                 {{ cms('contact.contact_faq.faq_caption', 'FAQ') }}</div>
                         </div>
                         <div class="faq-list"
-                            style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <div class="faq-item">
                                 <div class="faq-trigger">
                                     <div class="faq-title" style="color: rgb(120, 120, 120);">WHAT SERVICES DOES PROVIDE
@@ -283,7 +285,7 @@
             </div>
             <div class="horizontal-line-wrap">
                 <div class="horizontal-line"
-                    style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                    style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                 </div>
             </div>
         </section>
@@ -293,7 +295,7 @@
                     <div class="cta-component">
                         <div class="cta-title-wrap">
                             <div data-w-id="9a268fd0-8c98-cbd7-b73d-163a2aa21c2a" class="title-move-animation"
-                                style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                                style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                 <div class="text-gradient cta-text-gradient">
                                     <div class="text-align-center">
                                         <h2 class="display-medium">{{ cms('contact.contact_cta.cta_title_line_1', 'START YOUR') }}</h2>
@@ -303,7 +305,7 @@
                         </div>
                         <div class="cta-title-wrap">
                             <div data-w-id="93ad72e4-cc3e-2e24-6f93-9a3fc7f64ccd" class="title-move-animation"
-                                style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                                style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                 <div class="text-gradient cta-text-gradient">
                                     <div class="text-align-center">
                                         <div class="display-medium">{{ cms('contact.contact_cta.cta_title_line_2', 'PROJECT NOW') }}</div>
@@ -344,7 +346,7 @@
             </div>
             <div class="horizontal-line-wrap">
                 <div class="horizontal-line"
-                    style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                    style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                 </div>
             </div>
         </section>

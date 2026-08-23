@@ -116,7 +116,7 @@ for (const path of paths) {
             await page.goto(BASE + path, { waitUntil: 'networkidle2', timeout: 30000 });
         } catch {
             await page.close();
-            rows.push([width, [{ selector: '(page did not load)', over: 0, width: 0, text: '' }]]);
+            rows.push([width, [{ selector: '(page did not load)', over: 0, width: 0, text: '', kind: 'unreachable' }], 0]);
             continue;
         }
 

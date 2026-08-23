@@ -1,6 +1,8 @@
 @extends('site.layouts.app')
 
 @section('title', 'Services Details')
+@section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
+@section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
 <div class="cursor-wrapper">
@@ -350,14 +352,14 @@
                     <div id="w-node-fc291a14-7273-2f34-0daa-4445132c96b5-a80b356f" class="why-choose-us-content-wrap">
                         <div class="why-choose-us-caption-wrap">
                             <div class="caption"
-                                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                 {{ cms('service-details.why_choose_us.caption', 'WHY CHOOSE US') }}</div>
                         </div>
                         <div class="why-choose-us-content-block">
                             <div class="why-choose-us-content-item">
                                 <div class="why-choose-us-title-wrap">
                                     <div class="text-animation-block"
-                                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                         <h2>1. Proven Expertise</h2>
                                         <div class="text-overlay" style="will-change: width, height; width: 100%;">
                                         </div>
@@ -371,7 +373,7 @@
                                 </div>
                                 <div class="why-choose-us-para-wrap">
                                     <p data-w-id="fc291a14-7273-2f34-0daa-4445132c96c2"
-                                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;">
+                                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;">
                                         Whether with an app, a site, or a system, our focus is on helping improve
                                         your relationship with your customers through a mix of strategy, design, and
                                         technology.amet, consectetur adipiscing elit.</p>
@@ -380,7 +382,7 @@
                             <div class="why-choose-us-content-item">
                                 <div class="why-choose-us-title-wrap">
                                     <div class="text-animation-block"
-                                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                         <h2>2. Customized Strategies</h2>
                                         <div class="text-overlay" style="will-change: width, height; width: 100%;">
                                         </div>
@@ -394,7 +396,7 @@
                                 </div>
                                 <div class="why-choose-us-para-wrap">
                                     <p data-w-id="ec51c824-d57c-5570-4db8-4297ab6c291c"
-                                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;">
+                                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;">
                                         Whether with an app, a site, or a system, our focus is on helping improve
                                         your relationship with your customers through a mix of strategy, design, and
                                         technology.amet, consectetur adipiscing elit.</p>
@@ -403,7 +405,7 @@
                             <div class="why-choose-us-content-item">
                                 <div class="why-choose-us-title-wrap">
                                     <div class="text-animation-block"
-                                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                         <h2>3. direct Communication</h2>
                                         <div class="text-overlay" style="will-change: width, height; width: 100%;">
                                         </div>
@@ -417,7 +419,7 @@
                                 </div>
                                 <div class="why-choose-us-para-wrap">
                                     <p data-w-id="d3afc926-6b7d-0715-9ea6-e16b6afdd2f0"
-                                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;">
+                                        style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;">
                                         Whether with an app, a site, or a system, our focus is on helping improve
                                         your relationship with your customers through a mix of strategy, design, and
                                         technology.amet, consectetur adipiscing elit.</p>
@@ -449,7 +451,7 @@
                     </div>
                     <div id="w-node-fc291a14-7273-2f34-0daa-4445132c96c6-a80b356f" class="why-choose-us-image-block">
                         <div data-w-id="fc291a14-7273-2f34-0daa-4445132c96c7"
-                            style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
+                            style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                             class="why-choose-us-image-wrap"><img
                                 src="{{ cms_image('service-details.why_choose_us.side_image', '/storage/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp') }}"
                                 loading="lazy"
@@ -462,7 +464,7 @@
         </div>
         <div class="horizontal-line-wrap">
             <div class="horizontal-line"
-                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
     </section>
@@ -472,7 +474,7 @@
                 <div class="cta-component">
                     <div class="cta-title-wrap">
                         <div data-w-id="9a268fd0-8c98-cbd7-b73d-163a2aa21c2a" class="title-move-animation"
-                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
                                     <h2 class="display-medium">{{ cms('service-details.cta.cta_title_line_1', 'START YOUR') }}</h2>
@@ -482,7 +484,7 @@
                     </div>
                     <div class="cta-title-wrap">
                         <div data-w-id="93ad72e4-cc3e-2e24-6f93-9a3fc7f64ccd" class="title-move-animation"
-                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                            style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
                                     <div class="display-medium">{{ cms('service-details.cta.cta_title_line_2', 'PROJECT NOW') }}</div>
@@ -521,7 +523,7 @@
         </div>
         <div class="horizontal-line-wrap">
             <div class="horizontal-line"
-                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
+                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
     </section>

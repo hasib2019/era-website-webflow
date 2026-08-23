@@ -85,7 +85,7 @@ foreach ($PAGES as $file => $_) {
 }
 
 $clean = fn(string $h): string => inject_active_state(
-    rewrite_links(rewrite_assets(settle_ix2(unfreeze(rebrand_footer_credit(drop_stray_testimonial_wrapper(unwrap_dropped_links($h))))), $assetMap))
+    rewrite_links(rewrite_assets(unfreeze(rebrand_footer_credit(drop_stray_testimonial_wrapper(unwrap_dropped_links($h)))), $assetMap))
 );
 
 echo "shared partials\n";
@@ -132,6 +132,23 @@ foreach ($PAGES as $file => [$view, $title]) {
 
     $blade = "@extends('site.layouts.app')\n\n"
         . "@section('title', '" . addslashes($title) . "')\n";
+
+    /*
+     * Webflow's interactions runtime loads page-scoped animations — the video
+     * zoom, the process strip — by the id in data-wf-page. Drop it and those
+     * never bind, while element-level reveals carry on working, which makes the
+     * breakage look random rather than total.
+     */
+    preg_match('/data-wf-page="([^"]*)"/', $s['html_tag'], $pageId);
+    preg_match('/data-wf-site="([^"]*)"/', $s['html_tag'], $siteId);
+
+    if (! empty($pageId[1])) {
+        $blade .= "@section('wf_page', '" . $pageId[1] . "')\n";
+    }
+
+    if (! empty($siteId[1])) {
+        $blade .= "@section('wf_site', '" . $siteId[1] . "')\n";
+    }
     if ($hasCursor) {
         $cursorClass = str_contains($s['cursor'], 'class="cursor load-on-scroll"') ? 'cursor load-on-scroll' : 'cursor';
         $blade .= "@section('cursor')\n@include('site.partials.cursor', ['cursorClass' => '{$cursorClass}'])\n@endsection\n";

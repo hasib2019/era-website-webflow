@@ -41,7 +41,16 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
+            /*
+             * Root-relative on purpose.
+             *
+             * Every other asset on the public site is referenced as /site/...,
+             * and media should behave the same. Tying these urls to APP_URL means
+             * a mismatched host, port or scheme silently breaks every image the
+             * CMS serves. Set FILESYSTEM_PUBLIC_URL only if the files really do
+             * live on another domain, such as a CDN.
+             */
+            'url' => rtrim(env('FILESYSTEM_PUBLIC_URL', '/storage'), '/'),
             'visibility' => 'public',
             'throw' => false,
             'report' => false,
