@@ -118,6 +118,26 @@ guard for that case.
 
 ---
 
+## Fix a responsive problem
+
+1. **Measure it.** `node tools/responsive-audit.mjs` names the element, the width
+   and how far it overflows. Add widths with `WIDTHS=\"320,360,390\"` if the report
+   comes from a specific device.
+2. **Look at it** with `node tools/screenshot.mjs <path> name <width>` — never
+   with `chrome --headless --window-size`, which crops a desktop layout and
+   invents problems that are not there.
+3. **Find the rule** in `styles.css`; the breakpoint ladder for that class
+   usually shows the gap.
+4. **Add a block to `public/site/css/responsive-fixes.css`**, with a comment
+   saying what breaks without it and at which widths. Leave `styles.css` alone.
+5. `node tools/responsive-audit.mjs` until it says `16/16 pages clean`, then
+   `php tools/verify.php` to confirm the markup did not move.
+
+If the audit blames something the template animates on purpose, check the
+`BY_DESIGN` list at the top of the script before adding to it — it is meant to
+stay short.
+
+---
 ## Change the dashboard's look
 
 Ordinary Laravel work — `resources/views/admin/**` is hand-written.

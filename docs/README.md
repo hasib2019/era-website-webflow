@@ -13,6 +13,7 @@ Read these in order the first time:
 | [04 — Admin dashboard](04-admin-dashboard.md) | Screens, roles, permissions, adding a new one |
 | [05 — Recipes](05-recipes.md) | Step-by-step for the changes you will actually be asked for |
 | [06 — Operations](06-operations.md) | Setup, deployment, troubleshooting |
+| [07 — Responsive](07-responsive.md) | Where responsive CSS lives, how to measure it, what was corrected |
 
 ## The 30-second version
 

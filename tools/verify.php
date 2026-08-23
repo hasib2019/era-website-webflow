@@ -45,7 +45,12 @@ function dom(string $html): DOMXPath
     return new DOMXPath($d);
 }
 
-/** Tag+class skeleton of everything inside <body>, scripts excluded. */
+/**
+ * Tag+class skeleton of everything inside <body>, scripts excluded.
+ *
+ * Each entry is prefixed with its depth below <body>, so an element that moves
+ * to a different parent shows up even when the document order is unchanged.
+ */
 function skeleton(DOMXPath $x): array
 {
     $out = [];
@@ -57,7 +62,12 @@ function skeleton(DOMXPath $x): array
         // active-state markers are generated per route by design
         $cls = trim(str_replace('w--current', '', $cls));
         $cls = trim(preg_replace('/\s+/', ' ', $cls));
-        $out[] = $n->nodeName . ($cls !== '' ? '.' . $cls : '');
+        $depth = 0;
+        for ($p = $n->parentNode; $p && $p->nodeName !== 'body'; $p = $p->parentNode) {
+            $depth++;
+        }
+
+        $out[] = $depth . '|' . $n->nodeName . ($cls !== '' ? '.' . $cls : '');
     }
     return $out;
 }

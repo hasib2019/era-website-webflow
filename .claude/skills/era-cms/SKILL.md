@@ -1,6 +1,6 @@
 ---
 name: era-cms
-description: Working on the ERA Infotech Laravel CMS (era-website-fullstack) — the Webflow "Edoly" export rebuilt on Laravel 12. Load before editing anything under resources/views/site, tools/, the admin dashboard, the content models, or the seed data. Covers the generated-views rule, the verify guard, the three content layers, and the Webflow runtime behaviour the markup depends on.
+description: Working on the ERA Infotech Laravel CMS (era-website-fullstack) — the Webflow "Edoly" export rebuilt on Laravel 12. Load before editing anything under resources/views/site, tools/, public/site/css, the admin dashboard, the content models, or the seed data — including any responsive, layout or design change. Covers the generated-views rule, the verify guard, the three content layers, and the Webflow runtime behaviour the markup depends on.
 ---
 
 # ERA Infotech CMS
@@ -29,7 +29,7 @@ php tools/build.php --verify
 
 It must end with **`all pages structurally identical`**. The checker renders all
 16 pages, parses them against the original export, and compares the element
-skeleton, the visible text and the image list. `php tools/verify.php -v` shows
+skeleton (tag, classes and **depth**), the visible text and the image list. `php tools/verify.php -v` shows
 what differs per page.
 
 If you deliberately changed the design, verify will fail and that is correct —
@@ -74,6 +74,23 @@ Do not "clean these up":
 - **Two menu labels contain non-breaking spaces** (`Career`,
   `Career&nbsp;&nbsp;Details`). Retyping them with ordinary spaces fails verify.
 
+## Responsive and CSS
+
+`public/site/css/styles.css` is the export and stays byte-identical. Corrections
+go in `public/site/css/responsive-fixes.css`, loaded after it.
+
+```bash
+node tools/responsive-audit.mjs      # must end "16/16 pages clean"
+node tools/screenshot.mjs / home 390,768,1366
+```
+
+**`chrome --headless --window-size=390 --screenshot` does not emulate a mobile
+viewport.** It lays the page out for desktop and crops it, which looks exactly
+like broken responsive CSS. Use `tools/screenshot.mjs`, which sets a real
+viewport with `isMobile`.
+
+Be sparing with the audit's `BY_DESIGN` ignore list — two real bugs hid behind it
+on the first pass. Details in `docs/07-responsive.md`.
 ## Writing a wiring pass
 
 The passes in `tools/wire_*.php` all follow one shape. The four things that
@@ -90,6 +107,10 @@ actually go wrong:
    `wire_repeaters.php`.
 4. **Use the second card as the template when the first carries an extra class**
    (e.g. `margin-left-none`), then re-add it with `$loop->first`.
+5. **Close what you opened.** Splice with `substr($html, $end)` rather than
+   appending a hand-counted `</div>`. Getting this wrong reparented the footer's
+   bottom row into a two-column grid and pushed two link columns off screen at
+   every laptop width.
 
 Register any new pass in `tools/build.php`.
 
@@ -123,3 +144,4 @@ PHP 8.2 caps this at Laravel 12; Laravel 13 needs 8.3+.
 | `docs/04-admin-dashboard.md` | screens, roles, the two lockout guards |
 | `docs/05-recipes.md` | step-by-step for the common asks |
 | `docs/06-operations.md` | setup, deploy, troubleshooting |
+| `docs/07-responsive.md` | responsive CSS, the audit tool, the screenshot trap |

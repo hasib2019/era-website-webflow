@@ -14,6 +14,8 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('site/css/styles.css') }}" rel="stylesheet" type="text/css">
+    {{-- Corrections for the export's own responsive gaps; styles.css stays untouched. --}}
+    <link href="{{ asset('site/css/responsive-fixes.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
     <script src="{{ asset('site/js/webfont.js') }}" type="text/javascript"></script>

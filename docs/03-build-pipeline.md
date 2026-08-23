@@ -80,6 +80,11 @@ means a previous pass changed markup that this one was relying on.
 `probe.php` is a diagnostic: it prints the byte size of each slice per page, which
 is how you notice a page whose structure differs from the rest.
 
+Two Node tools sit beside the PHP pipeline and need `npm install` first:
+`tools/responsive-audit.mjs` measures overflow across widths, and
+`tools/screenshot.mjs` captures a page at a real mobile viewport. Both are
+covered in [07 — Responsive](07-responsive.md).
+
 ## Why string surgery and not a DOM parse
 
 `convert.php` works on raw strings with `match_close()` rather than

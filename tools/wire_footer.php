@@ -96,7 +96,16 @@ $loop = "@foreach (cms_menu('footer')->groupBy('column_heading') as \$heading =>
     . $newItem
     . '@endforeach';
 
-$newColumn = substr($column, 0, $itemOpen) . $loop . '</div>';
+// splice only the run of items, so whatever closes the list and the column
+// after them survives untouched
+$lastItemEnd = $itemEnd;
+$scan = $itemEnd;
+while (($next = strpos($column, '<div class="footer-menu-item">', $scan)) !== false) {
+    $lastItemEnd = match_close($column, $next, 'div');
+    $scan = $lastItemEnd;
+}
+
+$newColumn = substr($column, 0, $itemOpen) . $loop . substr($column, $lastItemEnd);
 $html = substr($html, 0, $colOpen) . $newColumn . substr($html, $colEnd);
 
 file_put_contents($file, $html);

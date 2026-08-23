@@ -83,11 +83,13 @@
                                             </div>
                                         </div>
                                     </a>@endforeach</div>
-                            </div>@endforeach</div>
+                            </div>@endforeach
+                        </div>
+                    </div>
                 </div>
                 <div data-w-id="6ae0aa8d-def1-f227-09ea-ec72da4627cf" class="footer-bottom-element"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                    <div class="footer-big-text">{{ setting('footer.big_text', 'edoly') }}</div>
+                    <div class="footer-big-text">{{ setting('footer.big_text', 'era') }}</div>
                 </div>
             </div>
         </div>
@@ -95,7 +97,7 @@
             <div class="footer-additional-component">
                 <div class="footer-additional-element">
                     <p>© All rights reserved.<a href="{{ setting('general.website_url', 'https://erainfotechbd.com/') }}" target="_blank"> Era Infotech Ltd</a>.</p>
-                    <p>Powered by <a href="http://webflow.com/" target="_blank">Webflow.</a></p>
+                    <p>Powered by <a href="http://erainfotechbd.com/" target="_blank">Era Infotech Ltd.</a></p>
                     <div class="social-icon-element"><a href="{{ setting('social.facebook', 'https://www.facebook.com/') }}" target="_blank"
                             class="social-icon w-inline-block">
                             <div></div>

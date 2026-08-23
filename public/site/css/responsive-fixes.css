@@ -1,0 +1,131 @@
+/*
+ * Responsive corrections for the Edoly export.
+ * ---------------------------------------------------------------------------
+ * styles.css is the Webflow export and is kept byte-identical so a re-export
+ * stays a drop-in replacement. Everything that corrects the template's own
+ * responsive gaps lives here instead, loaded straight after it.
+ *
+ * Each block says what breaks without it and at which widths, so these can be
+ * dropped one by one if a future export fixes the same thing upstream.
+ *
+ * Verified with: node tools/responsive-audit.mjs
+ */
+
+/* ---------------------------------------------------------------------------
+ * 1. Long words must never be clipped
+ *
+ * The display faces are set in fixed pixel steps, so a single long word can be
+ * wider than the column it sits in and the overflow is simply cut off — the
+ * about page loses the tail of "expressions" at 480px, and a case study title
+ * loses its last word at 1024px. Wrapping is preferable to losing the word.
+ * ------------------------------------------------------------------------- */
+.display-large,
+.display-medium,
+.display-small,
+.heading-h1,
+.heading-h2,
+.heading-h3,
+.case-study-title,
+.case-study-subtitle,
+.service-title,
+.blog-title,
+.job-item-title,
+.our-process-item-title,
+.testimonial-title,
+.faq-title,
+.footer-big-text,
+h1, h2, h3, h4 {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+/* ---------------------------------------------------------------------------
+ * 2. The missing display step between 480px and 767px
+ *
+ * .display-large steps 84px (<=991) -> 60px (<=767) -> 34px (<=479). Between
+ * 480 and 767 it stays at 60px, which is wider than the padded column on the
+ * narrow half of that band. Scaling with the viewport closes the gap without
+ * touching either end of the existing ladder.
+ * ------------------------------------------------------------------------- */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .display-large {
+        font-size: clamp(34px, 8.6vw, 60px);
+    }
+
+    .display-medium {
+        font-size: clamp(28px, 6.4vw, 44px);
+    }
+}
+
+/* ---------------------------------------------------------------------------
+ * 3. Case study titles on small laptops
+ *
+ * .case-study-title drops to 28px only below 991px, so between 992 and 1100 it
+ * is still at its full size inside a column that has already narrowed.
+ * ------------------------------------------------------------------------- */
+@media screen and (min-width: 992px) and (max-width: 1100px) {
+    .case-study-title {
+        font-size: 30px;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+ * 4. Nothing may cause a sideways scrollbar
+ *
+ * Several blocks are animated in from off-canvas by Webflow's interactions
+ * runtime, which parks them outside the viewport until they are scrolled into
+ * view. That is intentional, but it must be clipped rather than extend the
+ * page. `clip` is used over `hidden` so it cannot create a scroll container and
+ * break `position: sticky` inside these sections.
+ * ------------------------------------------------------------------------- */
+html,
+body {
+    overflow-x: clip;
+    max-width: 100%;
+}
+
+.section-home-video,
+.section-home-hero,
+.section-service,
+.section-case-study,
+.section-testimonial,
+.our-clients-logo-component {
+    overflow-x: clip;
+}
+
+/* ---------------------------------------------------------------------------
+ * 5. Media never wider than its column
+ * ------------------------------------------------------------------------- */
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* The hero portrait is sized in viewport units and may exceed its wrapper. */
+.home-hero-image-wrap img,
+.about-us-image-wrap img,
+.case-study-image-wrap img {
+    height: auto;
+}
+
+/* ---------------------------------------------------------------------------
+ * 6. The video zoom animation is desktop-sized
+ *
+ * Webflow's interactions runtime parks the hero video thumbnail at
+ * `scale(.3) translate(-160px, -1000px)` and grows it to full width as the
+ * section scrolls past. That -160px start is a small nudge on a desktop column
+ * and half the screen on a phone, which leaves a half-cut thumbnail floating
+ * over the copy at 414px and below.
+ *
+ * The runtime writes that transform inline, so overriding it needs !important.
+ * Below 480px the thumbnail simply sits where it belongs and the zoom is
+ * skipped; everything above keeps the animation exactly as authored.
+ * ------------------------------------------------------------------------- */
+@media screen and (max-width: 479px) {
+    .video-lightbox {
+        transform: none !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
