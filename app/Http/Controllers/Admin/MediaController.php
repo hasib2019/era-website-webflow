@@ -15,6 +15,12 @@ class MediaController extends Controller
     /** Image, video, and document types the library accepts. */
     private const MIMES = 'jpg,jpeg,png,gif,webp,avif,svg,mp4,webm,ogg,pdf';
 
+    /** Every upload lands flat in the disk root, which is public/era. */
+    private const FOLDER = 'era';
+
+    /** PHP's own max_file_uploads is the real ceiling; stay at or under it. */
+    private const MAX_FILES = 20;
+
     public function index(Request $request)
     {
         $query = Media::query()->latest('id');
@@ -34,46 +40,68 @@ class MediaController extends Controller
         return view('admin.media.index', [
             'files' => $query->paginate(36)->withQueryString(),
             'folders' => Media::query()->distinct()->orderBy('folder')->pluck('folder'),
+            'maxUploadMb' => (int) floor(self::maxKilobytes() / 1024),
         ]);
     }
 
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'files' => ['required', 'array', 'max:20'],
-            'files.*' => ['file', 'mimes:' . self::MIMES, 'max:20480'],
-            'folder' => ['nullable', 'string', 'max:60'],
+            'files' => ['required', 'array', 'max:' . self::MAX_FILES],
+            'files.*' => ['file', 'mimes:' . self::MIMES, 'max:' . self::maxKilobytes()],
         ]);
 
-        $folder = Str::slug($request->input('folder') ?: 'uploads') ?: 'uploads';
-        $count = 0;
+        $disk = Storage::disk('public');
+        $uploaded = 0;
+        $failed = [];
 
         foreach ($request->file('files') as $file) {
-            $filename = $this->uniqueFilename($folder, $file->getClientOriginalName());
-            $path = $file->storeAs("media/{$folder}", $filename, 'public');
+            $filename = $this->uniqueFilename($file->getClientOriginalName());
 
-            [$width, $height] = $this->dimensions(Storage::disk('public')->path($path));
+            // Straight into the disk root -- public/era, no nesting.
+            if (! $file->storeAs('', $filename, 'public')) {
+                $failed[] = $file->getClientOriginalName();
+                continue;
+            }
+
+            $full = $disk->path($filename);
+            [$width, $height] = $this->dimensions($full);
 
             $media = Media::create([
                 'disk' => 'public',
-                'path' => $path,
+                'path' => $filename,
                 'filename' => $filename,
                 'original_name' => pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME),
-                'mime_type' => $file->getClientMimeType(),
-                'extension' => $file->getClientOriginalExtension(),
-                'size' => $file->getSize(),
+                /*
+                 * Sniffed from the stored bytes, not taken from the upload.
+                 *
+                 * Browsers read the type off the Windows registry and hand us
+                 * application/octet-stream for webp, avif and svg often enough
+                 * that trusting them left is_image false -- the grid then drew
+                 * the extension placeholder over a perfectly good image and the
+                 * upload read as failed.
+                 */
+                'mime_type' => $disk->mimeType($filename) ?: $file->getClientMimeType(),
+                'extension' => strtolower(pathinfo($filename, PATHINFO_EXTENSION)),
+                'size' => $disk->size($filename),
                 'width' => $width,
                 'height' => $height,
                 'alt' => pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME),
-                'folder' => $folder,
+                'folder' => self::FOLDER,
                 'uploaded_by' => $request->user()->id,
             ]);
 
             ActivityLogger::log('uploaded', $media, 'Uploaded ' . $media->filename);
-            $count++;
+            $uploaded++;
         }
 
-        return back()->with('success', $count . ' file(s) uploaded.');
+        if ($failed) {
+            return back()
+                ->with('error', 'Could not save: ' . implode(', ', $failed))
+                ->with('success', $uploaded ? $uploaded . ' file(s) uploaded.' : null);
+        }
+
+        return back()->with('success', $uploaded . ' file(s) uploaded.');
     }
 
     public function update(Request $request, Media $medium): RedirectResponse
@@ -104,18 +132,68 @@ class MediaController extends Controller
         return back()->with('success', 'File deleted.');
     }
 
-    private function uniqueFilename(string $folder, string $original): string
+    /**
+     * A free name in the disk root.
+     *
+     * Checked against the library table as well as the disk: `media` has a
+     * unique index on (disk, path), so a row whose file was removed by hand
+     * still owns that name. Only looking at the filesystem let the insert hit
+     * a 1062 mid-loop, which aborted the request with some files already
+     * written and nothing explaining why.
+     */
+    private function uniqueFilename(string $original): string
     {
         $name = Str::slug(pathinfo($original, PATHINFO_FILENAME)) ?: 'file';
         $ext = strtolower(pathinfo($original, PATHINFO_EXTENSION));
         $candidate = $name . '.' . $ext;
         $n = 2;
 
-        while (Storage::disk('public')->exists("media/{$folder}/{$candidate}")) {
+        while ($this->taken($candidate)) {
             $candidate = $name . '-' . $n++ . '.' . $ext;
         }
 
         return $candidate;
+    }
+
+    private function taken(string $filename): bool
+    {
+        return Storage::disk('public')->exists($filename)
+            || Media::where('disk', 'public')->where('path', $filename)->exists();
+    }
+
+    /**
+     * The per-file cap in kilobytes, clamped to what PHP will actually accept.
+     *
+     * Advertising 20 MB while php.ini caps uploads lower means the file is
+     * dropped before Laravel sees it, and the user gets "files is required"
+     * on a form they plainly filled in.
+     */
+    private static function maxKilobytes(): int
+    {
+        $ini = min(
+            self::iniBytes('upload_max_filesize'),
+            self::iniBytes('post_max_size'),
+        );
+
+        return (int) max(1, min(20480, intdiv($ini, 1024)));
+    }
+
+    private static function iniBytes(string $key): int
+    {
+        $value = trim((string) ini_get($key));
+
+        if ($value === '') {
+            return PHP_INT_MAX;
+        }
+
+        $bytes = (int) $value;
+
+        return match (strtolower(substr($value, -1))) {
+            'g' => $bytes * 1024 ** 3,
+            'm' => $bytes * 1024 ** 2,
+            'k' => $bytes * 1024,
+            default => $bytes,
+        };
     }
 
     /** @return array{0: ?int, 1: ?int} */

@@ -22,8 +22,10 @@ if (! function_exists('cms')) {
     /**
      * One editable field of one page section.
      *
-     * The second argument is the value the template shipped with, so a page
-     * renders unchanged if the field is cleared or the section is hidden.
+     * The second argument is the value the template shipped with. It stands in
+     * only where the dashboard has no input for the field -- clear the box in
+     * /admin/pages and the page renders nothing there, which is the point of
+     * the box.
      */
     function cms(string $path, mixed $default = null): mixed
     {
@@ -37,7 +39,9 @@ if (! function_exists('cms_image')) {
     /** A section field holding a media reference, resolved to a public URL. */
     function cms_image(string $path, ?string $default = null): ?string
     {
-        return App\Support\Content::mediaUrl(cms($path), $default);
+        [$page, $section, $field] = array_pad(explode('.', $path, 3), 3, null);
+
+        return App\Support\Content::fieldMedia($page, $section, $field, $default);
     }
 }
 
@@ -45,7 +49,9 @@ if (! function_exists('cms_srcset')) {
     /** The responsive srcset for a section's image field, when one exists. */
     function cms_srcset(string $path, ?string $default = null): ?string
     {
-        return App\Support\Content::mediaSrcset(cms($path)) ?? $default;
+        [$page, $section, $field] = array_pad(explode('.', $path, 3), 3, null);
+
+        return App\Support\Content::fieldSrcset($page, $section, $field, $default);
     }
 }
 

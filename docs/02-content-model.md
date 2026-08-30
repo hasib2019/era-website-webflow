@@ -57,8 +57,14 @@ media picker, `richtext` and `html` a code box, everything else a text input. Th
 editor only writes keys that already exist in `content`, so a stray form field
 cannot invent one.
 
-`is_visible` on a section makes `cms()` return the fallback for every field in
-it — useful for hiding a band without deleting its copy.
+`is_visible` on a section makes `cms()` return `''` for every field in it, so the
+band's copy disappears without its rows being deleted. It returns empty rather
+than the export's literal on purpose: the one control meant to remove content
+must not put the original back.
+
+The band's markup shell still renders — emptying its fields is not the same as
+dropping the `<section>`. Removing the element needs a wiring pass that wraps it
+in `@if (cms_section_visible(...))`, which does not exist yet.
 
 ### Field types in use
 

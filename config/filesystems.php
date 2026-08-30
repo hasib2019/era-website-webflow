@@ -40,7 +40,20 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            /*
+             * Uploads live inside the document root on purpose.
+             *
+             * The conventional storage/app/public + `storage:link` pair needs a
+             * symlink, and creating one on Windows requires either developer
+             * mode or an elevated shell. When it silently fails you get exactly
+             * what we had: files written to storage/app/public that nothing can
+             * serve, so every upload looks broken in the library grid.
+             *
+             * Rooting the disk at public/era removes the symlink from the
+             * picture entirely -- the web server reaches the files directly and
+             * `storage:link` is no longer part of setup.
+             */
+            'root' => public_path('era'),
             /*
              * Root-relative on purpose.
              *
@@ -50,7 +63,7 @@ return [
              * CMS serves. Set FILESYSTEM_PUBLIC_URL only if the files really do
              * live on another domain, such as a CDN.
              */
-            'url' => rtrim(env('FILESYSTEM_PUBLIC_URL', '/storage'), '/'),
+            'url' => rtrim(env('FILESYSTEM_PUBLIC_URL', '/era'), '/'),
             'visibility' => 'public',
             'throw' => false,
             'report' => false,
@@ -82,8 +95,10 @@ return [
     |
     */
 
-    'links' => [
-        public_path('storage') => storage_path('app/public'),
-    ],
+    /*
+     * Empty on purpose: the public disk lives at public/era, inside the
+     * document root, so there is nothing left for `storage:link` to link.
+     */
+    'links' => [],
 
 ];

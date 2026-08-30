@@ -6,12 +6,18 @@
     if ($options instanceof Closure) {
         $options = $options();
     }
+    // page sections reuse this partial with a spec that carries no rules at all
+    $rules = $spec['rules'] ?? '';
+    $rules = is_string($rules) ? $rules : implode('|', (array) $rules);
+    $required = str_contains($rules, 'required');
     $input = 'mt-1.5 block w-full rounded-lg border-0 bg-slate-50 px-3.5 py-2.5 text-sm text-slate-900 ring-1 ring-slate-200 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-500';
 @endphp
 
 <div>
     @if ($type !== 'checkbox')
-        <label for="{{ $id }}" class="block text-sm font-medium text-slate-700">{{ $label }}</label>
+        <label for="{{ $id }}" class="block text-sm font-medium text-slate-700">
+            {{ $label }}@if ($required)<span class="text-red-500" title="Required">*</span>@endif
+        </label>
     @endif
 
     @switch($type)
@@ -25,8 +31,12 @@
             @break
 
         @case('select')
+            {{-- a required select must not offer an empty choice: picking it only
+                 buys a validation error on submit --}}
             <select id="{{ $id }}" name="{{ $name }}" class="{{ $input }}">
-                <option value="">— none —</option>
+                @unless ($required)
+                    <option value="">— none —</option>
+                @endunless
                 @foreach ($options as $optionValue => $optionLabel)
                     <option value="{{ $optionValue }}" @selected((string) $value === (string) $optionValue)>{{ $optionLabel }}</option>
                 @endforeach

@@ -15,12 +15,9 @@
                     <input id="files" type="file" name="files[]" multiple required
                         accept="image/*,video/mp4,video/webm,application/pdf"
                         class="mt-1.5 block w-full text-sm text-slate-600 file:mr-3 file:rounded-lg file:border-0 file:bg-brand-50 file:px-3.5 file:py-2 file:text-sm file:font-semibold file:text-brand-700 hover:file:bg-brand-100">
-                    <p class="mt-1 text-xs text-slate-400">Images, MP4/WebM video and PDF. Up to 20 files, 20 MB each.</p>
-                </div>
-                <div class="w-40">
-                    <label for="folder" class="block text-sm font-medium text-slate-700">Folder</label>
-                    <input id="folder" type="text" name="folder" value="uploads"
-                        class="mt-1.5 block w-full rounded-lg border-0 bg-slate-50 px-3.5 py-2 text-sm ring-1 ring-slate-200 focus:bg-white focus:ring-2 focus:ring-brand-500">
+                    <p class="mt-1 text-xs text-slate-400">
+                        Images, MP4/WebM video and PDF. Up to 20 files, {{ $maxUploadMb }} MB each. Saved to <code>public/era</code>.
+                    </p>
                 </div>
                 <button type="submit"
                     class="rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700">

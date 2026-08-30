@@ -5,12 +5,18 @@
 
 @section('content')
     @php
-        // fields without a group render first, then each named group as its own card
-        $groups = collect($fields)->groupBy(fn ($spec) => $spec['group'] ?? 'Content');
+        /*
+         * fields without a group render first, then each named group as its own card
+         *
+         * preserveKeys matters: groupBy() reindexes by default, which turned every
+         * field name into 0, 1, 2 ... so the whole form posted `name="0"` and not one
+         * value ever reached the model.
+         */
+        $groups = collect($fields)->groupBy(fn ($spec) => $spec['group'] ?? 'Content', preserveKeys: true);
     @endphp
 
     <form method="POST"
-        action="{{ $record->exists ? route("admin.{$key}.update", $record) : route("admin.{$key}.store") }}"
+        action="{{ $record->exists ? route("admin.{$key}.update", $record->getKey()) : route("admin.{$key}.store") }}"
         class="max-w-3xl space-y-6">
         @csrf
         @if ($record->exists)

@@ -188,7 +188,7 @@ section's image picker, a settings row, or the model's `image_id`. Nothing needs
 a rebuild; media is read at request time.
 
 To pull in a fresh batch of Webflow assets, drop the files into
-`storage/app/public/media/webflow/` and run:
+`public/era/media/webflow/` and run:
 
 ```bash
 php artisan media:import-webflow

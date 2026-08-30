@@ -27,7 +27,6 @@ composer install
 npm install && npm run build
 cp .env.example .env && php artisan key:generate     # then set DB_* and APP_URL
 php artisan migrate --seed
-php artisan storage:link
 php artisan serve
 ```
 
@@ -51,6 +50,7 @@ It is idempotent; files already registered are skipped.
 | `APP_URL` | must match how the site is served, or `asset()` URLs break |
 | `DB_*` | MySQL; the schema assumes `utf8mb4` |
 | `FILESYSTEM_DISK` | **must be `public`** — the media library writes there |
+| `FILESYSTEM_PUBLIC_URL` | only if uploads move to a CDN; defaults to `/era` |
 | `SEED_ADMIN_PASSWORD` | password for the seeded accounts; default `Era@2026!` |
 | `WEBFLOW_EXPORT_DIR` | only for the build tools; defaults to `../era-website` |
 | `VERIFY_BASE_URL` | only for `verify.php`; defaults to `http://127.0.0.1:8000` |
@@ -73,11 +73,12 @@ anywhere but localhost**, and delete the ones you do not need.
 composer install --no-dev --optimize-autoloader
 npm ci && npm run build
 php artisan migrate --force
-php artisan storage:link
 php artisan config:cache && php artisan route:cache && php artisan view:cache
 ```
 
-Point the web root at `public/`. Make `storage/` and `bootstrap/cache/` writable.
+Point the web root at `public/`. Make `storage/`, `bootstrap/cache/` and
+`public/era/` writable — `public/era/` is where the media library saves
+uploads, served directly as `/era/...` with no `storage:link` involved.
 
 The build tools are development-only — `tools/` and the Webflow export do not
 need to ship. Regenerate views locally, commit them, deploy the result.

@@ -43,9 +43,13 @@
                                 </td>
                             @endforeach
                             <td class="whitespace-nowrap px-4 py-3 text-right">
-                                <a href="{{ route("admin.{$key}.edit", $record) }}"
+                                {{-- getKey(), not the record itself: Service, Post, CaseStudy and
+                                     JobOpening expose `slug` as their route key so the public site
+                                     gets pretty URLs, and route() would serialise that slug into an
+                                     admin URL whose controller resolves by primary key. --}}
+                                <a href="{{ route("admin.{$key}.edit", $record->getKey()) }}"
                                     class="rounded-md px-2.5 py-1.5 text-xs font-semibold text-brand-700 hover:bg-brand-50">Edit</a>
-                                <form method="POST" action="{{ route("admin.{$key}.destroy", $record) }}" class="inline"
+                                <form method="POST" action="{{ route("admin.{$key}.destroy", $record->getKey()) }}" class="inline"
                                     data-confirm="Delete this {{ Str::lower($labels['singular']) }}? This cannot be undone.">
                                     @csrf
                                     @method('DELETE')

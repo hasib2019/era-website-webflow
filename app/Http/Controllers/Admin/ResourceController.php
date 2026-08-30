@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 /**
@@ -169,15 +170,38 @@ abstract class ResourceController extends Controller
         return $request->validate($rules);
     }
 
-    /** Normalises values just before they hit the model. */
+    /**
+     * Normalises values just before they hit the model.
+     *
+     * The one thing to get right here is a blank input. ConvertEmptyStringsToNull
+     * has already turned every untouched box into null by the time this runs, and
+     * columns like `sort_order`, `read_time`, `scope` and `row_group` are NOT NULL
+     * with a database default -- writing an explicit null overrides the default and
+     * the insert dies on a 1048. Leaving "Order" empty is the normal way to create a
+     * record, so that took out create on every collection.
+     *
+     * A blank value therefore only becomes null when the column actually accepts
+     * one. Otherwise the key is dropped: a create then takes the column default,
+     * and an update leaves the stored value alone.
+     */
     protected function prepare(array $data, Request $request, ?Model $record = null): array
     {
+        $nullable = $this->nullableColumns();
+
         foreach ($this->fields() as $name => $spec) {
             if (($spec['type'] ?? 'text') === 'checkbox') {
                 $data[$name] = $request->boolean($name);
+                continue;
             }
-            if (($data[$name] ?? null) === '' && ($spec['nullable'] ?? true)) {
+
+            if (! array_key_exists($name, $data) || ($data[$name] !== '' && $data[$name] !== null)) {
+                continue;
+            }
+
+            if (in_array($name, $nullable, true) && ($spec['nullable'] ?? true)) {
                 $data[$name] = null;
+            } else {
+                unset($data[$name]);
             }
         }
 
@@ -205,6 +229,23 @@ abstract class ResourceController extends Controller
         }
 
         return $candidate;
+    }
+
+    /**
+     * Column names on this model's table that accept null.
+     *
+     * Read from the schema rather than declared per field, so a migration that
+     * relaxes or tightens a column cannot drift out of sync with the forms.
+     */
+    protected function nullableColumns(): array
+    {
+        static $cache = [];
+
+        $table = (new ($this->model()))->getTable();
+
+        return $cache[$table] ??= array_keys(array_filter(
+            array_column(Schema::getColumns($table), 'nullable', 'name'),
+        ));
     }
 
     protected function mediaOptions()

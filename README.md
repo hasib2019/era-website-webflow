@@ -30,12 +30,14 @@ Agents: load the `era-cms` skill (`.claude/skills/era-cms/`).
 composer install
 npm install && npm run build
 php artisan migrate --seed
-php artisan storage:link
 php artisan serve
 ```
 
 `php artisan migrate:fresh --seed` rebuilds everything, including the media
-library rows for the assets under `storage/app/public/media/webflow`.
+library rows for the assets under `public/era/media/webflow`.
+
+Uploads go to `public/era/` and are served as `/era/...`, so there is no
+`storage:link` step.
 
 ## Sign in
 
@@ -101,8 +103,8 @@ resources/views/site/
 ```
 
 Assets live in `public/site/` (css, js, fonts, the four local images) and
-`storage/app/public/media/` (the 127 files pulled off Webflow's CDN, exposed
-through the `storage` symlink).
+`public/era/` (the media library — uploads plus the files pulled off
+Webflow's CDN, served directly as `/era/...`).
 
 ## Tooling
 

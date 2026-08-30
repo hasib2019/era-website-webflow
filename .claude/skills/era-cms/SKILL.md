@@ -51,8 +51,14 @@ Also: `cms_image()`, `setting_image()`, `cms_menu('primary'|'mega'|'footer')`,
 `app/Support/Content.php`.
 
 **Every binding keeps the export's literal as its last argument.** Preserve that
-when editing a wiring pass — it is what makes a cleared field fall back to the
-template instead of rendering a hole.
+when editing a wiring pass — it is what covers a page the seeder never reached
+and a key a section never declared.
+
+It is *not* a floor under the dashboard. Where an input exists, what it holds
+wins, including when it holds nothing: a cleared field and a hidden section both
+render empty. `Content` draws that line with null (no input maps here) versus ''
+(an input maps here and is empty). Expect verify to flag any field the client
+blanks — that is the feature working.
 
 ## Webflow facts the markup depends on
 

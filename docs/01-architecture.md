@@ -69,9 +69,12 @@ GET /services/paid-advertising
             the literal from the export        ← the fallback argument, always present
 ```
 
-Every binding keeps the export's own value as its last argument. Clear a field in
-the dashboard and the page falls back to what the template shipped with, rather
-than rendering a hole.
+Every binding keeps the export's own value as its last argument, and it stands in
+only where the dashboard has no input for that field — an unseeded page, or a key
+the section never declared. Where an input does exist, what it holds wins: clear
+the box in the dashboard and the page renders nothing there, which is the point
+of the box. `Content::rawField()` draws the line with null (no input) versus ''
+(an input, left empty).
 
 ## Directory map
 
@@ -98,7 +101,7 @@ era-website-fullstack/
 │
 ├── public/
 │   ├── site/            css, js, fonts, the four local images — served as-is
-│   ├── storage → …      symlink to storage/app/public
+│   ├── era/             media library uploads — served as /era/..., no symlink
 │   └── build/           Vite output (dashboard only)
 │
 ├── resources/views/

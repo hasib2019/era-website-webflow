@@ -15,6 +15,16 @@ use Illuminate\Support\Facades\Storage;
  * The public views call these through the helpers in helpers.php. Everything is
  * memoised per request because the layout touches settings and menus on every
  * page, and a section's fields are read many times over.
+ *
+ * Every binding carries the export's own literal as its last argument. That
+ * literal is a fallback for markup the dashboard cannot reach, *not* a floor
+ * under whatever the dashboard holds: where an input exists, what it holds
+ * wins, including when it holds nothing. Treating "empty" as "absent" is what
+ * made a cleared field spring back to the Webflow copy, and made hiding a
+ * section restore the very text it was meant to remove.
+ *
+ * The resolvers below draw that line with null vs '': null means "no input maps
+ * to this", '' means "an input maps to this and it is empty".
  */
 class Content
 {
@@ -24,18 +34,65 @@ class Content
 
     private static array $menus = [];
 
-    /** One field of one section, falling back to the template's own copy. */
+    /**
+     * One field of one section.
+     *
+     * `$default` is the export's own copy, returned only when the CMS has
+     * nothing to say about this field: no page row, no section row, or a
+     * section that never declared it.
+     */
     public static function field(string $pageSlug, string $sectionKey, string $fieldKey, mixed $default = null): mixed
     {
-        $section = static::section($pageSlug, $sectionKey);
+        $value = static::rawField($pageSlug, $sectionKey, $fieldKey);
 
-        if ($section === null || ! $section['visible']) {
+        return $value === null ? $default : $value;
+    }
+
+    /** A section field holding a media reference, resolved to a public URL. */
+    public static function fieldMedia(string $pageSlug, string $sectionKey, string $fieldKey, ?string $default = null): ?string
+    {
+        $value = static::rawField($pageSlug, $sectionKey, $fieldKey);
+
+        if ($value === null) {
             return $default;
         }
 
-        $value = $section['content'][$fieldKey]['value'] ?? null;
+        // Cleared, or pointing at a library row that has since been deleted --
+        // either way, showing the export's original image would be a lie.
+        return blank($value) ? null : static::mediaUrl($value, null);
+    }
 
-        return ($value === null || $value === '') ? $default : $value;
+    /** The srcset for a section's image field, on the same terms as fieldMedia(). */
+    public static function fieldSrcset(string $pageSlug, string $sectionKey, string $fieldKey, ?string $default = null): ?string
+    {
+        $value = static::rawField($pageSlug, $sectionKey, $fieldKey);
+
+        if ($value === null) {
+            return $default;
+        }
+
+        return blank($value) ? null : static::mediaSrcset($value);
+    }
+
+    /**
+     * The stored value, or null when no dashboard input maps to it.
+     *
+     * A hidden section reports its fields as empty rather than as absent: the
+     * one control meant to remove content must not hand the export's copy back.
+     */
+    private static function rawField(string $pageSlug, string $sectionKey, string $fieldKey): mixed
+    {
+        $section = static::section($pageSlug, $sectionKey);
+
+        if ($section === null || ! array_key_exists($fieldKey, $section['content'])) {
+            return null;
+        }
+
+        if (! $section['visible']) {
+            return '';
+        }
+
+        return $section['content'][$fieldKey]['value'] ?? '';
     }
 
     /** Whether a section should render at all. */
@@ -101,17 +158,35 @@ class Content
         return $media?->srcset;
     }
 
+    /**
+     * A site-wide value.
+     *
+     * Same rule as field(): no row means the dashboard cannot set it, so the
+     * template's copy stands, while a row someone emptied is a decision. The
+     * settings seeder leaves the logo rows null whenever the media library is
+     * empty, so "row present, value null" has to read as empty, not as absent.
+     */
     public static function setting(string $path, mixed $default = null): mixed
     {
-        $value = Setting::get($path);
+        $all = Setting::allFlat();
 
-        return ($value === null || $value === '') ? $default : $value;
+        if (! array_key_exists($path, $all)) {
+            return $default;
+        }
+
+        return $all[$path] ?? '';
     }
 
     /** A settings value that holds a media id, resolved to a URL. */
     public static function settingMedia(string $path, ?string $default = null): ?string
     {
-        return static::mediaUrl(static::setting($path), $default);
+        if (! array_key_exists($path, Setting::allFlat())) {
+            return $default;
+        }
+
+        $value = static::setting($path);
+
+        return blank($value) ? null : static::mediaUrl($value, null);
     }
 
     /** Active items of a menu, ordered, with children eager-loaded. */
