@@ -23,6 +23,42 @@ class Menu extends Model
         return $this->hasMany(MenuItem::class)->orderBy('sort_order');
     }
 
+    /**
+     * How this menu groups its items: none, fixed or free.
+     *
+     * @see config/menus.php, which explains why the mega menu's set is closed
+     *      and the footer's is not.
+     */
+    public function columnMode(): string
+    {
+        return config('menus.' . $this->slug . '.mode', 'free');
+    }
+
+    /** Headings to offer in the editor, in the order the site renders them. */
+    public function columnOptions(): array
+    {
+        if ($this->columnMode() === 'none') {
+            return [];
+        }
+
+        if ($this->columnMode() === 'fixed') {
+            return config('menus.' . $this->slug . '.columns', []);
+        }
+
+        // free: whatever the items already use, so the editor mirrors the site
+        return $this->items()
+            ->whereNotNull('column_heading')
+            ->distinct()
+            ->orderBy('column_heading')
+            ->pluck('column_heading')
+            ->all();
+    }
+
+    public function help(): ?string
+    {
+        return config('menus.' . $this->slug . '.help');
+    }
+
     /** Active top-level items with their children, ready to render. */
     public function tree(): Collection
     {

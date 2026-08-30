@@ -20,11 +20,8 @@
             </div>
 
             <div class="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-900/5">
-                @if ($errors->any())
-                    <div class="mb-6 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700 ring-1 ring-red-600/10">
-                        {{ $errors->first() }}
-                    </div>
-                @endif
+                {{-- sign-in failures surface as a toast like every other message --}}
+                @include('admin.partials.flash')
 
                 <form method="POST" action="{{ route('admin.login.attempt') }}" class="space-y-5">
                     @csrf

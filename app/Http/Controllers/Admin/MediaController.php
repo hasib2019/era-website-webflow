@@ -15,8 +15,14 @@ class MediaController extends Controller
     /** Image, video, and document types the library accepts. */
     private const MIMES = 'jpg,jpeg,png,gif,webp,avif,svg,mp4,webm,ogg,pdf';
 
-    /** Every upload lands flat in the disk root, which is public/era. */
-    private const FOLDER = 'era';
+    /**
+     * What the `folder` column holds for a file sitting in the disk root.
+     *
+     * Choosing a folder is optional: leave the box empty and the file lands
+     * directly in public/era, name a folder and it lands in public/era/<folder>.
+     * The column records which, so the library can filter by it either way.
+     */
+    private const ROOT = 'era';
 
     /** PHP's own max_file_uploads is the real ceiling; stay at or under it. */
     private const MAX_FILES = 20;
@@ -49,27 +55,28 @@ class MediaController extends Controller
         $request->validate([
             'files' => ['required', 'array', 'max:' . self::MAX_FILES],
             'files.*' => ['file', 'mimes:' . self::MIMES, 'max:' . self::maxKilobytes()],
+            'folder' => ['nullable', 'string', 'max:60'],
         ]);
 
+        $folder = $this->normaliseFolder($request->input('folder'));
         $disk = Storage::disk('public');
         $uploaded = 0;
         $failed = [];
 
         foreach ($request->file('files') as $file) {
-            $filename = $this->uniqueFilename($file->getClientOriginalName());
+            $filename = $this->uniqueFilename($folder, $file->getClientOriginalName());
+            $path = $this->pathFor($folder, $filename);
 
-            // Straight into the disk root -- public/era, no nesting.
-            if (! $file->storeAs('', $filename, 'public')) {
+            if (! $file->storeAs($this->directoryFor($folder), $filename, 'public')) {
                 $failed[] = $file->getClientOriginalName();
                 continue;
             }
 
-            $full = $disk->path($filename);
-            [$width, $height] = $this->dimensions($full);
+            [$width, $height] = $this->dimensions($disk->path($path));
 
             $media = Media::create([
                 'disk' => 'public',
-                'path' => $filename,
+                'path' => $path,
                 'filename' => $filename,
                 'original_name' => pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME),
                 /*
@@ -81,27 +88,29 @@ class MediaController extends Controller
                  * the extension placeholder over a perfectly good image and the
                  * upload read as failed.
                  */
-                'mime_type' => $disk->mimeType($filename) ?: $file->getClientMimeType(),
+                'mime_type' => $disk->mimeType($path) ?: $file->getClientMimeType(),
                 'extension' => strtolower(pathinfo($filename, PATHINFO_EXTENSION)),
-                'size' => $disk->size($filename),
+                'size' => $disk->size($path),
                 'width' => $width,
                 'height' => $height,
                 'alt' => pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME),
-                'folder' => self::FOLDER,
+                'folder' => $folder,
                 'uploaded_by' => $request->user()->id,
             ]);
 
-            ActivityLogger::log('uploaded', $media, 'Uploaded ' . $media->filename);
+            ActivityLogger::log('uploaded', $media, 'Uploaded ' . $media->path);
             $uploaded++;
         }
+
+        $where = $folder === self::ROOT ? 'public/era' : 'public/era/' . $folder;
 
         if ($failed) {
             return back()
                 ->with('error', 'Could not save: ' . implode(', ', $failed))
-                ->with('success', $uploaded ? $uploaded . ' file(s) uploaded.' : null);
+                ->with('success', $uploaded ? $uploaded . ' file(s) uploaded to ' . $where . '.' : null);
         }
 
-        return back()->with('success', $uploaded . ' file(s) uploaded.');
+        return back()->with('success', $uploaded . ' file(s) uploaded to ' . $where . '.');
     }
 
     public function update(Request $request, Media $medium): RedirectResponse
@@ -133,7 +142,30 @@ class MediaController extends Controller
     }
 
     /**
-     * A free name in the disk root.
+     * The folder segment to store against, or ROOT for "no folder".
+     *
+     * Slugged rather than taken verbatim: the name becomes a real directory
+     * under the document root, so spaces, slashes and dots have to go.
+     */
+    private function normaliseFolder(?string $input): string
+    {
+        return Str::slug((string) $input) ?: self::ROOT;
+    }
+
+    /** Directory to write into, relative to the disk root; '' means the root. */
+    private function directoryFor(string $folder): string
+    {
+        return $folder === self::ROOT ? '' : $folder;
+    }
+
+    /** Stored path for a file, which is what `media.path` and the URL use. */
+    private function pathFor(string $folder, string $filename): string
+    {
+        return $folder === self::ROOT ? $filename : $folder . '/' . $filename;
+    }
+
+    /**
+     * A free name within one folder.
      *
      * Checked against the library table as well as the disk: `media` has a
      * unique index on (disk, path), so a row whose file was removed by hand
@@ -141,24 +173,24 @@ class MediaController extends Controller
      * a 1062 mid-loop, which aborted the request with some files already
      * written and nothing explaining why.
      */
-    private function uniqueFilename(string $original): string
+    private function uniqueFilename(string $folder, string $original): string
     {
         $name = Str::slug(pathinfo($original, PATHINFO_FILENAME)) ?: 'file';
         $ext = strtolower(pathinfo($original, PATHINFO_EXTENSION));
         $candidate = $name . '.' . $ext;
         $n = 2;
 
-        while ($this->taken($candidate)) {
+        while ($this->taken($this->pathFor($folder, $candidate))) {
             $candidate = $name . '-' . $n++ . '.' . $ext;
         }
 
         return $candidate;
     }
 
-    private function taken(string $filename): bool
+    private function taken(string $path): bool
     {
-        return Storage::disk('public')->exists($filename)
-            || Media::where('disk', 'public')->where('path', $filename)->exists();
+        return Storage::disk('public')->exists($path)
+            || Media::where('disk', 'public')->where('path', $path)->exists();
     }
 
     /**

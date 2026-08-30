@@ -16,8 +16,24 @@
                         accept="image/*,video/mp4,video/webm,application/pdf"
                         class="mt-1.5 block w-full text-sm text-slate-600 file:mr-3 file:rounded-lg file:border-0 file:bg-brand-50 file:px-3.5 file:py-2 file:text-sm file:font-semibold file:text-brand-700 hover:file:bg-brand-100">
                     <p class="mt-1 text-xs text-slate-400">
-                        Images, MP4/WebM video and PDF. Up to 20 files, {{ $maxUploadMb }} MB each. Saved to <code>public/era</code>.
+                        Images, MP4/WebM video and PDF. Select several at once to upload in bulk &mdash;
+                        up to 20 files, {{ $maxUploadMb }} MB each.
                     </p>
+                </div>
+                <div class="w-56">
+                    <label for="folder" class="block text-sm font-medium text-slate-700">
+                        Folder <span class="font-normal text-slate-400">(optional)</span>
+                    </label>
+                    {{-- a datalist, so an existing folder is one click and a new one is just typed --}}
+                    <input id="folder" type="text" name="folder" list="media-folders" autocomplete="off"
+                        placeholder="none — straight into /era"
+                        class="mt-1.5 block w-full rounded-lg border-0 bg-slate-50 px-3.5 py-2 text-sm ring-1 ring-slate-200 focus:bg-white focus:ring-2 focus:ring-brand-500">
+                    <datalist id="media-folders">
+                        @foreach ($folders as $folder)
+                            <option value="{{ $folder }}"></option>
+                        @endforeach
+                    </datalist>
+                    <p class="mt-1 text-xs text-slate-400">Leave empty for <code>public/era</code>.</p>
                 </div>
                 <button type="submit"
                     class="rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700">
@@ -34,7 +50,9 @@
             class="rounded-lg border-0 bg-white px-3.5 py-2 text-sm ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-500">
             <option value="">All folders</option>
             @foreach ($folders as $folder)
-                <option value="{{ $folder }}" @selected(request('folder') === $folder)>{{ $folder }}</option>
+                <option value="{{ $folder }}" @selected(request('folder') === $folder)>
+                    {{ $folder === 'era' ? 'era (no subfolder)' : $folder }}
+                </option>
             @endforeach
         </select>
     </form>
@@ -50,7 +68,8 @@
                     @endif
                 </div>
                 <figcaption class="space-y-2 p-3">
-                    <p class="truncate text-xs font-medium text-slate-900" title="{{ $file->filename }}">{{ $file->original_name }}</p>
+                    <p class="truncate text-xs font-medium text-slate-900" title="{{ $file->path }}">{{ $file->original_name }}</p>
+                    <p class="truncate text-[11px] text-slate-400" title="{{ $file->url }}">{{ $file->folder }}</p>
                     <p class="text-[11px] text-slate-400">
                         {{ $file->human_size }}@if ($file->width) &middot; {{ $file->width }}&times;{{ $file->height }} @endif
                     </p>

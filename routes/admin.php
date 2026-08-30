@@ -75,6 +75,7 @@ Route::middleware('auth')->group(function () {
     Route::middleware('permission:menus.manage')->group(function () {
         Route::get('menus', [MenuController::class, 'index'])->name('menus.index');
         Route::get('menus/{menu}', [MenuController::class, 'edit'])->name('menus.edit');
+        Route::post('menus/{menu}/reorder', [MenuController::class, 'reorder'])->name('menus.reorder');
         Route::post('menus/{menu}/items', [MenuController::class, 'storeItem'])->name('menus.items.store');
         Route::put('menus/{menu}/items/{item}', [MenuController::class, 'updateItem'])->name('menus.items.update');
         Route::delete('menus/{menu}/items/{item}', [MenuController::class, 'destroyItem'])->name('menus.items.destroy');
