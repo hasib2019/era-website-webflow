@@ -44,6 +44,9 @@ $views = [
     'wire_testimonials.php' => 'tab slider, ids regenerated per item',
     'wire_details.php' => 'detail pages read the record in the URL',
     'wire_forms.php' => 'contact and newsletter forms post to Laravel',
+    'wire_seo.php' => 'page titles read the page Meta title field',
+    'wire_contact.php' => 'contact details and copyright read the settings',
+    'wire_chrome.php' => 'top-bar links, header button and remaining labels',
 ];
 
 function run(string $script, string $why): void

@@ -1,6 +1,6 @@
 @extends('site.layouts.app')
 
-@section('title', 'Contact Us')
+@section('title', page_title('contact', 'Contact Us'))
 @section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
@@ -73,22 +73,19 @@
                             style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                             class="address-wrapper">
                             <div class="address-info">
-                                <div class="address-info-title">office</div>
-                                <p><a href="#">714 Example
-                                        location</a></p><a href="mailto:hello@erainfotechbd.com"
-                                    class="address-link">hello@erainfotechbd.com</a>
+                                <div class="address-info-title">{{ setting('contact.office_label', 'office') }}</div>
+                                <p><a href="#">{{ setting('contact.office_address', '714 Example location') }}</a></p><a href="mailto:{{ setting('contact.email', 'hello@erainfotechbd.com') }}"
+                                    class="address-link">{{ setting('contact.email', 'hello@erainfotechbd.com') }}</a>
                             </div>
                             <div class="address-info">
-                                <div class="address-info-title">Sales</div>
-                                <p><a href="#">715 Example
-                                        location</a></p><a href="mailto:sales@erainfotechbd.com"
-                                    class="address-link">sales@erainfotechbd.com</a>
+                                <div class="address-info-title">{{ setting('contact.sales_label', 'Sales') }}</div>
+                                <p><a href="#">{{ setting('contact.sales_address', '715 Example location') }}</a></p><a href="mailto:{{ setting('contact.sales_email', 'sales@erainfotechbd.com') }}"
+                                    class="address-link">{{ setting('contact.sales_email', 'sales@erainfotechbd.com') }}</a>
                             </div>
                             <div class="address-info">
-                                <div class="address-info-title">Address</div>
-                                <p><a href="#">716 Example
-                                        location</a></p><a href="tel:+0-000-000-000"
-                                    class="address-link">+0-000-000-000</a>
+                                <div class="address-info-title">{{ setting('contact.address_label', 'Address') }}</div>
+                                <p><a href="#">{{ setting('contact.address', '716 Example location') }}</a></p><a href="tel:{{ setting('contact.phone', '+0-000-000-000') }}"
+                                    class="address-link">{{ setting('contact.phone', '+0-000-000-000') }}</a>
                             </div>
                         </div>
                         <div id="w-node-b7234a9a-67bb-0b74-f19a-02f99d3aed29-f09ac0cc" class="contact-us-form-element">

@@ -33,14 +33,14 @@
                                         <div class="main-menu-info-content-wrap">
                                             <p class="main-menu-info-para">your vision, our mission. let’s start the
                                                 journey</p><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="98cce219-106e-0917-6727-fde305ae5985"
-                                                href="/contact"
+                                                href="{{ setting('navbar.cta_url', '/contact') }}"
                                                 target="_blank" class="menu-button-wrapper w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}"
                                                 style="border-color: rgba(0, 0, 0, 0.5);">
                                                 <div class="button-text-wrap">
                                                     <div class="button-text-inner main-menu-nav-button-text"
                                                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                        <div class="text-block">BUY TEMPLATE</div>
-                                                        <div>BUY TEMPLATE</div>
+                                                        <div class="text-block">{{ setting('navbar.cta_label', 'BUY TEMPLATE') }}</div>
+                                                        <div>{{ setting('navbar.cta_label', 'BUY TEMPLATE') }}</div>
                                                     </div>
                                                 </div>
                                                 <div class="button-icon-element main-menu-button-icon-element">
@@ -83,47 +83,17 @@
                     </div>
                 </nav>
                 <div class="nav-menu">
-                    <div class="nav-link-wrap"><a {!! nav_active('/') ? 'aria-current="page"' : '' !!} href="/" class="link-wrap w-inline-block{{ nav_active('/') ? ' w--current' : '' }}">
+                    <div class="nav-link-wrap">@foreach (cms_menu('primary') as $item)<a {!! nav_active($item->url) ? 'aria-current="page"' : '' !!} href="{{ $item->url }}" class="link-wrap w-inline-block{{ nav_active($item->url) ? ' w--current' : '' }}">
                             <div class="link-inner"
                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                 <div class="link-text-wrap">
-                                    <div class="nav-link-text">Home</div>
+                                    <div class="nav-link-text">{{ $item->label }}</div>
                                 </div>
                                 <div class="link-text-wrap is-hover">
-                                    <div class="nav-link-text">Home </div>
+                                    <div class="nav-link-text">{{ $item->label }}</div>
                                 </div>
                             </div>
-                        </a><a {!! nav_active('/about') ? 'aria-current="page"' : '' !!} href="/about" class="link-wrap w-inline-block{{ nav_active('/about') ? ' w--current' : '' }}">
-                            <div class="link-inner"
-                                style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                <div class="link-text-wrap">
-                                    <div class="nav-link-text">About</div>
-                                </div>
-                                <div class="link-text-wrap is-hover">
-                                    <div class="nav-link-text">About</div>
-                                </div>
-                            </div>
-                        </a><a {!! nav_active('/services') ? 'aria-current="page"' : '' !!} href="/services" class="link-wrap w-inline-block{{ nav_active('/services') ? ' w--current' : '' }}">
-                            <div class="link-inner"
-                                style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                <div class="link-text-wrap">
-                                    <div class="nav-link-text">Services</div>
-                                </div>
-                                <div class="link-text-wrap is-hover">
-                                    <div class="nav-link-text">Services</div>
-                                </div>
-                            </div>
-                        </a><a {!! nav_active('/case-studies') ? 'aria-current="page"' : '' !!} href="/case-studies" class="link-wrap w-inline-block{{ nav_active('/case-studies') ? ' w--current' : '' }}">
-                            <div class="link-inner"
-                                style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                <div class="link-text-wrap">
-                                    <div class="nav-link-text">Case study</div>
-                                </div>
-                                <div class="link-text-wrap is-hover">
-                                    <div class="nav-link-text">Case study</div>
-                                </div>
-                            </div>
-                        </a>
+                        </a>@endforeach
                         <div data-hover="false" data-delay="0" class="dropdown w-dropdown">
                             <div class="dropdown-toggle w-dropdown-toggle" id="w-dropdown-toggle-0"
                                 aria-controls="w-dropdown-list-0" aria-haspopup="menu" aria-expanded="false"
@@ -132,11 +102,11 @@
                                     <div class="link-inner"
                                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                         <div class="link-text-wrap dropdown-nav-item">
-                                            <div class="nav-link-text">Other page</div>
+                                            <div class="nav-link-text">{{ setting('navbar.dropdown_label', 'Other page') }}</div>
                                             <div class="dropdown-icon"></div>
                                         </div>
                                         <div class="link-text-wrap is-hover">
-                                            <div class="nav-link-text">Other page</div>
+                                            <div class="nav-link-text">{{ setting('navbar.dropdown_label', 'Other page') }}</div>
                                             <div class="dropdown-icon-hover"></div>
                                         </div>
                                     </div>

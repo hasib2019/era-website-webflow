@@ -27,7 +27,16 @@ if (! defined('SITE_VIEWS')) {
     define('SITE_VIEWS', APP_ROOT . '/resources/views/site/');
 }
 
-if (! is_dir(EXPORT_PAGES)) {
+/*
+ * Most scripts read the export and cannot run without it. The wiring passes and
+ * the audit only look at views convert.php already produced, so they set
+ *
+ *     define('NEEDS_EXPORT', false);
+ *
+ * before requiring this file and stay usable on a checkout with no export beside
+ * it. Anything that does not say otherwise still requires one.
+ */
+if ((! defined('NEEDS_EXPORT') || NEEDS_EXPORT) && ! is_dir(EXPORT_PAGES)) {
     fwrite(STDERR, "Webflow export not found at " . EXPORT_PAGES . "\n");
     fwrite(STDERR, "Set WEBFLOW_EXPORT_DIR to the folder that contains Pages/.\n");
     exit(1);

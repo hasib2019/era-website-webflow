@@ -96,8 +96,8 @@
         <div class="footer-additional">
             <div class="footer-additional-component">
                 <div class="footer-additional-element">
-                    <p>© All rights reserved.<a href="{{ setting('general.website_url', 'https://erainfotechbd.com/') }}" target="_blank"> Era Infotech Ltd</a>.</p>
-                    <p>Powered by <a href="{{ setting('footer.credit_url', 'https://erainfotechbd.com/') }}" target="_blank">{{ setting('footer.credit_label', 'Era Infotech Ltd.') }}</a></p>
+                    <p>{{ setting('footer.copyright', '© All rights reserved.') }}<a href="{{ setting('general.website_url', 'https://erainfotechbd.com/') }}" target="_blank"> {{ setting('footer.company_label', 'Era Infotech Ltd') }}</a>.</p>
+                    <p>{{ setting('footer.credit_prefix', 'Powered by') }} <a href="{{ setting('footer.credit_url', 'https://erainfotechbd.com/') }}" target="_blank">{{ setting('footer.credit_label', 'Era Infotech Ltd.') }}</a></p>
                     <div class="social-icon-element"><a href="{{ setting('social.facebook', 'https://www.facebook.com/') }}" target="_blank"
                             class="social-icon w-inline-block">
                             <div></div>

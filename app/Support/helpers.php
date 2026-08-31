@@ -72,6 +72,43 @@ if (! function_exists('cms_section_visible')) {
     }
 }
 
+if (! function_exists('page_title')) {
+    /**
+     * The <title> for a page.
+     *
+     * `$default` is the title the export baked into the view, which stands until
+     * someone fills in Meta title on the page's own screen. Before this, every
+     * page hardcoded its title and that field reached nothing.
+     */
+    function page_title(string $slug, string $default = ''): string
+    {
+        return App\Support\Content::pageMeta($slug, 'meta_title') ?? $default;
+    }
+}
+
+if (! function_exists('detail_title')) {
+    /**
+     * The <title> for a detail page.
+     *
+     * A job or service page should be titled by the record in the URL, not by
+     * the template it renders through: the export baked in whichever record it
+     * happened to be taken from ("Brand Expert" on every career page). Falls
+     * back to the page-level Meta title, then the export's literal.
+     */
+    function detail_title(?object $record, string $slug, string $default = ''): string
+    {
+        foreach (['meta_title', 'title', 'name'] as $column) {
+            $value = $record->{$column} ?? null;
+
+            if (filled($value)) {
+                return (string) $value;
+            }
+        }
+
+        return page_title($slug, $default);
+    }
+}
+
 if (! function_exists('setting')) {
     function setting(string $path, mixed $default = null): mixed
     {

@@ -18,8 +18,11 @@ class MenuSeeder extends Seeder
             'name' => 'Primary navigation',
             'description' => 'The links shown across the top bar.',
             'items' => [
-                ['home', '/'],
-                ['about us', '/about'],
+                // Labels as the top bar shows them: since wire_chrome.php the
+                // Primary menu drives both the visible link row and the overlay
+                // menu, and neither has a text-transform to tidy casing.
+                ['Home', '/'],
+                ['About', '/about'],
                 ['Services', '/services'],
                 ['Case study', '/case-studies'],
                 ['Contact', '/contact'],

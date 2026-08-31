@@ -17,6 +17,12 @@ class SettingsSeeder extends Seeder
         $logo = fn (string $file) => Media::where('filename', $file)->value('id');
 
         $groups = [
+            // read by the navbar partial; see tools/wire_chrome.php
+            'navbar' => [
+                ['cta_label', 'BUY TEMPLATE', 'text', 'Header button label'],
+                ['cta_url', '/contact', 'text', 'Header button link'],
+                ['dropdown_label', 'Other page', 'text', 'Mega-menu toggle label'],
+            ],
             'general' => [
                 ['site_name', 'ERA Infotech Ltd.', 'text', 'Site name'],
                 ['tagline', 'Marketing Design Agency since 1988', 'text', 'Tagline'],
@@ -35,7 +41,10 @@ class SettingsSeeder extends Seeder
                 ['sales_email', 'sales@erainfotechbd.com', 'text', 'Sales email'],
                 ['office_address', '714 Example location', 'text', 'Office address'],
                 ['sales_address', '715 Example location', 'text', 'Sales address'],
-                ['phone', '', 'text', 'Phone'],
+                ['phone', '+0-000-000-000', 'text', 'Phone'],
+                ['office_label', 'office', 'text', 'Office block heading'],
+                ['sales_label', 'Sales', 'text', 'Sales block heading'],
+                ['address_label', 'Address', 'text', 'Address block heading'],
             ],
             'social' => [
                 ['facebook', 'https://www.facebook.com/', 'url', 'Facebook'],
@@ -45,11 +54,13 @@ class SettingsSeeder extends Seeder
                 ['behance', 'https://www.behance.net/', 'url', 'Behance'],
             ],
             'footer' => [
+                ['credit_prefix', 'Powered by', 'text', 'Credit prefix'],
+                ['company_label', 'Era Infotech Ltd', 'text', 'Company name in the copyright line'],
                 ['headline', 'Ready to elevate your brand with Fables?', 'text', 'Footer headline'],
                 ['cta_label', 'BUY TEMPLATE', 'text', 'Footer button label'],
                 ['cta_url', '/contact', 'url', 'Footer button link'],
                 ['big_text', 'era', 'text', 'Large footer wordmark'],
-                ['copyright', '© All rights reserved. Era Infotech Ltd. Powered by Era Infotech Ltd.', 'text', 'Copyright line'],
+                ['copyright', '© All rights reserved.', 'text', 'Copyright line'],
                 ['credit_label', 'Era Infotech Ltd.', 'text', 'Footer credit name'],
                 ['credit_url', 'https://erainfotechbd.com/', 'url', 'Footer credit link'],
                 ['newsletter_success', 'Thank you! Your submission has been received!', 'text', 'Newsletter success message'],

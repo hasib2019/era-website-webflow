@@ -1,6 +1,6 @@
 @extends('site.layouts.app')
 
-@section('title', 'Home')
+@section('title', page_title('home', 'Home'))
 @section('wf_page', '66485cbdb8fe5b2ef09ac0c2')
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 @section('cursor')

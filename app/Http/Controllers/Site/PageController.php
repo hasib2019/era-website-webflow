@@ -9,6 +9,7 @@ use App\Models\Page;
 use App\Models\Post;
 use App\Models\Service;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\View as ViewFactory;
 
 /**
  * Serves the public marketing site.
@@ -41,6 +42,10 @@ class PageController extends Controller
         // withdrawn; failing open keeps the route serving instead of stranding
         // it behind a flag nobody can reach.
         abort_if($published !== null && ! $published && ! auth()->check(), 404);
+
+        // the head composer reads this to cascade meta description and og:image
+        // from the page's own SEO fields down to the site defaults
+        ViewFactory::share('cmsPageSlug', $slug);
 
         return view('site.pages.' . $slug, $data);
     }

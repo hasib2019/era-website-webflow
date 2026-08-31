@@ -66,6 +66,36 @@ The band's markup shell still renders — emptying its fields is not the same as
 dropping the `<section>`. Removing the element needs a wiring pass that wraps it
 in `@if (cms_section_visible(...))`, which does not exist yet.
 
+### The navbar carries two navigations
+
+`site/partials/navbar.blade.php` renders the Primary menu twice, and until
+`tools/wire_chrome.php` existed only one of them was bound:
+
+| | class | bound by |
+|---|---|---|
+| overlay menu, behind the burger | `nav-main-menu-wrap` | `wire_navbar.php` |
+| the link row visitors actually click | `nav-link-wrap` | `wire_chrome.php` |
+
+Both now loop over `cms_menu('primary')`, so one menu drives both. Neither class
+carries a `text-transform`, so labels render exactly as typed — the seed data was
+changed from `home` / `about us` to `Home` / `About` for that reason.
+
+### Page SEO
+
+`pages.meta_title`, `meta_description` and `og_image_id` reach the markup by three
+different routes, because the head partial offers three different hooks:
+
+| | how |
+|---|---|
+| `<title>` | `page_title($slug, $literal)` in each page's `@section('title', …)`, written by `tools/wire_seo.php` |
+| detail pages | `detail_title($record, $slug, $literal)` — the job or service in the URL wins over the page row |
+| description, og:image | the `$site` composer in `AppServiceProvider`, cascading page → `seo.*` settings → the export's literal |
+
+`$site` is what `site/partials/head.blade.php` has always read. Nothing defined it
+until that composer existed, so `general.favicon_id`, `general.webclip_id`,
+`seo.og_image_id`, `seo.meta_title` and `seo.meta_description` were all editable
+in the dashboard and reached nothing.
+
 ### Field types in use
 
 `text`, `richtext`, `html`, `image`, `icon`, `video`, `url`, `number`, `boolean`

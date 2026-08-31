@@ -1,6 +1,6 @@
 @extends('site.layouts.app')
 
-@section('title', 'Brand Expert')
+@section('title', detail_title($job ?? null, 'career-details', 'Brand Expert'))
 @section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
@@ -79,7 +79,7 @@
                             <div class="application-para-wrap">
                                 <p>{{ cms('career-details.job_details.apply_box_text', 'Please let Advertise know that you found this position on Jobs as a way to support us, so we can keep posting.') }}</p>
                             </div><a data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                href="mailto:applyexamplejob@gmail.com?subject=Job%20Apply"
+                                href="mailto:{{ setting('contact.jobs_email', 'applyexamplejob@gmail.com') }}?subject=Job%20Apply"
                                 class="primary-button w-inline-block" style="border-color: rgba(255, 255, 255, 0.2);">
                                 <div class="button-text-wrap">
                                     <div class="button-text-inner"

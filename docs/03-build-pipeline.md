@@ -166,3 +166,16 @@ The passes all follow one shape:
 6. rebuild and verify.
 
 Register the new script in `tools/build.php` so it runs with everything else.
+
+## Passes that run without the export
+
+`wire_seo.php`, `wire_contact.php`, `wire_chrome.php` and `audit_hardcoded.php`
+set `define('NEEDS_EXPORT', false)` before requiring `config.php`. They only
+rewrite views `convert.php` already produced, so they stay usable on a checkout
+with no export beside it — which is the only way they could be applied here.
+
+All three passes are re-runnable: each checks for its own output before editing,
+so running one twice is a no-op. Verify that property before running any pass out
+of band, because `--verify` cannot run without the export. The check used instead
+is: snapshot every rendered page over HTTP, run the pass, re-render, diff with
+CSRF tokens normalised, and account for every remaining difference.

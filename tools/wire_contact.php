@@ -36,9 +36,18 @@ $edits = [
             '<p><a href="#">{{ setting(\'contact.office_address\', \'714 Example location\') }}</a></p>',
         ],
         [
+            /*
+             * Matched by position, not by the address itself.
+             *
+             * The export shipped hello@edoly.com and the site has since been
+             * given a real one; pinning the pattern to Webflow's placeholder
+             * made the pass silently skip the very field it exists to bind.
+             * $1 carries whatever address is there now, so it becomes the
+             * fallback and the page renders unchanged.
+             */
             'office email',
-            '#<a href="mailto:hello@edoly\.com"(\s+)class="address-link">hello@edoly\.com</a>#',
-            '<a href="mailto:{{ setting(\'contact.email\', \'hello@edoly.com\') }}"$1class="address-link">{{ setting(\'contact.email\', \'hello@edoly.com\') }}</a>',
+            '#<a href="mailto:([^"@{}]+@[^"{}]+)"(\s+)class="address-link">\1</a>#',
+            '<a href="mailto:{{ setting(\'contact.email\', \'$1\') }}"$2class="address-link">{{ setting(\'contact.email\', \'$1\') }}</a>',
         ],
         [
             'sales address',
@@ -46,9 +55,10 @@ $edits = [
             '<p><a href="#">{{ setting(\'contact.sales_address\', \'715 Example location\') }}</a></p>',
         ],
         [
+            // same shape; runs after the office rule, so it takes the next match
             'sales email',
-            '#<a href="mailto:sales@edoly\.com"(\s+)class="address-link">sales@edoly\.com</a>#',
-            '<a href="mailto:{{ setting(\'contact.sales_email\', \'sales@edoly.com\') }}"$1class="address-link">{{ setting(\'contact.sales_email\', \'sales@edoly.com\') }}</a>',
+            '#<a href="mailto:([^"@{}]+@[^"{}]+)"(\s+)class="address-link">\1</a>#',
+            '<a href="mailto:{{ setting(\'contact.sales_email\', \'$1\') }}"$2class="address-link">{{ setting(\'contact.sales_email\', \'$1\') }}</a>',
         ],
         [
             'postal address',

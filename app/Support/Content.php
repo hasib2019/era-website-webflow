@@ -34,6 +34,8 @@ class Content
 
     private static array $menus = [];
 
+    private static array $pages = [];
+
     private static ?array $linkMap = null;
 
     /**
@@ -120,6 +122,36 @@ class Content
         }
 
         return $section['content'][$fieldKey]['value'] ?? '';
+    }
+
+    /** The page row behind a slug, memoised. */
+    public static function page(string $slug): ?Page
+    {
+        if (! array_key_exists($slug, static::$pages)) {
+            static::$pages[$slug] = Page::where('slug', $slug)->first();
+        }
+
+        return static::$pages[$slug];
+    }
+
+    /**
+     * A page's own meta value, or null when it has none.
+     *
+     * Deliberately not cascading here: the title falls back to the template's
+     * literal and the description to the site default, so the decision belongs
+     * to the caller.
+     */
+    public static function pageMeta(string $slug, string $column): ?string
+    {
+        $value = static::page($slug)?->{$column};
+
+        return filled($value) ? (string) $value : null;
+    }
+
+    /** A page's share image, resolved to a URL. */
+    public static function pageImage(string $slug): ?string
+    {
+        return static::mediaUrl(static::page($slug)?->og_image_id);
     }
 
     /** Whether a section should render at all. */
@@ -238,6 +270,7 @@ class Content
         static::$sections = [];
         static::$mediaByFilename = null;
         static::$menus = [];
+        static::$pages = [];
         static::$linkMap = null;
     }
 }
