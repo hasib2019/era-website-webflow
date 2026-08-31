@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ProcessStepController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -98,6 +99,7 @@ Route::middleware('auth')->group(function () {
         'clients' => [ClientController::class, 'clients.manage'],
         'faqs' => [FaqController::class, 'faqs.manage'],
         'stats' => [StatController::class, 'stats.manage'],
+        'process-steps' => [ProcessStepController::class, 'process-steps.manage'],
         'changelog' => [ChangelogController::class, 'changelog.manage'],
     ];
 

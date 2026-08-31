@@ -27,6 +27,7 @@ class RolePermissionSeeder extends Seeder
             'clients.manage' => 'Manage clients',
             'faqs.manage' => 'Manage FAQs',
             'stats.manage' => 'Manage the animated counters',
+            'process-steps.manage' => 'Manage the process steps',
             'changelog.manage' => 'Manage changelog',
         ],
         'Media' => [
@@ -68,7 +69,7 @@ class RolePermissionSeeder extends Seeder
                 'dashboard.view', 'pages.view', 'pages.edit',
                 'services.manage', 'case-studies.manage', 'posts.manage', 'jobs.manage',
                 'testimonials.manage', 'team.manage', 'clients.manage', 'faqs.manage',
-                'changelog.manage', 'stats.manage', 'media.view', 'media.upload', 'media.delete',
+                'changelog.manage', 'stats.manage', 'process-steps.manage', 'media.view', 'media.upload', 'media.delete',
                 'menus.manage', 'messages.view', 'messages.manage',
                 'applications.view', 'subscribers.view', 'settings.manage',
             ],
@@ -80,7 +81,7 @@ class RolePermissionSeeder extends Seeder
                 'dashboard.view', 'pages.view', 'pages.edit',
                 'services.manage', 'case-studies.manage', 'posts.manage', 'jobs.manage',
                 'testimonials.manage', 'team.manage', 'clients.manage', 'faqs.manage',
-                'changelog.manage', 'stats.manage', 'media.view', 'media.upload',
+                'changelog.manage', 'stats.manage', 'process-steps.manage', 'media.view', 'media.upload',
             ],
         ],
         'author' => [

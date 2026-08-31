@@ -30,6 +30,7 @@ return [
         ['label' => 'Clients', 'route' => 'admin.clients.index', 'permission' => 'clients.manage', 'icon' => 'building'],
         ['label' => 'FAQs', 'route' => 'admin.faqs.index', 'permission' => 'faqs.manage', 'icon' => 'question'],
         ['label' => 'Counters', 'route' => 'admin.stats.index', 'permission' => 'stats.manage', 'icon' => 'chart'],
+        ['label' => 'Process steps', 'route' => 'admin.process-steps.index', 'permission' => 'process-steps.manage', 'icon' => 'clock'],
         ['label' => 'Changelog', 'route' => 'admin.changelog.index', 'permission' => 'changelog.manage', 'icon' => 'clock'],
     ],
 
