@@ -17,6 +17,8 @@ $REPEATERS = [
     ['view' => 'home', 'class' => 'our-process-item', 'scope' => 'home', 'model' => 'ProcessStep'],
     ['view' => 'services', 'class' => 'our-process-item', 'scope' => 'service', 'model' => 'ProcessStep'],
     ['view' => 'why-choose-us', 'class' => 'our-process-item', 'scope' => 'why-choose-us', 'model' => 'ProcessStep'],
+    // same shape, different model: the career page repeats Benefit rows
+    ['view' => 'career', 'class' => 'our-benefits-item', 'scope' => 'career', 'model' => 'Benefit'],
 ];
 
 /** Class tokens the first card has that the second one does not. */
@@ -55,6 +57,17 @@ foreach ($REPEATERS as $config) {
         continue;
     }
 
+    /*
+     * Already wired. Like the other passes this one normally runs once, on
+     * freshly converted markup; a second run would wrap its own @foreach in
+     * another one, so a strip that already loops is left alone.
+     */
+    $source = '\\App\\Models\\' . $config['model'] . "::forScope('" . $config['scope'] . "')->ordered()->get()";
+    if (str_contains($html, '@foreach (' . $source . ' as $step)')) {
+        printf("  %-16s %-22s already wired\n", $config['view'], $config['class']);
+        continue;
+    }
+
     $first = substr($html, $run[0][0], $run[0][1] - $run[0][0]);
     $second = substr($html, $run[1][0], $run[1][1] - $run[1][0]);
 
@@ -76,7 +89,7 @@ foreach ($REPEATERS as $config) {
     $item = bind_field($item, 'our-process-item-title', '{{ $step->title }}');
     $item = bind_counter($item, '{{ $step->number }}');
 
-    $source = '\\App\\Models\\' . $config['model'] . "::forScope('" . $config['scope'] . "')->ordered()->get()";
+    // $source computed above, alongside the already-wired check
     $loop = '@foreach (' . $source . ' as $step)' . $item . '@endforeach';
 
     $html = substr($html, 0, $run[0][0]) . $loop . substr($html, end($run)[1]);

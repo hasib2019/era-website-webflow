@@ -28,6 +28,13 @@ $dry = in_array('--dry', $argv, true);
 
 /** page slug => section key => field => [type, value] */
 $FIELDS = [
+    'service-details' => [
+        'why_choose_us' => [
+            'reason_1' => ['text', '1. Proven Expertise'],
+            'reason_2' => ['text', '2. Customized Strategies'],
+            'reason_3' => ['text', '3. direct Communication'],
+        ],
+    ],
     'why-choose-us' => [
         'why_choose_us_hero' => [
             'heading_line_2' => ['text', 'choose us'],

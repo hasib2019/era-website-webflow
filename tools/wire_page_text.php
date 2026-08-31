@@ -46,6 +46,24 @@ $edits = [
         ],
     ],
 
+    'pages/service-details.blade.php' => [
+        [
+            'reason 1',
+            '#(<h2>)1\. Proven Expertise(</h2>)#',
+            '$1{{ cms(\'service-details.why_choose_us.reason_1\', \'1. Proven Expertise\') }}$2',
+        ],
+        [
+            'reason 2',
+            '#(<h2>)2\. Customized Strategies(</h2>)#',
+            '$1{{ cms(\'service-details.why_choose_us.reason_2\', \'2. Customized Strategies\') }}$2',
+        ],
+        [
+            'reason 3',
+            '#(<h2>)3\. direct Communication(</h2>)#',
+            '$1{{ cms(\'service-details.why_choose_us.reason_3\', \'3. direct Communication\') }}$2',
+        ],
+    ],
+
     'pages/why-choose-us.blade.php' => [
         [
             'hero second line',

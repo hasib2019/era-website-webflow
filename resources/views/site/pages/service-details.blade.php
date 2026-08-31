@@ -338,7 +338,7 @@
                                 <div class="why-choose-us-title-wrap">
                                     <div class="text-animation-block"
                                         style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                        <h2>1. Proven Expertise</h2>
+                                        <h2>{{ cms('service-details.why_choose_us.reason_1', '1. Proven Expertise') }}</h2>
                                         <div class="text-overlay" style="will-change: width, height; width: 100%;">
                                         </div>
                                         <div class="text-overlay row-02"
@@ -361,7 +361,7 @@
                                 <div class="why-choose-us-title-wrap">
                                     <div class="text-animation-block"
                                         style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                        <h2>2. Customized Strategies</h2>
+                                        <h2>{{ cms('service-details.why_choose_us.reason_2', '2. Customized Strategies') }}</h2>
                                         <div class="text-overlay" style="will-change: width, height; width: 100%;">
                                         </div>
                                         <div class="text-overlay row-02"
@@ -384,7 +384,7 @@
                                 <div class="why-choose-us-title-wrap">
                                     <div class="text-animation-block"
                                         style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                        <h2>3. direct Communication</h2>
+                                        <h2>{{ cms('service-details.why_choose_us.reason_3', '3. direct Communication') }}</h2>
                                         <div class="text-overlay" style="will-change: width, height; width: 100%;">
                                         </div>
                                         <div class="text-overlay row-02"

@@ -25,6 +25,7 @@ $data = [
     'build_pages_json.php' => 'page sections -> database/data/pages.json',
     'extract_why_choose_us.php' => 'fills in the one page the inventory missed',
     'decode_entities.php' => 'normalises &amp; and &nbsp; in page copy',
+    'seed_page_fields.php' => 'declares the section fields wire_page_text.php binds',
 ];
 
 /**

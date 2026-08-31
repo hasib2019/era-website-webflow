@@ -54,6 +54,10 @@ function stripBlade(string $html): string
     $html = preg_replace('/<script\b[^>]*>.*?<\/script>/is', '', $html);
     $html = preg_replace('/<style\b[^>]*>.*?<\/style>/is', '', $html);
 
+    // Blade directives, so a @foreach argument is not read as page copy
+    $html = preg_replace('/@(foreach|forelse|if|elseif|unless|php|include|each)\s*\(([^()]|\([^()]*\))*\)/', '~~', $html);
+    $html = preg_replace('/@(endforeach|endforelse|endif|endunless|endphp|empty|else)/', '~~', $html);
+
     return $html;
 }
 
