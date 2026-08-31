@@ -70,8 +70,11 @@ Route::middleware('auth')->group(function () {
         Route::put('media/{medium}', [MediaController::class, 'update'])->name('media.update');
     });
 
-    Route::delete('media/{medium}', [MediaController::class, 'destroy'])
-        ->middleware('permission:media.delete')->name('media.destroy');
+    Route::middleware('permission:media.delete')->group(function () {
+        // no {medium}, so it cannot be mistaken for a single-file delete
+        Route::delete('media', [MediaController::class, 'bulkDestroy'])->name('media.bulk-destroy');
+        Route::delete('media/{medium}', [MediaController::class, 'destroy'])->name('media.destroy');
+    });
 
     // ---------------------------------------------------------------- menus
     Route::middleware('permission:menus.manage')->group(function () {

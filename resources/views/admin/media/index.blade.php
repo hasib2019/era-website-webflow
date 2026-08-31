@@ -17,7 +17,7 @@
                         class="mt-1.5 block w-full text-sm text-slate-600 file:mr-3 file:rounded-lg file:border-0 file:bg-brand-50 file:px-3.5 file:py-2 file:text-sm file:font-semibold file:text-brand-700 hover:file:bg-brand-100">
                     <p class="mt-1 text-xs text-slate-400">
                         Images, MP4/WebM video and PDF. Select several at once to upload in bulk &mdash;
-                        up to 20 files, {{ $maxUploadMb }} MB each.
+                        up to {{ $maxFiles }} files, {{ $maxUploadMb }} MB each.
                     </p>
                 </div>
                 <div class="w-56">
@@ -57,9 +57,41 @@
         </select>
     </form>
 
+    @if (auth()->user()->hasPermission('media.delete') && $files->count())
+        <div class="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl bg-white px-4 py-3 shadow-sm ring-1 ring-slate-900/5">
+            <label class="flex items-center gap-2 text-sm font-medium text-slate-700">
+                <input type="checkbox" data-bulk-all
+                    class="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500">
+                Select all on this page
+            </label>
+            <span data-bulk-count class="text-xs text-slate-400">None selected</span>
+
+            {{-- Standalone on purpose. Each card already contains its own update and
+                 delete forms, and forms cannot nest, so the checkboxes join this one
+                 through their form="media-bulk" attribute instead of by ancestry. --}}
+            <form id="media-bulk" method="POST" action="{{ route('admin.media.bulk-destroy') }}"
+                class="ml-auto" data-confirm="Delete the selected files? Pages using them will lose the image."
+                data-confirm-label="Delete">
+                @csrf
+                @method('DELETE')
+                <button type="submit" data-bulk-submit disabled
+                    class="rounded-lg bg-red-600 px-3.5 py-2 text-sm font-semibold text-white transition hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400">
+                    Delete selected
+                </button>
+            </form>
+        </div>
+    @endif
+
     <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
         @forelse ($files as $file)
-            <figure class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5">
+            <figure class="relative overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5">
+                @if (auth()->user()->hasPermission('media.delete'))
+                    <label class="absolute left-2 top-2 z-10 flex cursor-pointer items-center rounded-md bg-white/90 p-1 shadow-sm ring-1 ring-slate-900/10 backdrop-blur">
+                        <input type="checkbox" form="media-bulk" name="ids[]" value="{{ $file->id }}" data-bulk-item
+                            aria-label="Select {{ $file->original_name }}"
+                            class="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500">
+                    </label>
+                @endif
                 <div class="flex aspect-4/3 items-center justify-center bg-slate-100">
                     @if ($file->is_image)
                         <img src="{{ $file->url }}" alt="{{ $file->alt }}" loading="lazy" class="h-full w-full object-cover">

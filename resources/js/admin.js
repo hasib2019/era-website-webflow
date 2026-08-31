@@ -592,6 +592,66 @@ function initMediaPicker(dialog) {
     });
 }
 
+
+/* ---------------------------------------------------------- bulk selection */
+
+/**
+ * Checkbox selection for the media grid.
+ *
+ * The boxes live inside each card but belong to the toolbar's form through
+ * their form="media-bulk" attribute, so nothing here has to move them around;
+ * it only keeps the count, the select-all state and the confirm wording in
+ * step with what is ticked.
+ */
+function initBulkSelection() {
+    const form = document.getElementById('media-bulk');
+    const all = document.querySelector('[data-bulk-all]');
+    const counter = document.querySelector('[data-bulk-count]');
+    const submit = document.querySelector('[data-bulk-submit]');
+
+    if (!form || !submit) return;
+
+    const boxes = () => [...document.querySelectorAll('[data-bulk-item]')];
+
+    function sync() {
+        const items = boxes();
+        const picked = items.filter((b) => b.checked);
+
+        submit.disabled = picked.length === 0;
+
+        if (counter) {
+            counter.textContent = picked.length
+                ? `${picked.length} of ${items.length} selected`
+                : 'None selected';
+        }
+
+        if (all) {
+            all.checked = picked.length > 0 && picked.length === items.length;
+            // the in-between state, so "select all" is not misreported as empty
+            all.indeterminate = picked.length > 0 && picked.length < items.length;
+        }
+
+        // the toast confirm reads this at submit time
+        form.dataset.confirm =
+            picked.length === 1
+                ? 'Delete 1 file? Pages using it will lose the image.'
+                : `Delete ${picked.length} files? Pages using them will lose the image.`;
+    }
+
+    all?.addEventListener('change', () => {
+        boxes().forEach((b) => {
+            b.checked = all.checked;
+        });
+        sync();
+    });
+
+    document.addEventListener('change', (e) => {
+        if (e.target.matches('[data-bulk-item]')) sync();
+    });
+
+    sync();
+}
+
 /* ------------------------------------------------------------------- boot */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -643,6 +703,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // media grid multi-select
+    initBulkSelection();
 
     // drag-to-arrange navigation
     document.querySelectorAll('[data-menu-board]').forEach(initMenuBoard);

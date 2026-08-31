@@ -25,8 +25,16 @@ class MediaController extends Controller
      */
     private const ROOT = 'era';
 
-    /** PHP's own max_file_uploads is the real ceiling; stay at or under it. */
-    private const MAX_FILES = 20;
+    /**
+     * How many files one upload may carry.
+     *
+     * php.ini's max_file_uploads is the real ceiling and it is enforced before
+     * Laravel ever sees the request: PHP simply drops everything past the Nth
+     * file, with no error anywhere. maxFiles() below therefore clamps to it, so
+     * a server whose ini was never raised rejects the extras with a message
+     * instead of swallowing them.
+     */
+    private const MAX_FILES = 50;
 
     public function index(Request $request)
     {
@@ -48,13 +56,14 @@ class MediaController extends Controller
             'files' => $query->paginate(36)->withQueryString(),
             'folders' => Media::query()->distinct()->orderBy('folder')->pluck('folder'),
             'maxUploadMb' => (int) floor(self::maxKilobytes() / 1024),
+            'maxFiles' => self::maxFiles(),
         ]);
     }
 
     public function store(Request $request): RedirectResponse|JsonResponse
     {
         $request->validate([
-            'files' => ['required', 'array', 'max:' . self::MAX_FILES],
+            'files' => ['required', 'array', 'max:' . self::maxFiles()],
             'files.*' => ['file', 'mimes:' . self::MIMES, 'max:' . self::maxKilobytes()],
             'folder' => ['nullable', 'string', 'max:60'],
         ]);
@@ -152,6 +161,44 @@ class MediaController extends Controller
 
     public function destroy(Media $medium): RedirectResponse
     {
+        ActivityLogger::log('deleted', $medium, 'Deleted media: ' . $medium->path);
+        $this->forget($medium);
+
+        return back()->with('success', 'File deleted.');
+    }
+
+    /**
+     * Delete a whole selection in one go.
+     *
+     * Files are removed one at a time rather than with a mass query, because
+     * each row owns bytes on disk and a set of srcset variants that a bulk
+     * delete on the table would strand in public/era forever.
+     */
+    public function bulkDestroy(Request $request): RedirectResponse
+    {
+        $ids = $request->validate([
+            'ids' => ['required', 'array'],
+            'ids.*' => ['integer'],
+        ])['ids'];
+
+        $files = Media::whereIn('id', $ids)->get();
+
+        if ($files->isEmpty()) {
+            return back()->with('warning', 'Nothing was selected.');
+        }
+
+        foreach ($files as $medium) {
+            $this->forget($medium);
+        }
+
+        ActivityLogger::log('deleted', null, 'Deleted ' . $files->count() . ' media file(s)');
+
+        return back()->with('success', $files->count() . ' file(s) deleted.');
+    }
+
+    /** Removes one file's bytes, its variants and its row. */
+    private function forget(Media $medium): void
+    {
         $disk = Storage::disk($medium->disk);
         $disk->delete($medium->path);
 
@@ -159,10 +206,7 @@ class MediaController extends Controller
             $disk->delete($variant);
         }
 
-        ActivityLogger::log('deleted', $medium, 'Deleted media: ' . $medium->filename);
         $medium->delete();
-
-        return back()->with('success', 'File deleted.');
     }
 
     /**
@@ -215,6 +259,14 @@ class MediaController extends Controller
     {
         return Storage::disk('public')->exists($path)
             || Media::where('disk', 'public')->where('path', $path)->exists();
+    }
+
+    /** The file-count cap, never above what php.ini will actually accept. */
+    private static function maxFiles(): int
+    {
+        $ini = (int) ini_get('max_file_uploads');
+
+        return $ini > 0 ? min(self::MAX_FILES, $ini) : self::MAX_FILES;
     }
 
     /**
