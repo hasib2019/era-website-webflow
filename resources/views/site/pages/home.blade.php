@@ -240,63 +240,23 @@
                 <div class="case-study-element">
                     <div class="w-dyn-list">
                         <div role="list" class="w-dyn-items">
-                            <div role="listitem" class="case-study-collection-item w-dyn-item"
+                            @foreach (\App\Models\CaseStudy::published()->ordered()->take(3)->get() as $study)<div role="listitem" class="case-study-collection-item w-dyn-item"
                                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management"
+                                <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="{{ route('case-studies.show', $study->slug) }}"
                                     class="case-study-image-wrap w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}"><img
-                                        src="/era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp"
+                                        src="{{ $study->image?->url }}"
                                         loading="lazy" alt=""
-                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                        srcset="/era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-500.webp 500w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-800.webp 800w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1080.webp 1080w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1600.webp 1600w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp 1634w"
                                         class="full-image"></a>
                                 <div id="w-node-_0815d970-abde-a912-bf09-59715d3d53e9-f09ac0c2"
                                     class="case-study-content-block">
                                     <div class="case-study-content-wrap">
-                                        <div class="case-study-title">Event planning and management</div>
+                                        <div class="case-study-title">{{ $study->title }}</div>
                                         <div class="case-study-subtitle-wrap">
-                                            <p class="case-study-subtitle">Crafting impactful events </p>
+                                            <p class="case-study-subtitle">{{ $study->subtitle }}</p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div role="listitem" class="case-study-collection-item w-dyn-item"
-                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management"
-                                    class="case-study-image-wrap w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}"><img
-                                        src="/era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp"
-                                        loading="lazy" alt=""
-                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                        srcset="/era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-500.webp 500w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-800.webp 800w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1080.webp 1080w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1600.webp 1600w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp 1634w"
-                                        class="full-image"></a>
-                                <div id="w-node-_0815d970-abde-a912-bf09-59715d3d53e9-f09ac0c2"
-                                    class="case-study-content-block">
-                                    <div class="case-study-content-wrap">
-                                        <div class="case-study-title">A targeted digital campaign</div>
-                                        <div class="case-study-subtitle-wrap">
-                                            <p class="case-study-subtitle">Boosting Sales for company</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div role="listitem" class="case-study-collection-item w-dyn-item"
-                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management"
-                                    class="case-study-image-wrap w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}"><img
-                                        src="/era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3.webp"
-                                        loading="lazy" alt=""
-                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                        srcset="/era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-500.webp 500w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-800.webp 800w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-1080.webp 1080w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-1600.webp 1600w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3.webp 1634w"
-                                        class="full-image"></a>
-                                <div id="w-node-_0815d970-abde-a912-bf09-59715d3d53e9-f09ac0c2"
-                                    class="case-study-content-block">
-                                    <div class="case-study-content-wrap">
-                                        <div class="case-study-title">A multi-channel marketing strategy</div>
-                                        <div class="case-study-subtitle-wrap">
-                                            <p class="case-study-subtitle">Boosting E-commerce Sales</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>@endforeach
                         </div>
                     </div>
                     <div data-w-id="24d703d0-1aae-2fb7-d964-d55807bb8f67"
@@ -456,7 +416,7 @@
                 <div class="blog-element">
                     <div class="w-dyn-list">
                         <div role="list" class="w-dyn-items">
-                            <div role="listitem" class="blog-collection-item w-dyn-item"
+                            @foreach (\App\Models\Post::published()->latestFirst()->take(2)->get() as $post)<div role="listitem" class="blog-collection-item w-dyn-item"
                                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                 <div class="blog-item">
                                     <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92cd-635c92bf"
@@ -465,25 +425,22 @@
                                             <div class="blog-info"><img
                                                     src="/era/media/webflow/66507334b279af4803571b92_calender-icon.png"
                                                     loading="lazy" alt="">
-                                                <p class="font-weight-medium">Jul 10, 2024</p>
+                                                <p class="font-weight-medium">{{ $post->published_at?->format('M j, Y') }}</p>
                                             </div>
                                             <div class="blog-info"><img
                                                     src="/era/media/webflow/66507334a301d18ef9aa933f_time-icon.png"
                                                     loading="lazy" alt="">
                                                 <div class="blog-info-content-wrap">
-                                                    <p class="font-weight-medium">6</p>
-                                                    <p class="font-weight-medium">min read</p>
+                                                    <p class="font-weight-medium">{{ $post->read_time }}</p>
+                                                    <p class="font-weight-medium">{{ $post->read_time_unit }}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3 class="blog-title" style="color: rgb(120, 120, 120);">Navigating search
-                                            algorithms for regional impact</h3>
+                                        <h3 class="blog-title" style="color: rgb(120, 120, 120);">{{ $post->title }}</h3>
                                         <div class="blog-post-summary-wrap">
-                                            <p class="blog-post-summary">Lorem ipsum dolor sit amet, consecteturor
-                                                adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor. Eget
-                                                phasellus ideirs. </p>
+                                            <p class="blog-post-summary">{{ $post->summary }}</p>
                                         </div><a {!! nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                            href="/blog/navigating-search-algorithms-for-regional-impact"
+                                            href="{{ route('blog.show', $post->slug) }}"
                                             class="primary-button w-inline-block{{ nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? ' w--current' : '' }}"
                                             style="border-color: rgba(255, 255, 255, 0.2);">
                                             <div class="button-text-wrap">
@@ -508,76 +465,13 @@
                                     </div>
                                     <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92de-635c92bf"
                                         class="blog-thumbnail-image-wrap"><img
-                                            src="/era/media/webflow/66876a195c4a30e89f362732_blog-image-1.webp"
+                                            src="{{ $post->image?->url }}"
                                             loading="lazy" alt="This is a nice image"
-                                            sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 1439px) 40vw, (max-width: 1919px) 41vw, 44vw"
-                                            srcset="/era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-500.webp 500w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-800.webp 800w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-1080.webp 1080w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1.webp 1240w"
                                             class="blog-image"
                                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                     </div>
                                 </div>
-                            </div>
-                            <div role="listitem" class="blog-collection-item w-dyn-item"
-                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                <div class="blog-item">
-                                    <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92cd-635c92bf"
-                                        class="blog-content-wrap">
-                                        <div class="blog-info-wrap blog-item-info-wrap">
-                                            <div class="blog-info"><img
-                                                    src="/era/media/webflow/66507334b279af4803571b92_calender-icon.png"
-                                                    loading="lazy" alt="">
-                                                <p class="font-weight-medium">Jul 10, 2024</p>
-                                            </div>
-                                            <div class="blog-info"><img
-                                                    src="/era/media/webflow/66507334a301d18ef9aa933f_time-icon.png"
-                                                    loading="lazy" alt="">
-                                                <div class="blog-info-content-wrap">
-                                                    <p class="font-weight-medium">6</p>
-                                                    <p class="font-weight-medium">min read</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3 class="blog-title" style="color: rgb(120, 120, 120);">How to increase your
-                                            twitter reach by this simple trick</h3>
-                                        <div class="blog-post-summary-wrap">
-                                            <p class="blog-post-summary">Lorem ipsum dolor sit amet, consecteturor
-                                                adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor. Eget
-                                                phasellus ideirs.</p>
-                                        </div><a {!! nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                            href="/blog/navigating-search-algorithms-for-regional-impact"
-                                            class="primary-button w-inline-block{{ nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? ' w--current' : '' }}"
-                                            style="border-color: rgba(255, 255, 255, 0.2);">
-                                            <div class="button-text-wrap">
-                                                <div class="button-text-inner"
-                                                    style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="text-block">READ ARTICLE</div>
-                                                    <div>READ ARTICLE</div>
-                                                </div>
-                                            </div>
-                                            <div class="button-icon-element">
-                                                <div class="button-icon-wrap"
-                                                    style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="button-icon-inner"><img
-                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                            loading="lazy" alt="" class="button-iocn"></div>
-                                                    <div class="button-icon-inner"><img
-                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                            loading="lazy" alt="" class="button-iocn"></div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92de-635c92bf"
-                                        class="blog-thumbnail-image-wrap"><img
-                                            src="/era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2.webp"
-                                            loading="lazy" alt="This is a nice image"
-                                            sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 1439px) 40vw, (max-width: 1919px) 41vw, 44vw"
-                                            srcset="/era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-500.webp 500w, /era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-800.webp 800w, /era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-1080.webp 1080w, /era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2.webp 1240w"
-                                            class="blog-image"
-                                            style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                    </div>
-                                </div>
-                            </div>
+                            </div>@endforeach
                         </div>
                     </div>
                 </div>

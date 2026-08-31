@@ -339,21 +339,19 @@
                     class="jobs-collection-wrap">
                     <div class="w-dyn-list">
                         <div role="list" class="w-dyn-items">
-                            <div role="listitem" class="job-collection-item w-dyn-item">
+                            @foreach (\App\Models\JobOpening::published()->ordered()->get() as $job)<div role="listitem" class="job-collection-item w-dyn-item">
                                 <div class="job-item-inner">
                                     <div class="job-item-info-wrap">
-                                        <div class="job-item-title" style="color: rgb(120, 120, 120);">Social media
-                                            marketer</div>
+                                        <div class="job-item-title" style="color: rgb(120, 120, 120);">{{ $job->title }}</div>
                                         <div class="job-info">
-                                            <div class="job-info-text" style="color: rgb(120, 120, 120);">new york</div>
-                                            <div class="job-info-text" style="color: rgb(120, 120, 120);">Full time
-                                            </div>
+                                            <div class="job-info-text" style="color: rgb(120, 120, 120);">{{ $job->location }}</div>
+                                            <div class="job-info-text" style="color: rgb(120, 120, 120);">{{ $job->employment_type }}</div>
                                         </div>
                                     </div>
                                     <div id="w-node-_517743ec-d544-e9b2-871d-67e7f1a70837-f09ac0c6"
                                         class="job-apply-button-wrap"><a {!! nav_active('/career/brand-expert') ? 'aria-current="page"' : '' !!}
                                             data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                            href="/career/brand-expert" class="primary-button w-inline-block{{ nav_active('/career/brand-expert') ? ' w--current' : '' }}"
+                                            href="{{ route('career.show', $job->slug) }}" class="primary-button w-inline-block{{ nav_active('/career/brand-expert') ? ' w--current' : '' }}"
                                             style="border-color: rgba(255, 255, 255, 0.2);">
                                             <div class="button-text-wrap">
                                                 <div class="button-text-inner"
@@ -375,118 +373,7 @@
                                             </div>
                                         </a></div>
                                 </div>
-                            </div>
-                            <div role="listitem" class="job-collection-item w-dyn-item">
-                                <div class="job-item-inner">
-                                    <div class="job-item-info-wrap">
-                                        <div class="job-item-title" style="color: rgb(120, 120, 120);">Senior SEO expert
-                                        </div>
-                                        <div class="job-info">
-                                            <div class="job-info-text" style="color: rgb(120, 120, 120);">new york</div>
-                                            <div class="job-info-text" style="color: rgb(120, 120, 120);">Full time
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="w-node-_517743ec-d544-e9b2-871d-67e7f1a70837-f09ac0c6"
-                                        class="job-apply-button-wrap"><a {!! nav_active('/career/brand-expert') ? 'aria-current="page"' : '' !!}
-                                            data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                            href="/career/brand-expert" class="primary-button w-inline-block{{ nav_active('/career/brand-expert') ? ' w--current' : '' }}"
-                                            style="border-color: rgba(255, 255, 255, 0.2);">
-                                            <div class="button-text-wrap">
-                                                <div class="button-text-inner"
-                                                    style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="text-block">Apply now</div>
-                                                    <div>Apply now</div>
-                                                </div>
-                                            </div>
-                                            <div class="button-icon-element">
-                                                <div class="button-icon-wrap"
-                                                    style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="button-icon-inner"><img
-                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                            loading="lazy" alt="" class="button-iocn"></div>
-                                                    <div class="button-icon-inner"><img
-                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                            loading="lazy" alt="" class="button-iocn"></div>
-                                                </div>
-                                            </div>
-                                        </a></div>
-                                </div>
-                            </div>
-                            <div role="listitem" class="job-collection-item w-dyn-item">
-                                <div class="job-item-inner">
-                                    <div class="job-item-info-wrap">
-                                        <div class="job-item-title" style="color: rgb(120, 120, 120);">Content writer
-                                        </div>
-                                        <div class="job-info">
-                                            <div class="job-info-text" style="color: rgb(120, 120, 120);">new york</div>
-                                            <div class="job-info-text" style="color: rgb(120, 120, 120);">Full time
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="w-node-_517743ec-d544-e9b2-871d-67e7f1a70837-f09ac0c6"
-                                        class="job-apply-button-wrap"><a {!! nav_active('/career/brand-expert') ? 'aria-current="page"' : '' !!}
-                                            data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d" href="/career/brand-expert"
-                                            class="primary-button w-inline-block{{ nav_active('/career/brand-expert') ? ' w--current' : '' }}"
-                                            style="border-color: rgba(255, 255, 255, 0.2);">
-                                            <div class="button-text-wrap">
-                                                <div class="button-text-inner"
-                                                    style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="text-block">Apply now</div>
-                                                    <div>Apply now</div>
-                                                </div>
-                                            </div>
-                                            <div class="button-icon-element">
-                                                <div class="button-icon-wrap"
-                                                    style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="button-icon-inner"><img
-                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                            loading="lazy" alt="" class="button-iocn"></div>
-                                                    <div class="button-icon-inner"><img
-                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                            loading="lazy" alt="" class="button-iocn"></div>
-                                                </div>
-                                            </div>
-                                        </a></div>
-                                </div>
-                            </div>
-                            <div role="listitem" class="job-collection-item w-dyn-item">
-                                <div class="job-item-inner">
-                                    <div class="job-item-info-wrap">
-                                        <div class="job-item-title" style="color: rgb(120, 120, 120);">Brand expert
-                                        </div>
-                                        <div class="job-info">
-                                            <div class="job-info-text" style="color: rgb(120, 120, 120);">new york</div>
-                                            <div class="job-info-text" style="color: rgb(120, 120, 120);">Full time
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="w-node-_517743ec-d544-e9b2-871d-67e7f1a70837-f09ac0c6"
-                                        class="job-apply-button-wrap"><a {!! nav_active('/career/brand-expert') ? 'aria-current="page"' : '' !!}
-                                            data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d" href="/career/brand-expert"
-                                            class="primary-button w-inline-block{{ nav_active('/career/brand-expert') ? ' w--current' : '' }}"
-                                            style="border-color: rgba(255, 255, 255, 0.2);">
-                                            <div class="button-text-wrap">
-                                                <div class="button-text-inner"
-                                                    style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="text-block">Apply now</div>
-                                                    <div>Apply now</div>
-                                                </div>
-                                            </div>
-                                            <div class="button-icon-element">
-                                                <div class="button-icon-wrap"
-                                                    style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="button-icon-inner"><img
-                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                            loading="lazy" alt="" class="button-iocn"></div>
-                                                    <div class="button-icon-inner"><img
-                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                            loading="lazy" alt="" class="button-iocn"></div>
-                                                </div>
-                                            </div>
-                                        </a></div>
-                                </div>
-                            </div>
+                            </div>@endforeach
                         </div>
                     </div>
                 </div>

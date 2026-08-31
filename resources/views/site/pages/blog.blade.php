@@ -70,7 +70,7 @@
                 <div class="feature-blog-element">
                     <div class="w-dyn-list">
                         <div role="list" class="w-dyn-items">
-                            <div data-w-id="7df832da-86bf-45ef-9fae-01ffc62761b2"
+                            @foreach (\App\Models\Post::published()->where('is_featured', true)->latestFirst()->take(1)->get() as $post)<div data-w-id="7df832da-86bf-45ef-9fae-01ffc62761b2"
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                                 role="listitem" class="feature-blog-collection-item w-dyn-item">
                                 <div class="blog-item">
@@ -78,27 +78,24 @@
                                         class="blog-content-wrap">
                                         <div class="blog-info-wrap blog-item-info-wrap">
                                             <div class="blog-info-inner blog-item-info-inner"><img
-                                                    src="/era/media/webflow/66507334b279af4803571b92_calender-icon.png"
+                                                    src="{{ $post->image?->url }}"
                                                     loading="lazy" alt="">
-                                                <p class="blog-info-text">Jul 10, 2024</p>
+                                                <p class="blog-info-text">{{ $post->published_at?->format('M j, Y') }}</p>
                                             </div>
                                             <div class="blog-info-inner blog-item-info-inner"><img
                                                     src="/era/media/webflow/66507334a301d18ef9aa933f_time-icon.png"
                                                     loading="lazy" alt="">
                                                 <div class="blog-info-content-wrap">
-                                                    <p class="blog-info-text">6</p>
-                                                    <p class="blog-info-text">min read</p>
+                                                    <p class="blog-info-text">{{ $post->read_time }}</p>
+                                                    <p class="blog-info-text">{{ $post->read_time_unit }}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3 class="blog-title" style="color: rgb(120, 120, 120);">Navigating search
-                                            algorithms for regional impact</h3>
+                                        <h3 class="blog-title" style="color: rgb(120, 120, 120);">{{ $post->title }}</h3>
                                         <div class="blog-post-summary-wrap">
-                                            <p class="blog-post-summary">Lorem ipsum dolor sit amet, consecteturor
-                                                adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor.
-                                                Eget phasellus ideirs. </p>
+                                            <p class="blog-post-summary">{{ $post->summary }}</p>
                                         </div><a {!! nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                            href="/blog/navigating-search-algorithms-for-regional-impact"
+                                            href="{{ route('blog.show', $post->slug) }}"
                                             class="primary-button w-inline-block{{ nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? ' w--current' : '' }}"
                                             style="border-color: rgba(255, 255, 255, 0.2);">
                                             <div class="button-text-wrap">
@@ -125,13 +122,11 @@
                                         class="blog-thumbnail-image-wrap"><img
                                             src="/era/media/webflow/66876a195c4a30e89f362732_blog-image-1.webp"
                                             loading="lazy" alt="This is a nice image"
-                                            sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 1439px) 40vw, (max-width: 1919px) 41vw, 44vw"
-                                            srcset="/era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-500.webp 500w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-800.webp 800w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-1080.webp 1080w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1.webp 1240w"
                                             class="blog-image"
                                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                     </div>
                                 </div>
-                            </div>
+                            </div>@endforeach
                         </div>
                     </div>
                 </div>

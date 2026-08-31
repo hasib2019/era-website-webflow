@@ -196,7 +196,7 @@
                 <div class="blog-element">
                     <div class="w-dyn-list">
                         <div role="list" class="w-dyn-items">
-                            <div role="listitem" class="blog-collection-item w-dyn-item"
+                            @foreach (\App\Models\Post::published()->latestFirst()->take(2)->get() as $post)<div role="listitem" class="blog-collection-item w-dyn-item"
                                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                 <div class="blog-item">
                                     <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92cd-635c92bf"
@@ -205,7 +205,7 @@
                                             <div class="blog-info"><img
                                                     src="/era/media/webflow/66507334b279af4803571b92_calender-icon.png"
                                                     loading="lazy" alt="">
-                                                <p class="font-weight-medium">Jul 10, 2024</p>
+                                                <p class="font-weight-medium">{{ $post->published_at?->format('M j, Y') }}</p>
                                             </div>
                                             <div class="blog-info"><img
                                                     src="/era/media/webflow/66507334a301d18ef9aa933f_time-icon.png"
@@ -218,11 +218,9 @@
                                         </div>
                                         <h3 class="blog-title" style="color: rgb(120, 120, 120);">{{ ($post->title) ?: cms('blog-details.blog_details_hero.post_title', 'Navigating search algorithms for regional impact') }}</h3>
                                         <div class="blog-post-summary-wrap">
-                                            <p class="blog-post-summary">Lorem ipsum dolor sit amet, consecteturor
-                                                adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor.
-                                                Eget phasellus ideirs. </p>
+                                            <p class="blog-post-summary">{{ $post->summary }}</p>
                                         </div><a {!! nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                            href="/blog/navigating-search-algorithms-for-regional-impact" class="primary-button w-inline-block{{ nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? ' w--current' : '' }}"
+                                            href="{{ route('blog.show', $post->slug) }}" class="primary-button w-inline-block{{ nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? ' w--current' : '' }}"
                                             style="border-color: rgba(255, 255, 255, 0.2);">
                                             <div class="button-text-wrap">
                                                 <div class="button-text-inner"
@@ -246,76 +244,13 @@
                                     </div>
                                     <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92de-635c92bf"
                                         class="blog-thumbnail-image-wrap"><img
-                                            src="/era/media/webflow/66876a195c4a30e89f362732_blog-image-1.webp"
+                                            src="{{ $post->image?->url }}"
                                             loading="lazy" alt="This is a nice image"
-                                            sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 1439px) 40vw, (max-width: 1919px) 41vw, 44vw"
-                                            srcset="/era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-500.webp 500w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-800.webp 800w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-1080.webp 1080w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1.webp 1240w"
                                             class="blog-image"
                                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                     </div>
                                 </div>
-                            </div>
-                            <div role="listitem" class="blog-collection-item w-dyn-item"
-                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                <div class="blog-item">
-                                    <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92cd-635c92bf"
-                                        class="blog-content-wrap">
-                                        <div class="blog-info-wrap blog-item-info-wrap">
-                                            <div class="blog-info"><img
-                                                    src="/era/media/webflow/66507334b279af4803571b92_calender-icon.png"
-                                                    loading="lazy" alt="">
-                                                <p class="font-weight-medium">Jul 10, 2024</p>
-                                            </div>
-                                            <div class="blog-info"><img
-                                                    src="/era/media/webflow/66507334a301d18ef9aa933f_time-icon.png"
-                                                    loading="lazy" alt="">
-                                                <div class="blog-info-content-wrap">
-                                                    <p class="font-weight-medium">{{ ($post->read_time) ?: cms('blog-details.blog_details_hero.read_time_value', '6') }}</p>
-                                                    <p class="font-weight-medium">{{ ($post->read_time_unit) ?: cms('blog-details.blog_details_hero.read_time_label', 'min read') }}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3 class="blog-title" style="color: rgb(120, 120, 120);">How to increase
-                                            your twitter reach by this simple trick</h3>
-                                        <div class="blog-post-summary-wrap">
-                                            <p class="blog-post-summary">Lorem ipsum dolor sit amet, consecteturor
-                                                adipiscing elit. Tincidunt donec vulputate ipsum erat urna auctor.
-                                                Eget phasellus ideirs.</p>
-                                        </div><a {!! nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                            href="/blog/navigating-search-algorithms-for-regional-impact"
-                                            class="primary-button w-inline-block{{ nav_active('/blog/navigating-search-algorithms-for-regional-impact') ? ' w--current' : '' }}"
-                                            style="border-color: rgba(255, 255, 255, 0.2);">
-                                            <div class="button-text-wrap">
-                                                <div class="button-text-inner"
-                                                    style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="text-block">READ ARTICLE</div>
-                                                    <div>READ ARTICLE</div>
-                                                </div>
-                                            </div>
-                                            <div class="button-icon-element">
-                                                <div class="button-icon-wrap"
-                                                    style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="button-icon-inner"><img
-                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                            loading="lazy" alt="" class="button-iocn"></div>
-                                                    <div class="button-icon-inner"><img
-                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                            loading="lazy" alt="" class="button-iocn"></div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92de-635c92bf"
-                                        class="blog-thumbnail-image-wrap"><img
-                                            src="/era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2.webp"
-                                            loading="lazy" alt="This is a nice image"
-                                            sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 1439px) 40vw, (max-width: 1919px) 41vw, 44vw"
-                                            srcset="/era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-500.webp 500w, /era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-800.webp 800w, /era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-1080.webp 1080w, /era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2.webp 1240w"
-                                            class="blog-image"
-                                            style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                    </div>
-                                </div>
-                            </div>
+                            </div>@endforeach
                         </div>
                     </div>
                 </div>
