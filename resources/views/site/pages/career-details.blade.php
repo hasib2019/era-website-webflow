@@ -92,10 +92,10 @@
                                     <div class="button-icon-wrap"
                                         style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                         <div class="button-icon-inner"><img
-                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                 loading="lazy" alt="" class="button-iocn"></div>
                                         <div class="button-icon-inner"><img
-                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                 loading="lazy" alt="" class="button-iocn"></div>
                                     </div>
                                 </div>
@@ -171,10 +171,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -209,10 +209,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -247,10 +247,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -285,10 +285,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -323,10 +323,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -369,9 +369,9 @@
                         </div>
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
-                        <img src="{{ cms_image('career-details.cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
+                        <img src="{{ cms_image('career-details.cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
-                            srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                            srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                         href="/contact" target="_blank"
                         class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}" style="border-color: rgba(255, 255, 255, 0.2);">
@@ -386,10 +386,10 @@
                             <div class="button-icon-wrap"
                                 style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                             </div>
                         </div>

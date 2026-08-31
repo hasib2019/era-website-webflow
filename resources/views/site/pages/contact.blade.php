@@ -131,10 +131,10 @@
                                             <div class="button-icon-wrap"
                                                 style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                 <div class="button-icon-inner"><img
-                                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                         loading="lazy" alt="" class="button-iocn"></div>
                                                 <div class="button-icon-inner"><img
-                                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                         loading="lazy" alt="" class="button-iocn"></div>
                                             </div>
                                         </div>
@@ -144,7 +144,7 @@
                                 <div @if (session('form_sent') === 'contact') style="display:block" @endif class="success-message w-form-done" tabindex="-1" role="region"
                                     aria-label="Contact Us Form success">
                                     <div class="form-info-block"><img
-                                            src="{{ cms_image('contact.contact_us_main.form_success_icon', '/storage/media/webflow/668c4528a2433dc202d5dd5d_check-circle.svg') }}"
+                                            src="{{ cms_image('contact.contact_us_main.form_success_icon', '/era/media/webflow/668c4528a2433dc202d5dd5d_check-circle.svg') }}"
                                             loading="lazy" alt="">
                                         <div>{{ cms('contact.contact_us_main.form_success_message', 'Thank you! Your submission has been received!') }}</div>
                                     </div>
@@ -152,7 +152,7 @@
                                 <div @if (session('form_failed') === 'contact' || $errors->{'contact'}->any()) style="display:block" @endif class="error-message w-form-fail" tabindex="-1" role="region"
                                     aria-label="Contact Us Form failure">
                                     <div class="form-info-block"><img
-                                            src="{{ cms_image('contact.contact_us_main.form_error_icon', '/storage/media/webflow/668c45d06e7cd30793472a3d_alert-circle.svg') }}"
+                                            src="{{ cms_image('contact.contact_us_main.form_error_icon', '/era/media/webflow/668c45d06e7cd30793472a3d_alert-circle.svg') }}"
                                             loading="lazy" alt="">
                                         <div>{{ cms('contact.contact_us_main.form_error_message', 'Oops! Something went wrong while submitting the form.') }}</div>
                                     </div>
@@ -315,9 +315,9 @@
                         </div>
                         <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap"
                             style="opacity: 0;"><img
-                                src="{{ cms_image('contact.contact_cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
+                                src="{{ cms_image('contact.contact_cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                                 loading="lazy" sizes="100vw"
-                                srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                                srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                                 alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!}
                             data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                             href="/contact" target="_blank"
@@ -333,10 +333,10 @@
                                 <div class="button-icon-wrap"
                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                     <div class="button-icon-inner"><img
-                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                             loading="lazy" alt="" class="button-iocn"></div>
                                     <div class="button-icon-inner"><img
-                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                             loading="lazy" alt="" class="button-iocn"></div>
                                 </div>
                             </div>

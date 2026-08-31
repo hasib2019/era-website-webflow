@@ -10,7 +10,7 @@
             style="transform: translate3d(-36.669vw, -50vh, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1; will-change: transform;">
             <div data-w-id="fd885965-1454-8dd5-7dfb-6b25a03c3d51" class="cursor-text-view" style="opacity: 0;">View
                 Case</div><img
-                src="/storage/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg"
+                src="/era/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg"
                 loading="lazy" alt="" class="video-play-icon">
         </div>
     </div>
@@ -160,13 +160,13 @@
                 class="service-video-wrap"><a href="#" data-w-id="ef7353a3-37bb-bb7a-8ab0-e82230bed01b"
                     class="service-video-lightbox w-inline-block w-lightbox" aria-label="open lightbox"
                     aria-haspopup="dialog"><img
-                        src="{{ cms_image('services.service_video.video_thumbnail', '/storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp') }}"
+                        src="{{ cms_image('services.service_video.video_thumbnail', '/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp') }}"
                         loading="lazy"
                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1439px) 94vw, (max-width: 1919px) 96vw, 99vw"
-                        srcset="/storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-500.webp 500w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-800.webp 800w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1080.webp 1080w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1600.webp 1600w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-2000.webp 2000w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp 2480w"
+                        srcset="/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-500.webp 500w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-800.webp 800w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1080.webp 1080w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1600.webp 1600w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-2000.webp 2000w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp 2480w"
                         alt="Service video thumbnail image" class="lightbox-thumbnail">
                     <div class="video-play-icon-wrap service-video-play-icon-wrap" style="opacity: 1;"><img
-                            src="/storage/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg"
+                            src="/era/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg"
                             loading="lazy" alt="" class="video-play-icon"></div>
                     <script type="application/json" class="w-json">{
   "items": [
@@ -407,9 +407,9 @@
                         </div>
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
-                        <img src="{{ cms_image('services.cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
+                        <img src="{{ cms_image('services.cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
-                            srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                            srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                         href="/contact" target="_blank"
                         class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}" style="border-color: rgba(255, 255, 255, 0.2);">
@@ -424,10 +424,10 @@
                             <div class="button-icon-wrap"
                                 style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                             </div>
                         </div>

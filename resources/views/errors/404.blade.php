@@ -37,10 +37,10 @@
                                 <div class="button-icon-wrap"
                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                     <div class="button-icon-inner"><img
-                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                             loading="lazy" alt="" class="button-iocn"></div>
                                     <div class="button-icon-inner"><img
-                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                             loading="lazy" alt="" class="button-iocn"></div>
                                 </div>
                             </div>

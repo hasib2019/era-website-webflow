@@ -39,20 +39,20 @@
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                     class="about-us-hero-image-wrap">
                     <div id="w-node-_19fc91ae-bd01-8b6c-8c60-7bc668b115a1-f09ac0c6" class="career-hero-image-wrap"><img
-                            src="{{ cms_image('about.about_hero.hero_image_primary', '/storage/media/webflow/66a96bab029754bb653bd53c_about-us-image-1.webp') }}"
+                            src="{{ cms_image('about.about_hero.hero_image_primary', '/era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1.webp') }}"
                             loading="lazy" sizes="(max-width: 1634px) 100vw, 1634px"
-                            srcset="/storage/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-500.webp 500w, /storage/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-800.webp 800w, /storage/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-1080.webp 1080w, /storage/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-1600.webp 1600w, /storage/media/webflow/66a96bab029754bb653bd53c_about-us-image-1.webp 1634w"
+                            srcset="/era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-500.webp 500w, /era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-800.webp 800w, /era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-1080.webp 1080w, /era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-1600.webp 1600w, /era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1.webp 1634w"
                             alt="about us image" class="full-image"></div>
                     <div class="career-hero-image-wrap hide-on-mobile"><img
-                            src="{{ cms_image('about.about_hero.hero_image_secondary', '/storage/media/webflow/66a96bab2657765525173560_about-us-image-2.webp') }}"
+                            src="{{ cms_image('about.about_hero.hero_image_secondary', '/era/media/webflow/66a96bab2657765525173560_about-us-image-2.webp') }}"
                             loading="lazy" sizes="(max-width: 784px) 100vw, 784px"
-                            srcset="/storage/media/webflow/66a96bab2657765525173560_about-us-image-2-p-500.webp 500w, /storage/media/webflow/66a96bab2657765525173560_about-us-image-2.webp 784w"
+                            srcset="/era/media/webflow/66a96bab2657765525173560_about-us-image-2-p-500.webp 500w, /era/media/webflow/66a96bab2657765525173560_about-us-image-2.webp 784w"
                             alt="about us image" class="full-image"></div><a href="#team"
                         class="hero-round-text-wrap about-us-hero-round-text w-inline-block">
                         <div class="hero-round-icon-wrap"><img
-                                src="{{ cms_image('about.about_hero.hero_badge_arrow_icon', '/storage/media/webflow/66501c426d5623b1d6d38036_round-icon.png') }}"
+                                src="{{ cms_image('about.about_hero.hero_badge_arrow_icon', '/era/media/webflow/66501c426d5623b1d6d38036_round-icon.png') }}"
                                 loading="lazy" alt="Round icon" class="round-arrow-icon"></div><img
-                            src="{{ cms_image('about.about_hero.hero_badge_round_text_image', '/storage/media/webflow/66501c42caaf44099468db6d_hero-round-text.png') }}"
+                            src="{{ cms_image('about.about_hero.hero_badge_round_text_image', '/era/media/webflow/66501c42caaf44099468db6d_hero-round-text.png') }}"
                             loading="lazy" alt="Hero round text" class="hero-round-text-image"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(272.401deg) skew(0deg); transform-style: preserve-3d; will-change: transform;">
                     </a>
@@ -152,7 +152,7 @@
                         <div class="our-team-info">
                             <div class="our-team-name-block">
                                 <h3 class="team-member-name">{{ $member->name }}</h3><img
-                                    src="/storage/media/webflow/66a86668cd78441e18f50abe_team-plus-icon.svg"
+                                    src="/era/media/webflow/66a86668cd78441e18f50abe_team-plus-icon.svg"
                                     loading="lazy" alt="" class="team-plus-icon"
                                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                             </div>
@@ -366,10 +366,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -403,10 +403,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -440,10 +440,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -477,10 +477,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -523,9 +523,9 @@
                         </div>
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
-                        <img src="{{ cms_image('about.cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
+                        <img src="{{ cms_image('about.cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
-                            srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                            srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                         href="/contact" target="_blank"
                         class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}" style="border-color: rgba(255, 255, 255, 0.2);">
@@ -540,10 +540,10 @@
                             <div class="button-icon-wrap"
                                 style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                             </div>
                         </div>

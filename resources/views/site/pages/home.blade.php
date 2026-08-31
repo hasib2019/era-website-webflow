@@ -64,10 +64,10 @@
                                     <div class="button-icon-wrap"
                                         style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                         <div class="button-icon-inner"><img
-                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                 loading="lazy" alt="" class="button-iocn"></div>
                                         <div class="button-icon-inner"><img
-                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                 loading="lazy" alt="" class="button-iocn"></div>
                                     </div>
                                 </div>
@@ -143,10 +143,10 @@
                                     <div class="button-icon-wrap"
                                         style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                         <div class="button-icon-inner"><img
-                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                 loading="lazy" alt="" class="button-iocn"></div>
                                         <div class="button-icon-inner"><img
-                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                 loading="lazy" alt="" class="button-iocn"></div>
                                     </div>
                                 </div>
@@ -167,13 +167,13 @@
                     class="video-lightbox w-inline-block w-lightbox"
                     style="will-change: transform; transform: translate3d(-160px, -1000px, 0px) scale3d(0.3, 0.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;"
                     aria-label="open lightbox" aria-haspopup="dialog"><img
-                        src="{{ cms_image('home.home_video.video_thumbnail', '/storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp') }}"
+                        src="{{ cms_image('home.home_video.video_thumbnail', '/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp') }}"
                         loading="lazy"
                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1439px) 94vw, (max-width: 1919px) 96vw, 99vw"
-                        srcset="/storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-500.webp 500w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-800.webp 800w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1080.webp 1080w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1600.webp 1600w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-2000.webp 2000w, /storage/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp 2480w"
+                        srcset="/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-500.webp 500w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-800.webp 800w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1080.webp 1080w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1600.webp 1600w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-2000.webp 2000w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp 2480w"
                         alt="Service video thumbnail image" class="image">
                     <div style="opacity: 1;" class="video-play-icon-wrap"><img
-                            src="{{ cms_image('home.home_video.video_play_icon', '/storage/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg') }}"
+                            src="{{ cms_image('home.home_video.video_play_icon', '/era/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg') }}"
                             loading="lazy" alt="" class="video-play-icon"></div>
                     <script type="application/json" class="w-json">{
   "items": [
@@ -244,10 +244,10 @@
                                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                 <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management"
                                     class="case-study-image-wrap w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}"><img
-                                        src="/storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp"
+                                        src="/era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp"
                                         loading="lazy" alt=""
                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                        srcset="/storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-500.webp 500w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-800.webp 800w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1080.webp 1080w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1600.webp 1600w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp 1634w"
+                                        srcset="/era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-500.webp 500w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-800.webp 800w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1080.webp 1080w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1600.webp 1600w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp 1634w"
                                         class="full-image"></a>
                                 <div id="w-node-_0815d970-abde-a912-bf09-59715d3d53e9-f09ac0c2"
                                     class="case-study-content-block">
@@ -263,10 +263,10 @@
                                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                 <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management"
                                     class="case-study-image-wrap w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}"><img
-                                        src="/storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp"
+                                        src="/era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp"
                                         loading="lazy" alt=""
                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                        srcset="/storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-500.webp 500w, /storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-800.webp 800w, /storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1080.webp 1080w, /storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1600.webp 1600w, /storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp 1634w"
+                                        srcset="/era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-500.webp 500w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-800.webp 800w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1080.webp 1080w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1600.webp 1600w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp 1634w"
                                         class="full-image"></a>
                                 <div id="w-node-_0815d970-abde-a912-bf09-59715d3d53e9-f09ac0c2"
                                     class="case-study-content-block">
@@ -282,10 +282,10 @@
                                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                 <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management"
                                     class="case-study-image-wrap w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}"><img
-                                        src="/storage/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3.webp"
+                                        src="/era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3.webp"
                                         loading="lazy" alt=""
                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                        srcset="/storage/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-500.webp 500w, /storage/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-800.webp 800w, /storage/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-1080.webp 1080w, /storage/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-1600.webp 1600w, /storage/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3.webp 1634w"
+                                        srcset="/era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-500.webp 500w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-800.webp 800w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-1080.webp 1080w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-1600.webp 1600w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3.webp 1634w"
                                         class="full-image"></a>
                                 <div id="w-node-_0815d970-abde-a912-bf09-59715d3d53e9-f09ac0c2"
                                     class="case-study-content-block">
@@ -315,10 +315,10 @@
                                 <div class="button-icon-wrap"
                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                     <div class="button-icon-inner"><img
-                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                             loading="lazy" alt="" class="button-iocn"></div>
                                     <div class="button-icon-inner"><img
-                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                             loading="lazy" alt="" class="button-iocn"></div>
                                 </div>
                             </div>
@@ -463,12 +463,12 @@
                                         class="blog-content-wrap">
                                         <div class="blog-info-wrap blog-item-info-wrap">
                                             <div class="blog-info"><img
-                                                    src="/storage/media/webflow/66507334b279af4803571b92_calender-icon.png"
+                                                    src="/era/media/webflow/66507334b279af4803571b92_calender-icon.png"
                                                     loading="lazy" alt="">
                                                 <p class="font-weight-medium">Jul 10, 2024</p>
                                             </div>
                                             <div class="blog-info"><img
-                                                    src="/storage/media/webflow/66507334a301d18ef9aa933f_time-icon.png"
+                                                    src="/era/media/webflow/66507334a301d18ef9aa933f_time-icon.png"
                                                     loading="lazy" alt="">
                                                 <div class="blog-info-content-wrap">
                                                     <p class="font-weight-medium">6</p>
@@ -497,10 +497,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -508,10 +508,10 @@
                                     </div>
                                     <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92de-635c92bf"
                                         class="blog-thumbnail-image-wrap"><img
-                                            src="/storage/media/webflow/66876a195c4a30e89f362732_blog-image-1.webp"
+                                            src="/era/media/webflow/66876a195c4a30e89f362732_blog-image-1.webp"
                                             loading="lazy" alt="This is a nice image"
                                             sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 1439px) 40vw, (max-width: 1919px) 41vw, 44vw"
-                                            srcset="/storage/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-500.webp 500w, /storage/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-800.webp 800w, /storage/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-1080.webp 1080w, /storage/media/webflow/66876a195c4a30e89f362732_blog-image-1.webp 1240w"
+                                            srcset="/era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-500.webp 500w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-800.webp 800w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1-p-1080.webp 1080w, /era/media/webflow/66876a195c4a30e89f362732_blog-image-1.webp 1240w"
                                             class="blog-image"
                                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                     </div>
@@ -524,12 +524,12 @@
                                         class="blog-content-wrap">
                                         <div class="blog-info-wrap blog-item-info-wrap">
                                             <div class="blog-info"><img
-                                                    src="/storage/media/webflow/66507334b279af4803571b92_calender-icon.png"
+                                                    src="/era/media/webflow/66507334b279af4803571b92_calender-icon.png"
                                                     loading="lazy" alt="">
                                                 <p class="font-weight-medium">Jul 10, 2024</p>
                                             </div>
                                             <div class="blog-info"><img
-                                                    src="/storage/media/webflow/66507334a301d18ef9aa933f_time-icon.png"
+                                                    src="/era/media/webflow/66507334a301d18ef9aa933f_time-icon.png"
                                                     loading="lazy" alt="">
                                                 <div class="blog-info-content-wrap">
                                                     <p class="font-weight-medium">6</p>
@@ -558,10 +558,10 @@
                                                 <div class="button-icon-wrap"
                                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                     <div class="button-icon-inner"><img
-                                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                             loading="lazy" alt="" class="button-iocn"></div>
                                                 </div>
                                             </div>
@@ -569,10 +569,10 @@
                                     </div>
                                     <div id="w-node-_4e6796ed-5a35-3b0c-04fe-7c88635c92de-635c92bf"
                                         class="blog-thumbnail-image-wrap"><img
-                                            src="/storage/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2.webp"
+                                            src="/era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2.webp"
                                             loading="lazy" alt="This is a nice image"
                                             sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 1439px) 40vw, (max-width: 1919px) 41vw, 44vw"
-                                            srcset="/storage/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-500.webp 500w, /storage/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-800.webp 800w, /storage/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-1080.webp 1080w, /storage/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2.webp 1240w"
+                                            srcset="/era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-500.webp 500w, /era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-800.webp 800w, /era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2-p-1080.webp 1080w, /era/media/webflow/66876a27d9a22ea2e9b0e272_blog-image-2.webp 1240w"
                                             class="blog-image"
                                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                     </div>
@@ -614,9 +614,9 @@
                         </div>
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
-                        <img src="{{ cms_image('home.home_cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
+                        <img src="{{ cms_image('home.home_cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
-                            srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                            srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                         href="/contact" target="_blank"
                         class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}" style="border-color: rgba(255, 255, 255, 0.2);">
@@ -631,10 +631,10 @@
                             <div class="button-icon-wrap"
                                 style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                             </div>
                         </div>

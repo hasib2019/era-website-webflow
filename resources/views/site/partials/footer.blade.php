@@ -21,13 +21,13 @@
                                     id="Subscription-email" required="" value="{{ old('Email') }}">
                                 <div class="submit-button-wrap"><input type="submit" data-wait="Please wait..."
                                         class="submit-button w-button" value=""><img loading="lazy"
-                                        src="/storage/media/webflow/664c80ccd78ddbcc18790edc_arrow-long.svg"
+                                        src="/era/media/webflow/664c80ccd78ddbcc18790edc_arrow-long.svg"
                                         alt="" class="form-icon"></div>
                             </form>
                             <div @if (session('form_sent') === 'subscribe') style="display:block" @endif class="success-message w-form-done" tabindex="-1" role="region"
                                 aria-label="Subscription Email Form success">
                                 <div class="form-info-block"><img
-                                        src="/storage/media/webflow/668c4528a2433dc202d5dd5d_check-circle.svg"
+                                        src="/era/media/webflow/668c4528a2433dc202d5dd5d_check-circle.svg"
                                         loading="lazy" alt="">
                                     <div>{{ setting('footer.newsletter_success', 'Thank you! Your submission has been received!') }}</div>
                                 </div>
@@ -35,7 +35,7 @@
                             <div @if (session('form_failed') === 'subscribe' || $errors->{'subscribe'}->any()) style="display:block" @endif class="error-message w-form-fail" tabindex="-1" role="region"
                                 aria-label="Subscription Email Form failure">
                                 <div class="form-info-block"><img
-                                        src="/storage/media/webflow/668c45d06e7cd30793472a3d_alert-circle.svg"
+                                        src="/era/media/webflow/668c45d06e7cd30793472a3d_alert-circle.svg"
                                         loading="lazy" alt="">
                                     <div>{{ setting('footer.newsletter_error', 'Oops! Something went wrong while submitting the form.') }}</div>
                                 </div>
@@ -57,10 +57,10 @@
                                     <div class="button-icon-wrap"
                                         style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                         <div class="button-icon-inner"><img
-                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                 loading="lazy" alt="" class="button-iocn"></div>
                                         <div class="button-icon-inner"><img
-                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                 loading="lazy" alt="" class="button-iocn"></div>
                                     </div>
                                 </div>

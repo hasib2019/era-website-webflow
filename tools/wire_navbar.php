@@ -15,13 +15,13 @@ $before = strlen($html);
 
 // ---------------------------------------------------------------- logos
 $html = str_replace(
-    'src="/storage/media/webflow/664c33abd0e16d4b14b10a0c_Logo.png"',
-    'src="{{ setting_image(\'general.logo_light_id\', \'/storage/media/webflow/664c33abd0e16d4b14b10a0c_Logo.png\') }}"',
+    'src="/era/media/webflow/664c33abd0e16d4b14b10a0c_Logo.png"',
+    'src="{{ setting_image(\'general.logo_light_id\', \'/era/media/webflow/664c33abd0e16d4b14b10a0c_Logo.png\') }}"',
     $html
 );
 $html = str_replace(
-    'src="/storage/media/webflow/668c2e6e687f356e879426a1_Logo-black.svg"',
-    'src="{{ setting_image(\'general.logo_dark_id\', \'/storage/media/webflow/668c2e6e687f356e879426a1_Logo-black.svg\') }}"',
+    'src="/era/media/webflow/668c2e6e687f356e879426a1_Logo-black.svg"',
+    'src="{{ setting_image(\'general.logo_dark_id\', \'/era/media/webflow/668c2e6e687f356e879426a1_Logo-black.svg\') }}"',
     $html
 );
 

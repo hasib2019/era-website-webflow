@@ -10,7 +10,7 @@
             style="transform: translate3d(-28.163vw, 49.995vh, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1; background-color: rgb(255, 255, 255); will-change: transform;">
             <div data-w-id="fd885965-1454-8dd5-7dfb-6b25a03c3d51" class="cursor-text-view"
                 style="opacity: 0; display: block;">{{ cms('service-details.custom_cursor_overlay.cursor_hover_label', 'View Case') }}</div><img
-                src="{{ cms_image('service-details.custom_cursor_overlay.cursor_play_icon', '/storage/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg') }}"
+                src="{{ cms_image('service-details.custom_cursor_overlay.cursor_play_icon', '/era/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg') }}"
                 loading="lazy" alt="" class="video-play-icon">
         </div>
     </div>
@@ -51,10 +51,10 @@
                                 <div class="button-icon-wrap"
                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                     <div class="button-icon-inner"><img
-                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                             loading="lazy" alt="" class="button-iocn"></div>
                                     <div class="button-icon-inner"><img
-                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                             loading="lazy" alt="" class="button-iocn"></div>
                                 </div>
                             </div>
@@ -63,10 +63,10 @@
                         data-w-id="106e21cd-1a1c-528f-a761-28e2ab0e10e0"
                         style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                         class="service-main-image-wrap"><img
-                            src="{{ ($service->heroImage?->url ?: $service->image?->url) ?: cms_image('service-details.service_details_hero.hero_image', '/storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4.webp') }}"
+                            src="{{ ($service->heroImage?->url ?: $service->image?->url) ?: cms_image('service-details.service_details_hero.hero_image', '/era/media/webflow/66acd1202df48adbb6b1b10d_service-image-4.webp') }}"
                             loading="lazy" alt="This is a nice image"
                             sizes="(max-width: 479px) 43vw, (max-width: 767px) 35vw, (max-width: 991px) 32vw, (max-width: 1279px) 33vw, 540px"
-                            srcset="/storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4-p-500.webp 500w, /storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4-p-800.webp 800w, /storage/media/webflow/66acd1202df48adbb6b1b10d_service-image-4.webp 1028w"
+                            srcset="/era/media/webflow/66acd1202df48adbb6b1b10d_service-image-4-p-500.webp 500w, /era/media/webflow/66acd1202df48adbb6b1b10d_service-image-4-p-800.webp 800w, /era/media/webflow/66acd1202df48adbb6b1b10d_service-image-4.webp 1028w"
                             class="service-main-image"></div>
                 </div>
             </div>
@@ -274,10 +274,10 @@
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                                 <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management" class="w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}">
                                     <div class="case-study-image-wrap"><img
-                                            src="/storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp"
+                                            src="/era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp"
                                             loading="lazy" alt=""
                                             sizes="(max-width: 479px) 93vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                            srcset="/storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-500.webp 500w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-800.webp 800w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1080.webp 1080w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1600.webp 1600w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp 1634w"
+                                            srcset="/era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-500.webp 500w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-800.webp 800w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1080.webp 1080w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1600.webp 1600w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp 1634w"
                                             class="full-image"></div>
                                 </a>
                                 <div id="w-node-cda89d13-20d1-91a8-7902-5c59a19ff0f5-a80b356f"
@@ -294,10 +294,10 @@
                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                                 <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management" class="w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}">
                                     <div class="case-study-image-wrap"><img
-                                            src="/storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp"
+                                            src="/era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp"
                                             loading="lazy" alt=""
                                             sizes="(max-width: 479px) 93vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                            srcset="/storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-500.webp 500w, /storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-800.webp 800w, /storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1080.webp 1080w, /storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1600.webp 1600w, /storage/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp 1634w"
+                                            srcset="/era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-500.webp 500w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-800.webp 800w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1080.webp 1080w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1600.webp 1600w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp 1634w"
                                             class="full-image"></div>
                                 </a>
                                 <div id="w-node-cda89d13-20d1-91a8-7902-5c59a19ff0f5-a80b356f"
@@ -328,10 +328,10 @@
                                 <div class="button-icon-wrap"
                                     style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                     <div class="button-icon-inner"><img
-                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                             loading="lazy" alt="" class="button-iocn"></div>
                                     <div class="button-icon-inner"><img
-                                            src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                            src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                             loading="lazy" alt="" class="button-iocn"></div>
                                 </div>
                             </div>
@@ -440,10 +440,10 @@
                                     <div class="button-icon-wrap"
                                         style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                         <div class="button-icon-inner"><img
-                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                 loading="lazy" alt="" class="button-iocn"></div>
                                         <div class="button-icon-inner"><img
-                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                 loading="lazy" alt="" class="button-iocn"></div>
                                     </div>
                                 </div>
@@ -453,10 +453,10 @@
                         <div data-w-id="fc291a14-7273-2f34-0daa-4445132c96c7"
                             style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                             class="why-choose-us-image-wrap"><img
-                                src="{{ cms_image('service-details.why_choose_us.side_image', '/storage/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp') }}"
+                                src="{{ cms_image('service-details.why_choose_us.side_image', '/era/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp') }}"
                                 loading="lazy"
                                 sizes="(max-width: 479px) 93vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1279px) 44vw, 500px"
-                                srcset="/storage/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image-p-500.webp 500w, /storage/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image-p-800.webp 800w, /storage/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp 998w"
+                                srcset="/era/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image-p-500.webp 500w, /era/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image-p-800.webp 800w, /era/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp 998w"
                                 alt="our evaluation section image" class="full-image"></div>
                     </div>
                 </div>
@@ -493,9 +493,9 @@
                         </div>
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
-                        <img src="{{ cms_image('service-details.cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
+                        <img src="{{ cms_image('service-details.cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
-                            srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                            srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                         href="/contact" target="_blank"
                         class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}" style="border-color: rgba(255, 255, 255, 0.2);">
@@ -510,10 +510,10 @@
                             <div class="button-icon-wrap"
                                 style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                             </div>
                         </div>

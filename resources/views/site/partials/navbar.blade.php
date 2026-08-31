@@ -4,7 +4,7 @@
             <div class="nav-element">
                 <div class="brand-logo"><a {!! nav_active('/') ? 'aria-current="page"' : '' !!} href="/" class="brand-logo-link logo-white w-nav-brand{{ nav_active('/') ? ' w--current' : '' }}"
                         aria-label="home"><img
-                            src="{{ setting_image('general.logo_light_id', '/storage/media/webflow/664c33abd0e16d4b14b10a0c_Logo.png') }}"
+                            src="{{ setting_image('general.logo_light_id', '/era/media/webflow/664c33abd0e16d4b14b10a0c_Logo.png') }}"
                             loading="lazy" width="115" alt="" class="brand-logo-image"></a></div>
                 <nav role="navigation" class="nav-menu-main w-nav-menu">
                     <div class="nav-main-menu-inner">
@@ -12,7 +12,7 @@
                             <div class="nav-main-menu-element">
                                 <div class="nav-link-wrap main-menu-nav-link-wrap"><a {!! nav_active('/') ? 'aria-current="page"' : '' !!} href="/"
                                         class="brand-logo-link logo-black w-nav-brand{{ nav_active('/') ? ' w--current' : '' }}" aria-label="home"><img
-                                            src="{{ setting_image('general.logo_dark_id', '/storage/media/webflow/668c2e6e687f356e879426a1_Logo-black.svg') }}"
+                                            src="{{ setting_image('general.logo_dark_id', '/era/media/webflow/668c2e6e687f356e879426a1_Logo-black.svg') }}"
                                             loading="lazy" width="115" alt="Black Logo" class="brand-logo-image"></a>
                                     <div class="nav-main-menu-wrap">@foreach (cms_menu('primary') as $item)<a {!! nav_active($item->url) ? 'aria-current="page"' : '' !!} href="{{ $item->url }}"
                                             class="nav-main-menu-link w-inline-block{{ nav_active($item->url) ? ' w--current' : '' }}">
@@ -47,10 +47,10 @@
                                                     <div class="button-icon-wrap"
                                                         style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                                         <div class="button-icon-inner"><img loading="lazy"
-                                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                                 alt="" class="button-iocn"></div>
                                                         <div class="button-icon-inner"><img loading="lazy"
-                                                                src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                                                 alt="" class="button-iocn"></div>
                                                     </div>
                                                 </div>

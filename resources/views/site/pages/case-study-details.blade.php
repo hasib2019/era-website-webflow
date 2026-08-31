@@ -22,10 +22,10 @@
                 <div data-w-id="92bc3feb-83dd-5913-c237-7192f3537bff"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                     class="case-study-main-image-wrap"><img
-                        src="/storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp"
+                        src="/era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp"
                         loading="lazy" alt="This is a nice image"
                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1439px) 94vw, (max-width: 1919px) 96vw, 99vw"
-                        srcset="/storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-500.webp 500w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-800.webp 800w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1080.webp 1080w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1600.webp 1600w, /storage/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp 1634w"
+                        srcset="/era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-500.webp 500w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-800.webp 800w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1080.webp 1080w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1600.webp 1600w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp 1634w"
                         class="full-image"></div>
                 <div data-w-id="96477ec7-ac44-d1db-8285-7f230d0b1275"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
@@ -107,14 +107,14 @@
                             </div>
                         </div>
                         <div class="case-study-details-image-block"><img
-                                src="/storage/media/webflow/6697a1fab6721cc89ec1bbbf_case-strategies-image-1.webp"
+                                src="/era/media/webflow/6697a1fab6721cc89ec1bbbf_case-strategies-image-1.webp"
                                 loading="lazy" alt="" class="full-image"></div>
                     </div>
                     <div class="case-study-details-element second-element"
                         style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                         <div id="w-node-_87cc5316-0b96-3957-f92d-dcf2f7c2fca7-2f0a959f"
                             class="case-study-details-image-block"><img
-                                src="/storage/media/webflow/6697a202e6212609480fc166_case-strategies-image-2.webp"
+                                src="/era/media/webflow/6697a202e6212609480fc166_case-strategies-image-2.webp"
                                 loading="lazy" alt="" class="full-image"></div>
                         <div id="w-node-_87cc5316-0b96-3957-f92d-dcf2f7c2fca5-2f0a959f"
                             class="case-study-details-content-block">
@@ -138,7 +138,7 @@
                             </div>
                         </div>
                         <div class="case-study-details-image-block"><img
-                                src="/storage/media/webflow/6697a210df3b42c274654129_case-strategies-image-3.webp"
+                                src="/era/media/webflow/6697a210df3b42c274654129_case-strategies-image-3.webp"
                                 loading="lazy" alt="" class="full-image"></div>
                     </div>
                 </div>
@@ -286,9 +286,9 @@
                         </div>
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
-                        <img src="{{ cms_image('case-study-details.cta.cta_image', '/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
+                        <img src="{{ cms_image('case-study-details.cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
-                            srcset="/storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /storage/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                            srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                         href="/contact" target="_blank"
                         class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}" style="border-color: rgba(255, 255, 255, 0.2);">
@@ -303,10 +303,10 @@
                             <div class="button-icon-wrap"
                                 style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                                 <div class="button-icon-inner"><img
-                                        src="/storage/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
                                         loading="lazy" alt="" class="button-iocn"></div>
                             </div>
                         </div>
