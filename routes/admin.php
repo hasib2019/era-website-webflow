@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\StatController;
 use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TestimonialController;
@@ -96,6 +97,7 @@ Route::middleware('auth')->group(function () {
         'team' => [TeamController::class, 'team.manage'],
         'clients' => [ClientController::class, 'clients.manage'],
         'faqs' => [FaqController::class, 'faqs.manage'],
+        'stats' => [StatController::class, 'stats.manage'],
         'changelog' => [ChangelogController::class, 'changelog.manage'],
     ];
 

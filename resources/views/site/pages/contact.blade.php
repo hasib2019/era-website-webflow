@@ -75,14 +75,14 @@
                             <div class="address-info">
                                 <div class="address-info-title">office</div>
                                 <p><a href="#">714 Example
-                                        location</a></p><a href="mailto:hello@edoly.com"
-                                    class="address-link">hello@edoly.com</a>
+                                        location</a></p><a href="mailto:hello@erainfotechbd.com"
+                                    class="address-link">hello@erainfotechbd.com</a>
                             </div>
                             <div class="address-info">
                                 <div class="address-info-title">Sales</div>
                                 <p><a href="#">715 Example
-                                        location</a></p><a href="mailto:sales@edoly.com"
-                                    class="address-link">sales@edoly.com</a>
+                                        location</a></p><a href="mailto:sales@erainfotechbd.com"
+                                    class="address-link">sales@erainfotechbd.com</a>
                             </div>
                             <div class="address-info">
                                 <div class="address-info-title">Address</div>
@@ -182,7 +182,7 @@
                             <div class="faq-item">
                                 <div class="faq-trigger">
                                     <div class="faq-title" style="color: rgb(120, 120, 120);">WHAT SERVICES DOES PROVIDE
-                                        THE EDOLY?</div>
+                                        THE ERA?</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
                                             style="color: rgb(120, 120, 120); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
@@ -201,7 +201,7 @@
                             </div>
                             <div class="faq-item">
                                 <div class="faq-trigger">
-                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN EDOLY BENEFITS MY
+                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN ERA BENEFITS MY
                                         BUSINESS</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
@@ -241,7 +241,7 @@
                             </div>
                             <div class="faq-item">
                                 <div class="faq-trigger">
-                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES EDOLY PROVIDE THE
+                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES ERA PROVIDE THE
                                         SECURITY?</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"

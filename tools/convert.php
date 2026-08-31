@@ -166,7 +166,7 @@ foreach (glob($VIEWS . '/{pages,partials}/*.blade.php', GLOB_BRACE) as $f) {
     $b = file_get_contents($f);
     $hits = [];
     foreach ([
-        'webflow.io' => 'edoly.webflow.io',
+        'webflow.io' => 'erainfotechbd.com',
         'cdn.website-files' => 'cdn.prod.website-files.com',
         '.html link' => '.html"',
         'turnstile' => 'turnstile',

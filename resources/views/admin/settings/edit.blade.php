@@ -21,31 +21,23 @@
                         @endphp
 
                         <div class="{{ $wide ? 'sm:col-span-2' : '' }}">
-                            <label for="{{ $id }}" class="block text-sm font-medium text-slate-700">
-                                {{ $setting->label ?? Str::headline($setting->key) }}
-                            </label>
-
                             @if ($setting->type === 'media')
-                                @php $selected = $mediaOptions->firstWhere('id', (int) $setting->value); @endphp
-                                <div class="mt-1.5 flex items-start gap-3">
-                                    <div class="flex h-16 w-24 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-slate-100 ring-1 ring-slate-200">
-                                        @if ($selected)
-                                            <img src="{{ $selected->url }}" alt="" class="max-h-full max-w-full object-contain">
-                                        @endif
-                                    </div>
-                                    <select id="{{ $id }}" name="{{ $name }}" class="{{ $input }} mt-0">
-                                        <option value="">— none —</option>
-                                        @foreach ($mediaOptions as $media)
-                                            <option value="{{ $media->id }}" @selected((int) $setting->value === $media->id)>
-                                                {{ $media->original_name }} ({{ $media->filename }})
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            @elseif ($setting->type === 'textarea')
-                                <textarea id="{{ $id }}" name="{{ $name }}" rows="3" class="{{ $input }}">{{ $setting->value }}</textarea>
+                                @include('admin.resource.field', [
+                                    'name' => $name,
+                                    'spec' => ['label' => $setting->label ?? Str::headline($setting->key), 'type' => 'media'],
+                                    'value' => data_get(old('settings', []), $setting->group . '.' . $setting->key, $setting->value),
+                                    'mediaOptions' => $mediaOptions,
+                                ])
                             @else
-                                <input id="{{ $id }}" type="text" name="{{ $name }}" value="{{ $setting->value }}" class="{{ $input }}">
+                                <label for="{{ $id }}" class="block text-sm font-medium text-slate-700">
+                                    {{ $setting->label ?? Str::headline($setting->key) }}
+                                </label>
+
+                                @if ($setting->type === 'textarea')
+                                    <textarea id="{{ $id }}" name="{{ $name }}" rows="3" class="{{ $input }}">{{ $setting->value }}</textarea>
+                                @else
+                                    <input id="{{ $id }}" type="text" name="{{ $name }}" value="{{ $setting->value }}" class="{{ $input }}">
+                                @endif
                             @endif
                         </div>
                     @endforeach
@@ -57,4 +49,6 @@
             Save settings
         </button>
     </form>
+
+    @include('admin.partials.media-picker', ['mediaOptions' => $mediaOptions])
 @endsection

@@ -73,12 +73,12 @@
                                 </div>
                             </a></div>
                     </div>
-                </div> 
+                </div>
                 <div data-w-id="1cdc3515-9b69-d8e5-eafb-ce4163077016"
                     style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;"
                     class="home-hero-image-wrap">
                     <img src="{{ cms_image('home.home_hero.hero_image', '/site/images/home-hero-image.jpg') }}" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 54vw, (max-width: 991px) 40vw, 493px"
-                        srcset="{{ cms_image('home.home_hero.hero_image', '/site/images/home-hero-image.jpg') }}"
+                        srcset="/site/images/home-hero-image-p-500.jpg 500w, /site/images/home-hero-image.jpg 741w"
                         alt="Home hero image" class="image">
                     <a data-w-id="c868fe40-8193-7925-a7ad-53ff469463d6" style="opacity: 1;" href="#case-study" class="hero-round-text-wrap w-inline-block">
                         <div class="hero-round-icon-wrap"> 
@@ -130,7 +130,7 @@
                         <div data-w-id="2c20399a-82f8-c9ea-8c7f-33c1b402bb1d"
                             style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
                             class="text-align-right"><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                href="/contact" class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}"
+                                href="{{ cms_url('home.home_about_us.button_url', '/contact') }}" class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}"
                                 style="border-color: rgba(255, 255, 255, 0.2);">
                                 <div class="button-text-wrap">
                                     <div class="button-text-inner"

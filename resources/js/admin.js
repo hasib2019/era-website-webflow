@@ -383,13 +383,127 @@ function initMenuBoard(board) {
     });
 }
 
+/* ---------------------------------------------------------- media picker */
+
+function initMediaPicker(dialog) {
+    const search = dialog.querySelector('[data-media-picker-search]');
+    const items = [...dialog.querySelectorAll('[data-media-picker-item]')];
+    const empty = dialog.querySelector('[data-media-picker-empty]');
+    let activeField = null;
+
+    function filterItems() {
+        const query = (search?.value ?? '').trim().toLowerCase();
+        let visible = 0;
+
+        items.forEach((item) => {
+            const matches = !query || item.dataset.mediaSearch.includes(query);
+            item.classList.toggle('hidden', !matches);
+            if (matches) visible++;
+        });
+
+        empty?.classList.toggle('hidden', visible !== 0 || items.length === 0);
+    }
+
+    function markSelected() {
+        const input = activeField?.querySelector('[data-media-picker-value]');
+        const type = activeField?.dataset.mediaValueType;
+
+        items.forEach((item) => {
+            const value = type === 'id' ? item.dataset.mediaId : item.dataset.mediaFilename;
+            const selected = Boolean(input?.value) && input.value === value;
+            item.classList.toggle('ring-2', selected);
+            item.classList.toggle('ring-brand-600', selected);
+            item.classList.toggle('ring-slate-200', !selected);
+            item.setAttribute('aria-pressed', selected ? 'true' : 'false');
+        });
+    }
+
+    function refreshField(field, media = null) {
+        const preview = field.querySelector('[data-media-picker-preview]');
+        const placeholder = field.querySelector('[data-media-picker-placeholder]');
+        const name = field.querySelector('[data-media-picker-name]');
+        const clear = field.querySelector('[data-media-picker-clear]');
+        const openButtons = field.querySelectorAll('[data-media-picker-open]');
+
+        if (media) {
+            preview.src = media.url;
+            preview.classList.remove('hidden');
+            placeholder.classList.add('hidden');
+            name.textContent = `${media.name} (${media.filename})`;
+            clear.classList.remove('hidden');
+            openButtons.forEach((button) => {
+                if (button.textContent.trim() === 'Choose image') button.textContent = 'Change image';
+            });
+        } else {
+            preview.removeAttribute('src');
+            preview.classList.add('hidden');
+            placeholder.classList.remove('hidden');
+            placeholder.classList.add('flex');
+            name.textContent = 'No image selected';
+            clear.classList.add('hidden');
+            openButtons.forEach((button) => {
+                if (button.textContent.trim() === 'Change image') button.textContent = 'Choose image';
+            });
+        }
+    }
+
+    document.querySelectorAll('[data-media-picker-field]').forEach((field) => {
+        field.querySelectorAll('[data-media-picker-open]').forEach((button) => {
+            button.addEventListener('click', () => {
+                activeField = field;
+                if (search) search.value = '';
+                filterItems();
+                markSelected();
+                dialog.showModal();
+                window.setTimeout(() => search?.focus(), 0);
+            });
+        });
+
+        field.querySelector('[data-media-picker-clear]')?.addEventListener('click', () => {
+            field.querySelector('[data-media-picker-value]').value = '';
+            refreshField(field);
+        });
+    });
+
+    items.forEach((item) => {
+        item.addEventListener('click', () => {
+            if (!activeField) return;
+
+            const type = activeField.dataset.mediaValueType;
+            activeField.querySelector('[data-media-picker-value]').value =
+                type === 'id' ? item.dataset.mediaId : item.dataset.mediaFilename;
+            refreshField(activeField, {
+                url: item.dataset.mediaUrl,
+                name: item.dataset.mediaName,
+                filename: item.dataset.mediaFilename,
+            });
+            dialog.close();
+        });
+    });
+
+    search?.addEventListener('input', filterItems);
+    dialog.querySelector('[data-media-picker-close]')?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+        const box = dialog.getBoundingClientRect();
+        const outside =
+            event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom;
+        if (outside) dialog.close();
+    });
+}
+
 /* ------------------------------------------------------------------- boot */
 
 document.addEventListener('DOMContentLoaded', () => {
     // sidebar toggle on narrow screens
     const sidebar = document.querySelector('[data-sidebar]');
     document.querySelectorAll('[data-sidebar-toggle]').forEach((btn) => {
-        btn.addEventListener('click', () => sidebar?.classList.toggle('hidden'));
+        btn.addEventListener('click', () => {
+            if (!sidebar) return;
+
+            const opening = sidebar.classList.contains('hidden');
+            sidebar.classList.toggle('hidden', !opening);
+            sidebar.classList.toggle('flex', opening);
+        });
     });
 
     // flash messages and validation errors, handed over from the Blade partial
@@ -431,6 +545,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // drag-to-arrange navigation
     document.querySelectorAll('[data-menu-board]').forEach(initMenuBoard);
+
+    // thumbnail-based image selection for page content fields
+    document.querySelectorAll('[data-media-picker-dialog]').forEach(initMediaPicker);
 
     // repeatable rows in the section editors
     document.querySelectorAll('[data-repeater]').forEach((repeater) => {

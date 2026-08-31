@@ -7,27 +7,15 @@
  * IX2 runtime and stylesheet expect.
  */
 
-/** page file => site path. Detail pages keep the slugs the export already linked to. */
+/**
+ * page file => site path.
+ *
+ * Lives in config/link_map.php so the app can apply the same map to links an
+ * editor stores in a page section -- see App\Support\Content::url().
+ */
 function link_map(): array
 {
-    return [
-        'home.html' => '/',
-        'about.html' => '/about',
-        'service.html' => '/services',
-        'services-details.html' => '/services/search-engine-optimization',
-        'casestudy.html' => '/case-studies',
-        'case-study-details.html' => '/case-studies/event-planning-and-management',
-        'blog.html' => '/blog',
-        'blog-details.html' => '/blog/navigating-search-algorithms-for-regional-impact',
-        'career.html' => '/career',
-        'career-details.html' => '/career/brand-expert',
-        'contact-us.html' => '/contact',
-        'faq.html' => '/faq',
-        'why-choose-us.html' => '/why-choose-us',
-        'changelog.html' => '/changelog',
-        'style-guide.html' => '/style-guide',
-        '404.html' => '/404',
-    ];
+    return require dirname(__DIR__) . '/config/link_map.php';
 }
 
 /** Pages the project drops; their anchors are unwrapped rather than left dangling. */
@@ -60,10 +48,12 @@ function rewrite_assets(string $html, array $assetMap): string
     }
     $html = strtr($html, $encoded);
 
-    // local files copied into public/site
-    $html = preg_replace('#(?<=["\'(])(?:\.\./)?css/#', '/site/css/', $html);
-    $html = preg_replace('#(?<=["\'(])(?:\.\./)?js/#', '/site/js/', $html);
-    $html = preg_replace('#(?<=["\'(])(?:\.\./)?images/#', '/site/images/', $html);
+    // local files copied into public/site. The lookbehind also allows ", " so
+    // a later candidate in a srcset list -- "a.jpg 500w, ../images/b.jpg 741w"
+    // -- gets rewritten too, not just the one right after the opening quote.
+    $html = preg_replace('#(?<=["\'(]|, )(?:\.\./)?css/#', '/site/css/', $html);
+    $html = preg_replace('#(?<=["\'(]|, )(?:\.\./)?js/#', '/site/js/', $html);
+    $html = preg_replace('#(?<=["\'(]|, )(?:\.\./)?images/#', '/site/images/', $html);
 
     return $html;
 }

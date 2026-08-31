@@ -32,7 +32,7 @@
                         style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                         <div>12.10.2024</div>
                         <h2 class="utilities-section-block-title">1.1 Template release</h2>
-                        <p>Initial Edoly Template release.</p>
+                        <p>Initial Era Template release.</p>
                     </div>
                 </div>
             </div>

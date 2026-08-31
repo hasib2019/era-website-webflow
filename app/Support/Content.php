@@ -34,6 +34,8 @@ class Content
 
     private static array $menus = [];
 
+    private static ?array $linkMap = null;
+
     /**
      * One field of one section.
      *
@@ -60,6 +62,31 @@ class Content
         // Cleared, or pointing at a library row that has since been deleted --
         // either way, showing the export's original image would be a lie.
         return blank($value) ? null : static::mediaUrl($value, null);
+    }
+
+    /**
+     * A section field holding a link, e.g. a CTA button's destination.
+     *
+     * Rows seeded from the export still hold its raw filename ("contact-us.html");
+     * an editor can instead type a site path, an in-page anchor, `mailto:`, or an
+     * external URL. Only a value config/link_map.php actually recognises gets
+     * translated, so both forms work.
+     */
+    public static function url(string $pageSlug, string $sectionKey, string $fieldKey, ?string $default = null): ?string
+    {
+        $value = static::rawField($pageSlug, $sectionKey, $fieldKey);
+
+        if ($value === null) {
+            return $default;
+        }
+
+        if (blank($value)) {
+            return null;
+        }
+
+        static::$linkMap ??= require config_path('link_map.php');
+
+        return static::$linkMap[$value] ?? $value;
     }
 
     /** The srcset for a section's image field, on the same terms as fieldMedia(). */
@@ -133,6 +160,16 @@ class Content
             return $reference;
         }
 
+        // A handful of images (the home hero, its two decorative icons) never
+        // went through the CDN / media-library asset map -- the export served
+        // them from its own images/ folder, and that is the literal path a
+        // freshly seeded row still holds. tools/lib_rewrite.php makes the same
+        // rewrite for the generated markup itself; this is that rewrite's
+        // runtime counterpart, for whatever a section row still holds as-seeded.
+        if (is_string($reference) && preg_match('#^(?:\.\./)?images/#', $reference)) {
+            return '/site/' . preg_replace('#^(?:\.\./)?#', '', $reference);
+        }
+
         static::$mediaByFilename ??= Media::all()->keyBy('filename');
 
         $media = is_numeric($reference)
@@ -201,5 +238,6 @@ class Content
         static::$sections = [];
         static::$mediaByFilename = null;
         static::$menus = [];
+        static::$linkMap = null;
     }
 }

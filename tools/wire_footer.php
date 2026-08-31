@@ -32,7 +32,7 @@ $html = bind_text($html, 'Thank you! Your submission has been received!',
 $html = bind_text($html, 'Oops! Something went wrong while submitting the form.',
     "{{ setting('footer.newsletter_error', 'Oops! Something went wrong while submitting the form.') }}");
 
-$html = bind_text($html, 'edoly', "{{ setting('footer.big_text', 'edoly') }}");
+$html = bind_text($html, 'era', "{{ setting('footer.big_text', 'ERA') }}");
 
 $html = bind_text($html, 'PAGES',
     "{{ cms_menu('footer')->first()?->column_heading ?? 'PAGES' }}");

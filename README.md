@@ -145,7 +145,7 @@ Run it after any change to the site views.
 - **A broken link was fixed**: the footer's own `https:// erainfotechbd.com/`
   carried a stray space on all 16 pages. It is now a setting.
 - **Placeholder copy is still placeholder copy.** The template's lorem ipsum,
-  "Fables"/"EDOLY" branding and demo names are seeded as-is so the pages match
+  "Fables"/"Era" branding and demo names are seeded as-is so the pages match
   the export. All of it is editable from the dashboard.
 
 ## Not yet bound to the database

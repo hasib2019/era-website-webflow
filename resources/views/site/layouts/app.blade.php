@@ -18,6 +18,12 @@
     @yield('content')
     @include('site.partials.footer')
     @include('site.partials.scripts')
+    {{--
+        The export's webflow.js / schunk.js never actually contain the lightbox
+        module -- see public/site/js/lightbox-video.js for why -- so this is
+        what opens the video thumbnails on the home and services pages.
+    --}}
+    <script src="/site/js/lightbox-video.js"></script>
     @stack('scripts')
 </body>
 

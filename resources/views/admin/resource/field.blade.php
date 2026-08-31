@@ -45,23 +45,32 @@
 
         @case('media')
             @php $selected = $mediaOptions->firstWhere('id', (int) $value); @endphp
-            <div class="mt-1.5 flex items-start gap-4">
-                <div class="h-20 w-28 shrink-0 overflow-hidden rounded-lg bg-slate-100 ring-1 ring-slate-200">
-                    @if ($selected)
-                        <img src="{{ $selected->url }}" alt="" class="h-full w-full object-cover">
-                    @endif
-                </div>
-                <div class="min-w-0 flex-1">
-                    <select id="{{ $id }}" name="{{ $name }}" class="{{ $input }} mt-0">
-                        <option value="">— none —</option>
-                        @foreach ($mediaOptions as $media)
-                            <option value="{{ $media->id }}" @selected((int) $value === $media->id)>
-                                {{ $media->original_name }} ({{ $media->filename }})
-                            </option>
-                        @endforeach
-                    </select>
-                    <a href="{{ route('admin.media.index') }}" target="_blank" rel="noopener"
-                        class="mt-1.5 inline-block text-xs font-medium text-brand-700 hover:underline">Upload to media library</a>
+            <div class="mt-1.5" data-media-picker-field data-media-value-type="id">
+                <input id="{{ $id }}" type="hidden" name="{{ $name }}" value="{{ $value }}" data-media-picker-value>
+                <div class="flex items-start gap-4">
+                    <button type="button" data-media-picker-open
+                        class="group relative h-20 w-28 shrink-0 overflow-hidden rounded-lg bg-slate-100 ring-1 ring-slate-200 transition hover:ring-2 hover:ring-brand-500"
+                        aria-label="Choose {{ $label }}">
+                        <img src="{{ $selected?->url ?? '' }}" alt="" data-media-picker-preview
+                            class="h-full w-full object-cover {{ $selected ? '' : 'hidden' }}">
+                        <span data-media-picker-placeholder
+                            class="absolute inset-0 {{ $selected ? 'hidden' : 'flex' }} items-center justify-center text-xs font-medium text-slate-400">No image</span>
+                    </button>
+                    <div class="min-w-0 flex-1">
+                        <p data-media-picker-name class="truncate text-sm text-slate-700">
+                            {{ $selected ? $selected->original_name . ' (' . $selected->filename . ')' : 'No image selected' }}
+                        </p>
+                        <div class="mt-2 flex flex-wrap gap-2">
+                            <button type="button" data-media-picker-open
+                                class="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-brand-700 ring-1 ring-slate-200 transition hover:bg-brand-50">
+                                {{ $selected ? 'Change image' : 'Choose image' }}
+                            </button>
+                            <button type="button" data-media-picker-clear
+                                class="rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-500 transition hover:bg-slate-100 {{ $selected ? '' : 'hidden' }}">Remove</button>
+                        </div>
+                        <a href="{{ route('admin.media.index') }}" target="_blank" rel="noopener"
+                            class="mt-2 inline-block text-xs font-medium text-brand-700 hover:underline">Upload to media library</a>
+                    </div>
                 </div>
             </div>
             @break

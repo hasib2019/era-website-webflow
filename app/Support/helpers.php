@@ -45,6 +45,16 @@ if (! function_exists('cms_image')) {
     }
 }
 
+if (! function_exists('cms_url')) {
+    /** A section field holding a link, e.g. a CTA button's destination. */
+    function cms_url(string $path, ?string $default = null): ?string
+    {
+        [$page, $section, $field] = array_pad(explode('.', $path, 3), 3, null);
+
+        return App\Support\Content::url($page, $section, $field, $default);
+    }
+}
+
 if (! function_exists('cms_srcset')) {
     /** The responsive srcset for a section's image field, when one exists. */
     function cms_srcset(string $path, ?string $default = null): ?string

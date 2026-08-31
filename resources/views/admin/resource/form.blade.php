@@ -56,4 +56,8 @@
             @endif
         </div>
     </form>
+
+    @if (collect($fields)->contains(fn ($spec) => ($spec['type'] ?? 'text') === 'media'))
+        @include('admin.partials.media-picker', ['mediaOptions' => $mediaOptions ?? collect()])
+    @endif
 @endsection

@@ -1,11 +1,11 @@
 <aside data-sidebar
-    class="fixed inset-y-0 left-0 z-30 hidden w-64 shrink-0 overflow-y-auto border-r border-slate-200 bg-white lg:static lg:block">
-    <div class="flex h-16 items-center gap-2.5 border-b border-slate-200 px-5">
+    class="fixed inset-y-0 left-0 z-30 hidden h-full w-64 shrink-0 flex-col overflow-hidden border-r border-slate-200 bg-white lg:static lg:flex">
+    <div class="flex h-16 shrink-0 items-center gap-2.5 border-b border-slate-200 px-5">
         <img src="{{ asset('storage/media/webflow/668c2e6e687f356e879426a1_Logo-black.svg') }}" alt="" class="h-7 w-auto">
         <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Admin</span>
     </div>
 
-    <nav class="space-y-6 px-3 py-5">
+    <nav class="min-h-0 flex-1 space-y-6 overflow-y-auto overscroll-contain px-3 py-5">
         @foreach (config('admin_nav') as $group => $links)
             @php
                 $visible = array_filter($links, fn ($l) => auth()->user()->hasPermission($l['permission']));

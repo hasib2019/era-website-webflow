@@ -122,7 +122,7 @@
                             <div class="our-evaluation-title-wrap">
                                 <div class="text-animation-block"
                                     style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                    <h2>{{ cms('why-choose-us.our_evaluation.heading', 'Crafting Success with EDOLY Marketing') }}</h2>
+                                    <h2>{{ cms('why-choose-us.our_evaluation.heading', 'Crafting Success with ERA Marketing') }}</h2>
                                     <div class="text-overlay" style="will-change: width, height; width: 100%;">
                                     </div>
                                     <div class="text-overlay row-02" style="will-change: width, height; width: 100%;">
@@ -280,7 +280,7 @@
                         <div class="faq-item">
                             <div class="faq-trigger">
                                 <div class="faq-title" style="color: rgb(120, 120, 120);">WHAT SERVICES DOES PROVIDE
-                                    THE EDOLY?</div>
+                                    THE ERA?</div>
                                 <div class="faq-open-close-icon-wrap">
                                     <div class="faq-open-close-icon"
                                         style="color: rgb(120, 120, 120); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
@@ -299,7 +299,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-trigger">
-                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN EDOLY BENEFITS MY
+                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN ERA BENEFITS MY
                                     BUSINESS</div>
                                 <div class="faq-open-close-icon-wrap">
                                     <div class="faq-open-close-icon"
@@ -339,7 +339,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-trigger">
-                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES EDOLY PROVIDE THE
+                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES ERA PROVIDE THE
                                     SECURITY?</div>
                                 <div class="faq-open-close-icon-wrap">
                                     <div class="faq-open-close-icon"

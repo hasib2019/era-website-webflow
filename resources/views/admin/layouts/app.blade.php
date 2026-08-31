@@ -11,11 +11,11 @@
 </head>
 
 <body class="h-full bg-slate-100 font-sans text-slate-800 antialiased">
-    <div class="flex min-h-full">
+    <div class="flex h-full overflow-hidden">
         @include('admin.partials.sidebar')
 
-        <div class="flex min-w-0 flex-1 flex-col">
-            <header class="sticky top-0 z-20 flex h-16 items-center gap-4 border-b border-slate-200 bg-white/90 px-4 backdrop-blur sm:px-6">
+        <div class="flex h-full min-w-0 flex-1 flex-col overflow-hidden">
+            <header class="z-20 flex h-16 shrink-0 items-center gap-4 border-b border-slate-200 bg-white/90 px-4 backdrop-blur sm:px-6">
                 <button type="button" data-sidebar-toggle
                     class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 lg:hidden" aria-label="Toggle navigation">
                     <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@
                 </div>
             </header>
 
-            <main class="flex-1 px-4 py-6 sm:px-6 lg:px-8">
+            <main class="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-6 sm:px-6 lg:px-8">
                 @include('admin.partials.flash')
                 @yield('content')
             </main>

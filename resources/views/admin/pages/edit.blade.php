@@ -51,4 +51,6 @@
             </div>
         @endforelse
     </div>
+
+    @include('admin.partials.media-picker', ['mediaOptions' => $mediaOptions])
 @endsection

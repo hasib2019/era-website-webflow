@@ -1,6 +1,6 @@
 ---
 name: era-cms
-description: Working on the ERA Infotech Laravel CMS (era-website-fullstack) — the Webflow "Edoly" export rebuilt on Laravel 12. Load before editing anything under resources/views/site, tools/, public/site/css, the admin dashboard, the content models, or the seed data — including any responsive, layout or design change. Covers the generated-views rule, the verify guard, the three content layers, and the Webflow runtime behaviour the markup depends on.
+description: Working on the ERA Infotech Laravel CMS (era-website-fullstack) — the Webflow "Era" export rebuilt on Laravel 12. Load before editing anything under resources/views/site, tools/, public/site/css, the admin dashboard, the content models, or the seed data — including any responsive, layout or design change. Covers the generated-views rule, the verify guard, the three content layers, and the Webflow runtime behaviour the markup depends on.
 ---
 
 # ERA Infotech CMS

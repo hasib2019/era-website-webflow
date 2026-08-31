@@ -1,5 +1,5 @@
 /*
- * Responsive corrections for the Edoly export.
+ * Responsive corrections for the Era export.
  * ---------------------------------------------------------------------------
  * styles.css is the Webflow export and is kept byte-identical so a re-export
  * stays a drop-in replacement. Everything that corrects the template's own
@@ -91,6 +91,18 @@ body {
 .section-testimonial,
 .our-clients-logo-component {
     overflow-x: clip;
+}
+
+/* ---------------------------------------------------------------------------
+ * 5. Keep the large footer wordmark legible
+ *
+ * The export pulls the wordmark under the following footer band with a large
+ * negative margin. With the shorter "ERA" label, that band hides enough of
+ * the E's bottom stroke to make it resemble an F. A small proportional lift
+ * keeps all three letters readable at every responsive font-size step.
+ * ------------------------------------------------------------------------- */
+.footer-big-text {
+    transform: translateY(-0.04em);
 }
 
 /* ---------------------------------------------------------------------------

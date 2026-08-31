@@ -30,13 +30,10 @@
         @endif
     @endforeach
 
-    @if (filled($stat->suffix_html) || filled($stat->suffix))
+    @php($suffixMarkup = $stat->suffixMarkup())
+    @if (filled($suffixMarkup))
         <div class="couting-column">
-            @if (filled($stat->suffix_html))
-                {!! $stat->suffix_html !!}
-            @else
-                <div>{{ $stat->suffix }}</div>
-            @endif
+            {!! $suffixMarkup !!}
         </div>
     @endif
 </div>

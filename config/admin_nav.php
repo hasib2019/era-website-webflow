@@ -29,6 +29,7 @@ return [
         ['label' => 'Team', 'route' => 'admin.team.index', 'permission' => 'team.manage', 'icon' => 'users'],
         ['label' => 'Clients', 'route' => 'admin.clients.index', 'permission' => 'clients.manage', 'icon' => 'building'],
         ['label' => 'FAQs', 'route' => 'admin.faqs.index', 'permission' => 'faqs.manage', 'icon' => 'question'],
+        ['label' => 'Counters', 'route' => 'admin.stats.index', 'permission' => 'stats.manage', 'icon' => 'chart'],
         ['label' => 'Changelog', 'route' => 'admin.changelog.index', 'permission' => 'changelog.manage', 'icon' => 'clock'],
     ],
 

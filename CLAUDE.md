@@ -1,6 +1,6 @@
 # ERA Infotech CMS
 
-The Webflow "Edoly" export in `../era-website/` rebuilt on Laravel 12 so the
+The Webflow "Era" export in `../era-website/` rebuilt on Laravel 12 so the
 content can be edited. The design must not change.
 
 **Load the `era-cms` skill before working here.** It carries the rules; this file

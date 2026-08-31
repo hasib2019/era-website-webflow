@@ -1,6 +1,6 @@
 # ERA Infotech CMS — documentation
 
-The public site is a Webflow export ("Edoly") rebuilt on Laravel so that ERA can
+The public site is a Webflow export ("Era") rebuilt on Laravel so that ERA can
 edit it. The design does not change; only who can change it does.
 
 Read these in order the first time:

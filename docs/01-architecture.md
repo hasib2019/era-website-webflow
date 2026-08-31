@@ -2,7 +2,7 @@
 
 ## What this project is
 
-`era-website/` holds a Webflow export of the "Edoly" template: 18 HTML files, one
+`era-website/` holds a Webflow export of the "Era" template: 18 HTML files, one
 195 KB stylesheet, and Webflow's own JavaScript runtime. `era-website-fullstack/`
 is that same site rebuilt on Laravel 12 with an admin dashboard behind it.
 

@@ -8,6 +8,7 @@ use App\Models\Setting;
 use App\Support\ActivityLogger;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class SettingsController extends Controller
 {
@@ -25,9 +26,14 @@ class SettingsController extends Controller
         $changed = 0;
 
         foreach (Setting::all() as $setting) {
-            $value = data_get($submitted, $setting->group . '.' . $setting->key);
+            $path = $setting->group . '.' . $setting->key;
+            if (! Arr::has($submitted, $path)) {
+                continue;
+            }
 
-            if ($value === null || (string) $value === (string) $setting->value) {
+            $value = data_get($submitted, $path);
+
+            if ((string) $value === (string) $setting->value) {
                 continue;
             }
 

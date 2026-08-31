@@ -416,12 +416,12 @@
     ],
     "faqs": [
         {
-            "question": "WHAT SERVICES DOES PROVIDE THE EDOLY?",
+            "question": "WHAT SERVICES DOES PROVIDE THE ERA?",
             "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
             "sort_order": 0
         },
         {
-            "question": "HOW CAN EDOLY BENEFITS MY BUSINESS",
+            "question": "HOW CAN ERA BENEFITS MY BUSINESS",
             "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
             "sort_order": 1
         },
@@ -431,7 +431,7 @@
             "sort_order": 2
         },
         {
-            "question": "HOW DOES EDOLY PROVIDE THE SECURITY?",
+            "question": "HOW DOES ERA PROVIDE THE SECURITY?",
             "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis malesuada nunc. Mauris accumsan ultricies tempus. Suspendisse cursus dui non libero malesuada, id dignissim lacus posuere. Aliquam eget lectus lobortis, rutrum tortor quis, tincidunt odio. Pellentesque et turpis viverra, vestibulum urna at.",
             "sort_order": 3
         },
