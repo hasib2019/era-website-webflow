@@ -20,9 +20,9 @@
                     <div data-w-id="51215c0d-cb36-2309-ef4e-63fa92589f2d"
                         style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                         class="job-hero-info">
-                        <div class="job-info-text color-white">new york</div>
+                        <div class="job-info-text color-white">{{ $job->location }}</div>
                         <div class="job-hero-devider"></div>
-                        <div class="job-info-text color-white">Full time</div>
+                        <div class="job-info-text color-white">{{ $job->employment_type }}</div>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@
                                 <div class="title-move-animation"
                                     style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                                     <div class="text-gradient">
-                                        <div class="display-large">choose us</div>
+                                        <div class="display-large">{{ cms('why-choose-us.why_choose_us_hero.heading_line_2', 'choose us') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -82,8 +82,8 @@
                                 <div class="button-text-wrap">
                                     <div class="button-text-inner"
                                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="text-block">LET’S TALK</div>
-                                        <div>LET’S TALK</div>
+                                        <div class="text-block">{{ cms('why-choose-us.why_choose_us_hero.button_label', 'LET’S TALK') }}</div>
+                                        <div>{{ cms('why-choose-us.why_choose_us_hero.button_label', 'LET’S TALK') }}</div>
                                     </div>
                                 </div>
                                 <div class="button-icon-element">
@@ -494,7 +494,7 @@
                             style="transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                             <div class="text-gradient cta-text-gradient">
                                 <div class="text-align-center">
-                                    <div class="display-medium">PROJECT NOW</div>
+                                    <div class="display-medium">{{ cms('why-choose-us.cta.heading_line_2', 'PROJECT NOW') }}</div>
                                 </div>
                             </div>
                         </div>
@@ -509,8 +509,8 @@
                         <div class="button-text-wrap">
                             <div class="button-text-inner"
                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                <div class="text-block">GET IT TOUCH</div>
-                                <div>GET IT TOUCH</div>
+                                <div class="text-block">{{ cms('why-choose-us.cta.button_label', 'GET IT TOUCH') }}</div>
+                                <div>{{ cms('why-choose-us.cta.button_label', 'GET IT TOUCH') }}</div>
                             </div>
                         </div>
                         <div class="button-icon-element">

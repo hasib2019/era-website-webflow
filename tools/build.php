@@ -47,6 +47,7 @@ $views = [
     'wire_seo.php' => 'page titles read the page Meta title field',
     'wire_contact.php' => 'contact details and copyright read the settings',
     'wire_chrome.php' => 'top-bar links, header button and remaining labels',
+    'wire_page_text.php' => 'job hero fields, footer wordmark, remaining page labels',
 ];
 
 function run(string $script, string $why): void
