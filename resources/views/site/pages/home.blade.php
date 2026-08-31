@@ -77,8 +77,8 @@
                 <div data-w-id="1cdc3515-9b69-d8e5-eafb-ce4163077016"
                     style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;"
                     class="home-hero-image-wrap">
-                    <img src="{{ cms_image('home.home_hero.hero_image', '/site/images/home-hero-image.jpg') }}" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 54vw, (max-width: 991px) 40vw, 493px"
-                        srcset="/site/images/home-hero-image-p-500.jpg 500w, /site/images/home-hero-image.jpg 741w"
+                    <img src="{{ cms_image('home.home_hero.hero_image', 'ee/site/images/home-hero-image.jpg') }}" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 54vw, (max-width: 991px) 40vw, 493px"
+                        srcset="{{ cms_image('home.home_hero.hero_image', 'ee/site/images/home-hero-image.jpg') }} 500w, {{ cms_image('home.home_hero.hero_image', 'ee/site/images/home-hero-image.jpg') }} 741w"
                         alt="Home hero image" class="image">
                     <a data-w-id="c868fe40-8193-7925-a7ad-53ff469463d6" style="opacity: 1;" href="#case-study" class="hero-round-text-wrap w-inline-block">
                         <div class="hero-round-icon-wrap"> 

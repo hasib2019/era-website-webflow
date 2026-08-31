@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Media;
 use App\Support\ActivityLogger;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -50,7 +51,7 @@ class MediaController extends Controller
         ]);
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request): RedirectResponse|JsonResponse
     {
         $request->validate([
             'files' => ['required', 'array', 'max:' . self::MAX_FILES],
@@ -62,6 +63,7 @@ class MediaController extends Controller
         $disk = Storage::disk('public');
         $uploaded = 0;
         $failed = [];
+        $created = [];
 
         foreach ($request->file('files') as $file) {
             $filename = $this->uniqueFilename($folder, $file->getClientOriginalName());
@@ -99,10 +101,32 @@ class MediaController extends Controller
             ]);
 
             ActivityLogger::log('uploaded', $media, 'Uploaded ' . $media->path);
+            $created[] = $media;
             $uploaded++;
         }
 
         $where = $folder === self::ROOT ? 'public/era' : 'public/era/' . $folder;
+
+        /*
+         * The picker dialog on a content field uploads in place -- there is no
+         * page to redirect back to inside a <dialog> -- so it asks for JSON and
+         * gets the new rows back to add to its own grid instead of a flash
+         * message on a page it never navigated away from.
+         */
+        if ($request->wantsJson()) {
+            return response()->json([
+                'uploaded' => $uploaded,
+                'failed' => $failed,
+                'media' => array_map(fn (Media $m) => [
+                    'id' => $m->id,
+                    'filename' => $m->filename,
+                    'url' => $m->url,
+                    'name' => $m->original_name,
+                    'folder' => $m->folder,
+                    'is_image' => $m->is_image,
+                ], $created),
+            ], $failed && ! $created ? 422 : 201);
+        }
 
         if ($failed) {
             return back()

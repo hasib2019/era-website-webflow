@@ -387,8 +387,9 @@ function initMenuBoard(board) {
 
 function initMediaPicker(dialog) {
     const search = dialog.querySelector('[data-media-picker-search]');
-    const items = [...dialog.querySelectorAll('[data-media-picker-item]')];
+    const grid = dialog.querySelector('[data-media-picker-grid]');
     const empty = dialog.querySelector('[data-media-picker-empty]');
+    let items = [...dialog.querySelectorAll('[data-media-picker-item]')];
     let activeField = null;
 
     function filterItems() {
@@ -465,20 +466,120 @@ function initMediaPicker(dialog) {
         });
     });
 
-    items.forEach((item) => {
-        item.addEventListener('click', () => {
-            if (!activeField) return;
+    function selectItem(item) {
+        if (!activeField) return;
 
-            const type = activeField.dataset.mediaValueType;
-            activeField.querySelector('[data-media-picker-value]').value =
-                type === 'id' ? item.dataset.mediaId : item.dataset.mediaFilename;
-            refreshField(activeField, {
-                url: item.dataset.mediaUrl,
-                name: item.dataset.mediaName,
-                filename: item.dataset.mediaFilename,
-            });
-            dialog.close();
+        const type = activeField.dataset.mediaValueType;
+        activeField.querySelector('[data-media-picker-value]').value =
+            type === 'id' ? item.dataset.mediaId : item.dataset.mediaFilename;
+        refreshField(activeField, {
+            url: item.dataset.mediaUrl,
+            name: item.dataset.mediaName,
+            filename: item.dataset.mediaFilename,
         });
+        dialog.close();
+    }
+
+    function bindItem(item) {
+        item.addEventListener('click', () => selectItem(item));
+    }
+
+    items.forEach(bindItem);
+
+    /**
+     * Adds one freshly-uploaded file to the grid, in the same shape the
+     * server renders so search, selection and the "already selected" ring
+     * all treat it identically to a pre-existing item.
+     */
+    function addItem(media) {
+        grid?.querySelector('[data-media-picker-no-items]')?.remove();
+
+        const searchText = `${media.name} ${media.filename}`.toLowerCase();
+        grid?.insertAdjacentHTML(
+            'afterbegin',
+            `<button type="button" data-media-picker-item data-media-id="${media.id}"
+                data-media-filename="${escapeHtml(media.filename)}" data-media-url="${escapeHtml(media.url)}"
+                data-media-name="${escapeHtml(media.name)}" data-media-search="${escapeHtml(searchText)}"
+                class="overflow-hidden rounded-xl bg-white text-left ring-1 ring-slate-200 transition hover:ring-2 hover:ring-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                <span class="block aspect-square overflow-hidden bg-slate-100">
+                    <img src="${escapeHtml(media.url)}" alt="" loading="lazy" class="h-full w-full object-cover">
+                </span>
+                <span class="block min-w-0 px-2.5 py-2">
+                    <span class="block truncate text-xs font-semibold text-slate-700">${escapeHtml(media.name)}</span>
+                    <span class="mt-0.5 block truncate font-mono text-[10px] text-slate-400">${escapeHtml(media.filename)}</span>
+                </span>
+            </button>`,
+        );
+
+        const item = grid?.querySelector('[data-media-picker-item]');
+        if (!item) return null;
+
+        items = [item, ...items];
+        bindItem(item);
+
+        return item;
+    }
+
+    const uploadInput = dialog.querySelector('[data-media-picker-upload-input]');
+    const uploadLabel = dialog.querySelector('[data-media-picker-upload-label]');
+    const uploadIdle = dialog.querySelector('[data-media-picker-upload-idle]');
+    const uploadBusy = dialog.querySelector('[data-media-picker-upload-busy]');
+    const uploadError = dialog.querySelector('[data-media-picker-upload-error]');
+    const uploadUrl = dialog.dataset.mediaPickerUploadUrl;
+    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content ?? '';
+
+    uploadInput?.addEventListener('change', async () => {
+        const files = [...(uploadInput.files ?? [])];
+        if (!files.length || !uploadUrl) return;
+
+        uploadError?.classList.add('hidden');
+        uploadLabel?.setAttribute('aria-disabled', 'true');
+        uploadIdle?.classList.add('hidden');
+        uploadBusy?.classList.remove('hidden');
+
+        const body = new FormData();
+        files.forEach((file) => body.append('files[]', file));
+
+        try {
+            const res = await fetch(uploadUrl, {
+                method: 'POST',
+                headers: { 'X-CSRF-TOKEN': csrfToken, 'X-Requested-With': 'XMLHttpRequest', Accept: 'application/json' },
+                body,
+            });
+
+            const payload = await res.json().catch(() => ({}));
+
+            if (!res.ok && !payload.media?.length) {
+                const firstError = payload.errors ? Object.values(payload.errors)[0]?.[0] : null;
+                const message = firstError ?? payload.message ?? payload.failed?.join(', ') ?? `Upload failed (HTTP ${res.status}).`;
+                if (uploadError) {
+                    uploadError.textContent = message;
+                    uploadError.classList.remove('hidden');
+                }
+                return;
+            }
+
+            const added = (payload.media ?? []).filter((m) => m.is_image).map(addItem).filter(Boolean);
+
+            if (payload.failed?.length && uploadError) {
+                uploadError.textContent = `Could not upload: ${payload.failed.join(', ')}`;
+                uploadError.classList.remove('hidden');
+            }
+
+            filterItems();
+
+            if (added[0]) selectItem(added[0]);
+        } catch {
+            if (uploadError) {
+                uploadError.textContent = 'Upload failed -- check your connection and try again.';
+                uploadError.classList.remove('hidden');
+            }
+        } finally {
+            uploadLabel?.setAttribute('aria-disabled', 'false');
+            uploadIdle?.classList.remove('hidden');
+            uploadBusy?.classList.add('hidden');
+            uploadInput.value = '';
+        }
     });
 
     search?.addEventListener('input', filterItems);
