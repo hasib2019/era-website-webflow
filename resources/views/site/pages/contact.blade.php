@@ -75,7 +75,7 @@
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.office_label', 'office') }}</div>
                                 <p><a href="#">{{ setting('contact.office_address', '714 Example location') }}</a></p><a href="mailto:{{ setting('contact.email', 'hello@edoly.com') }}"
-                                    class="address-link">{{ setting('contact.email', 'hello@edoly.com') }}</a>
+                                    class="address-link">{{ setting('contact.email', 'hello@erainfotechbd.com') }}</a>
                             </div>
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.sales_label', 'Sales') }}</div>
@@ -179,7 +179,7 @@
                             <div class="faq-item">
                                 <div class="faq-trigger">
                                     <div class="faq-title" style="color: rgb(120, 120, 120);">WHAT SERVICES DOES PROVIDE
-                                        THE EDOLY?</div>
+                                        THE ERA?</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
                                             style="color: rgb(120, 120, 120); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
