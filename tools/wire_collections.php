@@ -44,6 +44,20 @@ $COLLECTIONS = [
         'href' => "route('case-studies.show', \$study->slug)",
     ],
     [
+        // the home page's own separate entry: same card, but a 3-up preview
+        // rather than the full (paginated) list case-studies.blade.php shows
+        'views' => ['home'],
+        'item_class' => 'case-study-collection-item',
+        'source' => "\App\Models\CaseStudy::published()->ordered()->take(3)->get()",
+        'as' => 'study',
+        'text' => [
+            'case-study-title' => '$study->title',
+            'case-study-subtitle' => '$study->subtitle',
+        ],
+        'image' => "\$study->image?->url",
+        'href' => "route('case-studies.show', \$study->slug)",
+    ],
+    [
         'views' => ['blog'],
         'item_class' => 'blog-collection-item',
         'source' => "\App\Models\Post::published()->where('is_featured', false)->latestFirst()->get()",

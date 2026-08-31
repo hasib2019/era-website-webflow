@@ -77,8 +77,8 @@
                 <div data-w-id="1cdc3515-9b69-d8e5-eafb-ce4163077016"
                     style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;"
                     class="home-hero-image-wrap">
-                    <img src="{{ cms_image('home.home_hero.hero_image', 'ee/site/images/home-hero-image.jpg') }}" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 54vw, (max-width: 991px) 40vw, 493px"
-                        srcset="{{ cms_image('home.home_hero.hero_image', 'ee/site/images/home-hero-image.jpg') }} 500w, {{ cms_image('home.home_hero.hero_image', 'ee/site/images/home-hero-image.jpg') }} 741w"
+                    <img src="{{ cms_image('home.home_hero.hero_image', '/site/images/home-hero-image.jpg') }}" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 54vw, (max-width: 991px) 40vw, 493px"
+                        srcset="/site/images/home-hero-image-p-500.jpg 500w, /site/images/home-hero-image.jpg 741w"
                         alt="Home hero image" class="image">
                     <a data-w-id="c868fe40-8193-7925-a7ad-53ff469463d6" style="opacity: 1;" href="#case-study" class="hero-round-text-wrap w-inline-block">
                         <div class="hero-round-icon-wrap"> 
@@ -240,63 +240,23 @@
                 <div class="case-study-element">
                     <div class="w-dyn-list">
                         <div role="list" class="w-dyn-items">
-                            <div role="listitem" class="case-study-collection-item w-dyn-item"
+                            @foreach (\App\Models\CaseStudy::published()->ordered()->take(3)->get() as $study)<div role="listitem" class="case-study-collection-item w-dyn-item"
                                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management"
+                                <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="{{ route('case-studies.show', $study->slug) }}"
                                     class="case-study-image-wrap w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}"><img
-                                        src="/era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp"
+                                        src="{{ $study->image?->url }}"
                                         loading="lazy" alt=""
-                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                        srcset="/era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-500.webp 500w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-800.webp 800w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1080.webp 1080w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1-p-1600.webp 1600w, /era/media/webflow/66a88aa8e8d3d468817e7ff3_case-study-image-1.webp 1634w"
                                         class="full-image"></a>
                                 <div id="w-node-_0815d970-abde-a912-bf09-59715d3d53e9-f09ac0c2"
                                     class="case-study-content-block">
                                     <div class="case-study-content-wrap">
-                                        <div class="case-study-title">Event planning and management</div>
+                                        <div class="case-study-title">{{ $study->title }}</div>
                                         <div class="case-study-subtitle-wrap">
-                                            <p class="case-study-subtitle">Crafting impactful events </p>
+                                            <p class="case-study-subtitle">{{ $study->subtitle }}</p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div role="listitem" class="case-study-collection-item w-dyn-item"
-                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management"
-                                    class="case-study-image-wrap w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}"><img
-                                        src="/era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp"
-                                        loading="lazy" alt=""
-                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                        srcset="/era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-500.webp 500w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-800.webp 800w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1080.webp 1080w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2-p-1600.webp 1600w, /era/media/webflow/66a88ba2e8b025fd7b925b37_case-study-image-2.webp 1634w"
-                                        class="full-image"></a>
-                                <div id="w-node-_0815d970-abde-a912-bf09-59715d3d53e9-f09ac0c2"
-                                    class="case-study-content-block">
-                                    <div class="case-study-content-wrap">
-                                        <div class="case-study-title">A targeted digital campaign</div>
-                                        <div class="case-study-subtitle-wrap">
-                                            <p class="case-study-subtitle">Boosting Sales for company</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div role="listitem" class="case-study-collection-item w-dyn-item"
-                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                <a {!! nav_active('/case-studies/event-planning-and-management') ? 'aria-current="page"' : '' !!} href="/case-studies/event-planning-and-management"
-                                    class="case-study-image-wrap w-inline-block{{ nav_active('/case-studies/event-planning-and-management') ? ' w--current' : '' }}"><img
-                                        src="/era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3.webp"
-                                        loading="lazy" alt=""
-                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 59vw, (max-width: 1279px) 61vw, (max-width: 1439px) 62vw, (max-width: 1919px) 63vw, 66vw"
-                                        srcset="/era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-500.webp 500w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-800.webp 800w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-1080.webp 1080w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3-p-1600.webp 1600w, /era/media/webflow/66a88bbbcdb323d26bec8efd_case-study-image-3.webp 1634w"
-                                        class="full-image"></a>
-                                <div id="w-node-_0815d970-abde-a912-bf09-59715d3d53e9-f09ac0c2"
-                                    class="case-study-content-block">
-                                    <div class="case-study-content-wrap">
-                                        <div class="case-study-title">A multi-channel marketing strategy</div>
-                                        <div class="case-study-subtitle-wrap">
-                                            <p class="case-study-subtitle">Boosting E-commerce Sales</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>@endforeach
                         </div>
                     </div>
                     <div data-w-id="24d703d0-1aae-2fb7-d964-d55807bb8f67"

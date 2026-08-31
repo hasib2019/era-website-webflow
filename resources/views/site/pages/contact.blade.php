@@ -74,13 +74,13 @@
                             class="address-wrapper">
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.office_label', 'office') }}</div>
-                                <p><a href="#">{{ setting('contact.office_address', '714 Example location') }}</a></p><a href="mailto:{{ setting('contact.email', 'hello@erainfotechbd.com') }}"
-                                    class="address-link">{{ setting('contact.email', 'hello@erainfotechbd.com') }}</a>
+                                <p><a href="#">{{ setting('contact.office_address', '714 Example location') }}</a></p><a href="mailto:{{ setting('contact.email', 'hello@edoly.com') }}"
+                                    class="address-link">{{ setting('contact.email', 'hello@edoly.com') }}</a>
                             </div>
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.sales_label', 'Sales') }}</div>
-                                <p><a href="#">{{ setting('contact.sales_address', '715 Example location') }}</a></p><a href="mailto:{{ setting('contact.sales_email', 'sales@erainfotechbd.com') }}"
-                                    class="address-link">{{ setting('contact.sales_email', 'sales@erainfotechbd.com') }}</a>
+                                <p><a href="#">{{ setting('contact.sales_address', '715 Example location') }}</a></p><a href="mailto:{{ setting('contact.sales_email', 'sales@edoly.com') }}"
+                                    class="address-link">{{ setting('contact.sales_email', 'sales@edoly.com') }}</a>
                             </div>
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.address_label', 'Address') }}</div>
@@ -179,7 +179,7 @@
                             <div class="faq-item">
                                 <div class="faq-trigger">
                                     <div class="faq-title" style="color: rgb(120, 120, 120);">WHAT SERVICES DOES PROVIDE
-                                        THE ERA?</div>
+                                        THE EDOLY?</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
                                             style="color: rgb(120, 120, 120); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
@@ -198,7 +198,7 @@
                             </div>
                             <div class="faq-item">
                                 <div class="faq-trigger">
-                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN ERA BENEFITS MY
+                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN EDOLY BENEFITS MY
                                         BUSINESS</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
@@ -238,7 +238,7 @@
                             </div>
                             <div class="faq-item">
                                 <div class="faq-trigger">
-                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES ERA PROVIDE THE
+                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES EDOLY PROVIDE THE
                                         SECURITY?</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
