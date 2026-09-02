@@ -168,20 +168,7 @@
                     <div class="video-play-icon-wrap service-video-play-icon-wrap" style="opacity: 1;"><img
                             src="/era/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg"
                             loading="lazy" alt="" class="video-play-icon"></div>
-                    <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "url": "https://youtube.com/watch?v=r233kDWShkA",
-      "originalUrl": "https://youtube.com/watch?v=r233kDWShkA",
-      "width": 940,
-      "height": 528,
-      "thumbnailUrl": "https://i.ytimg.com/vi/r233kDWShkA/hqdefault.jpg",
-      "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Fr233kDWShkA%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dr233kDWShkA&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fr233kDWShkA%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"940\" height=\"528\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
-      "type": "video"
-    }
-  ],
-  "group": ""
-}</script>
+                    <script type="application/json" class="w-json">@json(cms_video('services.service_video.video_url', 'https://youtube.com/watch?v=r233kDWShkA'))</script>
                 </a></div>
         </div>
         <div class="horizontal-line-wrap">

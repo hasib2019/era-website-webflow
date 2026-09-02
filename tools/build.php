@@ -41,6 +41,7 @@ $views = [
     'wire_repeaters.php' => 'process strips (first card keeps its extra class)',
     'wire_clients.php' => 'client marquee, both copies of each row',
     'wire_stats.php' => 'animated counters',
+    'wire_video.php' => 'home/services video lightbox -> Video Url field',
     'wire_cta_links.php' => 'CTA button hrefs make_dynamic.php cannot disambiguate',
     'wire_testimonials.php' => 'tab slider, ids regenerated per item',
     'wire_details.php' => 'detail pages read the record in the URL',

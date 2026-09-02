@@ -78,7 +78,7 @@
                     style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;"
                     class="home-hero-image-wrap">
                     <img src="{{ cms_image('home.home_hero.hero_image', '/site/images/home-hero-image.jpg') }}" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 54vw, (max-width: 991px) 40vw, 493px"
-                        srcset="/site/images/home-hero-image-p-500.jpg 500w, /site/images/home-hero-image.jpg 741w"
+                        srcset="{{ cms_image('home.home_hero.hero_image', '/site/images/home-hero-image.jpg') }} 741w"
                         alt="Home hero image" class="image">
                     <a data-w-id="c868fe40-8193-7925-a7ad-53ff469463d6" style="opacity: 1;" href="#case-study" class="hero-round-text-wrap w-inline-block">
                         <div class="hero-round-icon-wrap"> 
@@ -170,25 +170,12 @@
                         src="{{ cms_image('home.home_video.video_thumbnail', '/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp') }}"
                         loading="lazy"
                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1439px) 94vw, (max-width: 1919px) 96vw, 99vw"
-                        srcset="/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-500.webp 500w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-800.webp 800w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1080.webp 1080w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1600.webp 1600w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-2000.webp 2000w, /era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp 2480w"
+                        srcset="{{ cms_image('home.home_video.video_thumbnail', '/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp') }} 500w, {{ cms_image('home.home_video.video_thumbnail', '/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-800.webp') }} 800w, {{ cms_image('home.home_video.video_thumbnail', '/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1080.webp') }} 1080w, {{ cms_image('home.home_video.video_thumbnail', '/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-1600.webp') }} 1600w, {{ cms_image('home.home_video.video_thumbnail', '/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail-p-2000.webp') }} 2000w, {{ cms_image('home.home_video.video_thumbnail', '/era/media/webflow/66a671fa50dc9af69750f4cf_service-video-thumbnail.webp') }} 2480w"
                         alt="Service video thumbnail image" class="image">
                     <div style="opacity: 1;" class="video-play-icon-wrap"><img
                             src="{{ cms_image('home.home_video.video_play_icon', '/era/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg') }}"
                             loading="lazy" alt="" class="video-play-icon"></div>
-                    <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "url": "https://youtube.com/watch?v=r233kDWShkA",
-      "originalUrl": "https://youtube.com/watch?v=r233kDWShkA",
-      "width": 940,
-      "height": 528,
-      "thumbnailUrl": "https://i.ytimg.com/vi/r233kDWShkA/hqdefault.jpg",
-      "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Fr233kDWShkA%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dr233kDWShkA&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fr233kDWShkA%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"940\" height=\"528\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
-      "type": "video"
-    }
-  ],
-  "group": ""
-}</script>
+                    <script type="application/json" class="w-json">@json(cms_video('home.home_video.video_url', ''))</script>
                 </a></div>
         </div>
         <div class="horizontal-line-wrap">
