@@ -5,7 +5,7 @@
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
-<header class="section-case-study-details-hero">
+@if(cms_section_visible('case-study-details', 'case_study_details_hero'))<header class="section-case-study-details-hero">
         <div class="container-main">
             <div class="case-study-details-component">
                 <div class="case-study-details-hero-element">
@@ -15,8 +15,8 @@
                 </div>
             </div>
         </div>
-    </header>
-    <section class="section-case-study-info">
+    </header>@endif
+    @if(cms_section_visible('case-study-details', 'case_study_info'))<section class="section-case-study-info">
         <div class="container-main">
             <div class="case-study-info-component">
                 <div data-w-id="92bc3feb-83dd-5913-c237-7192f3537bff"
@@ -61,8 +61,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-case-study-details">
+    </section>@endif
+    @if(cms_section_visible('case-study-details', 'case_study_objective_and_strategies'))<section class="section-case-study-details">
         <div class="container-main">
             <div class="case-study-details-component">
                 <div class="section-title-element our-solution-title-element">
@@ -149,8 +149,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-case-study-result">
+    </section>@endif
+    @if(cms_section_visible('case-study-details', 'case_study_result'))<section class="section-case-study-result">
         <div class="container-main">
             <div class="case-study-result-component">
                 <div class="case-study-result-content">
@@ -199,8 +199,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-testimonial">
+    </section>@endif
+    @if(cms_section_visible('case-study-details', 'testimonial'))<section class="section-testimonial">
         <div class="container-main">
             <div class="testimonial-component">
                 <h2 class="caption"
@@ -260,8 +260,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-cta">
+    </section>@endif
+    @if(cms_section_visible('case-study-details', 'cta'))<section class="section-cta">
         <div class="container-main">
             <div class="max-width-930px">
                 <div class="cta-component">
@@ -319,5 +319,5 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
+    </section>@endif
 @endsection

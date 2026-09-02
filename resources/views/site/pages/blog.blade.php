@@ -5,7 +5,7 @@
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
-<header class="section-common-hero">
+@if(cms_section_visible('blog', 'blog_hero'))<header class="section-common-hero">
         <div class="container-main">
             <div class="common-hero-component">
                 <div class="common-hero-element">
@@ -41,8 +41,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </header>
-    <section class="section-feature-blog">
+    </header>@endif
+    @if(cms_section_visible('blog', 'blog_featured'))<section class="section-feature-blog">
         <div class="container-main">
             <div class="feature-blog-component">
                 <div class="section-title-element">
@@ -132,8 +132,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="section-blogs">
+    </section>@endif
+    @if(cms_section_visible('blog', 'blog_list'))<section class="section-blogs">
         <div class="container-main">
             <div class="blog-component">
                 <div class="section-title-element blog-section-title">
@@ -253,8 +253,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-cta">
+    </section>@endif
+    @if(cms_section_visible('blog', 'blog_cta'))<section class="section-cta">
         <div class="container-main">
             <div class="max-width-930px">
                 <div class="cta-component">
@@ -312,5 +312,5 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
+    </section>@endif
 @endsection

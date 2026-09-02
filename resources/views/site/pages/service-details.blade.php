@@ -5,7 +5,7 @@
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
-<div class="cursor-wrapper">
+@if(cms_section_visible('service-details', 'custom_cursor_overlay'))<div class="cursor-wrapper">
         <div data-w-id="fd885965-1454-8dd5-7dfb-6b25a03c3d50" class="cursor"
             style="transform: translate3d(-28.163vw, 49.995vh, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1; background-color: rgb(255, 255, 255); will-change: transform;">
             <div data-w-id="fd885965-1454-8dd5-7dfb-6b25a03c3d51" class="cursor-text-view"
@@ -13,8 +13,8 @@
                 src="{{ cms_image('service-details.custom_cursor_overlay.cursor_play_icon', '/era/media/webflow/664d7b64e6f014d2e2659c40_video-play.svg') }}"
                 loading="lazy" alt="" class="video-play-icon">
         </div>
-    </div>
-    <header class="section-common-hero">
+    </div>@endif
+    @if(cms_section_visible('service-details', 'service_details_hero'))<header class="section-common-hero">
         <div class="container-main">
             <div class="common-hero-component">
                 <div class="service-details-hero-element">
@@ -76,8 +76,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </header>
-    <section class="section-service-details">
+    </header>@endif
+    @if(cms_section_visible('service-details', 'service_details_features'))<section class="section-service-details">
         <div class="container-main">
             <div class="service-details-component">
                 <div class="service-details-element">
@@ -189,8 +189,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-service-process">
+    </section>@endif
+    @if(cms_section_visible('service-details', 'service_process'))<section class="section-service-process">
         <div class="container-main">
             <div class="service-process-component">
                 <div class="section-title-element">
@@ -260,8 +260,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-case-study">
+    </section>@endif
+    @if(cms_section_visible('service-details', 'case_study'))<section class="section-case-study">
         <div class="container-main">
             <div class="case-study-component">
                 <h2 class="caption"
@@ -322,8 +322,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-why-choose-us">
+    </section>@endif
+    @if(cms_section_visible('service-details', 'why_choose_us'))<section class="section-why-choose-us">
         <div class="container-main">
             <div class="why-choose-us-component">
                 <div class="why-choose-us-element">
@@ -445,8 +445,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-cta">
+    </section>@endif
+    @if(cms_section_visible('service-details', 'cta'))<section class="section-cta">
         <div class="container-main">
             <div class="max-width-930px">
                 <div class="cta-component">
@@ -504,5 +504,5 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
+    </section>@endif
 @endsection

@@ -5,7 +5,7 @@
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
-<header class="utilities-section-hero">
+@if(cms_section_visible('style-guide', 'style_guide_hero'))<header class="utilities-section-hero">
         <div class="container-main">
             <div class="utilities-component">
                 <div class="hero-title-wrap z-index-none">
@@ -22,8 +22,8 @@
             {!! cms('style-guide.style_guide_hero.hero_divider_visible', '<div class="horizontal-line" style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">') !!}
             </div>
         </div>
-    </header>
-    <section class="utilities-section-main">
+    </header>@endif
+    @if(cms_section_visible('style-guide', 'style_guide_main'))<section class="utilities-section-main">
         <div class="container-main">
             <div class="utilities-main-inner">
                 <aside class="utilities-main-aside">
@@ -134,8 +134,8 @@
             {!! cms('style-guide.style_guide_hero.hero_divider_visible', '<div class="horizontal-line" style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">') !!}
             </div>
         </div>
-    </section>
-    <section class="section-cta">
+    </section>@endif
+    @if(cms_section_visible('style-guide', 'style_guide_cta'))<section class="section-cta">
         <div class="container-main">
             <div class="max-width-930px">
                 <div class="cta-component">
@@ -192,5 +192,5 @@
             {!! cms('style-guide.style_guide_hero.hero_divider_visible', '<div class="horizontal-line" style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">') !!}
             </div>
         </div>
-    </section>
+    </section>@endif
 @endsection

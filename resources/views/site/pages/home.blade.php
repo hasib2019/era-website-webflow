@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-<header data-w-id="2148083c-5a88-2722-4e3b-37b4a1eb45bd" class="section-home-hero">
+@if(cms_section_visible('home', 'home_hero'))<header data-w-id="2148083c-5a88-2722-4e3b-37b4a1eb45bd" class="section-home-hero">
         <div class="container-main">
             <div class="home-hero-component">
                 <div class="home-hero-element">
@@ -94,8 +94,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </header>
-    <section data-w-id="53a1557a-a5dc-677e-bbe6-7708ef9f1c9e" class="section-home-about-us">
+    </header>@endif
+    @if(cms_section_visible('home', 'home_about_us'))<section data-w-id="53a1557a-a5dc-677e-bbe6-7708ef9f1c9e" class="section-home-about-us">
         <div class="container-main">
             <div class="home-about-us-component">
                 <div class="home-about-us-element">
@@ -160,8 +160,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-home-video">
+    </section>@endif
+    @if(cms_section_visible('home', 'home_video'))<section class="section-home-video">
         <div class="container-main">
             <div class="home-video-element"><a href="#" data-w-id="c3481595-905d-439d-a04b-32df4c47acce"
                     class="video-lightbox w-inline-block w-lightbox"
@@ -196,8 +196,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-service">
+    </section>@endif
+    @if(cms_section_visible('home', 'home_services'))<section class="section-service">
         <div class="container-main">
             <div class="service-component">
                 <div class="service-section-caption-wrap">
@@ -230,8 +230,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section id="case-study" class="section-case-study">
+    </section>@endif
+    @if(cms_section_visible('home', 'home_case_study'))<section id="case-study" class="section-case-study">
         <div class="container-main">
             <div class="case-study-component">
                 <h2 class="caption"
@@ -296,8 +296,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-our-process">
+    </section>@endif
+    @if(cms_section_visible('home', 'home_process'))<section class="section-our-process">
         <div class="container-main">
             <div class="our-process-component">
                 <div class="our-process-title-element home-page-process-title">
@@ -333,8 +333,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-testimonial">
+    </section>@endif
+    @if(cms_section_visible('home', 'home_testimonials'))<section class="section-testimonial">
         <div class="container-main">
             <div class="testimonial-component">
                 <h2 class="caption"
@@ -394,8 +394,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="home-latest-blog">
+    </section>@endif
+    @if(cms_section_visible('home', 'home_latest_blog'))<section class="home-latest-blog">
         <div class="container-main">
             <div class="blog-component">
                 <div class="blog-section-title-wrap">
@@ -482,8 +482,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-cta">
+    </section>@endif
+    @if(cms_section_visible('home', 'home_cta'))<section class="section-cta">
         <div class="container-main">
             <div class="max-width-930px">
                 <div class="cta-component">
@@ -510,7 +510,7 @@
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
                         <img src="{{ cms_image('home.home_cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
                             loading="lazy" sizes="100vw"
-                            srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                            srcset="{{ cms_image('home.home_cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }} 800w, {{ cms_image('home.home_cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg') }} 1080w, {{ cms_image('home.home_cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }} 1395w"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                         href="/contact" target="_blank"
                         class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}" style="border-color: rgba(255, 255, 255, 0.2);">
@@ -541,5 +541,5 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
+    </section>@endif
 @endsection

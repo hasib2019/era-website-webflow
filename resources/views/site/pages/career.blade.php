@@ -5,7 +5,7 @@
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
-<header class="section-common-hero career-hero">
+@if(cms_section_visible('career', 'career_hero'))<header class="section-common-hero career-hero">
         <div class="container-main">
             <div class="common-hero-component">
                 <div class="career-hero-content-wrap">
@@ -55,8 +55,8 @@
                 </div>
             </div>
         </div>
-    </header>
-    <section class="section-about-us-info">
+    </header>@endif
+    @if(cms_section_visible('career', 'career_stats'))<section class="section-about-us-info">
         <div class="container-main">
             <div data-w-id="6fcd4e0b-3ff9-370e-81f6-229d1417e516" class="about-us-info-component"
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
@@ -70,8 +70,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="section-our-benefits">
+    </section>@endif
+    @if(cms_section_visible('career', 'career_benefits'))<section class="section-our-benefits">
         <div class="container-main">
             <div class="our-benefits-component">
                 <div class="section-title-element our-solution-title-element">
@@ -157,8 +157,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-testimonial">
+    </section>@endif
+    @if(cms_section_visible('career', 'career_testimonials'))<section class="section-testimonial">
         <div class="container-main">
             <div class="testimonial-component">
                 <h2 class="caption"
@@ -218,8 +218,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-our-jobs">
+    </section>@endif
+    @if(cms_section_visible('career', 'career_jobs'))<section class="section-our-jobs">
         <div class="container-main">
             <div class="our-jobs-component">
                 <div class="section-title-element">
@@ -298,8 +298,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-cta">
+    </section>@endif
+    @if(cms_section_visible('career', 'career_cta'))<section class="section-cta">
         <div class="container-main">
             <div class="max-width-930px">
                 <div class="cta-component">
@@ -359,5 +359,5 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
+    </section>@endif
 @endsection

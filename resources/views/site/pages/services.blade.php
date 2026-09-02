@@ -14,7 +14,7 @@
                 loading="lazy" alt="" class="video-play-icon">
         </div>
     </div>
-    <header class="section-common-hero">
+    @if(cms_section_visible('services', 'service_hero'))<header class="section-common-hero">
         <div class="container-main">
             <div class="common-hero-component">
                 <div class="common-hero-element">
@@ -58,8 +58,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </header>
-    <section class="section-service">
+    </header>@endif
+    @if(cms_section_visible('services', 'service_list'))<section class="section-service">
         <div class="container-main">
             <div class="service-component">
                 <div class="service-section-caption-wrap">
@@ -92,8 +92,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="section-about-us-info">
+    </section>@endif
+    @if(cms_section_visible('services', 'about_us_stats'))<section class="section-about-us-info">
         <div class="container-main">
             <div data-w-id="6fcd4e0b-3ff9-370e-81f6-229d1417e516" class="about-us-info-component"
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
@@ -107,8 +107,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="section-our-process">
+    </section>@endif
+    @if(cms_section_visible('services', 'our_process'))<section class="section-our-process">
         <div class="container-main">
             <div class="our-process-component">
                 <div class="section-title-element our-process-title-element">
@@ -152,8 +152,8 @@
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
             </div>
         </div>
-    </section>
-    <section class="section-service-video">
+    </section>@endif
+    @if(cms_section_visible('services', 'service_video'))<section class="section-service-video">
         <div class="container-main">
             <div data-w-id="a9a38eeb-a9f9-3829-b862-02e83cad83f3"
                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
@@ -189,8 +189,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-faq">
+    </section>@endif
+    @if(cms_section_visible('services', 'faq'))<section class="section-faq">
         <div class="container-main">
             <div class="faq-component">
                 <div class="faq-element">
@@ -310,8 +310,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section data-w-id="979eb138-38b4-5f5c-7df2-418d23b3870f" class="section-our-clients">
+    </section>@endif
+    @if(cms_section_visible('services', 'our_clients'))<section data-w-id="979eb138-38b4-5f5c-7df2-418d23b3870f" class="section-our-clients">
         <div class="container-main">
             <div class="our-clients-logo-component">
                 <div class="caption"
@@ -381,8 +381,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-cta">
+    </section>@endif
+    @if(cms_section_visible('services', 'cta'))<section class="section-cta">
         <div class="container-main">
             <div class="max-width-930px">
                 <div class="cta-component">
@@ -440,5 +440,5 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
+    </section>@endif
 @endsection

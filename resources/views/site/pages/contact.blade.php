@@ -5,7 +5,7 @@
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
-<header class="section-common-hero">
+@if(cms_section_visible('contact', 'contact_hero'))<header class="section-common-hero">
             <div class="container-main">
                 <div class="common-hero-component">
                     <div class="common-hero-element">
@@ -42,8 +42,8 @@
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                 </div>
             </div>
-        </header>
-        <section class="section-contact-us">
+        </header>@endif
+        @if(cms_section_visible('contact', 'contact_us_main'))<section class="section-contact-us">
             <div class="container-main">
                 <div class="contact-us-component">
                     <div class="section-title-element">
@@ -164,8 +164,8 @@
                     style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                 </div>
             </div>
-        </section>
-        <section class="section-faq">
+        </section>@endif
+        @if(cms_section_visible('contact', 'contact_faq'))<section class="section-faq">
             <div class="container-main">
                 <div class="faq-component">
                     <div class="faq-element">
@@ -285,8 +285,8 @@
                     style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                 </div>
             </div>
-        </section>
-        <section class="section-cta">
+        </section>@endif
+        @if(cms_section_visible('contact', 'contact_cta'))<section class="section-cta">
             <div class="container-main">
                 <div class="max-width-930px">
                     <div class="cta-component">
@@ -346,5 +346,5 @@
                     style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                 </div>
             </div>
-        </section>
+        </section>@endif
 @endsection

@@ -5,7 +5,7 @@
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
-<header class="section-blog-details-hero">
+@if(cms_section_visible('blog-details', 'blog_details_hero'))<header class="section-blog-details-hero">
         <div class="container-main">
             <div class="blog-details-hero-component">
                 <div data-w-id="b08c0190-d097-484a-0a1b-70f7614623c8"
@@ -40,8 +40,8 @@
                         class="full-image"></div>
             </div>
         </div>
-    </header>
-    <section class="section-blog-details">
+    </header>@endif
+    @if(cms_section_visible('blog-details', 'blog_details_body'))<section class="section-blog-details">
         <div class="container-main">
             <div class="blog-details-component">
                 <div data-w-id="a6bceb13-7051-cd5e-5b6c-d9a15072b2b5"
@@ -174,8 +174,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="home-latest-blog">
+    </section>@endif
+    @if(cms_section_visible('blog-details', 'latest_blog'))<section class="home-latest-blog">
         <div class="container-main">
             <div class="blog-component">
                 <div class="blog-section-title-wrap">
@@ -261,8 +261,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-cta">
+    </section>@endif
+    @if(cms_section_visible('blog-details', 'cta'))<section class="section-cta">
         <div class="container-main">
             <div class="max-width-930px">
                 <div class="cta-component">
@@ -321,5 +321,5 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
+    </section>@endif
 @endsection
