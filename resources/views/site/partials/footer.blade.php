@@ -89,7 +89,7 @@
                 </div>
                 <div data-w-id="6ae0aa8d-def1-f227-09ea-ec72da4627cf" class="footer-bottom-element"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                    <div class="footer-big-text">{{ setting('footer.big_text', 'edoly') }}</div>
+                    <div class="footer-big-text">{{ setting('footer.big_text', 'era') }}</div>
                 </div>
             </div>
         </div>

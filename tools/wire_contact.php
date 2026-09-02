@@ -4,7 +4,7 @@
  *
  * `contact.email`, `contact.sales_email`, `contact.phone`, `contact.office_address`
  * and `contact.sales_address` all existed in the dashboard and were read by
- * nothing: the contact page carried Webflow's own hello@edoly.com, the career
+ * nothing: the contact page carried Webflow's own hello@era.com, the career
  * page a placeholder gmail address, and the footer its copyright line as plain
  * text. Editing any of them changed nothing on the site.
  *
@@ -39,7 +39,7 @@ $edits = [
             /*
              * Matched by position, not by the address itself.
              *
-             * The export shipped hello@edoly.com and the site has since been
+             * The export shipped hello@era.com and the site has since been
              * given a real one; pinning the pattern to Webflow's placeholder
              * made the pass silently skip the very field it exists to bind.
              * $1 carries whatever address is there now, so it becomes the

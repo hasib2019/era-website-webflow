@@ -49,6 +49,7 @@ $views = [
     'wire_contact.php' => 'contact details and copyright read the settings',
     'wire_chrome.php' => 'top-bar links, header button and remaining labels',
     'wire_page_text.php' => 'job hero fields, footer wordmark, remaining page labels',
+    'wire_section_visibility.php' => 'each page section -> "visible on site" toggle',
 ];
 
 function run(string $script, string $why): void

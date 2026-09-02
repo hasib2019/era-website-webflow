@@ -74,23 +74,23 @@
                             class="address-wrapper">
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.office_label', 'office') }}</div>
-                                <p><a href="#">{{ setting('contact.office_address', '714 Example location') }}</a></p><a href="mailto:{{ setting('contact.email', 'hello@edoly.com') }}"
-                                    class="address-link">{{ setting('contact.email', 'hello@erainfotechbd.com') }}</a>
+                                <p><a href="#">{{ setting('contact.office_address', 'Fareast Tower, 35 Topkhana Road, (Level-3), Dhaka-1000') }}</a></p><a href="mailto:{{ setting('contact.email', 'contact@erainfotechbd.com') }}"
+                                    class="address-link">{{ setting('contact.email', 'contact@erainfotechbd.com') }}</a>
                             </div>
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.sales_label', 'Sales') }}</div>
-                                <p><a href="#">{{ setting('contact.sales_address', '715 Example location') }}</a></p><a href="mailto:{{ setting('contact.sales_email', 'sales@edoly.com') }}"
-                                    class="address-link">{{ setting('contact.sales_email', 'sales@edoly.com') }}</a>
+                                <p><a href="#">{{ setting('contact.sales_address', 'Fareast Tower, 35 Topkhana Road, (Level-3), Dhaka-1000') }}</a></p><a href="mailto:{{ setting('contact.sales_email', 'sales@erainfotechbd.com') }}"
+                                    class="address-link">{{ setting('contact.sales_email', 'sales@era.com') }}</a>
                             </div>
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.address_label', 'Address') }}</div>
-                                <p><a href="#">{{ setting('contact.address', '716 Example location') }}</a></p><a href="tel:{{ setting('contact.phone', '+0-000-000-000') }}"
+                                <p><a href="#">{{ setting('contact.address', 'Fareast Tower, 35 Topkhana Road, (Level-3), Dhaka-1000') }}</a></p><a href="tel:{{ setting('contact.phone', '+0-000-000-000') }}"
                                     class="address-link">{{ setting('contact.phone', '+0-000-000-000') }}</a>
                             </div>
                         </div>
                         <div id="w-node-b7234a9a-67bb-0b74-f19a-02f99d3aed29-f09ac0cc" class="contact-us-form-element">
                             <div data-w-id="221a5df5-9f48-d8a2-8f2b-5b1c2a94ac8e"
-                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
+                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                                 class="contact-us-form-block w-form">
                                 <h3 class="contact-us-form-title">{{ cms('contact.contact_us_main.form_title', 'contact us!') }}</h3>
                                 <form id="wf-form-Contact-Us-Form" name="wf-form-Contact-Us-Form"
@@ -198,7 +198,7 @@
                             </div>
                             <div class="faq-item">
                                 <div class="faq-trigger">
-                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN EDOLY BENEFITS MY
+                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN era BENEFITS MY
                                         BUSINESS</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
@@ -238,7 +238,7 @@
                             </div>
                             <div class="faq-item">
                                 <div class="faq-trigger">
-                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES EDOLY PROVIDE THE
+                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES era PROVIDE THE
                                         SECURITY?</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
