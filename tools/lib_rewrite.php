@@ -76,10 +76,10 @@ function rewrite_links(string $html): string
 
     // the template author's own webflow.io demo, which carried the real slugs
     $html = str_replace([
-        'https://edoly.webflow.io/service/search-engine-optimization',
-        'https://edoly.webflow.io/post/navigating-search-algorithms-for-regional-impact',
-        'https://edoly.webflow.io/job/brand-expert',
-        'https://edoly.webflow.io/case-study/event-planning-and-management',
+        'https://era.webflow.io/service/search-engine-optimization',
+        'https://era.webflow.io/post/navigating-search-algorithms-for-regional-impact',
+        'https://era.webflow.io/job/brand-expert',
+        'https://era.webflow.io/case-study/event-planning-and-management',
     ], [
         '/services/search-engine-optimization',
         '/blog/navigating-search-algorithms-for-regional-impact',
@@ -90,7 +90,7 @@ function rewrite_links(string $html): string
     // template marketplace links that shipped with the theme
     $html = str_replace([
         'https://www.flowfye.com/services#pricing',
-        'https://webflow.com/templates/html/edoly-agency-website-template',
+        'https://webflow.com/templates/html/era-agency-website-template',
         'https://welifye.webflow.io/contact-us#w-tabs-0-data-w-pane-0',
         'https://welifye.webflow.io/contact-us#w-tabs-0-data-w-pane-1',
     ], ['/contact', '/contact', '#', '#'], $html);

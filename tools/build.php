@@ -42,6 +42,7 @@ $views = [
     'wire_clients.php' => 'client marquee, both copies of each row',
     'wire_about.php' => 'about-page core values, partners, certifications and awards',
     'wire_stats.php' => 'animated counters',
+    'wire_video.php' => 'home/services video lightbox -> Video Url field',
     'wire_cta_links.php' => 'CTA button hrefs make_dynamic.php cannot disambiguate',
     'wire_testimonials.php' => 'tab slider, ids regenerated per item',
     'wire_details.php' => 'detail pages read the record in the URL',
@@ -50,6 +51,7 @@ $views = [
     'wire_contact.php' => 'contact details and copyright read the settings',
     'wire_chrome.php' => 'top-bar links, header button and remaining labels',
     'wire_page_text.php' => 'job hero fields, footer wordmark, remaining page labels',
+    'wire_section_visibility.php' => 'each page section -> "visible on site" toggle',
 ];
 
 function run(string $script, string $why): void

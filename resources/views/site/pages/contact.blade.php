@@ -5,7 +5,7 @@
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
-<header class="section-common-hero">
+@if(cms_section_visible('contact', 'contact_hero'))<header class="section-common-hero">
             <div class="container-main">
                 <div class="common-hero-component">
                     <div class="common-hero-element">
@@ -42,8 +42,8 @@
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
                 </div>
             </div>
-        </header>
-        <section class="section-contact-us">
+        </header>@endif
+        @if(cms_section_visible('contact', 'contact_us_main'))<section class="section-contact-us">
             <div class="container-main">
                 <div class="contact-us-component">
                     <div class="section-title-element">
@@ -74,23 +74,28 @@
                             class="address-wrapper">
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.office_label', 'office') }}</div>
+<<<<<<< HEAD
                                 <p><a href="#">{{ setting('contact.office_address', '714 Example location') }}</a></p><a href="mailto:{{ setting('contact.email', 'hello@edoly.com') }}"
                                     class="address-link">{{ setting('contact.email', 'hello@edoly.com') }}</a>
+=======
+                                <p><a href="#">{{ setting('contact.office_address', 'Fareast Tower, 35 Topkhana Road, (Level-3), Dhaka-1000') }}</a></p><a href="mailto:{{ setting('contact.email', 'contact@erainfotechbd.com') }}"
+                                    class="address-link">{{ setting('contact.email', 'contact@erainfotechbd.com') }}</a>
+>>>>>>> cda3505d14a34a3ed3fbec23ed8225782d4e3631
                             </div>
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.sales_label', 'Sales') }}</div>
-                                <p><a href="#">{{ setting('contact.sales_address', '715 Example location') }}</a></p><a href="mailto:{{ setting('contact.sales_email', 'sales@edoly.com') }}"
-                                    class="address-link">{{ setting('contact.sales_email', 'sales@edoly.com') }}</a>
+                                <p><a href="#">{{ setting('contact.sales_address', 'Fareast Tower, 35 Topkhana Road, (Level-3), Dhaka-1000') }}</a></p><a href="mailto:{{ setting('contact.sales_email', 'sales@erainfotechbd.com') }}"
+                                    class="address-link">{{ setting('contact.sales_email', 'sales@era.com') }}</a>
                             </div>
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.address_label', 'Address') }}</div>
-                                <p><a href="#">{{ setting('contact.address', '716 Example location') }}</a></p><a href="tel:{{ setting('contact.phone', '+0-000-000-000') }}"
+                                <p><a href="#">{{ setting('contact.address', 'Fareast Tower, 35 Topkhana Road, (Level-3), Dhaka-1000') }}</a></p><a href="tel:{{ setting('contact.phone', '+0-000-000-000') }}"
                                     class="address-link">{{ setting('contact.phone', '+0-000-000-000') }}</a>
                             </div>
                         </div>
                         <div id="w-node-b7234a9a-67bb-0b74-f19a-02f99d3aed29-f09ac0cc" class="contact-us-form-element">
                             <div data-w-id="221a5df5-9f48-d8a2-8f2b-5b1c2a94ac8e"
-                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 0; transform-style: preserve-3d;"
+                                style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); opacity: 1; transform-style: preserve-3d;"
                                 class="contact-us-form-block w-form">
                                 <h3 class="contact-us-form-title">{{ cms('contact.contact_us_main.form_title', 'contact us!') }}</h3>
                                 <form id="wf-form-Contact-Us-Form" name="wf-form-Contact-Us-Form"
@@ -164,8 +169,8 @@
                     style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                 </div>
             </div>
-        </section>
-        <section class="section-faq">
+        </section>@endif
+        @if(cms_section_visible('contact', 'contact_faq'))<section class="section-faq">
             <div class="container-main">
                 <div class="faq-component">
                     <div class="faq-element">
@@ -198,7 +203,7 @@
                             </div>
                             <div class="faq-item">
                                 <div class="faq-trigger">
-                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN EDOLY BENEFITS MY
+                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN era BENEFITS MY
                                         BUSINESS</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
@@ -238,7 +243,7 @@
                             </div>
                             <div class="faq-item">
                                 <div class="faq-trigger">
-                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES EDOLY PROVIDE THE
+                                    <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES era PROVIDE THE
                                         SECURITY?</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
@@ -285,8 +290,8 @@
                     style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                 </div>
             </div>
-        </section>
-        <section class="section-cta">
+        </section>@endif
+        @if(cms_section_visible('contact', 'contact_cta'))<section class="section-cta">
             <div class="container-main">
                 <div class="max-width-930px">
                     <div class="cta-component">
@@ -345,5 +350,5 @@
                     style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
                 </div>
             </div>
-        </section>
+        </section>@endif
 @endsection

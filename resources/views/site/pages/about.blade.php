@@ -5,7 +5,7 @@
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
-<header class="section-common-hero">
+@if(cms_section_visible('about', 'about_hero'))<header class="section-common-hero">
         <div class="container-main">
             <div class="common-hero-component">
                 <div class="career-hero-content-wrap">
@@ -57,8 +57,8 @@
                 </div>
             </div>
         </div>
-    </header>
-    <section class="section-about-us-info">
+    </header>@endif
+    @if(cms_section_visible('about', 'about_us_info_stats'))<section class="section-about-us-info">
         <div class="container-main">
             <div data-w-id="6fcd4e0b-3ff9-370e-81f6-229d1417e516" class="about-us-info-component"
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
@@ -72,8 +72,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="section-our-mission">
+    </section>@endif
+    @if(cms_section_visible('about', 'our_mission'))<section class="section-our-mission">
         <div class="container-main">
             <div class="our-mission-component">
                 <div class="section-title-element our-mission-title-element">
@@ -118,6 +118,7 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
+<<<<<<< HEAD
     </section>
     @if (\App\Models\CoreValue::published()->exists())
     <section class="section-our-process">
@@ -147,6 +148,10 @@
     </section>
     @endif
     <section id="team" class="section-our-team">
+=======
+    </section>@endif
+    @if(cms_section_visible('about', 'our_team'))<section id="team" class="section-our-team">
+>>>>>>> cda3505d14a34a3ed3fbec23ed8225782d4e3631
         <div class="container-main">
             <div class="team-component">
                 <div class="section-title-element our-team-title-element">
@@ -203,6 +208,7 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
+<<<<<<< HEAD
     </section>
     @if (\App\Models\Client::published()->forScope('partner')->exists())
     <section class="section-our-clients">
@@ -231,6 +237,10 @@
     </section>
     @endif
     <section data-w-id="979eb138-38b4-5f5c-7df2-418d23b3870f" class="section-our-clients">
+=======
+    </section>@endif
+    @if(cms_section_visible('about', 'our_clients'))<section data-w-id="979eb138-38b4-5f5c-7df2-418d23b3870f" class="section-our-clients">
+>>>>>>> cda3505d14a34a3ed3fbec23ed8225782d4e3631
         <div class="container-main">
             <div class="our-clients-logo-component">
                 <div class="caption"
@@ -300,6 +310,7 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
+<<<<<<< HEAD
     </section>
     @if (\App\Models\Client::published()->forScope('certification')->exists())
     <section class="section-our-clients">
@@ -366,6 +377,10 @@
     </section>
     @endif
     <section class="section-testimonial">
+=======
+    </section>@endif
+    @if(cms_section_visible('about', 'testimonials'))<section class="section-testimonial">
+>>>>>>> cda3505d14a34a3ed3fbec23ed8225782d4e3631
         <div class="container-main">
             <div class="testimonial-component">
                 <h2 class="caption"
@@ -425,8 +440,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-our-jobs">
+    </section>@endif
+    @if(cms_section_visible('about', 'our_jobs'))<section class="section-our-jobs">
         <div class="container-main">
             <div class="our-jobs-component">
                 <div class="section-title-element">
@@ -499,8 +514,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-cta">
+    </section>@endif
+    @if(cms_section_visible('about', 'cta'))<section class="section-cta">
         <div class="container-main">
             <div class="max-width-930px">
                 <div class="cta-component">
@@ -557,5 +572,5 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
+    </section>@endif
 @endsection

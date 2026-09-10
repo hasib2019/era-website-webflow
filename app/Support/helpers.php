@@ -72,6 +72,49 @@ if (! function_exists('cms_section_visible')) {
     }
 }
 
+if (! function_exists('youtube_id')) {
+    /** The 11-character video id inside a youtube.com/watch, youtu.be, embed or shorts URL. */
+    function youtube_id(string $url): ?string
+    {
+        if (preg_match('/(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/', $url, $m)) {
+            return $m[1];
+        }
+
+        return null;
+    }
+}
+
+if (! function_exists('cms_video')) {
+    /**
+     * A section's video-url field, resolved to the JSON its `w-json` script
+     * tag needs. public/site/js/lightbox-video.js reads `items[0].html`
+     * verbatim, so this builds a plain YouTube iframe rather than routing
+     * through Webflow's embed.ly proxy, which is keyed to Webflow's own
+     * hosting and has no reason to keep working once a site leaves it.
+     *
+     * YouTube only, matching every video field the export shipped. A value
+     * that isn't a YouTube URL renders no video rather than guessing.
+     */
+    function cms_video(string $path, string $default): array
+    {
+        $url = cms($path, $default);
+        $id = filled($url) ? youtube_id($url) : null;
+
+        return [
+            'items' => $id ? [[
+                'url' => $url,
+                'originalUrl' => $url,
+                'width' => 940,
+                'height' => 528,
+                'thumbnailUrl' => "https://i.ytimg.com/vi/{$id}/hqdefault.jpg",
+                'html' => '<iframe class="embedly-embed" src="https://www.youtube.com/embed/' . $id . '" width="940" height="528" scrolling="no" title="YouTube embed" frameborder="0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>',
+                'type' => 'video',
+            ]] : [],
+            'group' => '',
+        ];
+    }
+}
+
 if (! function_exists('page_title')) {
     /**
      * The <title> for a page.

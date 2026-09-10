@@ -41,8 +41,8 @@ $edits = [
     'partials/footer.blade.php' => [
         [
             'footer wordmark',
-            '#(<div class="footer-big-text">)edoly(</div>)#',
-            '$1{{ setting(\'footer.big_text\', \'edoly\') }}$2',
+            '#(<div class="footer-big-text">)era(</div>)#',
+            '$1{{ setting(\'footer.big_text\', \'era\') }}$2',
         ],
     ],
 

@@ -5,7 +5,7 @@
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
-<header class="section-common-hero">
+@if(cms_section_visible('why-choose-us', 'why_choose_us_hero'))<header class="section-common-hero">
         <div class="container-main">
             <div class="common-hero-component">
                 <div class="common-hero-element">
@@ -42,8 +42,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </header>
-    <section class="section-our-solution">
+    </header>@endif
+    @if(cms_section_visible('why-choose-us', 'our_solution'))<section class="section-our-solution">
         <div class="container-main">
             <div class="our-solution-component">
                 <div class="section-title-element our-solution-title-element">
@@ -107,8 +107,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-our-evaluation">
+    </section>@endif
+    @if(cms_section_visible('why-choose-us', 'our_evaluation'))<section class="section-our-evaluation">
         <div class="container-main">
             <div class="our-evaluation-component">
                 <div class="our-evaluation-element">
@@ -122,7 +122,7 @@
                             <div class="our-evaluation-title-wrap">
                                 <div class="text-animation-block"
                                     style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
-                                    <h2>Crafting Success with EDOLY Marketing</h2>
+                                    <h2>Crafting Success with era Marketing</h2>
                                     <div class="text-overlay" style="will-change: width, height; width: 100%;">
                                     </div>
                                     <div class="text-overlay row-02" style="will-change: width, height; width: 100%;">
@@ -157,8 +157,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-our-process">
+    </section>@endif
+    @if(cms_section_visible('why-choose-us', 'our_process'))<section class="section-our-process">
         <div class="container-main">
             <div class="our-process-component">
                 <div class="section-title-element our-process-title-element">
@@ -202,8 +202,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-testimonial">
+    </section>@endif
+    @if(cms_section_visible('why-choose-us', 'testimonials'))<section class="section-testimonial">
         <div class="container-main">
             <div class="testimonial-component">
                 <h2 class="caption"
@@ -263,8 +263,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-faq">
+    </section>@endif
+    @if(cms_section_visible('why-choose-us', 'faq'))<section class="section-faq">
         <div class="container-main">
             <div class="faq-component">
                 <div class="faq-element">
@@ -278,7 +278,7 @@
                         <div class="faq-item">
                             <div class="faq-trigger">
                                 <div class="faq-title" style="color: rgb(120, 120, 120);">WHAT SERVICES DOES PROVIDE
-                                    THE EDOLY?</div>
+                                    THE era?</div>
                                 <div class="faq-open-close-icon-wrap">
                                     <div class="faq-open-close-icon"
                                         style="color: rgb(120, 120, 120); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
@@ -297,7 +297,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-trigger">
-                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN EDOLY BENEFITS MY
+                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN era BENEFITS MY
                                     BUSINESS</div>
                                 <div class="faq-open-close-icon-wrap">
                                     <div class="faq-open-close-icon"
@@ -337,7 +337,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-trigger">
-                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES EDOLY PROVIDE THE
+                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES era PROVIDE THE
                                     SECURITY?</div>
                                 <div class="faq-open-close-icon-wrap">
                                     <div class="faq-open-close-icon"
@@ -384,8 +384,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="home-latest-blog">
+    </section>@endif
+    @if(cms_section_visible('why-choose-us', 'latest_blog'))<section class="home-latest-blog">
         <div class="container-main">
             <div class="blog-component">
                 <div class="blog-section-title-wrap">
@@ -472,8 +472,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
-    <section class="section-cta">
+    </section>@endif
+    @if(cms_section_visible('why-choose-us', 'cta'))<section class="section-cta">
         <div class="container-main">
             <div class="max-width-930px">
                 <div class="cta-component">
@@ -530,5 +530,5 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-    </section>
+    </section>@endif
 @endsection
