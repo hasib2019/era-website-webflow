@@ -125,3 +125,125 @@ body {
         margin-right: auto;
     }
 }
+
+/* ---------------------------------------------------------------------------
+ * 7. The about page's four ERA bands
+ *
+ * Core values, partners, certifications and awards were added to the export on
+ * top of the template's own components, so they reuse its classes wherever the
+ * design already existed. Three things had no equivalent to borrow.
+ *
+ * `static-logo-row` — partners and certifications reuse the client marquee's
+ * logo markup but do not scroll. The marquee variant is a nowrap flex row whose
+ * chips carry a 100px right margin to space the loop, which standing still
+ * leaves a gap hanging off the end of a short list. Wrapping with a symmetric
+ * gap suits a fixed row, and starting at the left edge lines the logos up with
+ * the caption and heading above them.
+ *
+ * `client-logo-image` — these two bands take real vendor logos, where the
+ * clients marquee only ever draws styled text.
+ *
+ * `award-collection-item` — the awards list is drawn with the job list's row
+ * design, but it cannot share `job-collection-item`: tools/wire_collections.php
+ * binds that class across the whole about page from the first match to the
+ * last, so sharing it would fold the awards, the testimonials between them and
+ * the real job openings into one loop. The rule below is
+ * `.job-collection-item`'s, verbatim.
+ * ------------------------------------------------------------------------- */
+.client-logo-list-inner.static-logo-row {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 40px 64px;
+}
+
+.static-logo-row .client-logo-item {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px 64px;
+}
+
+.static-logo-row .client-logo-wrap {
+    margin-right: 0;
+}
+
+/*
+ * A fixed height, not a maximum.
+ *
+ * Logos arrive at whatever size their file happens to be — a 20px SVG icon and
+ * a 2000px PNG both get uploaded. Capping with max-height left the small one
+ * tiny and shrank the large one, so a row of logos had no common size at all.
+ * Pinning the height and letting object-fit letterbox inside a max width gives
+ * every logo the same optical weight whatever it was drawn at.
+ */
+.client-logo-image {
+    display: block;
+    width: auto;
+    max-width: 240px;
+    height: 52px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/*
+ * `white-logo` on a logo image, opt-in per row.
+ *
+ * styles.css already gives `.client-logo.white-logo` to the text chips. The
+ * filter pair flattens artwork to solid white, which rescues a dark logo that
+ * would otherwise vanish into this near-black band.
+ *
+ * It is deliberately NOT the default. `brightness(0)` blackens every opaque
+ * pixel and `invert(1)` then whitens them, so it only reads as a logo when the
+ * artwork is transparent. Applied to a logo with a baked-in background it fills
+ * the whole rectangle — two of the first bank logos uploaded here came out as
+ * plain white squares. Leaving the default alone means what you upload is what
+ * you see, and this is the fix for the transparent-but-dark case.
+ */
+.client-logo-image.white-logo {
+    filter: brightness(0) invert(1);
+}
+
+.award-collection-item {
+    border-bottom: 1px solid #fff3;
+    padding-top: 52px;
+    padding-bottom: 52px;
+}
+
+@media screen and (max-width: 767px) {
+    .client-logo-list-inner.static-logo-row,
+    .static-logo-row .client-logo-item {
+        gap: 28px 36px;
+    }
+
+    .client-logo-image {
+        height: 36px;
+    }
+
+    .award-collection-item {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+ * 8. A core-values row whose item count does not fill it
+ *
+ * `.our-process-item` is `flex: 20%`, which is shorthand for `1 1 20%` — the
+ * grow factor is 1. Five circles fill a desktop row exactly, so the grow never
+ * does anything; a sixth wraps alone onto a second row and grows to the full
+ * width, and because the circles are `aspect-ratio: 1` that item becomes a
+ * circle as tall as the viewport is wide. Below 992px the export resets the
+ * basis to 50%, so the same thing happens on any odd count.
+ *
+ * Every strip the template ships has exactly four items and never wraps, so the
+ * case never arose. It matters here because core values are a collection the
+ * client adds to and removes from, so any count has to look right.
+ *
+ * Pinning grow to 0 makes each circle keep its column width whatever the count:
+ * five across on desktop, two across below 992px, and a leftover last item the
+ * same size as the rest instead of a balloon. Scoped to this one list so the
+ * process strips on home, services and why-choose-us keep the export's rule.
+ * ------------------------------------------------------------------------- */
+.core-values-list .our-process-item {
+    flex-grow: 0;
+}

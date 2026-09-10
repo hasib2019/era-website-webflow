@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\Admin\ActivityController;
 use App\Http\Controllers\Admin\ApplicationController;
+use App\Http\Controllers\Admin\AwardController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CaseStudyController;
 use App\Http\Controllers\Admin\ChangelogController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\CoreValueController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\JobController;
@@ -100,6 +102,8 @@ Route::middleware('auth')->group(function () {
         'testimonials' => [TestimonialController::class, 'testimonials.manage'],
         'team' => [TeamController::class, 'team.manage'],
         'clients' => [ClientController::class, 'clients.manage'],
+        'core-values' => [CoreValueController::class, 'core-values.manage'],
+        'awards' => [AwardController::class, 'awards.manage'],
         'faqs' => [FaqController::class, 'faqs.manage'],
         'stats' => [StatController::class, 'stats.manage'],
         'process-steps' => [ProcessStepController::class, 'process-steps.manage'],

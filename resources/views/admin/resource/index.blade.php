@@ -17,6 +17,24 @@
         </a>
     </div>
 
+    {{-- Screens holding more than one kind of row get a tab per kind. --}}
+    @if (!empty($filters))
+        @php $activeFilter = (string) request($filterKey ?? 'scope', ''); @endphp
+        <nav class="mb-5 flex flex-wrap gap-1.5">
+            @foreach (['' => 'All'] + $filters as $value => $label)
+                @php $isActive = $activeFilter === (string) $value; @endphp
+                <a href="{{ request()->fullUrlWithQuery([($filterKey ?? 'scope') => $value ?: null, 'page' => null]) }}"
+                    @if ($isActive) aria-current="page" @endif
+                    class="rounded-lg px-3 py-1.5 text-sm font-medium transition {{ $isActive
+                        ? 'bg-brand-600 text-white'
+                        : 'text-slate-600 ring-1 ring-slate-200 hover:bg-white' }}">
+                    {{ $label }}
+                    <span class="ml-1 text-xs {{ $isActive ? 'text-white/70' : 'text-slate-400' }}">{{ $filterCounts[$value] ?? 0 }}</span>
+                </a>
+            @endforeach
+        </nav>
+    @endif
+
     <div class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-slate-200 text-sm">
@@ -31,7 +49,24 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100">
+                    @php $currentGroup = null; @endphp
                     @forelse ($records as $record)
+                        {{-- A heading row each time the grouping column changes. The listing
+                             must be ordered by that column for this to read correctly, which
+                             is what the controller's defaultOrder() override arranges. --}}
+                        @if ($groupBy ?? null)
+                            @php $group = (string) ($record->{$groupBy} ?? ''); @endphp
+                            @if ($group !== $currentGroup)
+                                @php $currentGroup = $group; @endphp
+                                <tr class="bg-slate-50/80">
+                                    <th colspan="{{ count($columns) + 1 }}"
+                                        class="px-4 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
+                                        {{ $groupLabels[$group] ?? Str::headline($group) }}
+                                    </th>
+                                </tr>
+                            @endif
+                        @endif
+
                         <tr class="hover:bg-slate-50/70">
                             @foreach ($columns as $column)
                                 <td class="px-4 py-3 align-middle">

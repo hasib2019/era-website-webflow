@@ -4,10 +4,42 @@
 @section('subheading', 'Page content')
 
 @section('content')
-    <div class="mb-5 flex flex-wrap items-center gap-3">
+@php
+    /*
+     * Preview URL.
+     *
+     * The four detail pages route through a {slug}, so route() needs a record to
+     * point at. Only services.show used to be handled and the other three threw
+     * "Missing required parameter", which 500'd the whole editor — those pages
+     * could not be opened at all. The first published record stands in for the
+     * page, and anything that still cannot be resolved just hides the button
+     * rather than taking the screen down with it.
+     */
+    $previewUrl = null;
+
+    if ($page->route_name && Route::has($page->route_name)) {
+        $sample = match ($page->route_name) {
+            'services.show' => \App\Models\Service::class,
+            'case-studies.show' => \App\Models\CaseStudy::class,
+            'blog.show' => \App\Models\Post::class,
+            'career.show' => \App\Models\JobOpening::class,
+            default => null,
+        };
+
+        try {
+            $previewUrl = $sample
+                ? (($slug = $sample::query()->value('slug')) ? route($page->route_name, ['slug' => $slug]) : null)
+                : route($page->route_name);
+        } catch (\Throwable) {
+            $previewUrl = null;
+        }
+    }
+@endphp
+
+<div class="mb-5 flex flex-wrap items-center gap-3">
         <a href="{{ route('admin.pages.index') }}" class="text-sm font-medium text-slate-500 hover:text-slate-800">&larr; All pages</a>
-        @if ($page->route_name && Route::has($page->route_name))
-            <a href="{{ route($page->route_name, $page->route_name === 'services.show' ? ['slug' => 'search-engine-optimization'] : []) }}"
+        @if ($previewUrl)
+            <a href="{{ $previewUrl }}"
                 target="_blank" rel="noopener"
                 class="ml-auto rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 ring-1 ring-slate-200 hover:bg-white">
                 Preview page

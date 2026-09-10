@@ -40,13 +40,11 @@
                     class="about-us-hero-image-wrap">
                     <div id="w-node-_19fc91ae-bd01-8b6c-8c60-7bc668b115a1-f09ac0c6" class="career-hero-image-wrap"><img
                             src="{{ cms_image('about.about_hero.hero_image_primary', '/era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1.webp') }}"
-                            loading="lazy" sizes="(max-width: 1634px) 100vw, 1634px"
-                            srcset="/era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-500.webp 500w, /era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-800.webp 800w, /era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-1080.webp 1080w, /era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1-p-1600.webp 1600w, /era/media/webflow/66a96bab029754bb653bd53c_about-us-image-1.webp 1634w"
+                            loading="lazy"
                             alt="about us image" class="full-image"></div>
                     <div class="career-hero-image-wrap hide-on-mobile"><img
                             src="{{ cms_image('about.about_hero.hero_image_secondary', '/era/media/webflow/66a96bab2657765525173560_about-us-image-2.webp') }}"
-                            loading="lazy" sizes="(max-width: 784px) 100vw, 784px"
-                            srcset="/era/media/webflow/66a96bab2657765525173560_about-us-image-2-p-500.webp 500w, /era/media/webflow/66a96bab2657765525173560_about-us-image-2.webp 784w"
+                            loading="lazy"
                             alt="about us image" class="full-image"></div><a href="#team"
                         class="hero-round-text-wrap about-us-hero-round-text w-inline-block">
                         <div class="hero-round-icon-wrap"><img
@@ -121,6 +119,33 @@
             </div>
         </div>
     </section>
+    @if (\App\Models\CoreValue::published()->exists())
+    <section class="section-our-process">
+        <div class="container-main">
+            <div class="our-process-component">
+                <div class="our-process-title-element home-page-process-title">
+                    <div class="caption">{{ cms('about.core_values.caption', 'CORE VALUES') }}</div>
+                    <div class="text-align-right">
+                        <h2>{{ cms('about.core_values.heading', 'THE PRINCIPLES BEHIND EVERY ENGAGEMENT') }}</h2>
+                    </div>
+                </div>
+                <div class="our-process-list core-values-list">
+                    @foreach (\App\Models\CoreValue::published()->ordered()->get() as $value)<div class="our-process-item{{ $loop->first ? ' margin-left-none' : '' }}">
+                        <div class="our-process-item-inner">
+                            <div class="our-process-item-title">{{ $value->title }}</div>@if ($value->description)<p>{{ $value->description }}</p>@endif
+                        </div>
+                        <div class="process-counting-wrap">
+                            <div>{{ $value->number ?: $loop->iteration }}</div>
+                        </div>
+                    </div>@endforeach
+                </div>
+            </div>
+        </div>
+        <div class="horizontal-line-wrap">
+            <div class="horizontal-line"></div>
+        </div>
+    </section>
+    @endif
     <section id="team" class="section-our-team">
         <div class="container-main">
             <div class="team-component">
@@ -179,6 +204,32 @@
             </div>
         </div>
     </section>
+    @if (\App\Models\Client::published()->forScope('partner')->exists())
+    <section class="section-our-clients">
+        <div class="container-main">
+            <div class="our-clients-logo-component">
+                <div class="caption">{{ cms('about.our_partners.caption', 'OUR PARTNERS') }}</div>
+                <div class="our-clients-title-wrap">
+                    <h2>{{ cms('about.our_partners.heading', 'TECHNOLOGY PARTNERSHIPS THAT EXTEND WHAT WE DELIVER') }}</h2>
+                </div>
+            </div>
+            <div class="client-logos-element">
+                <div class="client-logo-list">
+                    <div class="client-logo-list-inner static-logo-row">
+                        <div class="client-logo-item">
+                            @foreach (\App\Models\Client::published()->forScope('partner')->ordered()->get() as $client)<div class="client-logo-wrap">
+                                @if ($client->logo)<img src="{{ $client->logo->url }}" loading="lazy" alt="{{ $client->logo_alt ?: $client->name }}" class="client-logo-image{{ $client->variant ? ' ' . $client->variant : '' }}">@else<div class="client-logo{{ $client->variant ? ' ' . $client->variant : '' }}">{{ $client->name }}</div>@endif
+                            </div>@endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="horizontal-line-wrap">
+            <div class="horizontal-line"></div>
+        </div>
+    </section>
+    @endif
     <section data-w-id="979eb138-38b4-5f5c-7df2-418d23b3870f" class="section-our-clients">
         <div class="container-main">
             <div class="our-clients-logo-component">
@@ -203,27 +254,13 @@
                 <div class="client-logo-list-inner">
                     <div class="client-logo-item"
                         style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                        @foreach (\App\Models\Client::published()->where('row_group', 1)->ordered()->get() as $client)<div class="client-logo-wrap">
+                        @foreach (\App\Models\Client::published()->forScope('client')->where('row_group', 1)->ordered()->get() as $client)<div class="client-logo-wrap">
                             <div class="client-logo{{ $client->variant ? ' ' . $client->variant : '' }}">{{ $client->name }}</div>
                         </div>@endforeach
                     </div>
                     <div class="client-logo-item"
                         style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                        @foreach (\App\Models\Client::published()->where('row_group', 1)->ordered()->get() as $client)<div class="client-logo-wrap">
-                            <div class="client-logo{{ $client->variant ? ' ' . $client->variant : '' }}">{{ $client->name }}</div>
-                        </div>@endforeach
-                    </div>
-                </div>
-                <div class="client-logo-list-inner">
-                    <div class="client-logo-item"
-                        style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                        @foreach (\App\Models\Client::published()->where('row_group', 2)->ordered()->get() as $client)<div class="client-logo-wrap">
-                            <div class="client-logo{{ $client->variant ? ' ' . $client->variant : '' }}">{{ $client->name }}</div>
-                        </div>@endforeach
-                    </div>
-                    <div class="client-logo-item"
-                        style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                        @foreach (\App\Models\Client::published()->where('row_group', 2)->ordered()->get() as $client)<div class="client-logo-wrap">
+                        @foreach (\App\Models\Client::published()->forScope('client')->where('row_group', 1)->ordered()->get() as $client)<div class="client-logo-wrap">
                             <div class="client-logo{{ $client->variant ? ' ' . $client->variant : '' }}">{{ $client->name }}</div>
                         </div>@endforeach
                     </div>
@@ -231,13 +268,27 @@
                 <div class="client-logo-list-inner">
                     <div class="client-logo-item"
                         style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                        @foreach (\App\Models\Client::published()->where('row_group', 3)->ordered()->get() as $client)<div class="client-logo-wrap">
+                        @foreach (\App\Models\Client::published()->forScope('client')->where('row_group', 2)->ordered()->get() as $client)<div class="client-logo-wrap">
                             <div class="client-logo{{ $client->variant ? ' ' . $client->variant : '' }}">{{ $client->name }}</div>
                         </div>@endforeach
                     </div>
                     <div class="client-logo-item"
                         style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                        @foreach (\App\Models\Client::published()->where('row_group', 3)->ordered()->get() as $client)<div class="client-logo-wrap">
+                        @foreach (\App\Models\Client::published()->forScope('client')->where('row_group', 2)->ordered()->get() as $client)<div class="client-logo-wrap">
+                            <div class="client-logo{{ $client->variant ? ' ' . $client->variant : '' }}">{{ $client->name }}</div>
+                        </div>@endforeach
+                    </div>
+                </div>
+                <div class="client-logo-list-inner">
+                    <div class="client-logo-item"
+                        style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
+                        @foreach (\App\Models\Client::published()->forScope('client')->where('row_group', 3)->ordered()->get() as $client)<div class="client-logo-wrap">
+                            <div class="client-logo{{ $client->variant ? ' ' . $client->variant : '' }}">{{ $client->name }}</div>
+                        </div>@endforeach
+                    </div>
+                    <div class="client-logo-item"
+                        style="transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
+                        @foreach (\App\Models\Client::published()->forScope('client')->where('row_group', 3)->ordered()->get() as $client)<div class="client-logo-wrap">
                             <div class="client-logo{{ $client->variant ? ' ' . $client->variant : '' }}">{{ $client->name }}</div>
                         </div>@endforeach
                     </div>
@@ -250,6 +301,70 @@
             </div>
         </div>
     </section>
+    @if (\App\Models\Client::published()->forScope('certification')->exists())
+    <section class="section-our-clients">
+        <div class="container-main">
+            <div class="our-clients-logo-component">
+                <div class="caption">{{ cms('about.certifications.caption', 'CERTIFICATIONS & MEMBERSHIP') }}</div>
+                <div class="our-clients-title-wrap">
+                    <h2>{{ cms('about.certifications.heading', 'THE STANDARDS WE HOLD AND THE BODIES WE BELONG TO') }}</h2>
+                </div>
+            </div>
+            <div class="client-logos-element">
+                <div class="client-logo-list">
+                    <div class="client-logo-list-inner static-logo-row">
+                        <div class="client-logo-item">
+                            @foreach (\App\Models\Client::published()->forScope('certification')->ordered()->get() as $client)<div class="client-logo-wrap">
+                                @if ($client->logo)<img src="{{ $client->logo->url }}" loading="lazy" alt="{{ $client->logo_alt ?: $client->name }}" class="client-logo-image{{ $client->variant ? ' ' . $client->variant : '' }}">@else<div class="client-logo{{ $client->variant ? ' ' . $client->variant : '' }}">{{ $client->name }}</div>@endif
+                            </div>@endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="horizontal-line-wrap">
+            <div class="horizontal-line"></div>
+        </div>
+    </section>
+    @endif
+    @if (\App\Models\Award::published()->exists())
+    <section class="section-our-jobs">
+        <div class="container-main">
+            <div class="our-jobs-component">
+                <div class="section-title-element">
+                    <div class="section-caption-wrap">
+                        <div class="caption">{{ cms('about.awards.caption', 'AWARDS & ACHIEVEMENTS') }}</div>
+                    </div>
+                    <div class="section-title-wrap">
+                        <div class="text-align-right">
+                            <h2>{{ cms('about.awards.heading', 'RECOGNISED FOR THE WORK WE DELIVER') }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="jobs-collection-wrap">
+                    <div class="w-dyn-list">
+                        <div role="list" class="w-dyn-items">
+                            @foreach (\App\Models\Award::published()->ordered()->get() as $award)<div role="listitem" class="award-collection-item w-dyn-item">
+                                <div class="job-item-inner">
+                                    <div class="job-item-info-wrap">
+                                        <div class="job-item-title">{{ $award->title }}</div>
+                                    </div>
+                                    <div class="job-info">
+                                        @if ($award->year)<div class="job-info-text">{{ $award->year }}</div>@endif
+                                        @if ($award->awarded_by)<div class="job-info-text">{{ $award->awarded_by }}</div>@endif
+                                    </div>
+                                </div>
+                            </div>@endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="horizontal-line-wrap">
+            <div class="horizontal-line"></div>
+        </div>
+    </section>
+    @endif
     <section class="section-testimonial">
         <div class="container-main">
             <div class="testimonial-component">
@@ -411,8 +526,7 @@
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
                         <img src="{{ cms_image('about.cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
-                            loading="lazy" sizes="100vw"
-                            srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                            loading="lazy"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                         href="/contact" target="_blank"
                         class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}" style="border-color: rgba(255, 255, 255, 0.2);">

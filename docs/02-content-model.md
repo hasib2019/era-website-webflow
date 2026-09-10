@@ -116,7 +116,9 @@ Real tables with real columns, listed and edited at their own dashboard screen.
 | `JobOpening` | `job_openings` | careers list + `/career/{slug}` |
 | `Testimonial` | `testimonials` | the tab slider on six pages |
 | `TeamMember` | `team_members` | the about page team grid |
-| `Client` | `clients` | the three-row logo marquee |
+| `Client` | `clients` | the three-row logo marquee, plus the about page’s partners and certifications bands (by `scope`) |
+| `CoreValue` | `core_values` | the numbered circles in the about page’s core values band |
+| `Award` | `awards` | the about page’s awards & achievements list |
 | `Faq` | `faqs` | the accordion, filtered by `scope` |
 | `ProcessStep` | `process_steps` | the numbered strips, filtered by `scope` |
 | `Stat` | `stats` | the animated counters, filtered by `scope` |
@@ -132,11 +134,17 @@ one table per page, those models carry a `scope`:
 ProcessStep::forScope('home')->ordered()->get()      // home
 ProcessStep::forScope('service')->ordered()->get()   // services page
 Stat::forScope('career')->ordered()->get()           // careers page
-Client::published()->where('row_group', 2)->ordered()->get()
+Client::published()->forScope('client')->where('row_group', 2)->ordered()->get()
 ```
 
 Scopes in use: `home`, `about`, `service`, `service-details`, `career`,
-`why-choose-us`, plus `general`/`contact` for FAQs.
+`why-choose-us`, plus `general`/`contact` for FAQs and
+`client`/`partner`/`certification` for the three logo bands.
+
+The logo bands are the one place where forgetting a scope is silently wrong
+rather than empty: the marquee filters on `row_group`, so a partner row created
+with `row_group` 1 turns up mid-marquee unless the query also says
+`forScope('client')`.
 
 ### Shared query scopes
 

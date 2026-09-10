@@ -24,7 +24,9 @@ class RolePermissionSeeder extends Seeder
             'jobs.manage' => 'Manage job openings',
             'testimonials.manage' => 'Manage testimonials',
             'team.manage' => 'Manage team members',
-            'clients.manage' => 'Manage clients',
+            'clients.manage' => 'Manage clients, partners and certifications',
+            'core-values.manage' => 'Manage the core values',
+            'awards.manage' => 'Manage awards and achievements',
             'faqs.manage' => 'Manage FAQs',
             'stats.manage' => 'Manage the animated counters',
             'process-steps.manage' => 'Manage the process steps',
@@ -68,7 +70,7 @@ class RolePermissionSeeder extends Seeder
             'permissions' => [
                 'dashboard.view', 'pages.view', 'pages.edit',
                 'services.manage', 'case-studies.manage', 'posts.manage', 'jobs.manage',
-                'testimonials.manage', 'team.manage', 'clients.manage', 'faqs.manage',
+                'testimonials.manage', 'team.manage', 'clients.manage', 'faqs.manage', 'core-values.manage', 'awards.manage',
                 'changelog.manage', 'stats.manage', 'process-steps.manage', 'media.view', 'media.upload', 'media.delete',
                 'menus.manage', 'messages.view', 'messages.manage',
                 'applications.view', 'subscribers.view', 'settings.manage',
@@ -80,7 +82,7 @@ class RolePermissionSeeder extends Seeder
             'permissions' => [
                 'dashboard.view', 'pages.view', 'pages.edit',
                 'services.manage', 'case-studies.manage', 'posts.manage', 'jobs.manage',
-                'testimonials.manage', 'team.manage', 'clients.manage', 'faqs.manage',
+                'testimonials.manage', 'team.manage', 'clients.manage', 'faqs.manage', 'core-values.manage', 'awards.manage',
                 'changelog.manage', 'stats.manage', 'process-steps.manage', 'media.view', 'media.upload',
             ],
         ],

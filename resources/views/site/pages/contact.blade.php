@@ -75,7 +75,7 @@
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.office_label', 'office') }}</div>
                                 <p><a href="#">{{ setting('contact.office_address', '714 Example location') }}</a></p><a href="mailto:{{ setting('contact.email', 'hello@edoly.com') }}"
-                                    class="address-link">{{ setting('contact.email', 'hello@erainfotechbd.com') }}</a>
+                                    class="address-link">{{ setting('contact.email', 'hello@edoly.com') }}</a>
                             </div>
                             <div class="address-info">
                                 <div class="address-info-title">{{ setting('contact.sales_label', 'Sales') }}</div>
@@ -179,7 +179,7 @@
                             <div class="faq-item">
                                 <div class="faq-trigger">
                                     <div class="faq-title" style="color: rgb(120, 120, 120);">WHAT SERVICES DOES PROVIDE
-                                        THE ERA?</div>
+                                        THE EDOLY?</div>
                                     <div class="faq-open-close-icon-wrap">
                                         <div class="faq-open-close-icon"
                                             style="color: rgb(120, 120, 120); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
@@ -313,8 +313,7 @@
                         <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap"
                             style="opacity: 0;"><img
                                 src="{{ cms_image('contact.contact_cta.cta_image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
-                                loading="lazy" sizes="100vw"
-                                srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                                loading="lazy"
                                 alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!}
                             data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                             href="/contact" target="_blank"

@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             ContentSeeder::class,
             PageContentSeeder::class,
             DetailContentSeeder::class,
+            // needs the about page row PageContentSeeder creates
+            AboutSectionsSeeder::class,
         ]);
     }
 }

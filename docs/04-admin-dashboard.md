@@ -13,7 +13,7 @@ Unlike the public site, **these views are hand-written — edit them freely.**
 | `/admin/pages`, `/admin/pages/{slug}` | `pages.view` / `pages.edit` | the section editor |
 | `/admin/media` | `media.view` / `.upload` / `.delete` | grid, upload, alt text |
 | `/admin/menus`, `/admin/menus/{slug}` | `menus.manage` | link editor per menu |
-| `/admin/services` … `/admin/changelog` | one `*.manage` each | nine collection screens |
+| `/admin/services` … `/admin/changelog` | one `*.manage` each | eleven collection screens |
 | `/admin/messages`, `/admin/applications`, `/admin/subscribers` | `messages.view` etc. | the inbox |
 | `/admin/users`, `/admin/roles` | `users.*`, `roles.manage` | multi-admin |
 | `/admin/activity` | `activity.view` | audit trail with field-level diffs |
@@ -56,8 +56,9 @@ in the UI is a courtesy, not the control.
 
 ## Adding a collection screen
 
-Nine screens share `Admin\ResourceController` plus two views
-(`admin/resource/index.blade.php` and `form.blade.php`). A tenth is a small class:
+Eleven screens share `Admin\ResourceController` plus two views
+(`admin/resource/index.blade.php` and `form.blade.php`). A twelfth is a small class —
+the sketch below is what `AwardController` actually grew into:
 
 ```php
 class AwardController extends ResourceController

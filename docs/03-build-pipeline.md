@@ -49,7 +49,8 @@ it edits what the previous one produced.
 | `wire_navbar.php` | navbar → settings + the primary and mega menus |
 | `wire_collections.php` | repeated cards → collection loops (services, case studies, posts, jobs, FAQs, team) |
 | `wire_repeaters.php` | process strips, where the first card carries an extra layout class |
-| `wire_clients.php` | the client marquee — both copies of each row |
+| `wire_clients.php` | the client marquee — both copies of each row, skipping the about page’s two `static-logo-row` bands |
+| `wire_about.php` | the about page’s core values, partners, certifications and awards bands |
 | `wire_stats.php` | the animated counters |
 | `wire_testimonials.php` | the tab slider, regenerating its ids per item |
 | `wire_details.php` | detail pages read the record named in the URL |
@@ -109,6 +110,16 @@ to `verify.php`'s baseline, so they never show up as drift:
 | `unfreeze()` | removes the frozen `w-form-loading` class, the `disabled` submit button, `data-wf-page-id` and the stale Turnstile token and widget |
 | `settle_ix2()` | `translate3d(0, 60px, 0) … opacity: 0` → the settled state, so content is visible if the runtime never boots |
 | `drop_stray_testimonial_wrapper()` | the export nested an extra class-less `<div>` inside `.testimonial-inside-image-parent` on slide one only; neither element has any CSS, and removing it lets all five slides share a loop |
+
+One more runs inside `make_dynamic.php`. `drop_stale_srcset()` strips `srcset`
+and `sizes` from every `<img>` whose `src` it has just bound to `cms_image()`.
+Webflow ships each image with a `srcset` of its own downscales, and a browser
+that understands `srcset` picks a candidate from it and never reads `src` — so
+binding `src` alone left the export\u2019s asset on screen and made the dashboard\u2019s
+image picker look broken on 22 images across 12 pages. `wire_collections.php`
+and `wire_testimonials.php` already stripped it for the same reason; page-section
+images were the case nobody had covered. `verify.php` compares the `src` list
+only, so this does not move it.
 
 Two more fixes are applied by the wiring passes: the filename
 `case-study-image-1%20(1).webp` is renamed on disk (a space and parentheses in a

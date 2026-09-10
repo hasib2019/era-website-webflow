@@ -40,6 +40,7 @@ $views = [
     'wire_collections.php' => 'repeated cards -> collection loops',
     'wire_repeaters.php' => 'process strips (first card keeps its extra class)',
     'wire_clients.php' => 'client marquee, both copies of each row',
+    'wire_about.php' => 'about-page core values, partners, certifications and awards',
     'wire_stats.php' => 'animated counters',
     'wire_cta_links.php' => 'CTA button hrefs make_dynamic.php cannot disambiguate',
     'wire_testimonials.php' => 'tab slider, ids regenerated per item',

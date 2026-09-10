@@ -24,7 +24,13 @@
                 </button>
 
                 <div class="min-w-0 flex-1">
-                    <h1 class="truncate text-base font-semibold text-slate-900">@yield('heading', View::getSection('title', 'Dashboard'))</h1>
+                    {{-- Not @yield('heading', View::getSection('title')): an inline
+                         @section('title', $value) already runs the value through e(),
+                         and yieldContent() escapes its default argument a second time,
+                         so a title holding "&" rendered as a literal "&amp;". --}}
+                    <h1 class="truncate text-base font-semibold text-slate-900">
+                        @hasSection('heading')@yield('heading')@else{!! View::getSection('title', 'Dashboard') !!}@endif
+                    </h1>
                     @hasSection('subheading')
                         <p class="truncate text-xs text-slate-500">@yield('subheading')</p>
                     @endif

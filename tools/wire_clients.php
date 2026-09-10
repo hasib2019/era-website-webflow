@@ -21,14 +21,29 @@ foreach (['about', 'services'] as $view) {
 
     $html = file_get_contents($file);
 
-    // find the rows first; each holds two identical copies of its list
+    /*
+     * Find the rows first; each holds two identical copies of its list.
+     *
+     * The about page reuses this logo markup for two more bands — partners and
+     * certifications — which are static rows, not marquees. They carry
+     * `static-logo-row`, and skipping them here matters twice over: their row
+     * position would otherwise shift the marquee's own row numbers, so
+     * Client::where('row_group', 1) would come back empty and the top row of
+     * the marquee would render blank.
+     */
     $rows = [];
     $offset = 0;
-    while (preg_match('#<div[^>]*class="(?:[^"]*\s)?client-logo-list-inner(?:\s[^"]*)?"#', $html, $m, PREG_OFFSET_CAPTURE, $offset)) {
+    while (preg_match('#<div[^>]*class="(?P<class>(?:[^"]*\s)?client-logo-list-inner(?:\s[^"]*)?)"#', $html, $m, PREG_OFFSET_CAPTURE, $offset)) {
         $start = $m[0][1];
         $end = match_close($html, $start, 'div');
-        $rows[] = [$start, $end];
         $offset = $end;
+
+        $classes = preg_split('/\s+/', trim($m['class'][0]), -1, PREG_SPLIT_NO_EMPTY);
+        if (in_array('static-logo-row', $classes, true)) {
+            continue;
+        }
+
+        $rows[] = [$start, $end];
     }
 
     if (! $rows) {
@@ -79,7 +94,13 @@ foreach (['about', 'services'] as $view) {
                 1
             );
 
-            $loop = "@foreach (\App\Models\Client::published()->where('row_group', $rowNumber)->ordered()->get() as \$client)"
+            /*
+             * forScope('client') is what keeps the marquee to actual clients.
+             * The table now also holds partner and certification rows for the
+             * about page's other two logo bands, and row_group alone does not
+             * tell them apart — without this a new partner turns up mid-marquee.
+             */
+            $loop = "@foreach (\App\Models\Client::published()->forScope('client')->where('row_group', $rowNumber)->ordered()->get() as \$client)"
                 . $bound
                 . '@endforeach';
 

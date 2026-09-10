@@ -147,8 +147,6 @@
                             class="our-evaluation-image-wrap"><img
                                 src="{{ cms_image('why-choose-us.our_evaluation.image', '/era/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp') }}"
                                 loading="lazy"
-                                sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 1279px) 44vw, 500px"
-                                srcset="/era/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image-p-500.webp 500w, /era/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image-p-800.webp 800w, /era/media/webflow/668f57f523812d8b78e89c6b_our-evaluation-section-image.webp 998w"
                                 alt="our evaluation section image" class="full-image"></div>
                     </div>
                 </div>
@@ -501,8 +499,7 @@
                     </div>
                     <div data-w-id="fb3d8211-581b-e555-5949-cd34f550b0e3" class="cta-image-wrap" style="opacity: 0;">
                         <img src="{{ cms_image('why-choose-us.cta.image', '/era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg') }}"
-                            loading="lazy" sizes="100vw"
-                            srcset="/era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-500.jpg 500w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-800.jpg 800w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image-p-1080.jpg 1080w, /era/media/webflow/664c7b819abdb2098fe1c195_cta-image.jpg 1395w"
+                            loading="lazy"
                             alt="CTA image" class="full-image"></div><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
                         href="/contact" target="_blank"
                         class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}" style="border-color: rgba(255, 255, 255, 0.2);">

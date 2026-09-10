@@ -83,9 +83,73 @@ abstract class ResourceController extends Controller
         }
 
         return view('admin.resource.index', $this->viewData([
-            'records' => $query->paginate(20)->withQueryString(),
+            'records' => $query->paginate($this->perPage())->withQueryString(),
             'columns' => $this->columns(),
+            'filters' => $this->filters(),
+            'filterKey' => $this->filterKey(),
+            'filterCounts' => $this->filterCounts(),
+            'groupBy' => $this->groupBy(),
+            'groupLabels' => $this->filters(),
         ]));
+    }
+
+    /**
+     * Row count per filter tab, plus '' for the total.
+     *
+     * Counted off the unfiltered table rather than `baseQuery()`, so every tab
+     * still shows its own size while one of them is active.
+     */
+    protected function filterCounts(): array
+    {
+        $filters = $this->filters();
+
+        if (! $filters) {
+            return [];
+        }
+
+        $model = $this->model();
+        $counts = $model::query()->selectRaw($this->filterKey() . ' as k, count(*) as n')
+            ->groupBy($this->filterKey())
+            ->pluck('n', 'k')
+            ->all();
+
+        $counts[''] = array_sum($counts);
+
+        return $counts;
+    }
+
+    protected function perPage(): int
+    {
+        return 20;
+    }
+
+    /**
+     * Tabs above the index table, as value => label.
+     *
+     * The key is the query string the tab sets, matching whatever `baseQuery()`
+     * filters on. An empty array means no tab strip, which is every screen but
+     * the ones that hold more than one kind of row.
+     */
+    protected function filters(): array
+    {
+        return [];
+    }
+
+    /** Query parameter the filter tabs write. */
+    protected function filterKey(): string
+    {
+        return 'scope';
+    }
+
+    /**
+     * Column to break the table on, with a heading row for each run.
+     *
+     * Only meaningful when the listing is ordered by that column, which is what
+     * a `defaultOrder()` override is for. Null means one flat table.
+     */
+    protected function groupBy(): ?string
+    {
+        return null;
     }
 
     public function create()

@@ -104,6 +104,31 @@ function image_url(string $value, array $assetMap): ?string
     return $assetMap[$value] ?? null;
 }
 
+/**
+ * Drops `srcset` and `sizes` from every <img> whose `src` is now a CMS binding.
+ *
+ * Webflow ships each image with a srcset of its own downscales. A browser that
+ * understands srcset picks a candidate from it and never looks at src, so
+ * binding src alone leaves the export's asset on screen and the dashboard's
+ * image picker appears to do nothing. wire_collections.php and
+ * wire_testimonials.php already strip it for the same reason; page-section
+ * images were the case nobody had covered.
+ *
+ * verify.php compares the src list only, so removing these does not move it.
+ */
+function drop_stale_srcset(string $blade): string
+{
+    return preg_replace_callback('#<img\b[^>]*>#s', static function (array $m): string {
+        $img = $m[0];
+
+        if (! preg_match('#src="\{\{\s*(?:cms_image|setting_image)\(#', $img)) {
+            return $img;
+        }
+
+        return preg_replace('#\s+(?:srcset|sizes)="[^"]*"#', '', $img);
+    }, $blade);
+}
+
 $totals = ['replaced' => 0, 'ambiguous' => 0, 'missing' => 0];
 $report = [];
 
@@ -201,6 +226,8 @@ foreach ($pages as $page) {
             $replaced++;
         }
     }
+
+    $blade = drop_stale_srcset($blade);
 
     $totals['replaced'] += $replaced;
     $totals['ambiguous'] += $ambiguous;

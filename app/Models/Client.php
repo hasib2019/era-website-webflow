@@ -11,7 +11,7 @@ class Client extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'logo_id', 'logo_alt', 'variant', 'website_url',
+        'scope', 'name', 'logo_id', 'logo_alt', 'variant', 'website_url',
         'row_group', 'is_published', 'sort_order',
     ];
 
@@ -23,6 +23,12 @@ class Client extends Model
     public function logo(): BelongsTo
     {
         return $this->belongsTo(Media::class, 'logo_id');
+    }
+
+    /** Which about-page band a row belongs to: client, partner or certification. */
+    public function scopeForScope($query, string $scope)
+    {
+        return $query->where('scope', $scope);
     }
 
     public function scopePublished($query)

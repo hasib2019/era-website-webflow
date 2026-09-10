@@ -14,6 +14,9 @@
     @else
         <span class="text-slate-400">—</span>
     @endif
+@elseif ($type === 'select' && isset($spec['options'][$value]))
+    {{-- show the option the editor picked, not the value stored behind it --}}
+    <span class="text-slate-600">{{ $spec['options'][$value] }}</span>
 @elseif ($value instanceof \DateTimeInterface)
     <span class="text-slate-600">{{ $value->format('M j, Y') }}</span>
 @elseif (blank($value))
