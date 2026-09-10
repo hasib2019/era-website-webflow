@@ -247,3 +247,90 @@ body {
 .core-values-list .our-process-item {
     flex-grow: 0;
 }
+
+/* ---------------------------------------------------------------------------
+ * 9. The job application form
+ *
+ * The career-details "apply" box shipped with a mailto: link, so the export has
+ * no form here to inherit from and no file input anywhere to copy. The inputs
+ * themselves reuse `.form-field` from the contact page, which is already a
+ * transparent box with a bottom rule; these rules only lay them out and dress
+ * the one control the template never had.
+ *
+ * `.job-application-info` is `text-align: center`, which is right for the
+ * heading and the paragraph above but wrong for form fields, so the form resets
+ * it. The box is `position: sticky` and 424px wide, which the stacked layout
+ * below fits inside without changing either.
+ * ------------------------------------------------------------------------- */
+.job-apply-form-block {
+    width: 100%;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.job-apply-form {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+
+.job-apply-form .form-field {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.job-apply-form .text-box {
+    min-height: 72px;
+    resize: vertical;
+}
+
+/*
+ * The file input.
+ *
+ * The native control cannot be styled to match the rest of the band, so the
+ * label is the visible target and the input sits on top of it, transparent and
+ * full-size — the whole block stays clickable and keyboard focus still lands on
+ * a real input rather than on a div pretending to be one.
+ */
+.form-field-file {
+    border: 1px dashed #ffffff4d;
+    color: var(--color--grey);
+    cursor: pointer;
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+    padding: 16px;
+    position: relative;
+    transition: border-color .35s, color .35s;
+}
+
+.form-field-file:hover,
+.form-field-file:focus-within {
+    border-color: #fffc;
+    color: var(--color--white);
+}
+
+.form-field-file-label {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .2px;
+}
+
+.form-field-file-hint {
+    font-size: 13px;
+    opacity: .7;
+}
+
+.form-field-file input[type="file"] {
+    cursor: pointer;
+    height: 100%;
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+}
+
+/* the button is a grid child on the contact page; here it is a flex child */
+.job-apply-form .primary-button {
+    margin-top: 4px;
+}

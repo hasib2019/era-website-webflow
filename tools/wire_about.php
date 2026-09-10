@@ -128,8 +128,17 @@ function wire_band(string $html, array $band): array
     $loop = '@foreach (' . $band['source'] . ' as $' . $band['as'] . ')' . $item . '@endforeach';
     $section = substr($section, 0, $run[0][0]) . $loop . substr($section, end($run)[1]);
 
-    // hide the whole band while its collection is empty
-    $section = '@if (' . $band['guard'] . ')' . "\n    " . $section . "\n    " . '@endif';
+    /*
+     * Hide the whole band while its collection is empty.
+     *
+     * wire_section_visibility.php has already wrapped this section in its own
+     * @if, so this one nests inside it and the two @endifs end up adjacent. The
+     * trailing newline keeps them apart: Blade only reads a directive when the
+     * character before its @ is not a word boundary, so "@endif@endif" leaves
+     * the outer one as literal text. Whitespace between sections renders as
+     * nothing and verify.php skips whitespace-only text nodes.
+     */
+    $section = '@if (' . $band['guard'] . ')' . "\n    " . $section . "\n    " . '@endif' . "\n";
 
     $html = substr($html, 0, $start) . $section . substr($html, $end);
 

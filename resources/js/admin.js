@@ -301,11 +301,15 @@ function initMenuBoard(board) {
         const items = [];
         columns().forEach((list) => {
             const column = list.dataset.menuColumn;
+            // '' for the top row; a dropdown's id for one of its columns
+            const parent = list.dataset.menuParent || null;
             list.querySelectorAll('[data-menu-item]').forEach((card) => {
-                items.push({ id: Number(card.dataset.menuItem), column });
+                items.push({ id: Number(card.dataset.menuItem), column, parent });
                 // keep the card's own form in step, so a later Save agrees with the drag
                 const field = card.querySelector('[data-item-column]');
                 if (field) field.value = column;
+                const parentField = card.querySelector('[data-item-parent]');
+                if (parentField) parentField.value = parent ?? '';
             });
         });
 

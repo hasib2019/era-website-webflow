@@ -14,7 +14,7 @@
                                         class="brand-logo-link logo-black w-nav-brand{{ nav_active('/') ? ' w--current' : '' }}" aria-label="home"><img
                                             src="{{ setting_image('general.logo_dark_id', '/era/media/webflow/668c2e6e687f356e879426a1_Logo-black.svg') }}"
                                             loading="lazy" width="115" alt="Black Logo" class="brand-logo-image"></a>
-                                    <div class="nav-main-menu-wrap">@foreach (cms_menu('primary') as $item)<a {!! nav_active($item->url) ? 'aria-current="page"' : '' !!} href="{{ $item->url }}"
+                                    <div class="nav-main-menu-wrap">@foreach (cms_menu('primary')->flatMap(fn ($i) => $i->isDropdown() ? $i->children : [$i]) as $item)<a {!! nav_active($item->url) ? 'aria-current="page"' : '' !!} href="{{ $item->url }}"
                                             class="nav-main-menu-link w-inline-block{{ nav_active($item->url) ? ' w--current' : '' }}">
                                             <div class="nav-main-menu-link-inner"
                                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
@@ -32,9 +32,9 @@
                                     <div class="main-menu-other-info-inner">
                                         <div class="main-menu-info-content-wrap">
                                             <p class="main-menu-info-para">your vision, our mission. let’s start the
-                                                journey</p><a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="98cce219-106e-0917-6727-fde305ae5985"
-                                                href="{{ setting('navbar.cta_url', '/contact') }}"
-                                                target="_blank" class="menu-button-wrapper w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}"
+                                                journey</p><a data-w-id="98cce219-106e-0917-6727-fde305ae5985"
+                                                href="https://webflow.com/templates/html/edoly-agency-website-template"
+                                                target="_blank" class="menu-button-wrapper w-inline-block"
                                                 style="border-color: rgba(0, 0, 0, 0.5);">
                                                 <div class="button-text-wrap">
                                                     <div class="button-text-inner main-menu-nav-button-text"
@@ -83,7 +83,44 @@
                     </div>
                 </nav>
                 <div class="nav-menu">
-                    <div class="nav-link-wrap">@foreach (cms_menu('primary') as $item)<a {!! nav_active($item->url) ? 'aria-current="page"' : '' !!} href="{{ $item->url }}" class="link-wrap w-inline-block{{ nav_active($item->url) ? ' w--current' : '' }}">
+                    <div class="nav-link-wrap">@foreach (cms_menu('primary') as $item)@if ($item->isDropdown())<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
+                            <div class="dropdown-toggle w-dropdown-toggle" id="w-dropdown-toggle-{{ $loop->index }}"
+                                aria-controls="w-dropdown-list-{{ $loop->index }}" aria-haspopup="menu" aria-expanded="false"
+                                role="button" tabindex="0">
+                                <div class="link-wrap">
+                                    <div class="link-inner"
+                                        style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
+                                        <div class="link-text-wrap dropdown-nav-item">
+                                            <div class="nav-link-text">{{ $item->label }}</div>
+                                            <div class="dropdown-icon"></div>
+                                        </div>
+                                        <div class="link-text-wrap is-hover">
+                                            <div class="nav-link-text">{{ $item->label }}</div>
+                                            <div class="dropdown-icon-hover"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <nav class="dropdown-list w-dropdown-list" id="w-dropdown-list-{{ $loop->index }}"
+                                aria-labelledby="w-dropdown-toggle-{{ $loop->index }}">
+                                <div class="nav-dropdown-list-content">
+                                    <div class="nav-dropdown-list">
+                                        @foreach ($item->columns() as $heading => $links)<div class="nav-dropdown-column">@foreach ($links as $child)<a {!! nav_active($child->url) ? 'aria-current="page"' : '' !!} href="{{ $child->url }}"
+                                                class="link-wrap w-inline-block{{ nav_active($child->url) ? ' w--current' : '' }}" tabindex="0">
+                                                <div class="link-inner"
+                                                    style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
+                                                    <div class="link-text-wrap">
+                                                        <div class="nav-link-text">{{ $child->label }}</div>
+                                                    </div>
+                                                    <div class="link-text-wrap is-hover">
+                                                        <div class="nav-link-text">{{ $child->label }}</div>
+                                                    </div>
+                                                </div>
+                                            </a>@endforeach</div>@endforeach
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>@else<a {!! nav_active($item->url) ? 'aria-current="page"' : '' !!} href="{{ $item->url }}" class="link-wrap w-inline-block{{ nav_active($item->url) ? ' w--current' : '' }}">
                             <div class="link-inner"
                                 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                                 <div class="link-text-wrap">
@@ -93,70 +130,8 @@
                                     <div class="nav-link-text">{{ $item->label }}</div>
                                 </div>
                             </div>
-                        </a>@endforeach
-                        <div data-hover="false" data-delay="0" class="dropdown w-dropdown">
-                            <div class="dropdown-toggle w-dropdown-toggle" id="w-dropdown-toggle-0"
-                                aria-controls="w-dropdown-list-0" aria-haspopup="menu" aria-expanded="false"
-                                role="button" tabindex="0">
-                                <div class="link-wrap">
-                                    <div class="link-inner"
-                                        style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="link-text-wrap dropdown-nav-item">
-                                            <div class="nav-link-text">{{ setting('navbar.dropdown_label', 'Other page') }}</div>
-                                            <div class="dropdown-icon"></div>
-                                        </div>
-                                        <div class="link-text-wrap is-hover">
-                                            <div class="nav-link-text">{{ setting('navbar.dropdown_label', 'Other page') }}</div>
-                                            <div class="dropdown-icon-hover"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <nav class="dropdown-list w-dropdown-list" id="w-dropdown-list-0"
-                                aria-labelledby="w-dropdown-toggle-0">
-                                <div class="nav-dropdown-list-content">
-                                    <div class="nav-dropdown-list">
-                                        <div class="nav-dropdown-column">@foreach (cms_menu('mega')->where('column_heading', 'Column 1') as $item)<a {!! nav_active($item->url) ? 'aria-current="page"' : '' !!} href="{{ $item->url }}"
-                                                class="link-wrap w-inline-block{{ nav_active($item->url) ? ' w--current' : '' }}" tabindex="0">
-                                                <div class="link-inner"
-                                                    style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="link-text-wrap">
-                                                        <div class="nav-link-text">{{ $item->label }}</div>
-                                                    </div>
-                                                    <div class="link-text-wrap is-hover">
-                                                        <div class="nav-link-text">{{ $item->label }}</div>
-                                                    </div>
-                                                </div>
-                                            </a>@endforeach</div>
-                                        <div class="nav-dropdown-column">@foreach (cms_menu('mega')->where('column_heading', 'Column 2') as $item)<a {!! nav_active($item->url) ? 'aria-current="page"' : '' !!}
-                                                href="{{ $item->url }}"
-                                                class="link-wrap w-inline-block{{ nav_active($item->url) ? ' w--current' : '' }}" tabindex="0">
-                                                <div class="link-inner"
-                                                    style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="link-text-wrap">
-                                                        <div class="nav-link-text">{{ $item->label }}</div>
-                                                    </div>
-                                                    <div class="link-text-wrap is-hover">
-                                                        <div class="nav-link-text">{{ $item->label }}</div>
-                                                    </div>
-                                                </div>
-                                            </a>@endforeach</div>
-                                        <div class="nav-dropdown-column">@foreach (cms_menu('mega')->where('column_heading', 'Column 3') as $item)<a {!! nav_active($item->url) ? 'aria-current="page"' : '' !!} href="{{ $item->url }}" class="link-wrap w-inline-block{{ nav_active($item->url) ? ' w--current' : '' }}"
-                                                tabindex="0">
-                                                <div class="link-inner"
-                                                    style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                                    <div class="link-text-wrap">
-                                                        <div class="nav-link-text">{{ $item->label }}</div>
-                                                    </div>
-                                                    <div class="link-text-wrap is-hover">
-                                                        <div class="nav-link-text">{{ $item->label }}</div>
-                                                    </div>
-                                                </div>
-                                            </a>@endforeach</div>
-                                    </div>
-                                </div>
-                            </nav>
-                        </div>
+                        </a>@endif
+@endforeach
                     </div>
                 </div>
                 <div class="nav-menu-right">

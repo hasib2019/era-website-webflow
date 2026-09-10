@@ -40,18 +40,23 @@ $views = [
     'wire_collections.php' => 'repeated cards -> collection loops',
     'wire_repeaters.php' => 'process strips (first card keeps its extra class)',
     'wire_clients.php' => 'client marquee, both copies of each row',
-    'wire_about.php' => 'about-page core values, partners, certifications and awards',
     'wire_stats.php' => 'animated counters',
     'wire_video.php' => 'home/services video lightbox -> Video Url field',
     'wire_cta_links.php' => 'CTA button hrefs make_dynamic.php cannot disambiguate',
     'wire_testimonials.php' => 'tab slider, ids regenerated per item',
     'wire_details.php' => 'detail pages read the record in the URL',
     'wire_forms.php' => 'contact and newsletter forms post to Laravel',
+    'wire_wf_page.php' => 'each page gets the data-wf-page id its interactions use',
     'wire_seo.php' => 'page titles read the page Meta title field',
     'wire_contact.php' => 'contact details and copyright read the settings',
     'wire_chrome.php' => 'top-bar links, header button and remaining labels',
+    'wire_menu.php' => 'any top-bar item may be a dropdown, at any position',
     'wire_page_text.php' => 'job hero fields, footer wordmark, remaining page labels',
     'wire_section_visibility.php' => 'each page section -> "visible on site" toggle',
+    // after the visibility pass on purpose: its parser walks top-level tags,
+    // and these bands are wrapped in an @if, which is not one. Running last also
+    // nests the collection guard inside the visibility guard rather than beside it.
+    'wire_about.php' => 'about-page core values, partners, certifications and awards',
 ];
 
 function run(string $script, string $why): void

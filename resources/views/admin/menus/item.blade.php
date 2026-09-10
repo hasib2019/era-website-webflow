@@ -28,8 +28,20 @@
             <input type="text" name="label" value="{{ $item->label }}" required aria-label="Label" class="{{ $field }} font-medium">
             <input type="text" name="url" value="{{ $item->url }}" required aria-label="URL" class="{{ $field }} text-slate-500">
 
-            {{-- mirrors the card's column so a plain Save cannot wipe what a drag set --}}
+            {{-- mirror what the drag set, so a plain Save cannot wipe it --}}
             <input type="hidden" name="column_heading" value="{{ $item->column_heading }}" data-item-column>
+
+            @if ($menu->supportsDropdowns())
+                <input type="hidden" name="parent_id" value="{{ $item->parent_id }}" data-item-parent>
+
+                @if (! $item->parent_id)
+                    {{-- only a top-level item can open a panel --}}
+                    <select name="type" aria-label="Type" class="{{ $field }} text-slate-600">
+                        <option value="link" @selected(! $item->isDropdown())>Plain link</option>
+                        <option value="dropdown" @selected($item->isDropdown())>Dropdown panel</option>
+                    </select>
+                @endif
+            @endif
 
             <div class="flex items-center justify-between gap-2 pt-0.5">
                 <label class="flex items-center gap-1.5 text-[11px] text-slate-600">

@@ -135,8 +135,12 @@ Route::middleware('auth')->group(function () {
         Route::delete('messages/{message}', [MessageController::class, 'destroy'])->name('messages.destroy');
     });
 
-    Route::get('applications', [ApplicationController::class, 'index'])
-        ->middleware('permission:applications.view')->name('applications.index');
+    Route::middleware('permission:applications.view')->group(function () {
+        Route::get('applications', [ApplicationController::class, 'index'])->name('applications.index');
+        // the only route to an uploaded CV; the files themselves are not public
+        Route::get('applications/{application}/resume', [ApplicationController::class, 'resume'])
+            ->name('applications.resume');
+    });
 
     Route::get('subscribers', [SubscriberController::class, 'index'])
         ->middleware('permission:subscribers.view')->name('subscribers.index');

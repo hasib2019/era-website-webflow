@@ -58,7 +58,7 @@ GET /services/paid-advertising
   └─ view: site/pages/service-details.blade.php
        ├─ @extends site/layouts/app.blade.php
        │    ├─ @include site/partials/head     ← setting('general.favicon_id'), page meta
-       │    ├─ @include site/partials/navbar   ← cms_menu('primary'), cms_menu('mega')
+       │    ├─ @include site/partials/navbar   ← cms_menu('primary') — links and dropdown panels
        │    ├─ @yield('content')               ← the page body
        │    ├─ @include site/partials/footer   ← setting('footer.*'), cms_menu('footer')
        │    └─ @include site/partials/scripts  ← jQuery, Webflow runtime

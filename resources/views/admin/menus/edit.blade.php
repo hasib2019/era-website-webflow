@@ -5,14 +5,9 @@
 
 @section('content')
     @php
-        $flat = $menu->columnMode() === 'none';
+        $flat = $menu->columnMode() === 'none' && ! $menu->supportsDropdowns();
         // an item whose heading is not a real column is rendered nowhere on the site
         $strayIds = $stray->pluck('id')->all();
-        $buckets = $flat
-            ? ['' => $items]
-            : collect($columns)->mapWithKeys(fn ($c) => [
-                $c => $items->filter(fn ($i) => (string) $i->column_heading === $c && ! in_array($i->id, $strayIds, true)),
-            ])->all();
     @endphp
 
     <a href="{{ route('admin.menus.index') }}" class="mb-5 inline-block text-sm font-medium text-slate-500 hover:text-slate-800">&larr; All menus</a>
@@ -25,31 +20,41 @@
         <div class="xl:col-span-3">
             <div class="mb-3 flex items-center gap-3">
                 <h2 class="text-sm font-semibold text-slate-900">Links</h2>
-                <span class="text-xs text-slate-400">Drag a link by its handle to reorder{{ $flat ? '' : ' or move it between columns' }}. Saves as you drop.</span>
+                <span class="text-xs text-slate-400">
+                    Drag a link by its handle to reorder{{ $flat ? '' : ' or move it between columns' }}.
+                    @if ($menu->supportsDropdowns())
+                        Drop one under a dropdown to put it in that panel.
+                    @endif
+                    Saves as you drop.
+                </span>
             </div>
 
             @php
                 // literal classes: Tailwind cannot see a column count built at runtime
                 $grid = match (true) {
-                    $flat, count($columns) <= 1 => '',
-                    count($columns) === 2 => 'lg:grid-cols-2',
+                    $flat, count($board) <= 1 => '',
+                    count($board) === 2 => 'lg:grid-cols-2',
                     default => 'lg:grid-cols-3',
                 };
             @endphp
 
             <div data-menu-board data-reorder-url="{{ route('admin.menus.reorder', $menu) }}"
                 class="grid gap-4 {{ $grid }}">
-                @foreach ($buckets as $heading => $bucket)
-                    <section class="rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5">
+                @foreach ($board as $bucket)
+                    <section class="rounded-xl shadow-sm ring-1 {{ ($bucket['new'] ?? false) ? 'bg-slate-50 ring-dashed ring-slate-300' : 'bg-white ring-slate-900/5' }}">
                         <header class="flex items-center justify-between border-b border-slate-100 px-4 py-3">
-                            <h3 class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                                {{ $flat ? 'All links' : $heading }}
+                            <h3 class="truncate text-xs font-semibold uppercase tracking-wide {{ ($bucket['new'] ?? false) ? 'text-slate-400' : 'text-slate-500' }}">
+                                {{ $bucket['title'] }}
+                                @if ($bucket['new'] ?? false)
+                                    <span class="ml-1 font-normal normal-case tracking-normal">(new column)</span>
+                                @endif
                             </h3>
-                            <span class="text-[11px] text-slate-400" data-column-count>{{ $bucket->count() }}</span>
+                            <span class="text-[11px] text-slate-400" data-column-count>{{ $bucket['items']->count() }}</span>
                         </header>
 
-                        <ul data-menu-column="{{ $heading }}" class="min-h-24 space-y-2 p-3">
-                            @forelse ($bucket as $item)
+                        <ul data-menu-column="{{ $bucket['column'] }}" data-menu-parent="{{ $bucket['parent'] }}"
+                            class="min-h-24 space-y-2 p-3">
+                            @forelse ($bucket['items'] as $item)
                                 @include('admin.menus.item', ['item' => $item, 'menu' => $menu])
                             @empty
                                 @include('admin.menus.empty')
@@ -98,7 +103,42 @@
                     </datalist>
                 </div>
 
-                @unless ($flat)
+                @if ($menu->supportsDropdowns())
+                    <div>
+                        <label for="new-type" class="block text-sm font-medium text-slate-700">Type</label>
+                        <select id="new-type" name="type"
+                            class="mt-1.5 block w-full rounded-lg border-0 bg-slate-50 px-3.5 py-2.5 text-sm ring-1 ring-slate-200 focus:bg-white focus:ring-2 focus:ring-brand-500">
+                            <option value="link">Plain link</option>
+                            <option value="dropdown">Dropdown panel</option>
+                        </select>
+                        <p class="mt-1 text-xs text-slate-400">A dropdown opens a panel built from the links you put under it.</p>
+                    </div>
+
+                    <div>
+                        <label for="new-parent" class="block text-sm font-medium text-slate-700">Position</label>
+                        <select id="new-parent" name="parent_id"
+                            class="mt-1.5 block w-full rounded-lg border-0 bg-slate-50 px-3.5 py-2.5 text-sm ring-1 ring-slate-200 focus:bg-white focus:ring-2 focus:ring-brand-500">
+                            <option value="">Top row</option>
+                            @foreach ($dropdowns as $dropdown)
+                                <option value="{{ $dropdown->id }}">Inside “{{ $dropdown->label }}”</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="new-column" class="block text-sm font-medium text-slate-700">Column</label>
+                        <input id="new-column" type="text" name="column_heading" list="menu-columns" value="Column 1"
+                            class="mt-1.5 block w-full rounded-lg border-0 bg-slate-50 px-3.5 py-2.5 text-sm ring-1 ring-slate-200 focus:bg-white focus:ring-2 focus:ring-brand-500">
+                        <datalist id="menu-columns">
+                            @foreach ($items->pluck('column_heading')->filter()->unique() as $column)
+                                <option value="{{ $column }}"></option>
+                            @endforeach
+                        </datalist>
+                        <p class="mt-1 text-xs text-slate-400">
+                            Only used inside a dropdown. Links sharing a heading share a column; the heading itself is not shown on the site.
+                        </p>
+                    </div>
+                @elseif (! $flat)
                     <div>
                         <label for="new-column" class="block text-sm font-medium text-slate-700">Column</label>
                         @if ($menu->columnMode() === 'fixed')
@@ -120,7 +160,7 @@
                             <p class="mt-1 text-xs text-slate-400">A new heading creates a new footer column.</p>
                         @endif
                     </div>
-                @endunless
+                @endif
 
                 <label class="flex items-center gap-2 text-sm text-slate-600">
                     <input type="hidden" name="is_active" value="0">

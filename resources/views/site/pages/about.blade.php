@@ -118,9 +118,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-<<<<<<< HEAD
-    </section>
-    @if (\App\Models\CoreValue::published()->exists())
+    </section>@endif
+    @if(cms_section_visible('about', 'core_values'))@if (\App\Models\CoreValue::published()->exists())
     <section class="section-our-process">
         <div class="container-main">
             <div class="our-process-component">
@@ -147,11 +146,8 @@
         </div>
     </section>
     @endif
-    <section id="team" class="section-our-team">
-=======
-    </section>@endif
+@endif
     @if(cms_section_visible('about', 'our_team'))<section id="team" class="section-our-team">
->>>>>>> cda3505d14a34a3ed3fbec23ed8225782d4e3631
         <div class="container-main">
             <div class="team-component">
                 <div class="section-title-element our-team-title-element">
@@ -208,9 +204,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-<<<<<<< HEAD
-    </section>
-    @if (\App\Models\Client::published()->forScope('partner')->exists())
+    </section>@endif
+    @if(cms_section_visible('about', 'our_partners'))@if (\App\Models\Client::published()->forScope('partner')->exists())
     <section class="section-our-clients">
         <div class="container-main">
             <div class="our-clients-logo-component">
@@ -236,11 +231,8 @@
         </div>
     </section>
     @endif
-    <section data-w-id="979eb138-38b4-5f5c-7df2-418d23b3870f" class="section-our-clients">
-=======
-    </section>@endif
+@endif
     @if(cms_section_visible('about', 'our_clients'))<section data-w-id="979eb138-38b4-5f5c-7df2-418d23b3870f" class="section-our-clients">
->>>>>>> cda3505d14a34a3ed3fbec23ed8225782d4e3631
         <div class="container-main">
             <div class="our-clients-logo-component">
                 <div class="caption"
@@ -310,9 +302,8 @@
                 style="transform: translate3d(0px, 60px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 0;">
             </div>
         </div>
-<<<<<<< HEAD
-    </section>
-    @if (\App\Models\Client::published()->forScope('certification')->exists())
+    </section>@endif
+    @if(cms_section_visible('about', 'certifications'))@if (\App\Models\Client::published()->forScope('certification')->exists())
     <section class="section-our-clients">
         <div class="container-main">
             <div class="our-clients-logo-component">
@@ -338,7 +329,8 @@
         </div>
     </section>
     @endif
-    @if (\App\Models\Award::published()->exists())
+@endif
+    @if(cms_section_visible('about', 'awards'))@if (\App\Models\Award::published()->exists())
     <section class="section-our-jobs">
         <div class="container-main">
             <div class="our-jobs-component">
@@ -376,11 +368,8 @@
         </div>
     </section>
     @endif
-    <section class="section-testimonial">
-=======
-    </section>@endif
+@endif
     @if(cms_section_visible('about', 'testimonials'))<section class="section-testimonial">
->>>>>>> cda3505d14a34a3ed3fbec23ed8225782d4e3631
         <div class="container-main">
             <div class="testimonial-component">
                 <h2 class="caption"

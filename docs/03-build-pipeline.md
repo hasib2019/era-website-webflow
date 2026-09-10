@@ -46,15 +46,18 @@ it edits what the previous one produced.
 | `convert.php` | slices each export page into head / navbar / content / footer, writes the Blade views and shared partials |
 | `make_dynamic.php` | binds page-section fields — 253 of them |
 | `wire_footer.php` | footer → settings + the footer menu |
-| `wire_navbar.php` | navbar → settings + the primary and mega menus |
+| `wire_navbar.php` | navbar → settings + the primary menu |
+| `wire_menu.php` | folds the hard-coded "Other page" toggle into the primary loop, so any item can be a dropdown at any position; also flattens the burger overlay to the leaf links, since the top row is hidden below 992px |
 | `wire_collections.php` | repeated cards → collection loops (services, case studies, posts, jobs, FAQs, team) |
 | `wire_repeaters.php` | process strips, where the first card carries an extra layout class |
 | `wire_clients.php` | the client marquee — both copies of each row, skipping the about page’s two `static-logo-row` bands |
-| `wire_about.php` | the about page’s core values, partners, certifications and awards bands |
+| `wire_section_visibility.php` | wraps each section in its "visible on site" check |
+| `wire_about.php` | the about page’s core values, partners, certifications and awards bands — runs after the visibility pass, whose parser walks top-level tags and would choke on these bands’ `@if` |
 | `wire_stats.php` | the animated counters |
 | `wire_testimonials.php` | the tab slider, regenerating its ids per item |
 | `wire_details.php` | detail pages read the record named in the URL |
-| `wire_forms.php` | the contact and newsletter forms post to Laravel |
+| `wire_forms.php` | the contact, newsletter and job-application forms post to Laravel (the last one multipart, for the CV) |
+| `wire_wf_page.php` | each page gets the `data-wf-page` id its own interactions were authored with — see below |
 
 `make_dynamic.php` reports `253 wired, 33 ambiguous, 70 not found` on a clean
 build. That is the expected result, not a failure:
@@ -120,6 +123,18 @@ image picker look broken on 22 images across 12 pages. `wire_collections.php`
 and `wire_testimonials.php` already stripped it for the same reason; page-section
 images were the case nobody had covered. `verify.php` compares the `src` list
 only, so this does not move it.
+
+`wire_wf_page.php` corrects a Webflow export bug. An interaction addresses its
+target as `<pageId>|<elementId>` and matches that against the page's own
+`data-wf-page` plus the element's bare `data-w-id`. The export stamped the
+*about* page's id onto every page but the home page, so on those pages the two
+never agree and the interaction never runs — which leaves anything whose entry
+state is `opacity: 0` invisible for good. That hid the whole contact form and
+address block on /contact, the apply box and related-jobs list on a career page,
+and image blocks on /why-choose-us and a service page: sixteen elements over
+seven pages. The real id is recovered from the `w-node-<uuid>-<suffix>` ids,
+whose suffix is the last eight characters of the page id, matched against the
+page ids the interactions data actually references.
 
 Two more fixes are applied by the wiring passes: the filename
 `case-study-image-1%20(1).webp` is renamed on disk (a space and parentheses in a

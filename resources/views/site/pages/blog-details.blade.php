@@ -1,7 +1,7 @@
 @extends('site.layouts.app')
 
 @section('title', detail_title($post ?? null, 'blog-details', 'Blog Details'))
-@section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
+@section('wf_page', '664de430a70d9240564b443a')
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')

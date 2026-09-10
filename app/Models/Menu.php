@@ -59,6 +59,103 @@ class Menu extends Model
         return config('menus.' . $this->slug . '.help');
     }
 
+    /** Whether an item in this menu may open a panel instead of navigating. */
+    public function supportsDropdowns(): bool
+    {
+        return (bool) config('menus.' . $this->slug . '.dropdowns', false);
+    }
+
+    /**
+     * The drag board: one bucket per drop target, in the order they are drawn.
+     *
+     * A bucket is [title, parent, column, items]. `parent` and `column` are what
+     * the drag handler posts back, so dropping a card into a bucket is what sets
+     * both its position and where it belongs — there is no second step.
+     *
+     * Menus without dropdowns keep their old shape exactly: one bucket for a
+     * flat menu, one per column otherwise. A menu with dropdowns gets the top
+     * row first, then each dropdown's columns beneath it.
+     *
+     * Free-column buckets are followed by an empty one, so a new column is made
+     * by dragging a link into it rather than by knowing to type a new heading.
+     */
+    public function board(): array
+    {
+        $items = $this->items()->orderBy('sort_order')->orderBy('id')->get();
+        $mode = $this->columnMode();
+
+        if (! $this->supportsDropdowns()) {
+            if ($mode === 'none') {
+                return [['title' => 'All links', 'parent' => '', 'column' => '', 'items' => $items]];
+            }
+
+            $buckets = [];
+            foreach ($this->columnOptions() as $heading) {
+                $buckets[] = [
+                    'title' => $heading,
+                    'parent' => '',
+                    'column' => $heading,
+                    'items' => $items->filter(fn (MenuItem $i) => (string) $i->column_heading === $heading),
+                ];
+            }
+
+            if ($mode === 'free') {
+                $buckets[] = $this->emptyColumnBucket('', $this->columnOptions());
+            }
+
+            return $buckets;
+        }
+
+        $top = $items->whereNull('parent_id');
+
+        $buckets = [['title' => 'Top row', 'parent' => '', 'column' => '', 'items' => $top]];
+
+        foreach ($top as $item) {
+            if (! $item->isDropdown()) {
+                continue;
+            }
+
+            $children = $items->where('parent_id', $item->id);
+            $headings = $children->pluck('column_heading')
+                ->map(fn ($h) => (string) ($h ?: 'Column 1'))
+                ->unique()
+                ->values()
+                ->all();
+
+            foreach ($headings as $heading) {
+                $buckets[] = [
+                    'title' => $item->label . ' → ' . $heading,
+                    'parent' => (string) $item->id,
+                    'column' => $heading,
+                    'items' => $children->filter(
+                        fn (MenuItem $c) => (string) ($c->column_heading ?: 'Column 1') === $heading,
+                    ),
+                ];
+            }
+
+            $buckets[] = $this->emptyColumnBucket((string) $item->id, $headings, $item->label . ' → ');
+        }
+
+        return $buckets;
+    }
+
+    /** A drop target for a column that does not exist yet. */
+    private function emptyColumnBucket(string $parent, array $existing, string $prefix = ''): array
+    {
+        $n = 1;
+        while (in_array('Column ' . $n, $existing, true)) {
+            $n++;
+        }
+
+        return [
+            'title' => $prefix . 'Column ' . $n,
+            'parent' => $parent,
+            'column' => 'Column ' . $n,
+            'items' => collect(),
+            'new' => true,
+        ];
+    }
+
     /** Active top-level items with their children, ready to render. */
     public function tree(): Collection
     {

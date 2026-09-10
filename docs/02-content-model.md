@@ -62,9 +62,9 @@ band's copy disappears without its rows being deleted. It returns empty rather
 than the export's literal on purpose: the one control meant to remove content
 must not put the original back.
 
-The band's markup shell still renders — emptying its fields is not the same as
-dropping the `<section>`. Removing the element needs a wiring pass that wraps it
-in `@if (cms_section_visible(...))`, which does not exist yet.
+`tools/wire_section_visibility.php` wraps each section in
+`@if(cms_section_visible(...))`, so hiding a band now removes its markup rather
+than leaving an empty shell of icons and layout wrappers behind.
 
 ### The navbar carries two navigations
 
@@ -76,9 +76,12 @@ in `@if (cms_section_visible(...))`, which does not exist yet.
 | overlay menu, behind the burger | `nav-main-menu-wrap` | `wire_navbar.php` |
 | the link row visitors actually click | `nav-link-wrap` | `wire_chrome.php` |
 
-Both now loop over `cms_menu('primary')`, so one menu drives both. Neither class
-carries a `text-transform`, so labels render exactly as typed — the seed data was
-changed from `home` / `about us` to `Home` / `About` for that reason.
+Both read `cms_menu('primary')`, so one menu drives both — but not identically:
+the row draws the top level (a dropdown becomes a panel), while the overlay
+flattens to the leaf links, because it is the only navigation below 992px.
+Neither class carries a `text-transform`, so labels render exactly as typed —
+the seed data was changed from `home` / `about us` to `Home` / `About` for that
+reason.
 
 ### Page SEO
 
@@ -181,20 +184,52 @@ $service->image?->url                    // relation  -> URL
 
 ## Menus
 
-`menus` (3) → `menu_items` (31). `column_heading` groups items into the columns
+`menus` (2) → `menu_items` (31). `column_heading` groups items into the columns
 the design draws:
 
 | Menu | Items | Columns |
 |---|---|---|
-| `primary` | 5 | — (single row) |
-| `mega` | 14 | `Column 1` (7), `Column 2` (5), `Column 3` (2) |
+| `primary` | 6 top level (+14 children) | — for the row; each dropdown groups its own children |
 | `footer` | 12 | `PAGES` (5), `COMPANY` (4), `UTILITY` (3) |
 
 ```blade
 @foreach (cms_menu('footer')->groupBy('column_heading') as $heading => $items)
 ```
 
-Two `mega` labels contain non-breaking spaces (`Career`, `Career&nbsp;&nbsp;Details`)
+### The top bar is one menu, links and panels together
+
+`menu_items.type` is `link` or `dropdown`. A dropdown draws a panel from its
+own children instead of navigating, so a panel can sit at any position in the
+row and both kinds are built on one screen. `parent_id` and `children()` had
+been on the model since the start with nothing setting them; a `type` was all
+that was missing.
+
+There used to be a second `mega` menu feeding a hard-coded "Other page" toggle
+at the end of the row. `2026_01_01_001800_fold_mega_menu_into_primary` moves
+those rows under an ordinary dropdown item and drops the menu.
+
+```php
+$item->isDropdown()   // draw the panel rather than a link
+$item->columns()      // children grouped by heading, one column each
+$menu->board()        // the drag targets: top row, then each dropdown's columns
+```
+
+A dropdown's column headings are free text and are **not** rendered — they only
+say which links share a column. `.nav-dropdown-list` is a flex row, so the count
+follows the content; the panel is 700px wide, which is about four columns.
+
+Menus are two levels deep. `MenuController::reorder()` refuses a drop that would
+nest a dropdown inside another, because its own children would then point at
+something the navbar never opens and would silently vanish from the site.
+
+**The burger overlay draws the leaves, not the top level.** `.nav-menu` is
+`display: none` below 992px, so the overlay is the only navigation on a phone;
+drawing only the top level would make every link inside a panel unreachable
+there, and drawing the panel's own item would offer a link to `#`. Hence
+`cms_menu('primary')->flatMap(fn ($i) => $i->isDropdown() ? $i->children : [$i])`
+in `navbar.blade.php`.
+
+Two labels inside the "Other page" dropdown contain non-breaking spaces (`Career`, `Career&nbsp;&nbsp;Details`)
 because the export did. Retyping them with ordinary spaces makes `verify.php`
 fail — it is comparing against markup that has the entity.
 
@@ -204,8 +239,18 @@ fail — it is comparing against markup that has the entity.
 |---|---|---|
 | `contact_messages` | the contact form | `/admin/messages` |
 | `subscribers` | the footer newsletter | `/admin/subscribers` |
-| `job_applications` | nothing yet — no apply form exists in the design | `/admin/applications` |
+| `job_applications` | the apply form on `/career/{slug}` | `/admin/applications` |
 | `activity_logs` | `ActivityLogger` on every dashboard write | `/admin/activity` |
+
+### Uploaded CVs
+
+`job_applications.resume_path` points at the **`local`** disk
+(`storage/app/private`), not the public one. A CV is personal data, so no URL
+reaches it: `/admin/applications/{id}/resume` is the only way in, and it sits
+behind `applications.view` like the list itself. The file is written only after
+validation passes and is named from a random string, so nothing about the
+uploader's own filename is trusted. `mimes:pdf,doc,docx` and `max:5120` bound
+what is accepted.
 
 ## Known gap
 

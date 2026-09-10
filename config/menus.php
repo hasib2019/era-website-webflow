@@ -9,13 +9,19 @@
 | holds. This has to match what the site partials actually read, because a
 | heading they do not look for is an item nobody ever sees:
 |
-|   navbar.blade.php   cms_menu('mega')->where('column_heading', 'Column 1') ... 3
+|   navbar.blade.php   cms_menu('primary')  -- the top bar: a link per item, and
+|                                              a panel per item of type dropdown,
+|                                              whose columns come from $item->columns()
+|   navbar.blade.php   cms_menu('primary')  -- again, for the burger overlay, which
+|                                              draws the top level only
 |   footer.blade.php   cms_menu('footer')->groupBy('column_heading')
-|   navbar.blade.php   cms_menu('primary')                       -- one flat row
 |
-| So the mega menu's three columns are a closed set (the markup has exactly
-| three slots), the footer's are open (it renders a column per distinct
-| heading), and the primary menu has none.
+| cms_menu() already returns the tree: Menu::tree() takes active top-level items
+| with their active children eager-loaded, so a dropdown arrives ready to draw.
+|
+| The footer's columns are open (it renders a column per distinct heading) and
+| the primary row itself has none — but a primary item of type `dropdown`
+| groups its own children into columns the same open way.
 |
 | Modes:
 |   none   flat list; column_heading stays null
@@ -26,16 +32,22 @@
 
 return [
 
+    /*
+     * `dropdowns` lets an item in this menu open a panel instead of navigating.
+     * Its children group into columns by heading, the way the footer's do,
+     * because .nav-dropdown-list is a flex row rather than a fixed three-column
+     * grid — the number of columns follows the content. The panel is 700px wide
+     * (600 and 420 at the lower breakpoints), which is about four columns'
+     * worth before the links start to crowd.
+     *
+     * The top level itself stays flat: it is one row across the bar.
+     */
     'primary' => [
         'mode' => 'none',
-        'help' => 'The row of links across the top of every page.',
-    ],
-
-    'mega' => [
-        'mode' => 'fixed',
-        'columns' => ['Column 1', 'Column 2', 'Column 3'],
-        'help' => 'The panel that opens from the menu button. The template has exactly '
-            . 'three columns, so an item outside them would not render.',
+        'dropdowns' => true,
+        'help' => 'The row of links across the top of every page. Any item can be turned '
+            . 'into a dropdown, in any position — its children become the panel it '
+            . 'opens, grouped into columns by heading.',
     ],
 
     'footer' => [

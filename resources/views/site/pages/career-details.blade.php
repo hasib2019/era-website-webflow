@@ -1,7 +1,7 @@
 @extends('site.layouts.app')
 
 @section('title', detail_title($job ?? null, 'career-details', 'Brand Expert'))
-@section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
+@section('wf_page', '6662a7c41ba98ef26def8b4c')
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
@@ -78,28 +78,65 @@
                             <div class="heading-h4">{{ cms('career-details.job_details.apply_box_title', 'APPLY FOR THIS JOB') }}</div>
                             <div class="application-para-wrap">
                                 <p>{{ cms('career-details.job_details.apply_box_text', 'Please let Advertise know that you found this position on Jobs as a way to support us, so we can keep posting.') }}</p>
-                            </div><a data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                href="mailto:{{ setting('contact.jobs_email', 'applyexamplejob@gmail.com') }}?subject=Job%20Apply"
-                                class="primary-button w-inline-block" style="border-color: rgba(255, 255, 255, 0.2);">
-                                <div class="button-text-wrap">
-                                    <div class="button-text-inner"
-                                        style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="text-block">{{ cms('career-details.job_details.apply_button_label', 'APPLY FOR JOB') }}</div>
-                                        <div>{{ cms('career-details.job_details.apply_button_label', 'APPLY FOR JOB') }}</div>
+                            </div><div class="job-apply-form-block w-form">
+                                <form id="wf-form-Job-Application-Form" name="wf-form-Job-Application-Form"
+                                    data-name="Job Application Form" class="job-apply-form" method="POST" action="{{ route('career.apply', $job->slug) }}" enctype="multipart/form-data">@csrf
+                                    <input class="form-field w-input" maxlength="256" name="Applicant-name"
+                                        data-name="Applicant name" placeholder="Full name" type="text"
+                                        id="Applicant-name" required="" value="{{ old('Applicant-name') }}"><input class="form-field w-input"
+                                        maxlength="256" name="Applicant-email" data-name="Applicant email"
+                                        placeholder="Email address" type="email" id="Applicant-email"
+                                        required="" value="{{ old('Applicant-email') }}"><input class="form-field w-input" maxlength="40"
+                                        name="Applicant-phone" data-name="Applicant phone" placeholder="Phone number"
+                                        type="tel" id="Applicant-phone" required="" value="{{ old('Applicant-phone') }}"><textarea
+                                        placeholder="A short note (optional)" maxlength="2000" id="Applicant-note"
+                                        name="Applicant-note" data-name="Applicant note"
+                                        class="form-field text-box w-input">{{ old('Applicant-note') }}</textarea>
+                                    <label for="Applicant-cv" class="form-field-file">
+                                        <span class="form-field-file-label">Attach your CV</span>
+                                        <span class="form-field-file-hint">PDF or Word, up to 5 MB</span>
+                                        <input class="w-input" name="Applicant-cv" data-name="Applicant cv"
+                                            type="file" id="Applicant-cv" accept=".pdf,.doc,.docx" required="">
+                                    </label>
+                                    <button type="submit" class="primary-button"
+                                        style="border-color: rgba(255, 255, 255, 0.2);">
+                                        <div class="button-text-wrap">
+                                            <div class="button-text-inner"
+                                                style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
+                                                <div class="text-block">{{ cms('career-details.job_details.apply_button_label', 'APPLY FOR JOB') }}</div>
+                                                <div>{{ cms('career-details.job_details.apply_button_label', 'APPLY FOR JOB') }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="button-icon-element">
+                                            <div class="button-icon-wrap"
+                                                style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
+                                                <div class="button-icon-inner"><img
+                                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                        loading="lazy" alt="" class="button-iocn"></div>
+                                                <div class="button-icon-inner"><img
+                                                        src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
+                                                        loading="lazy" alt="" class="button-iocn"></div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </form>
+                                <div @if (session('form_sent') === 'apply') style="display:block" @endif class="success-message w-form-done" tabindex="-1" role="region"
+                                    aria-label="Job Application Form success">
+                                    <div class="form-info-block"><img
+                                            src="/era/media/webflow/668c4528a2433dc202d5dd5d_check-circle.svg"
+                                            loading="lazy" alt="">
+                                        <div>Thank you! Your application has been received.</div>
                                     </div>
                                 </div>
-                                <div class="button-icon-element">
-                                    <div class="button-icon-wrap"
-                                        style="transform: translate3d(-50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
-                                        <div class="button-icon-inner"><img
-                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                loading="lazy" alt="" class="button-iocn"></div>
-                                        <div class="button-icon-inner"><img
-                                                src="/era/media/webflow/664c2ad8ce7e660fca0261be_arrow.svg"
-                                                loading="lazy" alt="" class="button-iocn"></div>
+                                <div @if (session('form_failed') === 'apply' || $errors->{'apply'}->any()) style="display:block" @endif class="error-message w-form-fail" tabindex="-1" role="region"
+                                    aria-label="Job Application Form failure">
+                                    <div class="form-info-block"><img
+                                            src="/era/media/webflow/668c45d06e7cd30793472a3d_alert-circle.svg"
+                                            loading="lazy" alt="">
+                                        <div>Oops! Something went wrong while sending your application.</div>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>

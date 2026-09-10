@@ -1,7 +1,7 @@
 @extends('site.layouts.app')
 
 @section('title', detail_title($caseStudy ?? null, 'case-study-details', 'Case Study Details'))
-@section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
+@section('wf_page', '66629fa41d665bb22f0a959f')
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')

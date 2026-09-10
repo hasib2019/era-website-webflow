@@ -28,6 +28,21 @@ $FORMS = [
         'repopulate' => ['Email'],
         'textarea' => null,
     ],
+    [
+        /*
+         * The apply form carries a CV, so it needs an enctype the other two do
+         * not, and its action needs the job in the URL — $job is what
+         * PageController@careerDetails passes to this view.
+         */
+        'file' => 'pages/career-details.blade.php',
+        'data_name' => 'Job Application Form',
+        'route' => 'career.apply',
+        'route_args' => '$job->slug',
+        'key' => 'apply',
+        'repopulate' => ['Applicant-name', 'Applicant-email', 'Applicant-phone'],
+        'textarea' => 'Applicant-note',
+        'multipart' => true,
+    ],
 ];
 
 foreach ($FORMS as $form) {
@@ -45,7 +60,18 @@ foreach ($FORMS as $form) {
     $attrs = $m[1];
     $attrs = preg_replace('#\s+method="[^"]*"#i', '', $attrs);
     $attrs = preg_replace('#\s+action="[^"]*"#i', '', $attrs);
-    $attrs .= ' method="POST" action="{{ route(\'' . $form['route'] . '\') }}"';
+    $attrs = preg_replace('#\s+enctype="[^"]*"#i', '', $attrs);
+
+    $route = "route('" . $form['route'] . "'"
+        . (isset($form['route_args']) ? ', ' . $form['route_args'] : '')
+        . ')';
+
+    $attrs .= ' method="POST" action="{{ ' . $route . ' }}"';
+
+    // a form carrying a file has to say so, or PHP receives no upload at all
+    if ($form['multipart'] ?? false) {
+        $attrs .= ' enctype="multipart/form-data"';
+    }
 
     $html = str_replace($m[0], '<form' . $attrs . '>@csrf', $html);
 

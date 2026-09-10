@@ -25,7 +25,15 @@
                     <tr class="hover:bg-slate-50/70">
                         <td class="px-4 py-3">
                             <p class="font-medium text-slate-900">{{ $application->name }}</p>
-                            <p class="text-xs text-slate-500">{{ $application->email }}</p>
+                            <p class="text-xs text-slate-500">
+                                <a href="mailto:{{ $application->email }}" class="hover:underline">{{ $application->email }}</a>
+                                @if ($application->phone)
+                                    · <a href="tel:{{ $application->phone }}" class="hover:underline">{{ $application->phone }}</a>
+                                @endif
+                            </p>
+                            @if ($application->cover_letter)
+                                <p class="mt-1 max-w-md text-xs italic text-slate-400">{{ Str::limit($application->cover_letter, 140) }}</p>
+                            @endif
                         </td>
                         <td class="px-4 py-3 text-slate-600">{{ $application->jobOpening?->title ?? '—' }}</td>
                         <td class="px-4 py-3">
@@ -33,9 +41,10 @@
                         </td>
                         <td class="px-4 py-3 text-xs text-slate-500">{{ $application->created_at->diffForHumans() }}</td>
                         <td class="px-4 py-3 text-right">
+                            {{-- not Storage::url(): CVs sit on the private disk, so this route is the only way in --}}
                             @if ($application->resume_path)
-                                <a href="{{ Storage::disk('public')->url($application->resume_path) }}" target="_blank" rel="noopener"
-                                    class="text-xs font-semibold text-brand-700 hover:underline">Resume</a>
+                                <a href="{{ route('admin.applications.resume', $application) }}"
+                                    class="text-xs font-semibold text-brand-700 hover:underline">Download CV</a>
                             @else
                                 <span class="text-xs text-slate-400">—</span>
                             @endif

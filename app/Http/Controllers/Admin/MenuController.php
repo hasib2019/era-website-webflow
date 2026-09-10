@@ -41,8 +41,11 @@ class MenuController extends Controller
          * site, so it gets its own bucket in the editor rather than being hidden
          * here too. That is where links added before this screen could set a
          * column end up, which is exactly what needs to be obvious.
+         *
+         * A dropdown's children are exempt: their headings are free text, so any
+         * heading is a real column of that panel.
          */
-        $stray = $menu->columnMode() === 'none'
+        $stray = $menu->columnMode() === 'none' || $menu->supportsDropdowns()
             ? collect()
             : $items->reject(fn ($i) => in_array((string) $i->column_heading, $columns, true));
 
@@ -51,6 +54,8 @@ class MenuController extends Controller
             'columns' => $columns,
             'items' => $items,
             'stray' => $stray,
+            'board' => $menu->board(),
+            'dropdowns' => $items->whereNull('parent_id')->filter->isDropdown(),
         ]);
     }
 
@@ -98,6 +103,7 @@ class MenuController extends Controller
             'items' => ['present', 'array'],
             'items.*.id' => ['required', 'integer'],
             'items.*.column' => ['nullable', 'string', 'max:255'],
+            'items.*.parent' => ['nullable', 'integer'],
         ];
 
         if ($menu->columnMode() === 'fixed') {
@@ -109,17 +115,56 @@ class MenuController extends Controller
         // ids are client-supplied; only this menu's own items may be touched
         $owned = $menu->items()->pluck('id')->flip();
         $flat = $menu->columnMode() === 'none';
+        $nested = $menu->supportsDropdowns();
 
-        DB::transaction(function () use ($rows, $owned, $flat) {
+        // only a dropdown of this menu can take children, and never itself
+        $parents = $menu->items()->whereNull('parent_id')
+            ->where('type', MenuItem::TYPE_DROPDOWN)->pluck('id')->flip();
+
+        // menus are two levels deep, so anything that already has children stays put
+        $hasChildren = $menu->items()->whereNotNull('parent_id')->pluck('parent_id')->unique()->flip();
+
+        DB::transaction(function () use ($rows, $owned, $flat, $nested, $parents, $hasChildren) {
             foreach (array_values($rows) as $position => $row) {
-                if (! $owned->has((int) $row['id'])) {
+                $id = (int) $row['id'];
+
+                if (! $owned->has($id)) {
                     continue;
                 }
 
-                MenuItem::whereKey((int) $row['id'])->update([
+                $parent = $nested && filled($row['parent'] ?? null) ? (int) $row['parent'] : null;
+
+                /*
+                 * Reject a nesting that cannot be drawn: a parent that is not a
+                 * dropdown of this menu, an item under itself, or a panel being
+                 * dragged into another panel — that last one would leave its own
+                 * children pointing at something the navbar never opens, so they
+                 * would vanish from the site with nothing on screen to explain it.
+                 */
+                if ($parent !== null && (! $parents->has($parent) || $parent === $id || $hasChildren->has($id))) {
+                    $parent = null;
+                }
+
+                $column = filled($row['column'] ?? null) ? $row['column'] : null;
+
+                $update = [
                     'sort_order' => $position,
-                    'column_heading' => $flat ? null : (filled($row['column'] ?? null) ? $row['column'] : null),
-                ]);
+                    // a child is always in a column; a top-level item never is
+                    'column_heading' => $nested
+                        ? ($parent === null ? null : $column)
+                        : ($flat ? null : $column),
+                ];
+
+                if ($nested) {
+                    $update['parent_id'] = $parent;
+
+                    // a dropdown dragged under another item goes back to a link
+                    if ($parent !== null) {
+                        $update['type'] = MenuItem::TYPE_LINK;
+                    }
+                }
+
+                MenuItem::whereKey($id)->update($update);
             }
         });
 
@@ -140,18 +185,46 @@ class MenuController extends Controller
             'is_active' => ['nullable', 'boolean'],
         ];
 
-        $rules['column_heading'] = match ($mode) {
-            // a mega item with no column renders nowhere, so it is not optional
-            'fixed' => ['required', Rule::in($menu->columnOptions())],
-            'free' => ['required', 'string', 'max:255'],
-            default => ['nullable'],
-        };
+        if ($menu->supportsDropdowns()) {
+            $rules['type'] = ['nullable', Rule::in([MenuItem::TYPE_LINK, MenuItem::TYPE_DROPDOWN])];
+
+            // a parent must be a dropdown of this menu, so a child cannot be orphaned
+            $rules['parent_id'] = [
+                'nullable',
+                Rule::exists('menu_items', 'id')
+                    ->where('menu_id', $menu->id)
+                    ->whereNull('parent_id')
+                    ->where('type', MenuItem::TYPE_DROPDOWN),
+            ];
+
+            // a child is always in a column of its panel; a top-level item never is
+            $rules['column_heading'] = $request->filled('parent_id')
+                ? ['required', 'string', 'max:255']
+                : ['nullable'];
+        } else {
+            $rules['column_heading'] = match ($mode) {
+                // a mega item with no column renders nowhere, so it is not optional
+                'fixed' => ['required', Rule::in($menu->columnOptions())],
+                'free' => ['required', 'string', 'max:255'],
+                default => ['nullable'],
+            };
+        }
 
         $data = $request->validate($rules, [], ['column_heading' => 'column']);
 
         $data['is_active'] = $request->boolean('is_active');
         $data['target'] = $data['target'] ?? '_self';
-        $data['column_heading'] = $mode === 'none' ? null : ($data['column_heading'] ?? null);
+
+        if ($menu->supportsDropdowns()) {
+            $data['parent_id'] = $data['parent_id'] ?? null;
+            // only a top-level item can open a panel
+            $data['type'] = $data['parent_id'] === null
+                ? ($data['type'] ?? MenuItem::TYPE_LINK)
+                : MenuItem::TYPE_LINK;
+            $data['column_heading'] = $data['parent_id'] === null ? null : ($data['column_heading'] ?? null);
+        } else {
+            $data['column_heading'] = $mode === 'none' ? null : ($data['column_heading'] ?? null);
+        }
 
         return $data;
     }

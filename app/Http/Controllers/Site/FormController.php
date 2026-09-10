@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContactMessage;
+use App\Models\JobApplication;
+use App\Models\JobOpening;
 use App\Models\Subscriber;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 
 /**
- * Handles the two forms the template ships with.
+ * Handles the site's public forms: contact, newsletter and job applications.
  *
  * The inputs keep the names Webflow gave them so the markup is untouched; they
  * are mapped onto the models here. Webflow's own runtime only takes a form over
@@ -51,6 +53,56 @@ class FormController extends Controller
         return back()
             ->with('form_sent', 'contact')
             ->withFragment('contact-form');
+    }
+
+    /**
+     * A job application, with the CV attached.
+     *
+     * The file goes on the `local` disk, which is storage/app/private and is not
+     * reachable over the web — a CV is personal data and must not be guessable
+     * under /storage. /admin/applications/{id}/resume streams it back to a
+     * signed-in admin instead.
+     *
+     * The upload is stored only after validation passes, so a rejected file is
+     * never written, and it is named from a random string rather than what the
+     * visitor called it.
+     */
+    public function apply(Request $request, string $slug): RedirectResponse
+    {
+        $job = JobOpening::published()->where('slug', $slug)->firstOrFail();
+
+        if ($response = $this->throttle($request, 'apply', 3)) {
+            return $response;
+        }
+
+        $data = $request->validateWithBag('apply', [
+            'Applicant-name' => ['required', 'string', 'max:150'],
+            'Applicant-email' => ['required', 'email', 'max:255'],
+            'Applicant-phone' => ['required', 'string', 'max:40'],
+            'Applicant-note' => ['nullable', 'string', 'max:2000'],
+            'Applicant-cv' => ['required', 'file', 'mimes:pdf,doc,docx', 'max:5120'],
+        ], [], [
+            'Applicant-name' => 'name',
+            'Applicant-email' => 'email address',
+            'Applicant-phone' => 'phone number',
+            'Applicant-note' => 'note',
+            'Applicant-cv' => 'CV',
+        ]);
+
+        JobApplication::create([
+            'job_opening_id' => $job->id,
+            'name' => $data['Applicant-name'],
+            'email' => $data['Applicant-email'],
+            'phone' => $data['Applicant-phone'],
+            'cover_letter' => $data['Applicant-note'] ?? null,
+            'resume_path' => $request->file('Applicant-cv')->store('applications', 'local'),
+            'status' => 'new',
+            'ip_address' => $request->ip(),
+        ]);
+
+        return back()
+            ->with('form_sent', 'apply')
+            ->withFragment('apply');
     }
 
     public function subscribe(Request $request): RedirectResponse

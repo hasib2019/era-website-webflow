@@ -299,6 +299,21 @@
                 "sort_order": 2
             },
             {
+                "key": "core_values",
+                "name": "Core Values",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "CORE VALUES"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "THE PRINCIPLES BEHIND EVERY ENGAGEMENT"
+                    }
+                },
+                "sort_order": 3
+            },
+            {
                 "key": "our_team",
                 "name": "Our Team",
                 "content": {
@@ -315,7 +330,22 @@
                         "value": "team"
                     }
                 },
-                "sort_order": 3
+                "sort_order": 4
+            },
+            {
+                "key": "our_partners",
+                "name": "Our Partners",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "OUR PARTNERS"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "TECHNOLOGY PARTNERSHIPS THAT EXTEND WHAT WE DELIVER"
+                    }
+                },
+                "sort_order": 5
             },
             {
                 "key": "our_clients",
@@ -330,7 +360,37 @@
                         "value": "PROUD TO PARTNER WITH INDUSTRY-LEADING COMPANIES"
                     }
                 },
-                "sort_order": 4
+                "sort_order": 6
+            },
+            {
+                "key": "certifications",
+                "name": "Certifications & Membership",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "CERTIFICATIONS & MEMBERSHIP"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "THE STANDARDS WE HOLD AND THE BODIES WE BELONG TO"
+                    }
+                },
+                "sort_order": 7
+            },
+            {
+                "key": "awards",
+                "name": "Awards & Achievements",
+                "content": {
+                    "caption": {
+                        "type": "text",
+                        "value": "AWARDS & ACHIEVEMENTS"
+                    },
+                    "heading": {
+                        "type": "text",
+                        "value": "RECOGNISED FOR THE WORK WE DELIVER"
+                    }
+                },
+                "sort_order": 8
             },
             {
                 "key": "testimonials",
@@ -345,7 +405,7 @@
                         "value": "Tab 3"
                     }
                 },
-                "sort_order": 5
+                "sort_order": 9
             },
             {
                 "key": "our_jobs",
@@ -360,7 +420,7 @@
                         "value": "Opportunities to join our awesome team"
                     }
                 },
-                "sort_order": 6
+                "sort_order": 10
             },
             {
                 "key": "cta",
@@ -395,7 +455,7 @@
                         "value": "https://cdn.prod.website-files.com/66485cbdb8fe5b2ef09ac0c3/664c2ad8ce7e660fca0261be_arrow.svg"
                     }
                 },
-                "sort_order": 7
+                "sort_order": 11
             }
         ]
     },

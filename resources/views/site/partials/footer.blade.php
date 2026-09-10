@@ -43,9 +43,9 @@
                         </div>
                         <div data-w-id="bde28cae-09ae-cfcc-3461-00985d233a50" class="button-wrap"
                             style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                            <a {!! nav_active('/contact') ? 'aria-current="page"' : '' !!} data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
-                                href="{{ setting('footer.cta_url', '/contact') }}" target="_blank"
-                                class="primary-button w-inline-block{{ nav_active('/contact') ? ' w--current' : '' }}" style="border-color: rgba(255, 255, 255, 0.2);">
+                            <a data-w-id="84ff4b69-3bd5-a48a-06c2-d764252bc56d"
+                                href="https://webflow.com/templates/html/edoly-agency-website-template" target="_blank"
+                                class="primary-button w-inline-block" style="border-color: rgba(255, 255, 255, 0.2);">
                                 <div class="button-text-wrap">
                                     <div class="button-text-inner"
                                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
@@ -89,7 +89,7 @@
                 </div>
                 <div data-w-id="6ae0aa8d-def1-f227-09ea-ec72da4627cf" class="footer-bottom-element"
                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d; opacity: 1;">
-                    <div class="footer-big-text">{{ setting('footer.big_text', 'era') }}</div>
+                    <div class="footer-big-text">edoly</div>
                 </div>
             </div>
         </div>

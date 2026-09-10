@@ -43,3 +43,4 @@ Route::get('/404', fn () => response()->view('errors.404', [], 404))->name('not-
  */
 Route::post('/contact', [FormController::class, 'contact'])->name('contact.submit');
 Route::post('/subscribe', [FormController::class, 'subscribe'])->name('subscribe');
+Route::post('/career/{slug}/apply', [FormController::class, 'apply'])->name('career.apply');

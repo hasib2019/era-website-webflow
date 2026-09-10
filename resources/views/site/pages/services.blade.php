@@ -1,7 +1,7 @@
 @extends('site.layouts.app')
 
 @section('title', page_title('services', 'Services'))
-@section('wf_page', '66485cbdb8fe5b2ef09ac0c6')
+@section('wf_page', '66485cbdb8fe5b2ef09ac0c7')
 @section('wf_site', '66485cbdb8fe5b2ef09ac0c3')
 
 @section('content')
@@ -189,7 +189,7 @@
                         <div class="faq-item">
                             <div class="faq-trigger">
                                 <div class="faq-title" style="color: rgb(120, 120, 120);">WHAT SERVICES DOES PROVIDE
-                                    THE era?</div>
+                                    THE EDOLY?</div>
                                 <div class="faq-open-close-icon-wrap">
                                     <div class="faq-open-close-icon"
                                         style="color: rgb(120, 120, 120); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
@@ -208,7 +208,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-trigger">
-                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN era BENEFITS MY
+                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW CAN EDOLY BENEFITS MY
                                     BUSINESS</div>
                                 <div class="faq-open-close-icon-wrap">
                                     <div class="faq-open-close-icon"
@@ -248,7 +248,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-trigger">
-                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES era PROVIDE THE
+                                <div class="faq-title" style="color: rgb(120, 120, 120);">HOW DOES EDOLY PROVIDE THE
                                     SECURITY?</div>
                                 <div class="faq-open-close-icon-wrap">
                                     <div class="faq-open-close-icon"
